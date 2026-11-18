@@ -1,0 +1,7 @@
+<!doctype html><meta charset="utf-8"><script>
+const q=new URLSearchParams(location.search).get("s");
+const base={help:true,days:{}};
+if(q==="mid")base.days[1]={step:2,misses:["Emma"],done:false,won:false,bonus:null,onDay:true};
+if(q==="done")base.days[1]={step:2,misses:["Emma"],done:true,won:true,bonus:"universally",onDay:true};
+localStorage.setItem("half-a-line-v3",JSON.stringify(base));location.replace("index.html");
+</script>
