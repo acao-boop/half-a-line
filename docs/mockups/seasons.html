@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup A: Seasons</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../site/styles.css">
+<link rel="stylesheet" href="mock.css">
+<style>
+/* Direction A: Seasons. Palettes only, named for a season, each with a light and dark version, a soft wash behind the card
+   and one small motif drawn in SVG (no images). "Follow the season" picks by month: Dec–Feb winter, Mar–May spring, Jun–Aug summer, Sep–Nov autumn. */
+[data-mood="winter"]{--paper:#E8EEF3;--card:#FAFCFD;--ink:#132230;--muted:#435466;--line:#D2DCE5;--bar:#132230;--hl:#A9DDF5;--hl-ink:#132230;--accent:#255C8C;--accent-bg:#DCE9F5;--wash:#D6E3EE;--motif:#5E88AD}
+:root[data-theme="dark"][data-mood="winter"],:root[data-theme="dark"] [data-mood="winter"]{--paper:#0C141C;--card:#121D28;--ink:#E4EDF5;--muted:#9AAABA;--line:#253545;--bar:#C5D3E0;--hl:#7FC8EA;--hl-ink:#0C141C;--accent:#8CC2F0;--accent-bg:#19304A;--wash:#13263A;--motif:#8CC2F0}
+[data-mood="spring"]{--paper:#F2F1EA;--card:#FFFFFB;--ink:#1E261B;--muted:#4B5345;--line:#DFE0D3;--bar:#1E261B;--hl:#E4F06E;--hl-ink:#1E261B;--accent:#6A3FA0;--accent-bg:#ECE3F6;--wash:#E9DFF5;--motif:#8A62B8}
+:root[data-theme="dark"][data-mood="spring"],:root[data-theme="dark"] [data-mood="spring"]{--paper:#12150F;--card:#1A1E16;--ink:#ECEFE3;--muted:#A7AE9C;--line:#30362A;--bar:#D3D9C6;--hl:#CFE05A;--hl-ink:#12150F;--accent:#C6A6F0;--accent-bg:#2E2540;--wash:#241D33;--motif:#C6A6F0}
+[data-mood="summer"]{--paper:#F4EEE2;--card:#FFFDF8;--ink:#1B2638;--muted:#565E6E;--line:#E6DDCB;--bar:#1B2638;--hl:#FFD45C;--hl-ink:#1B2638;--accent:#0B6680;--accent-bg:#D8ECF0;--wash:#F8DFA6;--motif:#E59A1E}
+:root[data-theme="dark"][data-mood="summer"],:root[data-theme="dark"] [data-mood="summer"]{--paper:#0D1620;--card:#14202C;--ink:#F1EBDD;--muted:#A9B2BE;--line:#26364A;--bar:#D6CFBF;--hl:#F2C14E;--hl-ink:#0D1620;--accent:#7CCCE0;--accent-bg:#173444;--wash:#1B2E3D;--motif:#F2C14E}
+[data-mood="autumn"]{--paper:#F1E4D4;--card:#FFF8EE;--ink:#2A1A10;--muted:#574233;--line:#E6D3BD;--bar:#2A1A10;--hl:#F5A65B;--hl-ink:#2A1A10;--accent:#9B3A12;--accent-bg:#F6DFCC;--wash:#EFC79F;--motif:#B4521F}
+:root[data-theme="dark"][data-mood="autumn"],:root[data-theme="dark"] [data-mood="autumn"]{--paper:#1A100B;--card:#241812;--ink:#F3E6D6;--muted:#BCA592;--line:#3D2A1F;--bar:#DCC8B3;--hl:#E8954A;--hl-ink:#1A100B;--accent:#F0A877;--accent-bg:#3D2416;--wash:#3A2214;--motif:#E8954A}
+[data-mood="contrast"]{--paper:#FFFFFF;--card:#FFFFFF;--ink:#000000;--muted:#2B2B2B;--line:#6B6B6B;--bar:#000000;--hl:#FFE600;--hl-ink:#000000;--accent:#0033CC;--accent-bg:#E0E8FF;--wash:#FFFFFF;--motif:transparent}
+:root[data-theme="dark"][data-mood="contrast"],:root[data-theme="dark"] [data-mood="contrast"]{--paper:#000000;--card:#000000;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A;--wash:#000000;--motif:transparent}
+
+/* The wash: a soft glow of the season's colour from the top corner, fading into the paper. */
+body{background:radial-gradient(ellipse 90% 55% at 100% 0%,var(--wash),transparent 70%),radial-gradient(ellipse 70% 45% at 0% 100%,var(--wash),transparent 70%),var(--paper);background-attachment:fixed}
+/* One motif per season, top right, behind everything. Drawn as a mask so it takes the season's colour in light and dark. */
+body::before{content:"";position:fixed;top:-30px;right:-30px;width:260px;height:260px;background:var(--motif);opacity:.16;pointer-events:none;z-index:0;
+  -webkit-mask:var(--shape) center/contain no-repeat;mask:var(--shape) center/contain no-repeat}
+.wrap{position:relative;z-index:1}
+[data-mood="winter"]{--shape:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Cg stroke='%23000' stroke-width='3' stroke-linecap='round' fill='none'%3E%3Cpath id='a' d='M0 0V-44M0-30l-9-9M0-30l9-9M0-16l-7-7M0-16l7-7'/%3E%3Cuse href='%23a' transform='rotate(60)'/%3E%3Cuse href='%23a' transform='rotate(120)'/%3E%3Cuse href='%23a' transform='rotate(180)'/%3E%3Cuse href='%23a' transform='rotate(240)'/%3E%3Cuse href='%23a' transform='rotate(300)'/%3E%3C/g%3E%3C/svg%3E")}
+[data-mood="spring"]{--shape:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20 95C40 70 55 45 85 10' stroke='%23000' stroke-width='3' fill='none'/%3E%3Cg%3E%3Cellipse cx='48' cy='52' rx='9' ry='5' transform='rotate(-40 48 52)'/%3E%3Cellipse cx='62' cy='34' rx='9' ry='5' transform='rotate(-70 62 34)'/%3E%3Cellipse cx='36' cy='70' rx='9' ry='5' transform='rotate(-20 36 70)'/%3E%3Ccircle cx='85' cy='10' r='7'/%3E%3Ccircle cx='72' cy='22' r='5'/%3E%3C/g%3E%3C/svg%3E")}
+[data-mood="summer"]{--shape:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-50 -50 100 100'%3E%3Ccircle r='18'/%3E%3Cg stroke='%23000' stroke-width='4' stroke-linecap='round'%3E%3Cpath id='r' d='M0-26V-42'/%3E%3Cuse href='%23r' transform='rotate(45)'/%3E%3Cuse href='%23r' transform='rotate(90)'/%3E%3Cuse href='%23r' transform='rotate(135)'/%3E%3Cuse href='%23r' transform='rotate(180)'/%3E%3Cuse href='%23r' transform='rotate(225)'/%3E%3Cuse href='%23r' transform='rotate(270)'/%3E%3Cuse href='%23r' transform='rotate(315)'/%3E%3C/g%3E%3C/svg%3E")}
+[data-mood="autumn"]{--shape:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 4 58 26 76 16 70 38 94 38 76 54 86 66 62 66 64 86 50 74 36 86 38 66 14 66 24 54 6 38 30 38 24 16 42 26Z'/%3E%3Cpath d='M50 74V98' stroke='%23000' stroke-width='3'/%3E%3C/svg%3E")}
+[data-mood="contrast"]{--shape:none}
+html:not([data-mood="contrast"]) .card{box-shadow:0 1px 0 rgba(0,0,0,.03),0 12px 32px -18px rgba(0,0,0,.25)}
+.mtile[data-mood]{background:radial-gradient(ellipse 120% 70% at 100% 0%,var(--wash),transparent 70%),var(--card)}
+</style>
+<script>window.MOODS=[["winter","Winter"],["spring","Spring"],["summer","Summer"],["autumn","Autumn"],["contrast","High contrast"]]</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><a href="#">Half a <b>Line</b></a></h1>
+    <nav aria-label="Sections"><a href="#" aria-current="page">Today</a><a href="#">Archive</a><a href="#">Stats</a><a href="#">About</a><a href="#">Settings</a></nav>
+  </header>
+  <main class="card">
+    <div class="meta"><span>No. 2 · Thursday, November 19</span><span>3 of 4 pieces · 1 of 3 hints</span></div>
+    <p class="quote"><span class="part hid" aria-hidden="true">Life’s but a walking shadow,</span> <span class="part fresh">a poor player</span> <span class="part">/ That struts and frets his hour upon the stage</span> <span class="part">/ And then is heard no more.</span></p>
+    <ul class="hints"><li><span>Hint 1</span>A play from the 1600s</li></ul>
+    <div class="ask"><label for="g">Which work is this from?</label>
+      <div class="row"><div class="combo"><input type="text" id="g" placeholder="Start typing a title or author"></div><button class="btn">Guess</button><button class="btn ghost">Next clue</button></div>
+      <button class="linkish">Too hard? Pick from six titles</button></div>
+  </main>
+  <section class="card" aria-labelledby="st">
+    <h2 id="st">Settings</h2>
+    <fieldset class="set"><legend>Mood</legend>
+      <p class="hint">“Follow the season” changes on the first of December, March, June and September.</p>
+      <div class="mgrid">
+        <label class="mtile"><input type="radio" name="m" value="auto"><span class="mini">Call me <span class="f">Ishmael</span>.</span>Follow the season<small>Autumn until 1 December</small></label>
+        <label class="mtile" data-mood="winter"><input type="radio" name="m" value="winter" data-pick><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>Winter<small>Frost and ink</small></label>
+        <label class="mtile" data-mood="spring"><input type="radio" name="m" value="spring" data-pick><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>Spring<small>Lilac and new leaves</small></label>
+        <label class="mtile" data-mood="summer"><input type="radio" name="m" value="summer" data-pick><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>Summer<small>Linen and sea</small></label>
+        <label class="mtile" data-mood="autumn"><input type="radio" name="m" value="autumn" data-pick><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>Autumn<small>Rust and lamplight</small></label>
+        <label class="mtile" data-mood="contrast"><input type="radio" name="m" value="contrast" data-pick><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>High contrast<small>Strongest text and bars</small></label>
+      </div>
+    </fieldset>
+  </section>
+  <p class="foot">A new line every day at midnight, your time.</p>
+  <p class="site-credit">Designed and built by Andrew Cao</p>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>

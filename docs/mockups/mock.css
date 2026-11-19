@@ -1,0 +1,17 @@
+/* Mockup-only extras shared by the three directions. The real site's styles.css loads first. */
+.mockbar{position:sticky;top:0;z-index:30;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;margin:-24px -16px 18px;background:#111;color:#fff;font:600 13px Manrope,system-ui,sans-serif}
+.mockbar button{font:inherit;border:1px solid #555;background:#222;color:#fff;border-radius:999px;padding:4px 10px;cursor:pointer}
+.mockbar button[aria-pressed=true]{background:#fff;color:#111}
+html.shot .mockbar{display:none}
+body{min-height:100vh}
+/* A picker of moods drawn as small previews, replacing the three-dot swatches */
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.mtile{position:relative;display:flex;flex-direction:column;gap:8px;padding:8px 8px 10px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;font-weight:600;font-size:14px;color:var(--ink)}
+.mtile input{position:absolute;opacity:0;pointer-events:none}
+.mtile:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.mtile:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
+.mtile small{font-weight:500;color:var(--muted);font-size:12px;margin-top:-6px}
+.mini{display:block;border-radius:8px;padding:10px;background:var(--paper);color:var(--ink);font:400 15px/1.5 var(--serif);border:1px solid var(--line)}
+.mini .h{background:var(--bar);color:transparent;border-radius:2px}
+.mini .f{background:var(--hl);color:var(--hl-ink)}
+@media (max-width:480px){.mgrid{grid-template-columns:1fr 1fr}}

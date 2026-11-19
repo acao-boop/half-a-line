@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-attr="room" data-fixed-theme="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup B: Rooms</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../site/styles.css">
+<link rel="stylesheet" href="mock.css">
+<style>
+/* Direction B: Rooms. A scene drawn behind the card in CSS and inline SVG (no photos, nothing to license, about 3 KB per room).
+   The card, the header and the footer sit on solid plates, so text never sits on the scene: contrast is the card's, not the room's. */
+.page-scene{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1}
+.scene{position:absolute;inset:0}
+
+/* Reading room: green panelled walls, a banker's lamp glowing from the top, a wooden desk along the bottom. */
+:root[data-room="reading"]{--paper:#F3EBD7;--card:#FBF5E6;--ink:#1F1A12;--muted:#5E5443;--line:#E2D6BC;--bar:#1F1A12;--hl:#F2D16B;--hl-ink:#1F1A12;--accent:#2E5E45;--accent-bg:#E0EBDF}
+:root[data-room="reading"] .page-scene,.scene[data-room="reading"]{background:
+  radial-gradient(ellipse 60% 34% at 50% 0%,rgba(255,213,128,.5),rgba(255,213,128,0) 72%),
+  linear-gradient(180deg,rgba(0,0,0,0) 84%,#5A3720 84%,#4A2C18 85.5%,#2B190E 100%),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.2) 0 2px,rgba(255,255,255,.03) 2px 4px,rgba(0,0,0,0) 4px 96px),
+  linear-gradient(180deg,#24473A,#183126)}
+:root[data-room="reading"] .page-scene::before,.scene[data-room="reading"]::before{content:"";position:absolute;left:50%;top:-10px;width:200px;height:54px;transform:translateX(-50%);
+  background:radial-gradient(ellipse 80% 120% at 50% 0%,#4E9C6E,#1D5638);border-radius:0 0 100px 100px/0 0 46px 46px;box-shadow:0 3px 0 #C9A44A}
+
+/* Museum gallery: pale wall, a picture rail, a spotlight on the card, light oak floor. The card hangs in a white mat. */
+:root[data-room="gallery"]{--paper:#F3F1EC;--card:#FFFFFF;--ink:#1B1B1B;--muted:#5A5751;--line:#E2DED6;--bar:#1B1B1B;--hl:#FFE14D;--hl-ink:#1B1B1B;--accent:#8A2B2B;--accent-bg:#F3E1DE}
+:root[data-room="gallery"] .page-scene,.scene[data-room="gallery"]{background:
+  radial-gradient(ellipse 55% 60% at 50% 30%,rgba(255,251,238,1),rgba(255,251,238,0) 70%),
+  linear-gradient(180deg,rgba(0,0,0,0) 88%,#CDBB9C 88%,#BBA683 100%),
+  linear-gradient(180deg,rgba(0,0,0,0) 7%,#B3AB9E 7%,#B3AB9E calc(7% + 3px),rgba(0,0,0,0) calc(7% + 3px)),
+  linear-gradient(180deg,#D9D5CC,#E7E4DD 45%,#DDD9D1)}
+:root[data-room="gallery"] .card{border-radius:2px;border-color:#D6D0C4;box-shadow:0 0 0 10px #fff,0 0 0 11px #CFC8BB,0 34px 50px -24px rgba(40,30,10,.45)}
+:root[data-room="gallery"] .wrap{gap:30px;padding-top:6px}
+:root[data-room="gallery"] .foot{border-radius:2px!important;text-align:left;font-size:12px}
+
+/* Library at night: shelves of books in the dark, one warm lamp. */
+:root[data-room="library"]{--paper:#0F1422;--card:#141A2B;--ink:#ECE6D8;--muted:#A9A391;--line:#2C3348;--bar:#CFC7B4;--hl:#E8C25A;--hl-ink:#141A2B;--accent:#E3B26B;--accent-bg:#2E2A22}
+:root[data-room="library"] .page-scene,.scene[data-room="library"]{background:
+  radial-gradient(circle at 86% 10%,rgba(255,196,110,.42),rgba(255,196,110,0) 40%),
+  linear-gradient(rgba(8,11,20,.45),rgba(8,11,20,.75)),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='110'%3E%3Crect width='160' height='110' fill='%23121A2E'/%3E%3Crect y='100' width='160' height='10' fill='%233A2A1A'/%3E%3Crect x='4' y='34' width='14' height='66' fill='%235E2B2B'/%3E%3Crect x='19' y='44' width='10' height='56' fill='%23364869'/%3E%3Crect x='30' y='28' width='16' height='72' fill='%23705C2C'/%3E%3Crect x='47' y='46' width='11' height='54' fill='%232E4A3B'/%3E%3Crect x='59' y='38' width='13' height='62' fill='%234A3356'/%3E%3Crect x='76' y='50' width='9' height='50' fill='%235E2B2B' transform='rotate(-14 85 100)'/%3E%3Crect x='92' y='30' width='15' height='70' fill='%23364869'/%3E%3Crect x='108' y='40' width='12' height='60' fill='%23705C2C'/%3E%3Crect x='121' y='36' width='14' height='64' fill='%232E4A3B'/%3E%3Crect x='136' y='48' width='19' height='52' fill='%235E2B2B'/%3E%3C/svg%3E") 0 0/160px 110px}
+
+/* Autumn garden: a warm sky, a dark hedge along the bottom, leaves drifting down. */
+:root[data-room="garden"]{--paper:#F6ECDD;--card:#FFFAF2;--ink:#2A1A10;--muted:#6A5444;--line:#E8D6BF;--bar:#2A1A10;--hl:#F5A65B;--hl-ink:#2A1A10;--accent:#8F3A13;--accent-bg:#F6DFCC}
+:root[data-room="garden"] .page-scene,.scene[data-room="garden"]{background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cg opacity='.6'%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%23B4521F' transform='translate(40 50) rotate(30)'/%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%23C98A2B' transform='translate(190 30) rotate(-50)'/%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%237A2E1E' transform='translate(120 150) rotate(80)'/%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%23C98A2B' transform='translate(30 210) rotate(-20) scale(.8)'/%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%23B4521F' transform='translate(225 190) rotate(60) scale(.9)'/%3E%3C/g%3E%3C/svg%3E") 0 0/260px 260px,
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='120' preserveAspectRatio='none'%3E%3Cpath d='M0 60Q25 20 50 50Q80 10 110 45Q140 15 170 50Q200 20 230 48Q265 12 300 55V120H0Z' fill='%23667240'/%3E%3Cpath d='M0 85Q30 55 60 80Q95 50 130 82Q165 55 200 80Q240 52 300 84V120H0Z' fill='%234A5530'/%3E%3C/svg%3E") left bottom/300px 120px repeat-x,
+  linear-gradient(180deg,#F1D3A8,#F7E6CC 55%,#EED6B2)}
+
+/* Plain: today's Ink look, no room. High contrast: no room, strongest colours. */
+:root[data-room="plain"]{--paper:#EEF1F6;--card:#FFFFFF;--ink:#141B33;--muted:#59627A;--line:#D6DCE7;--bar:#141B33;--hl:#FFE14D;--hl-ink:#141B33;--accent:#2944C2;--accent-bg:#E3E8FB}
+:root[data-room="contrast"]{--paper:#FFFFFF;--card:#FFFFFF;--ink:#000000;--muted:#2B2B2B;--line:#6B6B6B;--bar:#000000;--hl:#FFE600;--hl-ink:#000000;--accent:#0033CC;--accent-bg:#E0E8FF}
+.scene[data-room="plain"]{background:#EEF1F6} .scene[data-room="contrast"]{background:#fff;border:2px solid #000}
+
+/* Plates: in a room, the header and footer sit on the card colour so their text keeps the card's contrast. */
+:root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px 10px 18px}
+:root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) :is(.foot,.site-credit){align-self:center;background:var(--card);padding:6px 14px;border-radius:999px;border:1px solid var(--line)}
+:root:is([data-room="reading"],[data-room="library"],[data-room="garden"]) .card{box-shadow:0 30px 60px -30px rgba(0,0,0,.55)}
+@media (max-width:480px){:root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) header{padding:8px 6px 6px 12px}:root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) nav a{padding:7px 7px}}
+body{background:var(--paper)}
+
+.thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.thumb .scene{width:400%;height:400%;transform:scale(.25);transform-origin:0 0}
+.thumb::after{content:"";position:absolute;left:30%;right:30%;top:28%;bottom:22%;background:var(--tc,#fff);border-radius:2px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.thumb[data-c="library"]{--tc:#141A2B} .thumb[data-c="reading"]{--tc:#FBF5E6} .thumb[data-c="garden"]{--tc:#FFFAF2}
+</style>
+<script>window.MOODS=[["reading","Reading room","light"],["gallery","Gallery","light"],["library","Library at night","dark"],["garden","Autumn garden","light"],["plain","Plain","light"],["contrast","High contrast","light"]]</script>
+</head>
+<body>
+<div class="page-scene" aria-hidden="true"></div>
+<div class="wrap">
+  <header>
+    <h1><a href="#">Half a <b>Line</b></a></h1>
+    <nav aria-label="Sections"><a href="#" aria-current="page">Today</a><a href="#">Archive</a><a href="#">Stats</a><a href="#">About</a><a href="#">Settings</a></nav>
+  </header>
+  <main class="card">
+    <div class="meta"><span>No. 2 · Thursday, November 19</span><span>3 of 4 pieces · 1 of 3 hints</span></div>
+    <p class="quote"><span class="part hid" aria-hidden="true">Life’s but a walking shadow,</span> <span class="part fresh">a poor player</span> <span class="part">/ That struts and frets his hour upon the stage</span> <span class="part">/ And then is heard no more.</span></p>
+    <ul class="hints"><li><span>Hint 1</span>A play from the 1600s</li></ul>
+    <div class="ask"><label for="g">Which work is this from?</label>
+      <div class="row"><div class="combo"><input type="text" id="g" placeholder="Start typing a title or author"></div><button class="btn">Guess</button><button class="btn ghost">Next clue</button></div>
+      <button class="linkish">Too hard? Pick from six titles</button></div>
+  </main>
+  <section class="card" aria-labelledby="st">
+    <h2 id="st">Settings</h2>
+    <fieldset class="set"><legend>Room</legend>
+      <p class="hint">Where you'd like to read today's line. The card itself stays easy to read in every room.</p>
+      <div class="mgrid">
+        <label class="mtile"><input type="radio" name="r" value="reading" data-pick><span class="thumb" data-c="reading"><span class="scene" data-room="reading"></span></span>Reading room<small>Green lamp, oak desk</small></label>
+        <label class="mtile"><input type="radio" name="r" value="gallery" data-pick><span class="thumb"><span class="scene" data-room="gallery"></span></span>Gallery<small>A line hung on the wall</small></label>
+        <label class="mtile"><input type="radio" name="r" value="library" data-pick><span class="thumb" data-c="library"><span class="scene" data-room="library"></span></span>Library at night<small>Shelves and one lamp</small></label>
+        <label class="mtile"><input type="radio" name="r" value="garden" data-pick><span class="thumb" data-c="garden"><span class="scene" data-room="garden"></span></span>Autumn garden<small>Falling leaves</small></label>
+        <label class="mtile"><input type="radio" name="r" value="plain" data-pick><span class="thumb"><span class="scene" data-room="plain"></span></span>Plain<small>No room, just the card</small></label>
+        <label class="mtile"><input type="radio" name="r" value="contrast" data-pick><span class="thumb"><span class="scene" data-room="contrast"></span></span>High contrast<small>No room, strongest colours</small></label>
+      </div>
+    </fieldset>
+  </section>
+  <p class="foot"><b>Half a Line</b>, No. 2. A new line every day at midnight, your time.</p>
+  <p class="site-credit">Designed and built by Andrew Cao</p>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>

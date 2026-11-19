@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-attr="hour" data-fixed-theme="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup C: Hours</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../site/styles.css">
+<link rel="stylesheet" href="mock.css">
+<style>
+/* Direction C: Hours. The page follows the player's own clock: dawn (5–9), day (9–17), dusk (17–20), night (20–5).
+   A sky drawn in CSS gradients (sun, moon, stars, two hills), no images. Night is the dark mode, so "Follow the hour" replaces Light/Dark/Match my device.
+   Header and footer sit on solid plates, as in Rooms, so text never sits on the sky. */
+.page-scene{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1}
+.scene{position:absolute;inset:0}
+:root[data-hour="dawn"],.scene[data-hour="dawn"]{--paper:#FBF0EA;--card:#FFFBF8;--ink:#2B1B24;--muted:#6B5560;--line:#EFDDD6;--bar:#2B1B24;--hl:#FFC9A8;--hl-ink:#2B1B24;--accent:#A2405E;--accent-bg:#F8E0E6;
+  --sky:linear-gradient(180deg,#F2B9AE 0%,#F9DCCB 45%,#FDF1E6 100%);--sun:radial-gradient(circle at 16% 74%,#FFE2AE 0 46px,rgba(255,214,150,.4) 48px,rgba(255,214,150,0) 160px);--hill:#E2B4A8;--hill2:#D49C93}
+:root[data-hour="day"],.scene[data-hour="day"]{--paper:#EEF4F8;--card:#FFFFFF;--ink:#10202E;--muted:#4F6070;--line:#D7E3EC;--bar:#10202E;--hl:#FFE14D;--hl-ink:#10202E;--accent:#1F5FA8;--accent-bg:#E0EBF8;
+  --sky:linear-gradient(180deg,#A9D2F0 0%,#D8EAF7 55%,#F1F7FB 100%);--sun:radial-gradient(circle at 84% 9%,#FFF6CF 0 40px,rgba(255,246,207,.5) 42px,rgba(255,246,207,0) 150px);--hill:#B9D2A9;--hill2:#9DBE8C}
+:root[data-hour="dusk"],.scene[data-hour="dusk"]{--paper:#F4ECF2;--card:#FFFBFD;--ink:#24182E;--muted:#5F5068;--line:#E7DBE6;--bar:#24182E;--hl:#FFB27A;--hl-ink:#24182E;--accent:#6B3FA0;--accent-bg:#ECE2F6;
+  --sky:linear-gradient(180deg,#3B3264 0%,#86588A 42%,#E38E6B 76%,#F5C08A 100%);--sun:radial-gradient(circle at 84% 84%,#FFC27F 0 54px,rgba(255,170,100,.45) 56px,rgba(255,170,100,0) 200px);--hill:#4A3557;--hill2:#2F2240}
+:root[data-hour="night"],.scene[data-hour="night"]{--paper:#0B1024;--card:#121833;--ink:#E8EBF7;--muted:#A0A7C2;--line:#262E52;--bar:#C9CFE6;--hl:#F2D46B;--hl-ink:#121833;--accent:#9DB0FF;--accent-bg:#212B57;
+  --good:#6FD39C;--good-bg:#173527;--bad:#FF9A90;--bad-bg:#3C1C1B;
+  --sky:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' fill='%23fff'%3E%3Ccircle cx='165' cy='77' r='1' fill-opacity='0.5'/%3E%3Ccircle cx='37' cy='274' r='0.6' fill-opacity='0.9'/%3E%3Ccircle cx='298' cy='29' r='1.3' fill-opacity='0.7'/%3E%3Ccircle cx='19' cy='44' r='1' fill-opacity='1'/%3E%3Ccircle cx='35' cy='123' r='0.6' fill-opacity='1'/%3E%3Ccircle cx='30' cy='289' r='0.6' fill-opacity='0.7'/%3E%3Ccircle cx='298' cy='31' r='1.3' fill-opacity='1'/%3E%3Ccircle cx='25' cy='113' r='0.6' fill-opacity='0.7'/%3E%3Ccircle cx='148' cy='214' r='0.8' fill-opacity='0.5'/%3E%3Ccircle cx='292' cy='157' r='1.3' fill-opacity='0.7'/%3E%3Ccircle cx='52' cy='297' r='1.3' fill-opacity='0.7'/%3E%3Ccircle cx='190' cy='49' r='1.3' fill-opacity='0.5'/%3E%3Ccircle cx='288' cy='30' r='1.3' fill-opacity='0.7'/%3E%3Ccircle cx='254' cy='272' r='1' fill-opacity='0.9'/%3E%3Ccircle cx='238' cy='299' r='1' fill-opacity='0.9'/%3E%3Ccircle cx='153' cy='127' r='0.8' fill-opacity='0.7'/%3E%3Ccircle cx='41' cy='294' r='1' fill-opacity='1'/%3E%3Ccircle cx='175' cy='229' r='1' fill-opacity='0.5'/%3E%3Ccircle cx='60' cy='262' r='1' fill-opacity='0.7'/%3E%3Ccircle cx='175' cy='77' r='1' fill-opacity='1'/%3E%3Ccircle cx='20' cy='39' r='1.3' fill-opacity='0.9'/%3E%3Ccircle cx='174' cy='179' r='1.3' fill-opacity='1'/%3E%3Ccircle cx='296' cy='233' r='0.6' fill-opacity='0.5'/%3E%3Ccircle cx='138' cy='242' r='0.6' fill-opacity='0.5'/%3E%3Ccircle cx='158' cy='295' r='1' fill-opacity='0.9'/%3E%3Ccircle cx='197' cy='177' r='0.6' fill-opacity='1'/%3E%3C/svg%3E") 0 0/320px 320px,linear-gradient(180deg,#050919 0%,#111A3E 70%,#1B2552 100%);
+  --sun:radial-gradient(circle at calc(84% + 14px) calc(10% - 8px),#0B1230 0 34px,transparent 35px),radial-gradient(circle at 84% 10%,#F4F0DC 0 36px,rgba(244,240,220,.2) 38px,rgba(244,240,220,0) 130px);--hill:#0A0F22;--hill2:#060915}
+:root[data-hour="contrast"]{--paper:#FFFFFF;--card:#FFFFFF;--ink:#000000;--muted:#2B2B2B;--line:#6B6B6B;--bar:#000000;--hl:#FFE600;--hl-ink:#000000;--accent:#0033CC;--accent-bg:#E0E8FF}
+.scene[data-hour="contrast"]{background:#fff;border:2px solid #000}
+:root:not([data-hour="contrast"]) .page-scene,.scene:not([data-hour="contrast"]){background:
+  radial-gradient(ellipse 75% 16% at 18% 100%,var(--hill2) 98%,transparent 100%),
+  radial-gradient(ellipse 90% 20% at 88% 102%,var(--hill) 98%,transparent 100%),
+  var(--sun),var(--sky)}
+:root:not([data-hour="contrast"]) header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px 10px 18px}
+:root:not([data-hour="contrast"]) :is(.foot,.site-credit){align-self:center;background:var(--card);padding:6px 14px;border-radius:999px;border:1px solid var(--line)}
+:root:not([data-hour="contrast"]) .card{box-shadow:0 30px 60px -30px rgba(0,0,0,.45)}
+@media (max-width:480px){:root:not([data-hour="contrast"]) header{padding:8px 6px 6px 12px}:root:not([data-hour="contrast"]) nav a{padding:7px 7px}}
+body{background:var(--paper)}
+.clock{font-size:13px;color:var(--muted);margin:-8px 0 0}
+.thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.thumb .scene{width:400%;height:400%;transform:scale(.25);transform-origin:0 0}
+.thumb::after{content:"";position:absolute;left:30%;right:30%;top:28%;bottom:26%;background:var(--card);border-radius:2px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.thumb.split{display:grid;grid-template-columns:repeat(4,1fr)}
+.thumb.split .scene{position:relative;inset:auto;width:100%;height:400%;transform:none}
+.thumb.split::after{display:none}
+</style>
+<script>window.MOODS=[["dawn","Dawn","light"],["day","Day","light"],["dusk","Dusk","light"],["night","Night","dark"],["contrast","High contrast","light"]]</script>
+</head>
+<body>
+<div class="page-scene" aria-hidden="true"></div>
+<div class="wrap">
+  <header>
+    <h1><a href="#">Half a <b>Line</b></a></h1>
+    <nav aria-label="Sections"><a href="#" aria-current="page">Today</a><a href="#">Archive</a><a href="#">Stats</a><a href="#">About</a><a href="#">Settings</a></nav>
+  </header>
+  <main class="card">
+    <div class="meta"><span>No. 2 · Thursday, November 19</span><span>3 of 4 pieces · 1 of 3 hints</span></div>
+    <p class="quote"><span class="part hid" aria-hidden="true">Life’s but a walking shadow,</span> <span class="part fresh">a poor player</span> <span class="part">/ That struts and frets his hour upon the stage</span> <span class="part">/ And then is heard no more.</span></p>
+    <ul class="hints"><li><span>Hint 1</span>A play from the 1600s</li></ul>
+    <div class="ask"><label for="g">Which work is this from?</label>
+      <div class="row"><div class="combo"><input type="text" id="g" placeholder="Start typing a title or author"></div><button class="btn">Guess</button><button class="btn ghost">Next clue</button></div>
+      <button class="linkish">Too hard? Pick from six titles</button></div>
+  </main>
+  <section class="card" aria-labelledby="st">
+    <h2 id="st">Settings</h2>
+    <fieldset class="set"><legend>Sky</legend>
+      <p class="hint">The page follows your clock: dawn, day, dusk and night. Night is the dark version.</p>
+      <div class="mgrid">
+        <label class="mtile"><input type="radio" name="h" value="auto"><span class="thumb split"><span class="scene" data-hour="dawn"></span><span class="scene" data-hour="day"></span><span class="scene" data-hour="dusk"></span><span class="scene" data-hour="night"></span></span>Follow the hour<small>Changes through the day</small></label>
+        <label class="mtile"><input type="radio" name="h" value="dawn" data-pick><span class="thumb"><span class="scene" data-hour="dawn"></span></span>Always dawn<small>Peach and rose</small></label>
+        <label class="mtile"><input type="radio" name="h" value="day" data-pick><span class="thumb"><span class="scene" data-hour="day"></span></span>Always day<small>Clear sky</small></label>
+        <label class="mtile"><input type="radio" name="h" value="dusk" data-pick><span class="thumb"><span class="scene" data-hour="dusk"></span></span>Always dusk<small>Violet and ember</small></label>
+        <label class="mtile"><input type="radio" name="h" value="night" data-pick><span class="thumb" style="--card:#121833"><span class="scene" data-hour="night"></span></span>Always night<small>Moon and stars</small></label>
+        <label class="mtile"><input type="radio" name="h" value="contrast" data-pick><span class="thumb"><span class="scene" data-hour="contrast"></span></span>High contrast<small>No sky, strongest colours</small></label>
+      </div>
+    </fieldset>
+  </section>
+  <p class="foot">A new line every day at midnight, your time.</p>
+  <p class="site-credit">Designed and built by Andrew Cao</p>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>
