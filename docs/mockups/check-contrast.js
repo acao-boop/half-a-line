@@ -6,7 +6,7 @@ const mix=(a,b,t)=>"#"+[0,2,4].map(i=>Math.round(parseInt(a.slice(1).substr(i,2)
 const base={light:{good:"#1C7A4B","good-bg":"#DDF2E6",bad:"#B3261E","bad-bg":"#FBE3E1"},dark:{good:"#6FD39C","good-bg":"#173527",bad:"#FF9A90","bad-bg":"#3C1C1B"}};
 const pairs=[["ink","card","line text"],["muted","card","small grey text"],["ink","paper","hint and input text"],["muted","paper","hint label, placeholder"],["hl-ink","hl","newest clue"],["accent","card","links"],["card","ink","Guess button"],["bad","bad-bg","wrong guesses"],["good","card","solved"]];
 let fails=0,rows=0;
-for(const f of ["seasons.html","rooms.html","hours.html","architecture.html","collage-rooms.html","../../site/styles.css"]){
+for(const f of ["seasons.html","rooms.html","hours.html","architecture.html","museum-rooms.html","../../site/styles.css"]){
   const css=fs.readFileSync(path.join(__dirname,f),"utf8").replace(/\/\*[^]*?\*\//g,"");
   for(const m of css.matchAll(/([^{}]+)\{([^{}]*--ink:[^{}]*)\}/g)){
     const sel=m[1].trim().split(",").pop().replace(/\s+/g," "),v={};

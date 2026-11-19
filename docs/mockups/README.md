@@ -46,12 +46,16 @@ File `architecture.html`, sheet `shots/d-architecture.jpg`. Andrew's three examp
 - **Same rules:** all text on solid card colours (contrast check now covers 452 pairs, all at least 4.5:1); no images, CSS and inline SVG only, drawn for this project; High contrast keeps plain black bars and yellow highlight. "Mid-century showroom" is a generic style; no shop names or branding.
 - **Relation to the Rooms build on this branch (3fa6852):** if Andrew picks architecture, the Reading room, Gallery and Autumn garden become these three (or join them as more eras: a Victorian library fits), and the piece styling moves into `site/styles.css`. The saving, plates, thumbnails and dark versions already built stay as they are.
 
-## E · Collage rooms (19 November 2026, Andrew's decision)
-File `collage-rooms.html`, sheet `shots/e-collage-rooms.jpg`, art in `art/`, sources and licences in `art/CREDITS.md`. The D rooms and their clue pieces are unchanged; only the backdrop behind the card is now a collage of public-domain museum images (the Met, CC0; the Library of Congress, no known restrictions), with torn edges, tape and paper grain.
+## F · Museum rooms (19 November 2026; replaces E, the scrapbook collages)
+File `museum-rooms.html`, sheet `shots/f-museum-rooms.jpg`, art in `art/`, sources and licences in `art/CREDITS.md`. Andrew asked for the feeling of standing in a curated room rather than papers on a table, with real textures and no AI generation. Each backdrop is now a wall, a skirting or panelling band and a floor, all cropped from real photographs, with works hung in a tidy symmetrical arrangement on either side of the card. The clue pieces are unchanged.
 
-- **Weight:** desktop 95–142 KB, phone 74–113 KB, webp. Each visitor downloads only one of the two (the phone image under 600 px wide).
-- **Evening:** the same collage dimmed by a dark overlay in CSS. No separate art.
-- **Remaking them:** serve this folder plus the source images in `img/` over a local server and open `art/collage-maker.html?room=cabin&mode=desk&q=0.6`. It prints the webp as text; the image list and positions are at the top of the file.
+- **Renaissance gallery:** a crimson silk damask from about 1600 as the wall covering, panelling and floor tiles from the Gubbio study room, Botticelli and Verrocchio in gilt frames with small labels and picture lights, Piranesi and a Corinthian capital print in mats.
+- **Mid-century showroom:** warm plaster wall, a long teak cabinet and wood floor from the kitchen of Louis Kahn's Esherick House (1961), 1950s houses and interiors in thin black frames with white mats.
+- **Rustic cabin:** a hewn log wall and floorboards from building-survey photographs, a Log Cabin quilt hung from a rod, Kensett's Hudson River painting and a Hill print in wood frames.
+- **What is drawn rather than photographed:** picture frames, mats, labels, shadows, picture-light glow and the plain plaster colour. Nothing is AI-generated.
+- **Weight:** desktop 25–109 KB, phone 19–59 KB, webp. Each visitor downloads only one of the two.
+- **Evening:** the same room dimmed by a dark overlay in CSS.
+- **Remaking them:** serve this folder plus the source images (`img/`, `img2/`) over a local server and open `art/room-maker.html?room=cabin&mode=desk&q=0.6`. It prints the webp as text; each room's layout is a short block in the file.
 
 ### Swapping in Andrew's own art (for example from Canva)
 | | Desktop | Phone |
