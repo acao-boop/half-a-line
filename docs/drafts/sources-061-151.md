@@ -70,7 +70,7 @@ Draft: somewhere i have never travelled,gladly beyond any experience,your eyes h
 
 Result: 4 independent sources match (4 word-for-word, the rest differ only by scanning errors)
 
-Why fewer than five, or what to know: Four independent web copies match, keeping Cummings's lack of space after commas. Published in 1931, so it is still in copyright until 1 January 2027: Gutenberg and Wikisource can't carry it yet, and archive.org's scans of 1931 printings are lending-only, so their text can't be searched. Checked against the open copies that exist.
+Why fewer than five, or what to know: Four independent web copies match; three keep Cummings's lack of a space after commas (poets.org adds spaces). Published in 1931, so it is still in copyright until 1 January 2027: Gutenberg and Wikisource can't carry it yet, and archive.org's scans of 1931 printings are lending-only, so their text can't be searched.
 
 - [Web: reason.com](https://reason.com/volokh/2021/08/11/poetry-wednesday-somewhere-i-have-never-travelledgladly-beyond-by-e-e-cummings/) · exact · “somewhere i have never travelled,gladly beyond any experience,your eyes have their silence”
 - [Web: poets.org](https://poets.org/anthology/ee-cummings-1) · exact · “somewhere i have never travelled, gladly beyond any experience, your eyes have their silence”
