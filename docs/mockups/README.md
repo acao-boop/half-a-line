@@ -31,3 +31,17 @@ Mockups only. Nothing here is in `site/` or live. Each page loads the real `site
 - Keep the Light / Dark / Match my device choice for Seasons and Rooms; Hours replaces it with "Follow the hour".
 - Respect reduced motion (nothing in the mockups moves; keep it that way).
 - Re-run `check-contrast.js` against the final colours, then the usual checks: desktop and 375 px, keyboard-only, reduced motion, light and dark. Bump `?v=` on styles.css, lines.js and app.js only.
+
+## D · Rooms by architecture (19 November 2026, after Andrew's art direction)
+File `architecture.html`, sheet `shots/d-architecture.jpg`. Andrew's three examples, each styling **the clue pieces themselves**:
+
+| Room | Hidden pieces | Newest clue | Card | Evening (dark mode) |
+|---|---|---|---|---|
+| Renaissance | green marble plaques, gilt edge | gold leaf | hung in a gilt frame; arches and a marble checker floor behind | candlelit; plaques turn to white marble |
+| Mid-century / Scandinavian showroom | bent-plywood blocks (teak layers), rounded | mustard block | clean, rounded, no border; a long teak sideboard, a paper globe lamp, a round wall print | the lamp glows; plywood turns to birch |
+| Rustic cabin | pine boards with grain | strip of paper tape | pinned with a red tack; log walls, a snowy window | fire glow from the corner; boards turn pale pine |
+
+- **Lighting, not extra rooms:** Day and Evening follow Light / Dark / Match my device. Seasons could tint the same rooms later (an autumn cabin, a winter Renaissance hall) without adding rooms.
+- **Themed weeks (optional, later):** a week could suggest a room ("Gothic week: try the candlelit hall") without switching anyone's choice.
+- **Same rules:** all text on solid card colours (contrast check now covers 452 pairs, all at least 4.5:1); no images, CSS and inline SVG only, drawn for this project; High contrast keeps plain black bars and yellow highlight. "Mid-century showroom" is a generic style; no shop names or branding.
+- **Relation to the Rooms build on this branch (3fa6852):** if Andrew picks architecture, the Reading room, Gallery and Autumn garden become these three (or join them as more eras: a Victorian library fits), and the piece styling moves into `site/styles.css`. The saving, plates, thumbnails and dark versions already built stay as they are.

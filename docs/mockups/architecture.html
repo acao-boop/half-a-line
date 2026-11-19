@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-attr="room">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup D: Rooms by architecture</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../site/styles.css">
+<link rel="stylesheet" href="mock.css">
+<style>
+/* Direction D: rooms by architecture and era (Andrew's examples). Each room styles the clue pieces too:
+   Renaissance: hidden pieces are green marble plaques with a gilt edge, the newest clue is gold leaf, the card hangs in a gilt frame.
+   Mid-century / Scandinavian showroom: hidden pieces are bent-plywood blocks (teak layers), the newest clue a mustard block.
+   Rustic cabin: hidden pieces are wooden boards with grain, the newest clue a strip of paper tape, the card pinned with a tack.
+   Lighting is a variation on each room, not a separate room: Day (light mode) and Evening (dark mode, the scene dims, a lamp/candle/fire glows).
+   All art is CSS and inline SVG drawn for this project: no photos, nothing to license, a few KB per room. */
+.page-scene{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1}
+.scene{position:absolute;inset:0}
+[data-room]{--s-dim:rgba(0,0,0,0);--s-glow:rgba(0,0,0,0)}
+
+/* ---------- Renaissance ---------- */
+[data-room="renaissance"]{--paper:#F4EBD8;--card:#FCF6E8;--ink:#2A1E12;--muted:#65553F;--line:#E4D5B8;--bar:#2F3B33;--vein:rgba(255,255,255,.2);--hl:#EDCB6B;--hl2:#E0B24A;--hl-ink:#2A1E12;--accent:#7A2E1F;--accent-bg:#F3DED2;--gilt:#C9972E;--gilt-dk:#8A6420;--gilt-lt:#EBCB7A}
+:root[data-theme="dark"][data-room="renaissance"],:root[data-theme="dark"] [data-room="renaissance"]{--paper:#16110B;--card:#201810;--ink:#F2E7D0;--muted:#BBA98B;--line:#3A2D1E;--bar:#DCD5C8;--vein:rgba(90,80,70,.35);--hl:#E8C25E;--hl2:#D9A93E;--hl-ink:#201810;--accent:#E8A58E;--accent-bg:#3A2219;--s-dim:rgba(14,8,3,.74);--s-glow:rgba(255,190,90,.30)}
+:root[data-room="renaissance"] .page-scene,.thumb[data-room="renaissance"]>.scene{background:
+  radial-gradient(ellipse 45% 35% at 50% 18%,var(--s-glow),rgba(0,0,0,0) 70%),
+  linear-gradient(var(--s-dim),var(--s-dim)),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect width='60' height='60' fill='%23E9E2D3'/%3E%3Crect width='30' height='30' fill='%237E7363'/%3E%3Crect x='30' y='30' width='30' height='30' fill='%237E7363'/%3E%3C/svg%3E") left bottom/60px 60px repeat-x,
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect width='60' height='60' fill='%237E7363'/%3E%3Crect width='30' height='30' fill='%23E9E2D3'/%3E%3Crect x='30' y='30' width='30' height='30' fill='%23E9E2D3'/%3E%3C/svg%3E") left calc(100% - 60px)/60px 60px repeat-x,
+  linear-gradient(180deg,rgba(0,0,0,0) calc(100% - 132px),#B48A55 calc(100% - 132px),#B48A55 calc(100% - 120px),rgba(0,0,0,0) calc(100% - 120px)),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='420'%3E%3Crect width='240' height='420' fill='%23D4B080'/%3E%3Cpath d='M50 420V170A70 70 0 0 1 190 170V420Z' fill='%23B88E5A'/%3E%3Cpath d='M62 420V172A58 58 0 0 1 178 172V420Z' fill='%23A87E4C'/%3E%3Crect width='18' height='420' fill='%23E3C99E'/%3E%3Crect x='222' width='18' height='420' fill='%23E3C99E'/%3E%3Crect x='-4' y='60' width='26' height='10' fill='%23EBD5AE'/%3E%3Crect x='218' y='60' width='26' height='10' fill='%23EBD5AE'/%3E%3Crect width='240' height='14' fill='%23C49E6C'/%3E%3C/svg%3E") center top/240px 420px repeat-x,
+  linear-gradient(180deg,#D4B080,#C9A270)}
+:root[data-room="renaissance"] .card{border:0;border-radius:3px;box-shadow:0 0 0 4px var(--gilt),0 0 0 6px var(--gilt-dk),0 0 0 9px var(--gilt-lt),0 0 0 10px var(--gilt-dk),0 30px 50px -22px rgba(30,15,0,.6)}
+:root[data-room="renaissance"] .wrap{gap:28px}
+:root[data-room="renaissance"] .part.hid,.mtile[data-room="renaissance"] .mini .h{background:linear-gradient(115deg,rgba(0,0,0,0) 28%,var(--vein) 30%,rgba(0,0,0,0) 33%,rgba(0,0,0,0) 62%,var(--vein) 63%,rgba(0,0,0,0) 66%),var(--bar);border-radius:2px;box-shadow:inset 0 0 0 1.5px var(--gilt)}
+:root[data-room="renaissance"] :is(.part.fresh,.hints li.fresh),.mtile[data-room="renaissance"] .mini .f,:root[data-room="renaissance"] h1 b{background:linear-gradient(180deg,var(--hl),var(--hl2))}
+
+/* ---------- Mid-century / Scandinavian showroom ---------- */
+[data-room="midcentury"]{--paper:#F1EEE8;--card:#FFFFFF;--ink:#1D1F1E;--muted:#575B58;--line:#E2DED6;--bar:#9A6234;--ply:#B57D4A;--hl:#F2B632;--hl2:#F2B632;--hl-ink:#1D1F1E;--accent:#1F6F6A;--accent-bg:#DDEEEC}
+:root[data-theme="dark"][data-room="midcentury"],:root[data-theme="dark"] [data-room="midcentury"]{--paper:#121615;--card:#1A201F;--ink:#ECEDE8;--muted:#A7ACA6;--line:#2E3634;--bar:#D9BE8F;--ply:#C4A574;--hl:#F2B632;--hl2:#F2B632;--hl-ink:#1A201F;--accent:#7FD1C8;--accent-bg:#1D3634;--s-dim:rgba(8,12,12,.72);--s-glow:rgba(255,226,160,.45)}
+:root[data-room="midcentury"] .page-scene,.thumb[data-room="midcentury"]>.scene{background:
+  radial-gradient(circle at 82% 16%,#FFFDF4 0 46px,rgba(255,240,200,.5) 48px,rgba(255,240,200,0) 160px),
+  radial-gradient(circle at 82% 16%,var(--s-glow) 0,rgba(0,0,0,0) 260px),
+  linear-gradient(90deg,rgba(0,0,0,0) calc(82% - 1px),#2B2B2B calc(82% - 1px),#2B2B2B calc(82% + 1px),rgba(0,0,0,0) calc(82% + 1px)) 0 0/100% calc(16% - 40px) no-repeat,
+  linear-gradient(var(--s-dim),var(--s-dim)),
+  repeating-linear-gradient(90deg,rgba(0,0,0,0) 0 159px,rgba(0,0,0,.22) 159px 160px) 0 89.9%/100% 11% no-repeat,
+  radial-gradient(circle at 14% 24%,#E07A3A 0 56px,rgba(0,0,0,0) 57px),
+  radial-gradient(circle at 21% 33%,#F2B632 0 44px,rgba(0,0,0,0) 45px),
+  radial-gradient(circle at 9% 37%,#6E7D45 0 30px,rgba(0,0,0,0) 31px),
+  linear-gradient(180deg,rgba(0,0,0,0) 80%,#9A6234 80%,#8A5630 91%,#2E241B 91%,#2E241B 92.5%,#D9C6A3 92.5%),
+  linear-gradient(180deg,#EFEAE1,#E6E0D5)}
+:root[data-room="midcentury"] .card{border:0;border-radius:20px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 24px 50px -28px rgba(0,0,0,.45)}
+:root[data-room="midcentury"] .part.hid,.mtile[data-room="midcentury"] .mini .h{background:repeating-linear-gradient(180deg,var(--bar) 0 3px,var(--ply) 3px 4px);border-radius:7px}
+:root[data-room="midcentury"] :is(.part.fresh),.mtile[data-room="midcentury"] .mini .f{border-radius:7px}
+:root[data-room="midcentury"] h1 b{border-radius:6px}
+
+/* ---------- Rustic cabin ---------- */
+[data-room="cabin"]{--paper:#F2E8D5;--card:#FBF4E4;--ink:#2B2117;--muted:#62523F;--line:#E3D3B6;--bar:#6B4426;--grain1:#7A5030;--grain2:#5E381E;--hl:#F0D99A;--hl2:#E8CE88;--hl-ink:#2B2117;--accent:#8C2F1B;--accent-bg:#F2DCD2}
+:root[data-theme="dark"][data-room="cabin"],:root[data-theme="dark"] [data-room="cabin"]{--paper:#17110B;--card:#221A12;--ink:#F3E8D6;--muted:#BCAA90;--line:#3B2E21;--bar:#D2B489;--grain1:#C6A577;--grain2:#DEC49C;--hl:#E9C77E;--hl2:#DDB96C;--hl-ink:#221A12;--accent:#F0A58C;--accent-bg:#3D241B;--s-dim:rgba(14,8,4,.66);--s-glow:rgba(255,130,40,.55)}
+:root[data-room="cabin"] .page-scene,.thumb[data-room="cabin"]>.scene{background:
+  radial-gradient(ellipse 45% 35% at 90% 100%,var(--s-glow),rgba(0,0,0,0) 70%),
+  linear-gradient(var(--s-dim),var(--s-dim)),
+  radial-gradient(ellipse 40% 28% at 90% 100%,rgba(255,150,60,.35),rgba(255,150,60,0) 70%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='170'%3E%3Crect width='150' height='170' fill='%234E301A'/%3E%3Crect x='10' y='10' width='130' height='150' fill='%23D3E3EA'/%3E%3Cpath d='M10 160V120Q75 105 140 122V160Z' fill='%23F4F4EF'/%3E%3Cpath d='M30 132L47 80L64 132ZM84 128L104 62L124 128Z' fill='%232F4A35'/%3E%3Crect x='72' y='10' width='6' height='150' fill='%234E301A'/%3E%3Crect x='10' y='82' width='130' height='6' fill='%234E301A'/%3E%3C/svg%3E") 6% 70px/150px 170px no-repeat,
+  linear-gradient(180deg,rgba(0,0,0,0) 90%,#5C3B22 90%,#4A2F1B 100%),
+  linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,0) 22%,rgba(0,0,0,0) 78%,rgba(0,0,0,.22)),
+  repeating-linear-gradient(180deg,#9A6A40 0,#B17D4E 9px,#93633A 20px,#5A3920 26px,#4A2E19 28px)}
+:root[data-room="cabin"] main.card{position:relative;border-radius:4px;box-shadow:0 26px 50px -26px rgba(20,10,0,.6)}
+:root[data-room="cabin"] main.card::before{content:"";position:absolute;top:-7px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#E46A50,#8C2F1B 70%);box-shadow:0 2px 3px rgba(0,0,0,.4)}
+:root[data-room="cabin"] .part.hid,.mtile[data-room="cabin"] .mini .h{background:repeating-linear-gradient(177deg,var(--bar) 0 2px,var(--grain1) 2px 5px,var(--grain2) 5px 6px);border-radius:3px}
+:root[data-room="cabin"] :is(.part.fresh,.hints li.fresh),.mtile[data-room="cabin"] .mini .f,:root[data-room="cabin"] h1 b{background:linear-gradient(180deg,var(--hl),var(--hl2));box-shadow:0 1px 2px rgba(0,0,0,.18)}
+
+/* High contrast: no room, no textures. */
+[data-room="contrast"]{--paper:#FFFFFF;--card:#FFFFFF;--ink:#000000;--muted:#2B2B2B;--line:#6B6B6B;--bar:#000000;--hl:#FFE600;--hl-ink:#000000;--accent:#0033CC;--accent-bg:#E0E8FF}
+:root[data-theme="dark"][data-room="contrast"],:root[data-theme="dark"] [data-room="contrast"]{--paper:#000000;--card:#000000;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A}
+.thumb[data-room="contrast"]>.scene{background:var(--paper)}
+
+/* Plates: header and footer sit on the card colour in every room. */
+:root:not([data-room="contrast"]) header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px 10px 18px}
+:root:not([data-room="contrast"]) :is(.foot,.site-credit){align-self:center;background:var(--card);padding:6px 14px;border-radius:999px;border:1px solid var(--line)}
+@media (max-width:480px){:root:not([data-room="contrast"]) header{padding:8px 6px 6px 12px}:root:not([data-room="contrast"]) nav a{padding:7px 7px}}
+body{background:var(--paper)}
+
+.thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.thumb .scene{width:400%;height:400%;transform:scale(.25);transform-origin:0 0}
+.thumb::after{content:"";position:absolute;left:30%;right:30%;top:26%;bottom:24%;background:var(--card);border-radius:2px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.mtile[data-room]{background:var(--card);color:var(--ink)}
+.mtile .mini{margin-top:-2px}
+</style>
+<script>window.MOODS=[["renaissance","Renaissance"],["midcentury","Mid-century showroom"],["cabin","Rustic cabin"],["contrast","High contrast"]]</script>
+</head>
+<body>
+<div class="page-scene" aria-hidden="true"></div>
+<div class="wrap">
+  <header>
+    <h1><a href="#">Half a <b>Line</b></a></h1>
+    <nav aria-label="Sections"><a href="#" aria-current="page">Today</a><a href="#">Archive</a><a href="#">Stats</a><a href="#">About</a><a href="#">Settings</a></nav>
+  </header>
+  <main class="card">
+    <div class="meta"><span>No. 2 · Thursday, November 19</span><span>3 of 4 pieces · 1 of 3 hints</span></div>
+    <p class="quote"><span class="part hid" aria-hidden="true">Life’s but a walking shadow,</span> <span class="part fresh">a poor player</span> <span class="part">/ That struts and frets his hour upon the stage</span> <span class="part">/ And then is heard no more.</span></p>
+    <ul class="hints"><li><span>Hint 1</span>A play from the 1600s</li></ul>
+    <div class="ask"><label for="g">Which work is this from?</label>
+      <div class="row"><div class="combo"><input type="text" id="g" placeholder="Start typing a title or author"></div><button class="btn">Guess</button><button class="btn ghost">Next clue</button></div>
+      <button class="linkish">Too hard? Pick from six titles</button></div>
+  </main>
+  <section class="card" aria-labelledby="st">
+    <h2 id="st">Settings</h2>
+    <fieldset class="set"><legend>Room</legend>
+      <p class="hint">Each room has its own clue pieces. Lighting follows Light or dark: day, or evening by lamp, candle or fire.</p>
+      <div class="mgrid">
+        <label class="mtile" data-room="renaissance"><input type="radio" name="r" value="renaissance" data-pick><span class="thumb" data-room="renaissance"><span class="scene"></span></span><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>Renaissance<small>Marble plaques, gold leaf</small></label>
+        <label class="mtile" data-room="midcentury"><input type="radio" name="r" value="midcentury" data-pick><span class="thumb" data-room="midcentury"><span class="scene"></span></span><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>Mid-century showroom<small>Plywood and mustard</small></label>
+        <label class="mtile" data-room="cabin"><input type="radio" name="r" value="cabin" data-pick><span class="thumb" data-room="cabin"><span class="scene"></span></span><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>Rustic cabin<small>Pine boards, paper tape</small></label>
+        <label class="mtile" data-room="contrast"><input type="radio" name="r" value="contrast" data-pick><span class="thumb" data-room="contrast"><span class="scene"></span></span><span class="mini"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span>High contrast<small>No room, strongest colours</small></label>
+      </div>
+    </fieldset>
+  </section>
+  <p class="foot">A new line every day at midnight, your time.</p>
+  <p class="site-credit">Designed and built by Andrew Cao</p>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>
