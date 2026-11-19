@@ -4,6 +4,7 @@
 Live since 18 November 2026 at https://halfaline.andrewcao.org/ (moved from https://acao-boop.github.io/half-a-line/, which forwards) (tag `published`), and hung third on the andrewcao.org wall (acao-boop/enoch#54). Day 1 is 18 November 2026 (Pride and Prejudice). 60 lines run to 16 January 2027.
 
 ## Last change
+- 2026-11-19: three fixes from `docs/ux-assessment-2026-11.md` (Andrew: GO): the result text ends with halfaline.andrewcao.org and phones with a share sheet get "Share result"; "How to play" is one line, so on a 375×812 phone the guess box is on screen (bottom at 649 px, was 850); Enter on a partial title submits it when exactly one title matches, and opens the list otherwise. Tested locally; the phone share sheet itself is untested (no share sheet in the test browser). Committed, not yet published.
 - 2026-11-18: themed weeks approved; theme support added to `site/app.js` and `site/styles.css` (committed, not pushed or published).
 - 2026-11-18: moved to halfaline.andrewcao.org (Cloudflare DNS-only CNAME `halfaline` → acao-boop.github.io; Pages custom domain; HTTPS enforced once the certificate was issued). Share tags and 404 paths updated.
 - 2026-11-18: built from the Claude prototype. Public version: full page with share tags, icons, 404, credit mark; no review page; no all-caps labels. Notes fact-checked by Claude (fixed the Earnest note; Song of Myself dated 1855, text of 1892). Andrew has not reviewed the lines yet.

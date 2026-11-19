@@ -76,9 +76,9 @@ button:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(-
 .share{display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:12px;background:var(--paper)}
 .share pre{font:15px/1.5 ui-monospace,Menlo,monospace;margin:0;white-space:pre-wrap}
 .next{font-size:14px;color:var(--muted);margin:0;font-variant-numeric:tabular-nums}
-.help{background:var(--accent-bg);color:var(--ink);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
-.help p{margin:0}
-.help ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.help{background:var(--accent-bg);color:var(--ink);border-radius:10px;padding:10px 12px 10px 14px;display:flex;align-items:center;gap:12px;font-size:14px;line-height:1.45}
+.help p{margin:0;flex:1;min-width:0}
+.gotit{flex:none;font:700 13px var(--sans);color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px;cursor:pointer}
 .arch{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
 .arch a{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:10px;border:1px solid var(--line);color:var(--ink);text-decoration:none;background:var(--card)}
 .arch a:hover{border-color:var(--ink)}

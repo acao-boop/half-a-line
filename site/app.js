@@ -28,7 +28,7 @@ const plural=(k,w)=>k+" "+w+(k===1?"":"s");
 const clues=k=>plural(k,"extra clue");
 
 function squares(L,r){const T=steps(L).length+1;if(!r.done)return"";if(!r.won)return"\u{1F7E5}".repeat(T);return"\u{1F7E8}".repeat(r.step)+"\u{1F7E9}"+"⬜".repeat(T-1-r.step)}
-function shareText(n,L,r){return "Half a Line #"+n+(L.theme?" \u00b7 "+L.theme:"")+"\n"+(r.won?(r.step?"Solved with "+clues(r.step):"Solved with no extra clues"):"Missed")+"\n"+squares(L,r)}
+function shareText(n,L,r){return "Half a Line #"+n+(L.theme?" \u00b7 "+L.theme:"")+"\n"+(r.won?(r.step?"Solved with "+clues(r.step):"Solved with no extra clues"):"Missed")+"\n"+squares(L,r)+"\nhalfaline.andrewcao.org"}
 function shuffle(a,seed){const b=a.slice();let s=seed*9301+49297;for(let k=b.length-1;k>0;k--){s=(s*9301+49297)%233280;const j=Math.floor(s/233280*(k+1));[b[k],b[j]]=[b[j],b[k]]}return b}
 
 function quoteHTML(L,r,blankKey){
@@ -48,7 +48,7 @@ function play(n){
   const today=TODAY(), isToday=n===today, L=lineOf(n), r=rec(n), N=L.parts.length, T=steps(L).length, v=view(L,r);
   setNav(isToday?"today":"archive");
   let h='';
-  if(isToday&&!S.help)h+='<div class="help" id="help"><p><b>How to play</b></p><ol><li>A famous line is shown with some pieces hidden.</li><li>Guess which work it’s from. Every wrong guess, or “Next clue,” reveals a hint or another piece.</li><li>Solve it with as few extra clues as you can, then try the bonus word.</li></ol><div><button class="btn ghost" id="gotit">Got it</button></div></div>';
+  if(isToday&&!S.help)h+='<div class="help" id="help"><p><b>How to play:</b> name the work this line is from. Each wrong guess, or \u201cNext clue,\u201d shows a hint or more of the line.</p><button class="gotit" id="gotit" aria-label="Hide how to play">Got it</button></div>';
   h+='<div class="meta"><span>No. '+n+' · '+fmt(dateOf(n),true)+'</span><span>'+(r.done?(r.won?(r.step?'Solved with '+clues(r.step):'Solved, no extra clues'):'Missed'):v.pieces+' of '+N+' pieces · '+v.hints.length+' of 3 hints')+'</span></div>';
   if(L.theme)h+='<p class="theme">This week: <b>'+esc(L.theme)+'</b></p>';
   h+='<p class="quote">'+quoteHTML(L,r,r.done&&r.bonus===null?L.key:null)+'</p>';
@@ -70,7 +70,7 @@ function play(n){
     }else{
       h+='<div class="bonus"><p><b>Bonus:</b> '+(r.bonus===L.key?'right, it’s “'+esc(L.key)+'.”':'it was “'+esc(L.key)+',” not “'+esc(r.bonus)+'.”')+'</p></div>';
       h+='<p class="note">'+esc(L.note)+'</p>';
-      h+='<div class="share"><pre id="sharetext">'+esc(shareText(n,L,r))+'</pre><div class="row"><button class="btn" id="copy">Copy result</button><a class="btn ghost" href="#stats">Your stats</a>'
+      h+='<div class="share"><pre id="sharetext">'+esc(shareText(n,L,r))+'</pre><div class="row"><button class="btn" id="copy">'+(canShare()?'Share result':'Copy result')+'</button><a class="btn ghost" href="#stats">Your stats</a>'
         +(isToday?'<a class="btn ghost" href="#archive">Play past lines</a>':nextLink(n))+'</div><p class="err" id="cerr" style="color:var(--muted)"></p>'
         +(isToday?'<p class="next" id="countdown"></p>':'')+'</div>';
     }
@@ -102,8 +102,10 @@ function wire(n,L,r,T){
     f.addEventListener("submit",e=>{e.preventDefault();
       const v=g.value.trim();
       if(!v){err.textContent="Type a title first.";return}
-      const hit=WORKS.find(([t])=>norm(t)===norm(v));
-      if(!hit){err.textContent="Pick a title from the list. Start typing to see suggestions.";return}
+      let hit=WORKS.find(([t])=>norm(t)===norm(v));
+      if(!hit){const m=WORKS.filter(([t,a])=>norm(t).includes(norm(v))||norm(a).includes(norm(v)));
+        if(m.length===1)hit=m[0];
+        else{g.dispatchEvent(new Event("input"));err.textContent=m.length?"More than one title matches. Pick one from the list.":"No title matches. Start typing to see suggestions.";return}}
       if(r.misses.includes(hit[0])){err.textContent="You already tried that one.";return}
       if(hit[0]===L.work||(L.alias||[]).includes(hit[0])){finish(n,r,true)}
       else{r.misses.push(hit[0]);if(r.step<T)r.step++;else finish(n,r,false)}
@@ -112,9 +114,12 @@ function wire(n,L,r,T){
   }
   document.querySelectorAll(".tile").forEach(b=>b.onclick=()=>{r.bonus=b.dataset.t;save();play(n)});
   const cp=$("copy");if(cp)cp.onclick=()=>{const text=shareText(n,L,r);
+    if(canShare()){navigator.share({text}).catch(()=>{});return}
     const fall=()=>{const rg=document.createRange();rg.selectNodeContents($("sharetext"));const s=getSelection();s.removeAllRanges();s.addRange(rg);$("cerr").textContent="Copying isn't allowed here. The result is selected, so copy it yourself."};
     try{navigator.clipboard.writeText(text).then(()=>{cp.textContent="Copied"},fall)}catch(e){fall()}};
 }
+// The phone's own share sheet on touch screens; copying everywhere else.
+function canShare(){return !!navigator.share&&matchMedia("(pointer: coarse)").matches}
 function finish(n,r,won){r.done=true;r.won=won;r.onDay=n===dayNo(new Date())}
 
 function tick(){const el=$("countdown");if(!el)return;const now=new Date(),next=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1),m=Math.max(0,Math.round((next-now)/6e4));
