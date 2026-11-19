@@ -4,7 +4,7 @@
 
 **How it was checked:** the in-app browser at desktop width and at 375×812 (phone emulation); light and dark mode; a cleared browser (first-time player); keyboard tab order read from the page; behaviour read from `site/app.js`. Earlier the same day: a full play-through (wrong guess, solve, bonus, note, results card, stats, archive), the 404 page, and a test copy with two made-up themed days. **Not checked:** a real phone, a screen reader, or slow networks.
 
-**Process note:** `bc9b2d4` (theme support) is live and tagged `published`, but this session committed it locally and did not push it. Someone else published it. It is harmless today, because no line has a theme yet and the page renders exactly as before, but Andrew had not approved that publish in this session.
+**Process note:** `bc9b2d4` (theme support) is live and tagged `published`. The coordinator pushed it on Andrew's "Push all paused" (19 November), after a line check and a syntax check, and confirmed the live files matched. It is harmless: no line has a theme yet, so the page renders exactly as before.
 
 ## Verdict
 The core loop works and feels like a real daily game: it's quick, clear once you've played one line, and good on phones and in dark mode. Three things matter most: **the line supply runs out on 16 January**, **first-time players on phones see instructions instead of the puzzle**, and **the results card carries no link back to the game**, so sharing doesn't bring new players.
