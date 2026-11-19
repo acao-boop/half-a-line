@@ -45,3 +45,21 @@ File `architecture.html`, sheet `shots/d-architecture.jpg`. Andrew's three examp
 - **Themed weeks (optional, later):** a week could suggest a room ("Gothic week: try the candlelit hall") without switching anyone's choice.
 - **Same rules:** all text on solid card colours (contrast check now covers 452 pairs, all at least 4.5:1); no images, CSS and inline SVG only, drawn for this project; High contrast keeps plain black bars and yellow highlight. "Mid-century showroom" is a generic style; no shop names or branding.
 - **Relation to the Rooms build on this branch (3fa6852):** if Andrew picks architecture, the Reading room, Gallery and Autumn garden become these three (or join them as more eras: a Victorian library fits), and the piece styling moves into `site/styles.css`. The saving, plates, thumbnails and dark versions already built stay as they are.
+
+## E · Collage rooms (19 November 2026, Andrew's decision)
+File `collage-rooms.html`, sheet `shots/e-collage-rooms.jpg`, art in `art/`, sources and licences in `art/CREDITS.md`. The D rooms and their clue pieces are unchanged; only the backdrop behind the card is now a collage of public-domain museum images (the Met, CC0; the Library of Congress, no known restrictions), with torn edges, tape and paper grain.
+
+- **Weight:** desktop 95–142 KB, phone 74–113 KB, webp. Each visitor downloads only one of the two (the phone image under 600 px wide).
+- **Evening:** the same collage dimmed by a dark overlay in CSS. No separate art.
+- **Remaking them:** serve this folder plus the source images in `img/` over a local server and open `art/collage-maker.html?room=cabin&mode=desk&q=0.6`. It prints the webp as text; the image list and positions are at the top of the file.
+
+### Swapping in Andrew's own art (for example from Canva)
+| | Desktop | Phone |
+|---|---|---|
+| Size | **1600 × 1000 px** | **600 × 1300 px** |
+| Format and weight | webp (or jpg), **150 KB or less** | webp (or jpg), **110 KB or less** |
+| Calm zone (the card covers it) | the middle **800 px**, from x = 400 to x = 1200, full height | almost all of it: the card covers the middle 92% |
+| Where the mood must be | x = 110–380 and x = 1220–1490 (the outer 110 px get cut off on some screen shapes) | the top 100 px and the outer 30 px each side; a dense all-over pattern works best |
+| Avoid | text, faces or key details in the calm zone; brand names or logos anywhere | the same |
+
+To swap one: save it with the same name in `art/` (for example `cabin-desk.webp`), add its source and licence to `art/CREDITS.md`, and rerun the contrast check (the text sits on the solid card, so it should still pass). Check Canva's licence terms for each element before using it (I haven't checked them), and record what was used in `art/CREDITS.md`.
