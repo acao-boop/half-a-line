@@ -118,22 +118,78 @@ button:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(-
 .notfound p{margin:0}
 .linkish{background:none;border:0;padding:0;font:inherit;font-size:14px;color:var(--muted);text-decoration:underline;cursor:pointer}
 
-/* Colour choices (Settings). Each palette is set on the page root and on its own swatch, in light and dark. */
-[data-palette="ink"]{--paper:#EEF1F6;--card:#FFFFFF;--ink:#141B33;--muted:#59627A;--line:#D6DCE7;--bar:#141B33;--hl:#FFE14D;--hl-ink:#141B33;--accent:#2944C2;--accent-bg:#E3E8FB}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"])[data-palette="ink"],:root:not([data-theme="light"]) [data-palette="ink"]{--paper:#0E1322;--card:#161C2F;--ink:#E7EBF4;--muted:#9BA4B9;--line:#2B334A;--bar:#C9D0E0;--hl:#E8C62E;--hl-ink:#0E1322;--accent:#9AAEFF;--accent-bg:#222B4D}}
-:root[data-theme="dark"][data-palette="ink"],:root[data-theme="dark"] [data-palette="ink"]{--paper:#0E1322;--card:#161C2F;--ink:#E7EBF4;--muted:#9BA4B9;--line:#2B334A;--bar:#C9D0E0;--hl:#E8C62E;--hl-ink:#0E1322;--accent:#9AAEFF;--accent-bg:#222B4D}
-[data-palette="sepia"]{--paper:#F4EDE1;--card:#FFFBF4;--ink:#2E2118;--muted:#6F5E4E;--line:#E3D6C2;--bar:#2E2118;--hl:#F2B84B;--hl-ink:#2E2118;--accent:#8A4B1F;--accent-bg:#F5E3D0}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"])[data-palette="sepia"],:root:not([data-theme="light"]) [data-palette="sepia"]{--paper:#1A140F;--card:#241C15;--ink:#F0E6D8;--muted:#B3A391;--line:#3A2E24;--bar:#D9CBB7;--hl:#E0A53A;--hl-ink:#1A140F;--accent:#E9A66B;--accent-bg:#3A2A1C}}
-:root[data-theme="dark"][data-palette="sepia"],:root[data-theme="dark"] [data-palette="sepia"]{--paper:#1A140F;--card:#241C15;--ink:#F0E6D8;--muted:#B3A391;--line:#3A2E24;--bar:#D9CBB7;--hl:#E0A53A;--hl-ink:#1A140F;--accent:#E9A66B;--accent-bg:#3A2A1C}
-[data-palette="sage"]{--paper:#EDF2EC;--card:#FFFFFF;--ink:#17261E;--muted:#566A5E;--line:#D2DED5;--bar:#17261E;--hl:#C6E86B;--hl-ink:#17261E;--accent:#2F6B4A;--accent-bg:#DCEDE2}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"])[data-palette="sage"],:root:not([data-theme="light"]) [data-palette="sage"]{--paper:#0F1813;--card:#16221B;--ink:#E4EEE7;--muted:#9AB0A2;--line:#29392F;--bar:#C3D3C8;--hl:#B5D85C;--hl-ink:#0F1813;--accent:#85CFA5;--accent-bg:#1D3327}}
-:root[data-theme="dark"][data-palette="sage"],:root[data-theme="dark"] [data-palette="sage"]{--paper:#0F1813;--card:#16221B;--ink:#E4EEE7;--muted:#9AB0A2;--line:#29392F;--bar:#C3D3C8;--hl:#B5D85C;--hl-ink:#0F1813;--accent:#85CFA5;--accent-bg:#1D3327}
-[data-palette="rose"]{--paper:#F7EEF0;--card:#FFFFFF;--ink:#2A1520;--muted:#74586A;--line:#EAD6DD;--bar:#2A1520;--hl:#FFB3C7;--hl-ink:#2A1520;--accent:#A3305C;--accent-bg:#F8DCE6}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"])[data-palette="rose"],:root:not([data-theme="light"]) [data-palette="rose"]{--paper:#1B1016;--card:#251820;--ink:#F3E5EC;--muted:#B9A0AE;--line:#3D2733;--bar:#D8C3CE;--hl:#F08DAA;--hl-ink:#1B1016;--accent:#F49BBE;--accent-bg:#3E2131}}
-:root[data-theme="dark"][data-palette="rose"],:root[data-theme="dark"] [data-palette="rose"]{--paper:#1B1016;--card:#251820;--ink:#F3E5EC;--muted:#B9A0AE;--line:#3D2733;--bar:#D8C3CE;--hl:#F08DAA;--hl-ink:#1B1016;--accent:#F49BBE;--accent-bg:#3E2131}
-[data-palette="contrast"]{--paper:#FFFFFF;--card:#FFFFFF;--ink:#000000;--muted:#2B2B2B;--line:#6B6B6B;--bar:#000000;--hl:#FFE600;--hl-ink:#000000;--accent:#0033CC;--accent-bg:#E0E8FF}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"])[data-palette="contrast"],:root:not([data-theme="light"]) [data-palette="contrast"]{--paper:#000000;--card:#000000;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A}}
-:root[data-theme="dark"][data-palette="contrast"],:root[data-theme="dark"] [data-palette="contrast"]{--paper:#000000;--card:#000000;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A}
+/* Rooms (Settings). A scene drawn behind the card in CSS and inline SVG: no images, nothing to license. Each room sets its colours
+   on the page root and on its own Settings thumbnail, in light and dark. Plain is the default look (the :root colours above).
+   In dark mode a room keeps its scene and dims it (--s-dim); Library at night is always dark. Text never sits on a scene:
+   the card, header and footer sit on solid plates. Check new colours with docs/mockups/check-contrast.js (4.5:1 for all text). */
+[data-room]{--s-dim:rgba(0,0,0,0)}
+[data-room="plain"]{--paper:#EEF1F6;--card:#FFFFFF;--ink:#141B33;--muted:#59627A;--line:#D6DCE7;--bar:#141B33;--hl:#FFE14D;--hl-ink:#141B33;--accent:#2944C2;--accent-bg:#E3E8FB}
+[data-room="reading"]{--paper:#F3EBD7;--card:#FBF5E6;--ink:#1F1A12;--muted:#5E5443;--line:#E2D6BC;--bar:#1F1A12;--hl:#F2D16B;--hl-ink:#1F1A12;--accent:#2E5E45;--accent-bg:#E0EBDF}
+[data-room="gallery"]{--paper:#F3F1EC;--card:#FFFFFF;--ink:#1B1B1B;--muted:#5A5751;--line:#E2DED6;--bar:#1B1B1B;--hl:#FFE14D;--hl-ink:#1B1B1B;--accent:#8A2B2B;--accent-bg:#F3E1DE;--mat:#FFFFFF;--mat-line:#CFC8BB}
+[data-room="garden"]{--paper:#F6ECDD;--card:#FFFAF2;--ink:#2A1A10;--muted:#6A5444;--line:#E8D6BF;--bar:#2A1A10;--hl:#F5A65B;--hl-ink:#2A1A10;--accent:#8F3A13;--accent-bg:#F6DFCC}
+[data-room="library"],:root[data-room="library"]{--paper:#0F1422;--card:#141A2B;--ink:#ECE6D8;--muted:#A9A391;--line:#2C3348;--bar:#CFC7B4;--hl:#E8C25A;--hl-ink:#141A2B;--accent:#E3B26B;--accent-bg:#2E2A22;--good:#6FD39C;--good-bg:#173527;--bad:#FF9A90;--bad-bg:#3C1C1B;color-scheme:dark}
+[data-room="contrast"]{--paper:#FFFFFF;--card:#FFFFFF;--ink:#000000;--muted:#2B2B2B;--line:#6B6B6B;--bar:#000000;--hl:#FFE600;--hl-ink:#000000;--accent:#0033CC;--accent-bg:#E0E8FF}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]) [data-room="plain"]{--paper:#0E1322;--card:#161C2F;--ink:#E7EBF4;--muted:#9BA4B9;--line:#2B334A;--bar:#C9D0E0;--hl:#E8C62E;--hl-ink:#0E1322;--accent:#9AAEFF;--accent-bg:#222B4D}
+:root:not([data-theme="light"])[data-room="reading"],:root:not([data-theme="light"]) [data-room="reading"]{--paper:#141A15;--card:#1B231D;--ink:#EFE8D6;--muted:#B0A88F;--line:#2F3A31;--bar:#D8CFB8;--hl:#E9C75A;--hl-ink:#141A15;--accent:#9FD0B2;--accent-bg:#22392C;--s-dim:rgba(6,10,8,.62)}
+:root:not([data-theme="light"])[data-room="gallery"],:root:not([data-theme="light"]) [data-room="gallery"]{--paper:#121211;--card:#1B1B1A;--ink:#EDEBE6;--muted:#ABA79F;--line:#34322E;--bar:#D9D5CC;--hl:#E8C62E;--hl-ink:#121211;--accent:#F0A3A3;--accent-bg:#3A2424;--mat:#2A2926;--mat-line:#46433D;--s-dim:rgba(10,10,9,.78)}
+:root:not([data-theme="light"])[data-room="garden"],:root:not([data-theme="light"]) [data-room="garden"]{--paper:#1A100B;--card:#241812;--ink:#F3E6D6;--muted:#BCA592;--line:#3D2A1F;--bar:#DCC8B3;--hl:#E8954A;--hl-ink:#1A100B;--accent:#F0A877;--accent-bg:#3D2416;--s-dim:rgba(20,10,12,.72)}
+:root:not([data-theme="light"])[data-room="contrast"],:root:not([data-theme="light"]) [data-room="contrast"]{--paper:#000000;--card:#000000;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A}}
+:root[data-theme="dark"] [data-room="plain"]{--paper:#0E1322;--card:#161C2F;--ink:#E7EBF4;--muted:#9BA4B9;--line:#2B334A;--bar:#C9D0E0;--hl:#E8C62E;--hl-ink:#0E1322;--accent:#9AAEFF;--accent-bg:#222B4D}
+:root[data-theme="dark"][data-room="reading"],:root[data-theme="dark"] [data-room="reading"]{--paper:#141A15;--card:#1B231D;--ink:#EFE8D6;--muted:#B0A88F;--line:#2F3A31;--bar:#D8CFB8;--hl:#E9C75A;--hl-ink:#141A15;--accent:#9FD0B2;--accent-bg:#22392C;--s-dim:rgba(6,10,8,.62)}
+:root[data-theme="dark"][data-room="gallery"],:root[data-theme="dark"] [data-room="gallery"]{--paper:#121211;--card:#1B1B1A;--ink:#EDEBE6;--muted:#ABA79F;--line:#34322E;--bar:#D9D5CC;--hl:#E8C62E;--hl-ink:#121211;--accent:#F0A3A3;--accent-bg:#3A2424;--mat:#2A2926;--mat-line:#46433D;--s-dim:rgba(10,10,9,.78)}
+:root[data-theme="dark"][data-room="garden"],:root[data-theme="dark"] [data-room="garden"]{--paper:#1A100B;--card:#241812;--ink:#F3E6D6;--muted:#BCA592;--line:#3D2A1F;--bar:#DCC8B3;--hl:#E8954A;--hl-ink:#1A100B;--accent:#F0A877;--accent-bg:#3D2416;--s-dim:rgba(20,10,12,.72)}
+:root[data-theme="dark"][data-room="contrast"],:root[data-theme="dark"] [data-room="contrast"]{--paper:#000000;--card:#000000;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A}
+
+/* The scene layer: one fixed div behind the page, and a small copy inside each Settings thumbnail. */
+.scene{display:none}
+:root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) body>.scene{display:block;position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1}
+:root[data-room="reading"] body>.scene,.thumb[data-room="reading"]>.scene{background:
+  linear-gradient(var(--s-dim),var(--s-dim)),
+  radial-gradient(ellipse 60% 34% at 50% 0%,rgba(255,213,128,.5),rgba(255,213,128,0) 72%),
+  linear-gradient(180deg,rgba(0,0,0,0) 84%,#5A3720 84%,#4A2C18 85.5%,#2B190E 100%),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.2) 0 2px,rgba(255,255,255,.03) 2px 4px,rgba(0,0,0,0) 4px 96px),
+  linear-gradient(180deg,#24473A,#183126)}
+:root[data-room="reading"] body>.scene::before,.thumb[data-room="reading"]>.scene::before{content:"";position:absolute;left:50%;top:-10px;width:200px;height:54px;transform:translateX(-50%);
+  background:radial-gradient(ellipse 80% 120% at 50% 0%,#4E9C6E,#1D5638);border-radius:0 0 100px 100px/0 0 46px 46px;box-shadow:0 3px 0 #C9A44A}
+:root[data-room="gallery"] body>.scene,.thumb[data-room="gallery"]>.scene{background:
+  linear-gradient(var(--s-dim),var(--s-dim)),
+  radial-gradient(ellipse 55% 60% at 50% 30%,rgba(255,251,238,1),rgba(255,251,238,0) 70%),
+  linear-gradient(180deg,rgba(0,0,0,0) 88%,#CDBB9C 88%,#BBA683 100%),
+  linear-gradient(180deg,rgba(0,0,0,0) 7%,#B3AB9E 7%,#B3AB9E calc(7% + 3px),rgba(0,0,0,0) calc(7% + 3px)),
+  linear-gradient(180deg,#D9D5CC,#E7E4DD 45%,#DDD9D1)}
+:root[data-room="library"] body>.scene,.thumb[data-room="library"]>.scene{background:
+  radial-gradient(circle at 86% 10%,rgba(255,196,110,.42),rgba(255,196,110,0) 40%),
+  linear-gradient(rgba(8,11,20,.45),rgba(8,11,20,.75)),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='110'%3E%3Crect width='160' height='110' fill='%23121A2E'/%3E%3Crect y='100' width='160' height='10' fill='%233A2A1A'/%3E%3Crect x='4' y='34' width='14' height='66' fill='%235E2B2B'/%3E%3Crect x='19' y='44' width='10' height='56' fill='%23364869'/%3E%3Crect x='30' y='28' width='16' height='72' fill='%23705C2C'/%3E%3Crect x='47' y='46' width='11' height='54' fill='%232E4A3B'/%3E%3Crect x='59' y='38' width='13' height='62' fill='%234A3356'/%3E%3Crect x='76' y='50' width='9' height='50' fill='%235E2B2B' transform='rotate(-14 85 100)'/%3E%3Crect x='92' y='30' width='15' height='70' fill='%23364869'/%3E%3Crect x='108' y='40' width='12' height='60' fill='%23705C2C'/%3E%3Crect x='121' y='36' width='14' height='64' fill='%232E4A3B'/%3E%3Crect x='136' y='48' width='19' height='52' fill='%235E2B2B'/%3E%3C/svg%3E") 0 0/160px 110px}
+:root[data-room="garden"] body>.scene,.thumb[data-room="garden"]>.scene{background:
+  linear-gradient(var(--s-dim),var(--s-dim)),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cg opacity='.6'%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%23B4521F' transform='translate(40 50) rotate(30)'/%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%23C98A2B' transform='translate(190 30) rotate(-50)'/%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%237A2E1E' transform='translate(120 150) rotate(80)'/%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%23C98A2B' transform='translate(30 210) rotate(-20) scale(.8)'/%3E%3Cpath d='M0-12C8-4 8 4 0 12C-8 4-8-4 0-12Z' fill='%23B4521F' transform='translate(225 190) rotate(60) scale(.9)'/%3E%3C/g%3E%3C/svg%3E") 0 0/260px 260px,
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='120' preserveAspectRatio='none'%3E%3Cpath d='M0 60Q25 20 50 50Q80 10 110 45Q140 15 170 50Q200 20 230 48Q265 12 300 55V120H0Z' fill='%23667240'/%3E%3Cpath d='M0 85Q30 55 60 80Q95 50 130 82Q165 55 200 80Q240 52 300 84V120H0Z' fill='%234A5530'/%3E%3C/svg%3E") left bottom/300px 120px repeat-x,
+  linear-gradient(180deg,#F1D3A8,#F7E6CC 55%,#EED6B2)}
+
+/* Plates: in a room, the header and footer sit on the card colour, so their text keeps the card's contrast. */
+:root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px 10px 18px}
+:root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) :is(.foot,.site-credit){align-self:center;background:var(--card);padding:6px 14px;border-radius:999px;border:1px solid var(--line)}
+:root:is([data-room="reading"],[data-room="library"],[data-room="garden"]) .card{box-shadow:0 30px 60px -30px rgba(0,0,0,.55)}
+:root[data-room="gallery"] .card{border-radius:2px;border-color:var(--mat-line);box-shadow:0 0 0 10px var(--mat),0 0 0 11px var(--mat-line),0 34px 50px -24px rgba(40,30,10,.45)}
+:root[data-room="gallery"] .wrap{gap:30px;padding-top:6px}
+@media (max-width:480px){:root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) header{padding:8px 6px 6px 12px}
+  :root:is([data-room="reading"],[data-room="gallery"],[data-room="library"],[data-room="garden"]) nav a{padding:7px 7px}}
+
+/* Room picker in Settings: a small picture of each room with a card in it. */
+.rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.rtile{position:relative;display:flex;flex-direction:column;gap:4px;padding:8px 8px 10px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;font-weight:600;font-size:14px;color:var(--ink)}
+.rtile input{position:absolute;opacity:0;pointer-events:none}
+.rtile:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.rtile:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
+.rtile small{font-weight:500;color:var(--muted);font-size:12px;line-height:1.35}
+.thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--paper);margin-bottom:4px}
+.thumb>.scene{display:block;position:absolute;left:0;top:0;width:400%;height:400%;transform:scale(.25);transform-origin:0 0}
+.thumb::after{content:"";position:absolute;left:30%;right:30%;top:26%;bottom:24%;background:var(--card);border:1px solid var(--line);border-radius:2px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.thumb[data-room="contrast"]::after{border:2px solid var(--ink);box-shadow:none}
+@media (max-width:480px){.rooms{grid-template-columns:1fr 1fr}}
 
 /* Settings page and easy mode */
 .set{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
@@ -145,9 +201,6 @@ button:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(-
 .opt:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .opt:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
 .opt.plain{padding-left:14px}
-.sw{display:flex;align-items:center;gap:3px;padding:5px 6px;border-radius:7px;background:var(--paper);border:1px solid var(--line)}
-.sw i{display:block;width:12px;height:12px;border-radius:3px}
-.sw i:nth-child(1){background:var(--bar)} .sw i:nth-child(2){background:var(--hl)} .sw i:nth-child(3){background:var(--accent)}
 .toggle{display:flex;gap:12px;align-items:flex-start;font-size:15px;cursor:pointer}
 .toggle input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent);flex:none}
 .choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}

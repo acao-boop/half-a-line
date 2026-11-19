@@ -6,13 +6,13 @@ const mix=(a,b,t)=>"#"+[0,2,4].map(i=>Math.round(parseInt(a.slice(1).substr(i,2)
 const base={light:{good:"#1C7A4B","good-bg":"#DDF2E6",bad:"#B3261E","bad-bg":"#FBE3E1"},dark:{good:"#6FD39C","good-bg":"#173527",bad:"#FF9A90","bad-bg":"#3C1C1B"}};
 const pairs=[["ink","card","line text"],["muted","card","small grey text"],["ink","paper","hint and input text"],["muted","paper","hint label, placeholder"],["hl-ink","hl","newest clue"],["accent","card","links"],["card","ink","Guess button"],["bad","bad-bg","wrong guesses"],["good","card","solved"]];
 let fails=0,rows=0;
-for(const f of ["seasons.html","rooms.html","hours.html"]){
+for(const f of ["seasons.html","rooms.html","hours.html","../../site/styles.css"]){
   const css=fs.readFileSync(path.join(__dirname,f),"utf8").replace(/\/\*[^]*?\*\//g,"");
   for(const m of css.matchAll(/([^{}]+)\{([^{}]*--ink:[^{}]*)\}/g)){
     const sel=m[1].trim().split(",").pop().replace(/\s+/g," "),v={};
     for(const d of m[2].matchAll(/--([\w-]+):(#[0-9A-Fa-f]{6})/g))v[d[1]]=d[2];
-    const dark=/dark/.test(sel)||/"(library|night)"/.test(sel),t=Object.assign({},base[dark?"dark":"light"],v);
-    const name=f.replace(".html","")+" "+(sel.match(/"(\w+)"\]/g)||[]).pop().replace(/"|\]/g,"")+(/dark/.test(sel)?" (dark)":"");
+    if(!v.card)continue;const dark=L(v.card)<.2,t=Object.assign({},base[dark?"dark":"light"],v);
+    const name=f.replace(".html","").replace("../../site/","site/")+" "+((sel.match(/"(\w+)"\]/g)||['"base"]']).pop().replace(/"|\]/g,""))+(dark?" (dark)":"");
     const bad=[];
     for(const [fg,bg,what] of pairs){const r=ratio(t[fg],t[bg]);rows++;if(r<4.5){bad.push(`${what} ${r.toFixed(2)}`);fails++}}
     if(f==="seasons.html"&&t.wash){// nav and footer text sit straight on the wash (and, top right, on the faint motif)

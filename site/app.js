@@ -22,14 +22,17 @@ if(!S||typeof S.days!=="object")S=fresh();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 // Settings live under their own key, separate from progress.
 const PK="half-a-line-prefs";
-let P={palette:"ink",mode:"auto",easy:false};
-try{Object.assign(P,JSON.parse(localStorage.getItem(PK))||{})}catch(e){}
+let P={room:"plain",mode:"auto",easy:false};
+try{const o=JSON.parse(localStorage.getItem(PK))||{};Object.assign(P,o);
+  // Before rooms (19 Nov 2026) the choice was a colour set; carry it across.
+  if(!o.room&&o.palette)P.room=({contrast:"contrast",sepia:"reading"})[o.palette]||"plain"}catch(e){}
 const saveP=()=>{try{localStorage.setItem(PK,JSON.stringify(P))}catch(e){}};
 function applyP(){const d=document.documentElement;
-  if(P.palette&&P.palette!=="ink")d.dataset.palette=P.palette;else delete d.dataset.palette;
+  if(P.room&&P.room!=="plain")d.dataset.room=P.room;else delete d.dataset.room;
   if(P.mode==="light"||P.mode==="dark")d.dataset.theme=P.mode;else delete d.dataset.theme}
 applyP();
-const PALS=[["ink","Ink"],["sepia","Sepia"],["sage","Sage"],["rose","Rose"],["contrast","High contrast"]];
+// Rooms: a scene drawn behind the card (CSS and inline SVG in styles.css). Plain and High contrast have no scene.
+const ROOMS=[["plain","Plain","Just the card"],["reading","Reading room","Green lamp, oak desk"],["gallery","Gallery","A line hung on the wall"],["library","Library at night","Shelves and one lamp; always dark"],["garden","Autumn garden","Falling leaves"],["contrast","High contrast","Strongest colours, no room"]];
 const rec=n=>S.days[n]||(S.days[n]={step:0,misses:[],done:false,won:false,bonus:null,onDay:false});
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const norm=s=>s.toLowerCase().normalize("NFD").replace(/\p{M}/gu,"").replace(/^the\s+/,"").replace(/[^a-z0-9]/g,"");
@@ -187,12 +190,13 @@ function stats(){
 
 function settings(){
   setNav("settings");
-  const radio=(name,k,label,on,sw)=>'<label class="opt'+(sw?'':' plain')+'"><input type="radio" name="'+name+'" value="'+k+'"'+(on?' checked':'')+'>'+(sw?'<span class="sw" data-palette="'+k+'" aria-hidden="true"><i></i><i></i><i></i></span>':'')+label+'</label>';
+  const radio=(name,k,label,on)=>'<label class="opt plain"><input type="radio" name="'+name+'" value="'+k+'"'+(on?' checked':'')+'>'+label+'</label>';
+  const room=([k,l,s])=>'<label class="rtile"><input type="radio" name="room" value="'+k+'"'+(P.room===k?' checked':'')+'><span class="thumb" data-room="'+k+'" aria-hidden="true"><span class="scene"></span></span><span>'+l+'</span><small>'+s+'</small></label>';
   $("card").innerHTML='<div class="meta"><span>Settings</span><span>Saved in this browser</span></div>'
-    +'<fieldset class="set"><legend>Colours</legend><div class="opts">'+PALS.map(([k,l])=>radio("pal",k,l,P.palette===k,true)).join("")+'</div></fieldset>'
+    +'<fieldset class="set"><legend>Room</legend><p class="hint">Where you’d like to read the day’s line. The card stays easy to read in every room.</p><div class="rooms">'+ROOMS.map(room).join("")+'</div></fieldset>'
     +'<fieldset class="set"><legend>Light or dark</legend><div class="opts">'+[["auto","Match my device"],["light","Light"],["dark","Dark"]].map(([k,l])=>radio("mode",k,l,P.mode===k)).join("")+'</div></fieldset>'
     +'<fieldset class="set"><legend>Difficulty</legend><label class="toggle"><input type="checkbox" id="easy"'+(P.easy?' checked':'')+'><span><b>Easy mode.</b> Pick the work from six titles instead of typing it. Shared results say “easy mode.”</span></label></fieldset>';
-  document.querySelectorAll('input[name=pal]').forEach(i=>i.onchange=()=>{P.palette=i.value;saveP();applyP()});
+  document.querySelectorAll('input[name=room]').forEach(i=>i.onchange=()=>{P.room=i.value;saveP();applyP()});
   document.querySelectorAll('input[name=mode]').forEach(i=>i.onchange=()=>{P.mode=i.value;saveP();applyP()});
   $("easy").onchange=e=>{P.easy=e.target.checked;saveP()};
 }
@@ -203,7 +207,7 @@ function about(){
     +'<p>Each day brings one famous line from literature, shown a few pieces at a time. Name the work it comes from in as few clues as you can, then read why the line matters.</p>'
     +'<p>Every line comes from a work in the public domain. Translations are named where they’re used: Constance Garnett for Tolstoy, Samuel Butler for Homer.</p>'
     +'<p><b>Scoring.</b> You start with two pieces of the line. Each wrong guess, or a press of “Next clue,” gives you a hint or another piece. Your score is the number of extra clues you needed.</p>'
-    +'<p><b>Easy mode.</b> Prefer to pick from a short list? Turn on easy mode in Settings, or press “Too hard?” under the guess box. Colours and light or dark are there too.</p>'
+    +'<p><b>Easy mode.</b> Prefer to pick from a short list? Turn on easy mode in Settings, or press “Too hard?” under the guess box. Rooms and light or dark are there too.</p>'
     +'<p>Designed and built by <a href="https://andrewcao.org/">Andrew Cao</a>.</p></div>';
 }
 
