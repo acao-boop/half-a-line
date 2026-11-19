@@ -38,7 +38,7 @@ def row(l, first):
         f"{l['key']} ({', '.join(t for t in l['tiles'] if t != l['key'])})",
         l["note"],
         f"{l['who']} · {l['year']}",
-        f"{c['count']}" + (" (see note)" if c.get("finding") else ""),
+        ("Exact" if c.get("exact") else ("Exact check not run" if "day" not in l else "Not exact")) + f" · {c['count']} texts" + (" (see sources file)" if c.get("finding") else ""),
     ]) + " |"
 
 HEAD = ["| Day | Work | Line, by piece | Hints (weak to strong) | Bonus word (wrong choices) | Note | Speaker · year | Sources |",
@@ -47,7 +47,7 @@ out = ["# Half a Line: draft lines for days 61 to 151", "",
        "Drafted 19 November 2026 for Andrew's review. **Not in the game.** The same lines are in the review sheet (rows 62–152) with Status \"To review\".", "",
        "- Pieces show the reveal order in brackets: 1 and 2 show first.",
        "- \"Easy\" marks the one or two lines a week that most players will know.",
-       "- Sources: how many independent printings or copies match the quotation word for word. Every link is in `sources-061-151.md`. Lines with fewer than five say why there.",
+       "- Sources: \"Exact\" means the line matches at least one named edition character for character, to the standard in `docs/line-check-2026-11-19.md` (only a first-word capital, curly quotes and \" / \" for line breaks may differ; end punctuation as printed), and at least one more independent text has the same words. The number is how many independent texts have the same words. Every link is in `sources-061-151.md`.",
        "- New titles to add to the guess list when these go in are listed at the end.", ""]
 week = None
 for l in lines:
@@ -78,12 +78,18 @@ out += [f"- {t} ({a})" for t, a in new]
 open(D + "lines-061-151.md", "w").write("\n".join(out) + "\n")
 
 s = ["# Source check for days 61 to 151", "",
-     "How it was checked (19 November 2026, script `tools/verify-quotes.py`): each quotation was compared word for word, ignoring case and punctuation, with the full text of each source. Sources are Project Gutenberg texts, Wikisource transcriptions, scans of different printings on archive.org (one per edition), and, for works still in copyright until 2027, independent web copies.",
+     "Two checks, 19 November 2026. (1) Exact text, script `tools/exact-check.py`, to the standard in `docs/line-check-2026-11-19.md`: each draft equals a named edition character for character, with only a first-word capital, curly quotes and \" / \" for line breaks allowed to differ (plus transcription marks that are not text, each named where it applies). For the five 1931 works, which stay in copyright until 1 January 2027, the exact match is against web copies, as no public-domain edition is online yet. (2) Same words, script `tools/verify-quotes.py`: each quotation was compared word for word, ignoring case and punctuation, with the full text of each source. Sources are Project Gutenberg texts, Wikisource transcriptions, scans of different printings on archive.org (one per edition), and, for works still in copyright until 2027, independent web copies.",
      "\"Exact\" means every word in order. \"Near\" means the only differences are scanning errors (such as *bad* for *had*) or a word cut at a line break; the snippet shows the source's own wording and punctuation, so spelling and punctuation can be read against the draft.", ""]
 for l in lines + reserve:
     c = check(l)
     title = f"Day {l['day']}" if "day" in l else "Reserve"
     s += [f"## {title}: {l['author']}, *{l['work']}*", "", f"Draft: {text(l)}", "", f"Result: {c['summary']}", ""]
+    if c.get("exact"):
+        s += ["Exact match (character for character, to the line-check standard) in:", ""]
+        for x in c["exact"]:
+            note = f" (allowed differences: {'; '.join(x['notes'])})" if x["notes"] else ""
+            s.append(f"- [{x['label']}]({x['url']}){note}")
+        s += ["", "Same words in (all sources found):", ""]
     if c.get("finding"):
         s += [f"Why fewer than five, or what to know: {c['finding']}", ""]
     for x in c["sources"]:

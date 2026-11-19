@@ -39,7 +39,10 @@
   "note": "The first words of Woolf's most experimental novel. Its italic interludes follow the sun across a single day while six voices cover whole lives.",
   "search": {
    "title": "waves",
-   "creator": "woolf"
+   "creator": "woolf",
+   "urls": [
+    "https://gutenberg.net.au/ebooks02/0201091h.html"
+   ]
   },
   "known": false
  },
@@ -360,7 +363,7 @@
   "who": "The narrator",
   "parts": [
    [
-    "It was a dark and stormy night;",
+    "It was a dark and stormy night,",
     4
    ],
    [
@@ -388,10 +391,13 @@
    "buckets",
    "streams"
   ],
-  "note": "The sentence goes on for another thirty words, which is why it became the byword for overwritten openings. A contest for the worst first line of a novel is named after its author.",
+  "note": "The 1830 first edition, as here. The sentence goes on for another thirty words, which is why it became the byword for overwritten openings; a contest for the worst first line of a novel is named after its author.",
   "search": {
    "title": "paul clifford",
-   "creator": "lytton"
+   "creator": "lytton",
+   "urls": [
+    "https://en.wikisource.org/w/index.php?title=Paul_Clifford/Volume_1/Chapter_1&action=render"
+   ]
   },
   "known": true
  },
@@ -726,7 +732,7 @@
     3
    ],
    [
-    "/ The sedge has withered from the lake,",
+    "/ The sedge has wither'd from the lake,",
     2
    ],
    [
@@ -749,7 +755,10 @@
   "note": "Keats copied it into a letter in April 1819. The printed version of 1820 changed the knight to a \"wretched wight\"; most readers know the letter's version.",
   "search": {
    "title": "keats poems",
-   "creator": "keats"
+   "creator": "keats",
+   "urls": [
+    "https://en.wikisource.org/w/index.php?title=The_Poetical_Works_of_John_Keats/La_Belle_Dame_sans_Merci&action=render"
+   ]
   },
   "known": false
  },
@@ -1126,7 +1135,7 @@
     2
    ],
    [
-    "with our English dead.",
+    "with our English dead!",
     1
    ]
   ],
@@ -1145,7 +1154,11 @@
   "note": "The siege of Harfleur. The breach is a gap blown in the town wall; if they can't get through it, Henry says, they should fill it with their bodies.",
   "search": {
    "title": "henry v",
-   "creator": "shakespeare"
+   "creator": "shakespeare",
+   "urls": [
+    "https://en.wikisource.org/w/index.php?title=Henry_V_(1918)_Yale/Text/Act_III&action=render",
+    "https://shakespeare.mit.edu/henryv/henryv.3.1.html"
+   ]
   },
   "known": true
  },
@@ -1233,7 +1246,10 @@
   "note": "Enobarbus is the play's cynic, so the praise counts. He is explaining why Antony will never leave her, just after Antony has agreed to marry someone else.",
   "search": {
    "title": "antony and cleopatra",
-   "creator": "shakespeare"
+   "creator": "shakespeare",
+   "urls": [
+    "https://shakespeare.mit.edu/cleopatra/cleopatra.2.2.html"
+   ]
   },
   "known": false
  },
@@ -1469,7 +1485,7 @@
     4
    ],
    [
-    "and be my love,",
+    "and be my Love,",
     3
    ],
    [
@@ -1493,10 +1509,13 @@
    "seasons",
    "meadows"
   ],
-  "note": "The text here is the 1599–1600 printing (England's Helicon). Walter Raleigh wrote the nymph's reply: flowers fade, wool wears out, and shepherds lie.",
+  "note": "This is the oldest printed text (England's Helicon, 1600), as in the Oxford Book of English Verse. Walter Raleigh wrote the nymph's reply: flowers fade, wool wears out, and shepherds lie.",
   "search": {
    "title": "marlowe poems",
-   "creator": "marlowe"
+   "creator": "marlowe",
+   "urls": [
+    "https://en.wikisource.org/w/index.php?title=Oxford_Book_of_English_Verse_1250-1900/The_Passionate_Shepherd_to_His_Love&action=render"
+   ]
   },
   "known": true
  },
@@ -2535,47 +2554,47 @@
   "known": false
  },
  {
-  "day": 117,
   "theme": "",
-  "work": "Oliver Twist",
-  "author": "Charles Dickens",
-  "year": "1838",
-  "who": "Oliver, to the master of the workhouse",
+  "work": "Robinson Crusoe",
+  "author": "Daniel Defoe",
+  "year": "1719",
+  "who": "Crusoe, the narrator",
   "parts": [
    [
-    "basin and spoon in hand,",
+    "It happened one day, about noon, going towards my boat,",
     4
    ],
    [
-    "said: somewhat alarmed at his own temerity:",
+    "I was exceedingly surprised",
     3
    ],
    [
-    "“Please, sir,",
+    "with the print of a man's naked foot on the shore,",
     2
    ],
    [
-    "I want some more.”",
+    "which was very plain to be seen on the sand.",
     1
    ]
   ],
   "hints": [
-   "A novel from the 1830s",
-   "Author's initials: C. D.",
-   "An orphan in a workhouse asks for a second helping"
+   "A novel from the 1710s",
+   "Author's initials: D. D.",
+   "A castaway spends twenty-eight years on an island"
   ],
-  "key": "temerity",
+  "key": "foot",
   "tiles": [
-   "temerity",
-   "hunger",
-   "boldness",
-   "daring"
+   "foot",
+   "hand",
+   "boat",
+   "fire"
   ],
-  "note": "The boys drew lots to decide who would ask. The master hits Oliver with the ladle and the board offers five pounds to anyone who will take him away.",
+  "note": "Crusoe has been alone for fifteen years. One footprint terrifies him more than the shipwreck did.",
   "search": {
-   "title": "oliver twist",
-   "creator": "dickens"
+   "title": "robinson crusoe",
+   "creator": "defoe"
   },
+  "day": 117,
   "known": true
  },
  {
@@ -2631,47 +2650,47 @@
   "known": true
  },
  {
-  "day": 119,
   "theme": "",
-  "work": "Invictus",
-  "author": "William Ernest Henley",
-  "year": "1888",
+  "work": "The Lake Isle of Innisfree",
+  "author": "W. B. Yeats",
+  "year": "1890",
   "who": "The speaker",
   "parts": [
    [
-    "It matters not how strait the gate,",
+    "I will arise and go now,",
     4
    ],
    [
-    "/ How charged with punishments the scroll,",
+    "and go to Innisfree,",
     3
    ],
    [
-    "/ I am the master of my fate:",
+    "/ And a small cabin build there,",
     2
    ],
    [
-    "/ I am the captain of my soul.",
+    "of clay and wattles made;",
     1
    ]
   ],
   "hints": [
-   "A poem from the 1880s",
-   "Author's initials: W. E. H.",
-   "Written in hospital by a poet who had lost a leg to tuberculosis"
+   "A poem from the 1890s",
+   "Author's initials: W. B. Y.",
+   "On a grey London pavement a man dreams of an island with bean rows and a beehive"
   ],
-  "key": "captain",
+  "key": "wattles",
   "tiles": [
-   "captain",
-   "pilot",
-   "ruler",
-   "keeper"
+   "wattles",
+   "timber",
+   "stone",
+   "reeds"
   ],
-  "note": "Henley wrote it in hospital in Edinburgh, where surgeons saved his other leg. \"Strait\" means narrow, as in the Bible's strait gate. His friend Stevenson based Long John Silver on him.",
+  "note": "Yeats said a fountain in a London shop window, with a little ball balanced on its jet, set off the memory of a lake in Sligo.",
   "search": {
-   "title": "book of verses",
-   "creator": "henley"
+   "title": "yeats poems",
+   "creator": "yeats"
   },
+  "day": 119,
   "known": false
  },
  {
@@ -2764,44 +2783,44 @@
  },
  {
   "theme": "",
-  "work": "Sympathy",
-  "author": "Paul Laurence Dunbar",
-  "year": "1899",
+  "work": "The Negro Speaks of Rivers",
+  "author": "Langston Hughes",
+  "year": "1921",
   "who": "The speaker",
   "parts": [
    [
-    "I know why the caged bird sings, ah me,",
+    "I've known rivers:",
     4
    ],
    [
-    "/ When his wing is bruised and his bosom sore,—",
+    "/ I've known rivers ancient as the world",
     3
    ],
    [
-    "/ When he beats his bars and he would be free;",
+    "and older than the flow of human blood in human veins.",
     2
    ],
    [
-    "/ It is not a carol of joy or glee,",
+    "/ My soul has grown deep like the rivers.",
     1
    ]
   ],
   "hints": [
-   "A poem from the 1890s",
-   "Author's initials: P. L. D.",
-   "A speaker compares himself to a bird beating its wings against a cage"
+   "A poem from the 1920s",
+   "Author's initials: L. H.",
+   "A speaker remembers the Euphrates, the Congo, the Nile and the Mississippi"
   ],
-  "key": "caged",
+  "key": "ancient",
   "tiles": [
-   "caged",
-   "captive",
-   "wounded",
-   "lonely"
+   "ancient",
+   "endless",
+   "mighty",
+   "quiet"
   ],
-  "note": "Maya Angelou took the title of her 1969 memoir from this line. Dunbar, the son of formerly enslaved parents, was one of the first Black poets to find a national readership.",
+  "note": "Hughes wrote it at about 18 on a train crossing the Mississippi. It was printed in The Crisis in June 1921.",
   "search": {
-   "title": "lyrics of the hearthside",
-   "creator": "dunbar"
+   "title": "weary blues",
+   "creator": "hughes"
   },
   "day": 122,
   "known": false
@@ -3038,15 +3057,15 @@
   "who": "The speaker",
   "parts": [
    [
-    "The Owl and the Pussy-cat went to sea",
+    "The Owl and the Pussy-Cat went to sea",
     4
    ],
    [
-    "/ In a beautiful pea-green boat,",
+    "/ In a beautiful pea-green boat:",
     3
    ],
    [
-    "/ They took some honey, and plenty of money,",
+    "/ They took some honey, and plenty of money",
     2
    ],
    [
@@ -3250,7 +3269,11 @@
   "note": "Coleridge said the poem came to him in an opium dream, and that a visitor \"on business from Porlock\" broke it off. He published it as a fragment.",
   "search": {
    "title": "christabel kubla khan",
-   "creator": "coleridge"
+   "creator": "coleridge",
+   "urls": [
+    "https://en.wikisource.org/w/index.php?title=Christabel;_Kubla_Khan;_The_Pains_of_Sleep_(1816)/Kubla_Khan&action=render",
+    "https://en.wikisource.org/w/index.php?title=Oxford_Book_of_English_Verse_1250-1900/Kubla_Khan&action=render"
+   ]
   },
   "known": false
  },
@@ -3344,47 +3367,47 @@
  },
  {
   "theme": "",
-  "work": "Elegy Written in a Country Churchyard",
-  "author": "Thomas Gray",
-  "year": "1751",
-  "who": "The speaker, of the villagers buried there",
+  "work": "Anne of Green Gables",
+  "author": "L. M. Montgomery",
+  "year": "1908",
+  "who": "Anne, to Marilla",
   "parts": [
    [
-    "Far from the madding crowd's ignoble strife,",
+    "isn't it nice to think",
     4
    ],
    [
-    "/ Their sober wishes never learn'd to stray;",
+    "that to-morrow is a new day",
     3
    ],
    [
-    "/ Along the cool sequester'd vale of life",
+    "with no mistakes",
     2
    ],
    [
-    "/ They kept the noiseless tenor of their way.",
+    "in it yet?",
     1
    ]
   ],
   "hints": [
-   "A poem from the 1750s",
-   "Author's initials: T. G.",
-   "At dusk in a village churchyard, a poet thinks about the poor buried there"
+   "A novel from the 1900s",
+   "Author's initials: L. M. M.",
+   "An orphan girl with red hair is sent by mistake to a brother and sister on Prince Edward Island"
   ],
-  "key": "madding",
+  "key": "mistakes",
   "tiles": [
-   "madding",
-   "noisy",
-   "angry",
-   "busy"
+   "mistakes",
+   "troubles",
+   "lessons",
+   "regrets"
   ],
-  "note": "\"Madding\" means frenzied. Thomas Hardy borrowed the phrase for the title of his 1874 novel, which is not today's answer.",
+  "note": "Anne says it after a day of disasters. Montgomery built the book from a note she had made years earlier: a couple ask for a boy and are sent a girl. (\"To-morrow\" is the 1908 first edition's spelling.)",
   "search": {
-   "title": "elegy written in a country churchyard",
-   "creator": "gray"
+   "title": "anne of green gables",
+   "creator": "montgomery"
   },
-  "known": true,
-  "day": 135
+  "day": 135,
+  "known": true
  },
  {
   "day": 136,
@@ -3447,11 +3470,11 @@
     3
    ],
    [
-    "/ And burnt the topless towers of Ilium?",
+    "/ And burnt the topless towers of Ilium—",
     2
    ],
    [
-    "/ Sweet Helen, make me immortal with a kiss.",
+    "/ Sweet Helen, make me immortal with a kiss.—",
     1
    ]
   ],
@@ -3467,10 +3490,13 @@
    "ancient",
    "mighty"
   ],
-  "note": "Helen is a spirit the devil has conjured, so the kiss damns him. Goethe's Faust (day 102) retells the same legend two centuries later.",
+  "note": "From the 1604 printing (the A-text); the dash after \"kiss\" leads into the kiss itself. Helen is a spirit the devil has conjured, so the kiss damns him. Goethe's Faust (day 102) retells the same legend two centuries later.",
   "search": {
    "title": "doctor faustus",
-   "creator": "marlowe"
+   "creator": "marlowe",
+   "urls": [
+    "https://en.wikisource.org/w/index.php?title=Doctor_Faustus_(1604)&action=render"
+   ]
   },
   "known": true
  },
@@ -3841,14 +3867,14 @@
   "work": "The Souls of Black Folk",
   "author": "W. E. B. Du Bois",
   "year": "1903",
-  "who": "The author, in the Forethought",
+  "who": "The author, in chapter two",
   "parts": [
    [
     "The problem",
     4
    ],
    [
-    "of the twentieth century",
+    "of the Twentieth Century",
     3
    ],
    [
@@ -3856,7 +3882,7 @@
     2
    ],
    [
-    "of the color-line,",
+    "of the color-line.",
     1
    ]
   ],
@@ -3872,7 +3898,7 @@
    "border",
    "money"
   ],
-  "note": "Du Bois states it in the Forethought and repeats it in chapter two. His idea of \"double-consciousness\" is still taught a century later.",
+  "note": "Du Bois says it first in the book's Forethought and again here, in chapter two. His idea of \"double-consciousness\" is still taught a century later.",
   "search": {
    "title": "souls of black folk",
    "creator": "du bois"
@@ -3896,7 +3922,7 @@
     4
    ],
    [
-    "/ Which is the bliss of solitude;",
+    "/ Which is the bliss of solitude,",
     3
    ],
    [
@@ -3904,7 +3930,7 @@
     2
    ],
    [
-    "/ And dances with the daffodils.",
+    "/ And dances with the Daffodils.",
     1
    ]
   ],
@@ -3940,11 +3966,11 @@
     4
    ],
    [
-    "when without moving from his privacy,",
+    "when, without moving from his privacy,",
     3
    ],
    [
-    "Bartleby",
+    "Bartleby,",
     5
    ],
    [
@@ -4066,7 +4092,10 @@
   "note": "Tennyson wrote it within weeks of reading the newspaper report from the Crimean War. It praises the men and quietly blames the order.",
   "search": {
    "title": "tennyson poems",
-   "creator": "tennyson"
+   "creator": "tennyson",
+   "urls": [
+    "https://en.wikisource.org/w/index.php?title=Poems_That_Every_Child_Should_Know/The_Charge_of_the_Light_Brigade&action=render"
+   ]
   },
   "known": true
  },
@@ -4087,7 +4116,7 @@
     3
    ],
    [
-    "/ And this same flower that smiles to-day,",
+    "/ And this same flower that smiles to-day",
     2
    ],
    [
@@ -4110,7 +4139,10 @@
   "note": "From Hesperides, over a thousand short poems. Herrick was a country parson in Devon.",
   "search": {
    "title": "hesperides",
-   "creator": "herrick"
+   "creator": "herrick",
+   "urls": [
+    "https://en.wikisource.org/w/index.php?title=Oxford_Book_of_English_Verse_1250-1900/To_the_Virgins,_to_make_much_of_Time&action=render"
+   ]
   },
   "known": true
  }
