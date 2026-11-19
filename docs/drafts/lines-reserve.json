@@ -1,0 +1,851 @@
+[
+ {
+  "theme": "",
+  "work": "Pygmalion",
+  "author": "George Bernard Shaw",
+  "year": "1913",
+  "who": "Higgins, to Eliza",
+  "parts": [
+   [
+    "The great secret, Eliza,",
+    4
+   ],
+   [
+    "is not having bad manners or good manners",
+    3
+   ],
+   [
+    "or any other particular sort of manners,",
+    2
+   ],
+   [
+    "but having the same manner for all human souls:",
+    1
+   ]
+  ],
+  "hints": [
+   "A comedy from the 1910s",
+   "Author's initials: G. B. S.",
+   "A professor of speech bets he can pass off a flower seller as a duchess"
+  ],
+  "key": "souls",
+  "tiles": [
+   "souls",
+   "people",
+   "classes",
+   "comers"
+  ],
+  "note": "Higgins defends being rude to everyone equally. Shaw refused to let the play end with a wedding, and wrote an essay explaining why.",
+  "search": {
+   "title": "pygmalion",
+   "creator": "shaw"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Loveliest of trees, the cherry now",
+  "alias": [
+   "A Shropshire Lad"
+  ],
+  "author": "A. E. Housman",
+  "year": "1896",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Loveliest of trees,",
+    4
+   ],
+   [
+    "the cherry now / Is hung with bloom along the bough,",
+    3
+   ],
+   [
+    "/ And stands about the woodland ride",
+    2
+   ],
+   [
+    "/ Wearing white for Eastertide.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1890s",
+   "Author's initials: A. E. H.",
+   "A man of twenty works out he has only fifty springs left to see the blossom"
+  ],
+  "key": "cherry",
+  "tiles": [
+   "cherry",
+   "apple",
+   "hawthorn",
+   "almond"
+  ],
+  "note": "Poem II of A Shropshire Lad. Easter falls on 28 March in 2027, two days after this line.",
+  "search": {
+   "title": "shropshire lad",
+   "creator": "housman"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Locksley Hall",
+  "author": "Alfred, Lord Tennyson",
+  "year": "1842",
+  "who": "The speaker",
+  "parts": [
+   [
+    "In the Spring",
+    4
+   ],
+   [
+    "a young man's fancy",
+    3
+   ],
+   [
+    "lightly turns",
+    2
+   ],
+   [
+    "to thoughts of love.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1840s",
+   "Author's initials: Lord T.",
+   "A young man returns to the house by the sea where his cousin turned him down"
+  ],
+  "key": "fancy",
+  "tiles": [
+   "fancy",
+   "heart",
+   "mind",
+   "eye"
+  ],
+  "note": "Quoted as if it's cheerful. In the poem the speaker is bitter: the cousin he loved married a richer man.",
+  "search": {
+   "title": "tennyson poems",
+   "creator": "tennyson"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Home-Thoughts, from Abroad",
+  "author": "Robert Browning",
+  "year": "1845",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Oh, to be in England",
+    4
+   ],
+   [
+    "/ Now that April's there,",
+    3
+   ],
+   [
+    "/ And whoever wakes in England",
+    2
+   ],
+   [
+    "/ Sees, some morning, unaware,",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1840s",
+   "Author's initials: R. B.",
+   "An Englishman in Italy is homesick for elm leaves, chaffinches and buttercups"
+  ],
+  "key": "April",
+  "tiles": [
+   "April",
+   "summer",
+   "morning",
+   "Easter"
+  ],
+  "note": "Browning wrote it in Italy, where he later lived with Elizabeth Barrett Browning (day 89). The poem ends by preferring buttercups to Italian flowers.",
+  "search": {
+   "title": "dramatic romances",
+   "creator": "browning"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Spring",
+  "author": "Gerard Manley Hopkins",
+  "year": "1918",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Nothing is so beautiful as Spring—",
+    4
+   ],
+   [
+    "/ When weeds, in wheels,",
+    3
+   ],
+   [
+    "shoot long and lovely and lush;",
+    2
+   ],
+   [
+    "/ Thrush's eggs look little low heavens,",
+    1
+   ]
+  ],
+  "hints": [
+   "A sonnet written in the 1870s, printed in 1918",
+   "Author's initials: G. M. H.",
+   "A priest-poet sees thrushes' eggs and racing lambs as a glimpse of Eden"
+  ],
+  "key": "lush",
+  "tiles": [
+   "lush",
+   "green",
+   "wild",
+   "thick"
+  ],
+  "note": "Hopkins, a Jesuit, never published his poems. His friend Robert Bridges printed them in 1918, nearly thirty years after his death.",
+  "search": {
+   "title": "poems of gerard manley hopkins",
+   "creator": "hopkins"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Elegy Written in a Country Churchyard",
+  "author": "Thomas Gray",
+  "year": "1751",
+  "who": "The speaker",
+  "parts": [
+   [
+    "The boast of heraldry, the pomp of pow'r,",
+    4
+   ],
+   [
+    "/ And all that beauty, all that wealth e'er gave,",
+    3
+   ],
+   [
+    "/ Awaits alike th' inevitable hour.",
+    2
+   ],
+   [
+    "/ The paths of glory lead but to the grave.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1750s",
+   "Author's initials: T. G.",
+   "At dusk in a village churchyard, a poet thinks about the poor buried there"
+  ],
+  "key": "glory",
+  "tiles": [
+   "glory",
+   "honour",
+   "fortune",
+   "fame"
+  ],
+  "note": "General Wolfe is said to have recited the poem the night before he died taking Quebec, saying he'd rather have written it.",
+  "search": {
+   "title": "elegy written in a country churchyard",
+   "creator": "gray"
+  }
+ },
+ {
+  "theme": "",
+  "work": "The Negro Speaks of Rivers",
+  "author": "Langston Hughes",
+  "year": "1921",
+  "who": "The speaker",
+  "parts": [
+   [
+    "I've known rivers:",
+    4
+   ],
+   [
+    "/ I've known rivers ancient as the world",
+    3
+   ],
+   [
+    "and older than the flow of human blood in human veins.",
+    2
+   ],
+   [
+    "/ My soul has grown deep like the rivers.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1920s",
+   "Author's initials: L. H.",
+   "A speaker remembers the Euphrates, the Congo, the Nile and the Mississippi"
+  ],
+  "key": "ancient",
+  "tiles": [
+   "ancient",
+   "endless",
+   "mighty",
+   "quiet"
+  ],
+  "note": "Hughes wrote it at about 18 on a train crossing the Mississippi. It was printed in The Crisis in June 1921.",
+  "search": {
+   "title": "weary blues",
+   "creator": "hughes"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Dover Beach",
+  "author": "Matthew Arnold",
+  "year": "1867",
+  "who": "The speaker, to his companion",
+  "parts": [
+   [
+    "The sea is calm to-night.",
+    4
+   ],
+   [
+    "/ The tide is full,",
+    3
+   ],
+   [
+    "the moon lies fair",
+    2
+   ],
+   [
+    "/ Upon the straits;",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1860s",
+   "Author's initials: M. A.",
+   "A man at a window above the Channel hears faith ebbing like the tide"
+  ],
+  "key": "tide",
+  "tiles": [
+   "tide",
+   "wave",
+   "bay",
+   "sky"
+  ],
+  "note": "The calm doesn't last. By the end the world has \"neither joy, nor love, nor light\", and the only comfort left is being true to each other.",
+  "search": {
+   "title": "new poems",
+   "creator": "arnold"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Sea-Fever",
+  "author": "John Masefield",
+  "year": "1902",
+  "who": "The speaker",
+  "parts": [
+   [
+    "I must down to the seas again,",
+    4
+   ],
+   [
+    "to the lonely sea and the sky,",
+    3
+   ],
+   [
+    "/ And all I ask is a tall ship",
+    2
+   ],
+   [
+    "and a star to steer her by,",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1900s",
+   "Author's initials: J. M.",
+   "A former sailor longs for the wind, the gulls and a merry yarn"
+  ],
+  "key": "star",
+  "tiles": [
+   "star",
+   "moon",
+   "wind",
+   "map"
+  ],
+  "note": "Masefield went to sea at fifteen and later became Poet Laureate. Early printings say \"I must down\"; the \"go\" most people add came later.",
+  "search": {
+   "title": "salt-water ballads",
+   "creator": "masefield"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Crossing the Bar",
+  "author": "Alfred, Lord Tennyson",
+  "year": "1889",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Sunset and evening star,",
+    4
+   ],
+   [
+    "/ And one clear call for me!",
+    3
+   ],
+   [
+    "/ And may there be no moaning of the bar,",
+    2
+   ],
+   [
+    "/ When I put out to sea,",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1880s",
+   "Author's initials: Lord T.",
+   "An old poet imagines his death as a ship leaving harbour"
+  ],
+  "key": "moaning",
+  "tiles": [
+   "moaning",
+   "weeping",
+   "warning",
+   "singing"
+  ],
+  "note": "The bar is a sandbank at a harbour mouth. Tennyson asked that this poem be printed last in every collection of his work.",
+  "search": {
+   "title": "demeter and other poems",
+   "creator": "tennyson"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Childe Harold's Pilgrimage",
+  "author": "Lord Byron",
+  "year": "1818",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Roll on,",
+    4
+   ],
+   [
+    "thou deep and dark blue Ocean—roll!",
+    3
+   ],
+   [
+    "/ Ten thousand fleets sweep over thee in vain;",
+    2
+   ],
+   [
+    "/ Man marks the earth with ruin—his control / Stops with the shore;",
+    1
+   ]
+  ],
+  "hints": [
+   "A long poem whose last part came out in the 1810s",
+   "Author's initials: Lord B.",
+   "A gloomy young nobleman travels through Europe"
+  ],
+  "key": "fleets",
+  "tiles": [
+   "fleets",
+   "ships",
+   "storms",
+   "sailors"
+  ],
+  "note": "From the last canto. The poem made Byron famous overnight; he said he woke one morning to find himself so.",
+  "search": {
+   "title": "childe harold",
+   "creator": "byron"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Robinson Crusoe",
+  "author": "Daniel Defoe",
+  "year": "1719",
+  "who": "Crusoe, the narrator",
+  "parts": [
+   [
+    "It happened one day, about noon, going towards my boat,",
+    4
+   ],
+   [
+    "I was exceedingly surprised",
+    3
+   ],
+   [
+    "with the print of a man's naked foot on the shore,",
+    2
+   ],
+   [
+    "which was very plain to be seen in the sand.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1710s",
+   "Author's initials: D. D.",
+   "A castaway spends twenty-eight years on an island"
+  ],
+  "key": "foot",
+  "tiles": [
+   "foot",
+   "hand",
+   "boat",
+   "fire"
+  ],
+  "note": "Crusoe has been alone for fifteen years. One footprint terrifies him more than the shipwreck did. (\"In the sand\" is the 1719 first edition; some modern texts print \"on\".)",
+  "search": {
+   "title": "robinson crusoe",
+   "creator": "defoe"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Riders to the Sea",
+  "author": "J. M. Synge",
+  "year": "1904",
+  "who": "Maurya",
+  "parts": [
+   [
+    "They're all gone now,",
+    4
+   ],
+   [
+    "and there isn't anything more",
+    3
+   ],
+   [
+    "the sea",
+    2
+   ],
+   [
+    "can do to me.",
+    1
+   ]
+  ],
+  "hints": [
+   "A one-act play from the 1900s",
+   "Author's initials: J. M. S.",
+   "An old woman on the Aran Islands loses the last of her sons"
+  ],
+  "key": "gone",
+  "tiles": [
+   "gone",
+   "drowned",
+   "home",
+   "safe"
+  ],
+  "note": "Maurya has lost her husband and six sons to the sea. Synge heard the islanders' English on his visits to Aran and wrote it down.",
+  "search": {
+   "title": "riders to the sea",
+   "creator": "synge"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Requiem",
+  "author": "Robert Louis Stevenson",
+  "year": "1887",
+  "who": "The speaker",
+  "parts": [
+   [
+    "This be the verse you grave for me:",
+    4
+   ],
+   [
+    "/ Here he lies where he longed to be;",
+    3
+   ],
+   [
+    "/ Home is the sailor, home from sea,",
+    2
+   ],
+   [
+    "/ And the hunter home from the hill.",
+    1
+   ]
+  ],
+  "hints": [
+   "A short poem from the 1880s",
+   "Author's initials: R. L. S.",
+   "A writer composes his own epitaph"
+  ],
+  "key": "sailor",
+  "tiles": [
+   "sailor",
+   "soldier",
+   "stranger",
+   "traveller"
+  ],
+  "note": "The lines are on Stevenson's grave on a mountain in Samoa. People often say \"home from the sea\"; he wrote \"home from sea\".",
+  "search": {
+   "title": "underwoods",
+   "creator": "stevenson"
+  }
+ },
+ {
+  "theme": "",
+  "work": "The Adventures of Tom Sawyer",
+  "author": "Mark Twain",
+  "year": "1876",
+  "who": "The narrator",
+  "parts": [
+   [
+    "Work consists of whatever",
+    4
+   ],
+   [
+    "a body is obliged to do,",
+    3
+   ],
+   [
+    "and that Play consists of whatever",
+    2
+   ],
+   [
+    "a body is not obliged to do.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1870s",
+   "Author's initials: M. T.",
+   "A boy on the Mississippi tricks his friends into whitewashing a fence"
+  ],
+  "key": "obliged",
+  "tiles": [
+   "obliged",
+   "allowed",
+   "paid",
+   "ordered"
+  ],
+  "note": "The moral Tom would have learned from the fence, \"if he had been a great and wise philosopher\". His friends paid him for the chance to paint it.",
+  "search": {
+   "title": "adventures of tom sawyer",
+   "creator": "twain"
+  }
+ },
+ {
+  "theme": "",
+  "work": "The Soldier",
+  "author": "Rupert Brooke",
+  "year": "1915",
+  "who": "The speaker",
+  "parts": [
+   [
+    "If I should die, think only this of me:",
+    4
+   ],
+   [
+    "/ That there's some corner of a foreign field",
+    3
+   ],
+   [
+    "/ That is for ever",
+    2
+   ],
+   [
+    "/ England.",
+    1
+   ]
+  ],
+  "hints": [
+   "A sonnet from the 1910s",
+   "Author's initials: R. B.",
+   "A young man going to war imagines his grave abroad"
+  ],
+  "key": "corner",
+  "tiles": [
+   "corner",
+   "acre",
+   "patch",
+   "stretch"
+  ],
+  "note": "Brooke died of an infected mosquito bite on the way to Gallipoli in April 1915, months after the sonnet was first printed. He is buried on the Greek island of Skyros.",
+  "search": {
+   "title": "1914 and other poems",
+   "creator": "brooke"
+  }
+ },
+ {
+  "theme": "",
+  "work": "The Lake Isle of Innisfree",
+  "author": "W. B. Yeats",
+  "year": "1890",
+  "who": "The speaker",
+  "parts": [
+   [
+    "I will arise and go now,",
+    4
+   ],
+   [
+    "and go to Innisfree,",
+    3
+   ],
+   [
+    "/ And a small cabin build there,",
+    2
+   ],
+   [
+    "of clay and wattles made:",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1890s",
+   "Author's initials: W. B. Y.",
+   "On a grey London pavement a man dreams of an island with bean rows and a beehive"
+  ],
+  "key": "wattles",
+  "tiles": [
+   "wattles",
+   "timber",
+   "stone",
+   "reeds"
+  ],
+  "note": "Yeats said a fountain in a London shop window, with a little ball balanced on its jet, set off the memory of a lake in Sligo.",
+  "search": {
+   "title": "yeats poems",
+   "creator": "yeats"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Anne of Green Gables",
+  "author": "L. M. Montgomery",
+  "year": "1908",
+  "who": "Anne, to Marilla",
+  "parts": [
+   [
+    "isn't it nice to think",
+    4
+   ],
+   [
+    "that to-morrow is a new day",
+    3
+   ],
+   [
+    "with no mistakes",
+    2
+   ],
+   [
+    "in it yet?",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1900s",
+   "Author's initials: L. M. M.",
+   "An orphan girl with red hair is sent by mistake to a brother and sister on Prince Edward Island"
+  ],
+  "key": "mistakes",
+  "tiles": [
+   "mistakes",
+   "troubles",
+   "lessons",
+   "regrets"
+  ],
+  "note": "Anne says it after a day of disasters. Montgomery built the book from a note she had made years earlier: a couple ask for a boy and are sent a girl. (\"To-morrow\" is the 1908 first edition's spelling.)",
+  "search": {
+   "title": "anne of green gables",
+   "creator": "montgomery"
+  }
+ },
+ {
+  "theme": "",
+  "work": "The Fall of the House of Usher",
+  "author": "Edgar Allan Poe",
+  "year": "1839",
+  "who": "The narrator",
+  "parts": [
+   [
+    "During the whole of a dull, dark, and soundless day",
+    5
+   ],
+   [
+    "in the autumn of the year,",
+    4
+   ],
+   [
+    "when the clouds hung oppressively low in the heavens,",
+    3
+   ],
+   [
+    "I had been passing alone, on horseback,",
+    2
+   ],
+   [
+    "through a singularly dreary tract of country;",
+    1
+   ]
+  ],
+  "hints": [
+   "A short story from the 1830s",
+   "Author's initials: E. A. P.",
+   "A visitor arrives at a crumbling house where a brother and sister are the last of their line"
+  ],
+  "key": "dreary",
+  "tiles": [
+   "dreary",
+   "desolate",
+   "gloomy",
+   "barren"
+  ],
+  "note": "Poe wanted every word of a story to build one effect. Here the sentence itself is long, low and heavy, like the clouds.",
+  "search": {
+   "title": "tales",
+   "creator": "poe"
+  }
+ },
+ {
+  "theme": "",
+  "work": "Candide",
+  "author": "Voltaire",
+  "year": "1759",
+  "who": "Candide (anonymous translation, London: George Redway, 1898; reprinted New York: Boni and Liveright, 1918)",
+  "parts": [
+   [
+    "“All that is very well,”",
+    4
+   ],
+   [
+    "answered Candide,",
+    3
+   ],
+   [
+    "“but let us cultivate",
+    2
+   ],
+   [
+    "our garden.”",
+    1
+   ]
+  ],
+  "hints": [
+   "A French satire from the 1750s, in translation",
+   "Author: one pen name, V.",
+   "A young man taught that all is for the best meets war, earthquake and the Inquisition"
+  ],
+  "key": "cultivate",
+  "tiles": [
+   "cultivate",
+   "tend",
+   "water",
+   "weed"
+  ],
+  "note": "The book's last words. Pangloss is still insisting that everything happened for the best; Candide stops arguing and goes back to work.",
+  "search": {
+   "title": "candide",
+   "creator": "voltaire"
+  },
+  "known": true,
+  "reserve_reason": "The famous wording (\"let us cultivate our garden\") comes from an anonymous translation; Smollett's named one has \"take care of our garden\". Swapped out because every translation must name its translator."
+ }
+]

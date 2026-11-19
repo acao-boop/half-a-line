@@ -1,0 +1,4117 @@
+[
+ {
+  "day": 61,
+  "theme": "New to the public domain",
+  "work": "The Waves",
+  "author": "Virginia Woolf",
+  "year": "1931",
+  "who": "The narrator, in the first interlude",
+  "parts": [
+   [
+    "The sun had not yet risen.",
+    4
+   ],
+   [
+    "The sea was indistinguishable from the sky,",
+    3
+   ],
+   [
+    "except that the sea was slightly creased",
+    2
+   ],
+   [
+    "as if a cloth had wrinkles in it.",
+    1
+   ]
+  ],
+  "hints": [
+   "An experimental English novel",
+   "Author's initials: V. W.",
+   "Six friends speak in turn from childhood to middle age, between interludes about the sea"
+  ],
+  "key": "creased",
+  "tiles": [
+   "creased",
+   "folded",
+   "rippled",
+   "crumpled"
+  ],
+  "note": "The first words of Woolf's most experimental novel. Its italic interludes follow the sun across a single day while six voices cover whole lives.",
+  "search": {
+   "title": "waves",
+   "creator": "woolf"
+  },
+  "known": false
+ },
+ {
+  "day": 62,
+  "theme": "New to the public domain",
+  "work": "The Good Earth",
+  "author": "Pearl S. Buck",
+  "year": "1931",
+  "who": "The narrator",
+  "parts": [
+   [
+    "It was",
+    2
+   ],
+   [
+    "Wang Lung's",
+    3
+   ],
+   [
+    "marriage day.",
+    1
+   ]
+  ],
+  "hints": [
+   "The bestselling novel in America that year",
+   "Author's initials: P. S. B.",
+   "A Chinese farmer, his wife O-lan, and the land"
+  ],
+  "key": "marriage",
+  "tiles": [
+   "marriage",
+   "wedding",
+   "harvest",
+   "birth"
+  ],
+  "note": "The opening of the novel that topped the US bestseller list in 1931 and 1932 and won the Pulitzer Prize. The Nobel Prize followed for Buck in 1938.",
+  "search": {
+   "title": "good earth",
+   "creator": "buck",
+   "urls": [
+    "https://www.powells.com/book/good-earth-9780743272933/1759324",
+    "https://www.editoreric.com/greatlit/books/Good-Earth-text.html",
+    "https://www.goodreads.com/work/quotes/2346070"
+   ]
+  },
+  "known": true
+ },
+ {
+  "day": 63,
+  "theme": "New to the public domain",
+  "work": "Sanctuary",
+  "author": "William Faulkner",
+  "year": "1931",
+  "who": "The narrator",
+  "parts": [
+   [
+    "From beyond the screen of bushes",
+    2
+   ],
+   [
+    "which surrounded the spring,",
+    1
+   ],
+   [
+    "Popeye",
+    4
+   ],
+   [
+    "watched the man drinking.",
+    3
+   ]
+  ],
+  "hints": [
+   "A Southern novel its author called \"a cheap idea\"",
+   "Author's initials: W. F.",
+   "A Mississippi crime story: a gangster, a bootleggers' house, a kidnapped student"
+  ],
+  "key": "spring",
+  "tiles": [
+   "spring",
+   "well",
+   "river",
+   "pond"
+  ],
+  "note": "Faulkner later wrote that he conceived the book to make money. It became his first bestseller.",
+  "search": {
+   "title": "sanctuary",
+   "creator": "faulkner",
+   "urls": [
+    "https://www.fadedpage.com/books/20190423/html.php",
+    "https://archive.org/download/in.ernet.dli.2015.148864/2015.148864.Sanctuary_djvu.txt"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 64,
+  "theme": "New to the public domain",
+  "work": "Love is not all",
+  "alias": [
+   "Fatal Interview"
+  ],
+  "author": "Edna St. Vincent Millay",
+  "year": "1931",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Love is not all:",
+    4
+   ],
+   [
+    "it is not meat nor drink",
+    3
+   ],
+   [
+    "/ Nor slumber",
+    2
+   ],
+   [
+    "nor a roof against the rain;",
+    1
+   ]
+  ],
+  "hints": [
+   "A sonnet from a sequence about a love affair",
+   "Author's initials: E. St. V. M.",
+   "The speaker lists everything love can't do, then admits she wouldn't trade it"
+  ],
+  "key": "rain",
+  "tiles": [
+   "rain",
+   "wind",
+   "cold",
+   "storm"
+  ],
+  "note": "Sonnet XXX of Fatal Interview, 52 sonnets about an affair that ends. It starts by denying love's power and ends by refusing to give it up.",
+  "search": {
+   "title": "fatal interview",
+   "creator": "millay",
+   "urls": [
+    "https://poets.org/poem/love-not-all-sonnet-xxx",
+    "https://fadedpage.com/books/20200622/html.php",
+    "https://potw.org/archive/potw21.html",
+    "https://www.lieder.net/lieder/get_text.html?TextId=23435",
+    "https://wist.info/millay-edna-st-vincent/72683/",
+    "https://literarydevices.net/love-is-not-all-sonnet-xxx",
+    "https://en.wikipedia.org/wiki/Love_Is_Not_All:_It_Is_Not_Meat_nor_Drink"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 65,
+  "theme": "New to the public domain",
+  "work": "The Negro Mother",
+  "author": "Langston Hughes",
+  "year": "1931",
+  "who": "The mother, to her children",
+  "parts": [
+   [
+    "Children, I come back today",
+    3
+   ],
+   [
+    "/ To tell you a story of the long dark way",
+    2
+   ],
+   [
+    "/ That I had to climb, that I had to know",
+    1
+   ],
+   [
+    "/ In order that the race might live and grow.",
+    4
+   ]
+  ],
+  "hints": [
+   "A poem written to be performed aloud",
+   "Author's initials: L. H.",
+   "A mother speaks to her children about the road from slavery"
+  ],
+  "key": "climb",
+  "tiles": [
+   "climb",
+   "walk",
+   "run",
+   "cross"
+  ],
+  "note": "Hughes wrote it for his reading tour of the South and sold it as a cheap illustrated booklet, so audiences could take the poem home.",
+  "search": {
+   "title": "negro mother",
+   "creator": "hughes",
+   "urls": [
+    "https://www.poemhunter.com/poem/the-negro-mother/",
+    "https://www.poetryverse.com/langston-hughes-poems/negro-mother",
+    "https://m.richmondfreepress.com/news/2025/may/08/mothers-day-tribute",
+    "https://ebsco.com/research-starters/history/negro-mother-langston-hughes",
+    "https://teachersinstitute.yale.edu/curriculum/units/files/94.02.07.pdf",
+    "https://www.poetryverse.com/langston-hughes-poems/negro-mother/poem-analysis",
+    "https://pressbooks.nvcc.edu/writingthenation/?p=166"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 66,
+  "theme": "New to the public domain",
+  "work": "somewhere i have never travelled,gladly beyond",
+  "author": "E. E. Cummings",
+  "year": "1931",
+  "who": "The speaker, to the beloved",
+  "parts": [
+   [
+    "somewhere i have never",
+    4
+   ],
+   [
+    "travelled,gladly beyond",
+    3
+   ],
+   [
+    "/ any experience,your eyes",
+    2
+   ],
+   [
+    "have their silence:",
+    1
+   ]
+  ],
+  "hints": [
+   "A love poem with almost no capital letters",
+   "Author's initials: E. E. C.",
+   "A beloved who opens the speaker the way spring opens a rose"
+  ],
+  "key": "silence",
+  "tiles": [
+   "silence",
+   "secrets",
+   "sorrow",
+   "stillness"
+  ],
+  "note": "From his 1931 collection ViVa. Its last line, about the rain's small hands, is one of the most quoted in American poetry.",
+  "search": {
+   "title": "viva",
+   "creator": "cummings",
+   "urls": [
+    "https://www.poetryfoundation.org/poems/153877/somewhere-i-have-never-travelledgladly-beyond",
+    "https://www.lieder.net/lieder/get_text.html?TextId=39302",
+    "https://websites.umich.edu/~pfa/poemquot/somewhere.html",
+    "https://reason.com/volokh/2021/08/11/poetry-wednesday-somewhere-i-have-never-travelledgladly-beyond-by-e-e-cummings/",
+    "https://poets.org/anthology/ee-cummings-1",
+    "https://poetryinvoice.ca/poems/somewhere-i-have-never-travelled",
+    "https://www.litcharts.com/poetry/e-e-cummings/somewhere-i-have-never-travelled-gladly-beyond",
+    "https://encyclopedia.com/arts/educational-magazines/somewhere-i-have-never-travelledgladly-beyond"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 67,
+  "theme": "New to the public domain",
+  "work": "Mourning Becomes Electra",
+  "author": "Eugene O'Neill",
+  "year": "1931",
+  "who": "Lavinia Mannon, to the servant Seth",
+  "parts": [
+   [
+    "I'm the last Mannon.",
+    4
+   ],
+   [
+    "I've got to punish myself!",
+    3
+   ],
+   [
+    "Living alone here with the dead",
+    2
+   ],
+   [
+    "is a worse act of justice than death or prison!",
+    1
+   ]
+  ],
+  "hints": [
+   "An American stage trilogy that retells a Greek tragedy",
+   "Author's initials: E. O'N.",
+   "A general comes home from the Civil War, and his wife and daughter go to war with each other"
+  ],
+  "key": "justice",
+  "tiles": [
+   "justice",
+   "mercy",
+   "penance",
+   "cruelty"
+  ],
+  "note": "Lavinia's last speech. O'Neill moved Aeschylus's Oresteia to New England after the Civil War; at the end she shuts herself in the house with the family's dead.",
+  "search": {
+   "title": "mourning becomes electra",
+   "creator": "o'neill",
+   "q": "title:(mourning becomes electra) AND mediatype:texts",
+   "urls": [
+    "https://gutenberg.net.au/ebooks04/0400141h.html",
+    "https://www.litcharts.com/lit/mourning-becomes-electra/quotes",
+    "https://assets.litcharts.com/lit/mourning-becomes-electra/the-haunted-act-4",
+    "https://stageagent.com/monologues/4436/mourning-becomes-electra/lavinia-mannon",
+    "https://archive.org/download/in.ernet.dli.2015.182240/2015.182240.Mourning-Becomes-Electra_djvu.txt"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 68,
+  "theme": "First lines",
+  "work": "Paul Clifford",
+  "author": "Edward Bulwer-Lytton",
+  "year": "1830",
+  "who": "The narrator",
+  "parts": [
+   [
+    "It was a dark and stormy night;",
+    4
+   ],
+   [
+    "the rain fell in torrents—",
+    3
+   ],
+   [
+    "except at occasional intervals,",
+    2
+   ],
+   [
+    "when it was checked by a violent gust of wind",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1830s",
+   "Author's initials: E. B.-L.",
+   "A gentleman highwayman in London"
+  ],
+  "key": "torrents",
+  "tiles": [
+   "torrents",
+   "sheets",
+   "buckets",
+   "streams"
+  ],
+  "note": "The sentence goes on for another thirty words, which is why it became the byword for overwritten openings. A contest for the worst first line of a novel is named after its author.",
+  "search": {
+   "title": "paul clifford",
+   "creator": "lytton"
+  },
+  "known": true
+ },
+ {
+  "day": 69,
+  "theme": "First lines",
+  "work": "The Good Soldier",
+  "author": "Ford Madox Ford",
+  "year": "1915",
+  "who": "John Dowell, the narrator",
+  "parts": [
+   [
+    "This is",
+    4
+   ],
+   [
+    "the saddest story",
+    3
+   ],
+   [
+    "I have",
+    2
+   ],
+   [
+    "ever heard.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1910s",
+   "Author's initials: F. M. F.",
+   "Two married couples meet every year at a German spa, and the narrator notices nothing"
+  ],
+  "key": "saddest",
+  "tiles": [
+   "saddest",
+   "strangest",
+   "oldest",
+   "truest"
+  ],
+  "note": "He says \"heard\", but it is his own story: his wife's affair went on under his nose for nine years. The calm opening is the first sign we can't trust him.",
+  "search": {
+   "title": "good soldier",
+   "creator": "ford",
+   "urls": [
+    "https://standardebooks.org/ebooks/ford-madox-ford/the-good-soldier/text/single-page"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 70,
+  "theme": "First lines",
+  "work": "Peter Pan",
+  "alias": [
+   "Peter and Wendy"
+  ],
+  "author": "J. M. Barrie",
+  "year": "1911",
+  "who": "The narrator",
+  "parts": [
+   [
+    "All children,",
+    3
+   ],
+   [
+    "except one,",
+    2
+   ],
+   [
+    "grow up.",
+    1
+   ]
+  ],
+  "hints": [
+   "A children's novel from the 1910s, based on the author's play",
+   "Author's initials: J. M. B.",
+   "A boy takes three London children to Neverland"
+  ],
+  "key": "children",
+  "tiles": [
+   "children",
+   "people",
+   "flowers",
+   "stories"
+  ],
+  "note": "The novel was first called Peter and Wendy. Five words give away the whole story, and the next sentence says the children all find out soon.",
+  "search": {
+   "title": "peter and wendy",
+   "creator": "barrie"
+  },
+  "known": true
+ },
+ {
+  "day": 71,
+  "theme": "First lines",
+  "work": "Don Quixote",
+  "author": "Miguel de Cervantes",
+  "year": "1605",
+  "who": "The narrator (John Ormsby's 1885 translation)",
+  "parts": [
+   [
+    "In a village of La Mancha,",
+    5
+   ],
+   [
+    "the name of which I have no desire to call to mind,",
+    4
+   ],
+   [
+    "there lived not long since one of those gentlemen",
+    3
+   ],
+   [
+    "that keep a lance in the lance-rack, an old buckler,",
+    2
+   ],
+   [
+    "a lean hack, and a greyhound for coursing.",
+    1
+   ]
+  ],
+  "hints": [
+   "A Spanish novel from the 1600s, in translation",
+   "Author's initials: M. de C.",
+   "An old gentleman reads too many tales of chivalry and rides out as a knight"
+  ],
+  "key": "greyhound",
+  "tiles": [
+   "greyhound",
+   "mastiff",
+   "falcon",
+   "mule"
+  ],
+  "note": "The lance, shield, thin horse and dog are a whole social class in a list: a gentleman with a name and no money. He is about to become a knight in his own mind.",
+  "search": {
+   "title": "don quixote",
+   "creator": "ormsby"
+  },
+  "known": false
+ },
+ {
+  "day": 72,
+  "theme": "First lines",
+  "work": "Scaramouche",
+  "author": "Rafael Sabatini",
+  "year": "1921",
+  "who": "The narrator",
+  "parts": [
+   [
+    "He was born",
+    4
+   ],
+   [
+    "with a gift of laughter",
+    2
+   ],
+   [
+    "and a sense",
+    3
+   ],
+   [
+    "that the world was mad.",
+    1
+   ]
+  ],
+  "hints": [
+   "An adventure novel from the 1920s",
+   "Author's initials: R. S.",
+   "A young lawyer hides from the French Revolution in a troupe of travelling actors"
+  ],
+  "key": "laughter",
+  "tiles": [
+   "laughter",
+   "courage",
+   "fortune",
+   "temper"
+  ],
+  "note": "The hero, André-Louis Moreau, lives up to it: a lawyer who becomes a clown, a fencing master and a revolutionary.",
+  "search": {
+   "title": "scaramouche",
+   "creator": "sabatini"
+  },
+  "known": false
+ },
+ {
+  "day": 73,
+  "theme": "First lines",
+  "work": "The Secret Garden",
+  "author": "Frances Hodgson Burnett",
+  "year": "1911",
+  "who": "The narrator",
+  "parts": [
+   [
+    "When Mary Lennox was sent to Misselthwaite Manor",
+    4
+   ],
+   [
+    "to live with her uncle",
+    3
+   ],
+   [
+    "everybody said she was",
+    2
+   ],
+   [
+    "the most disagreeable-looking child ever seen.",
+    1
+   ]
+  ],
+  "hints": [
+   "A children's novel from the 1910s",
+   "Author's initials: F. H. B.",
+   "An orphan from India finds a locked garden on a Yorkshire estate"
+  ],
+  "key": "disagreeable",
+  "tiles": [
+   "disagreeable",
+   "unhappy",
+   "lonely",
+   "spoiled"
+  ],
+  "note": "Burnett starts her heroine as unlikeable as possible, sour, sallow and rude, so the garden has something to mend.",
+  "search": {
+   "title": "secret garden",
+   "creator": "burnett"
+  },
+  "known": true
+ },
+ {
+  "day": 74,
+  "theme": "First lines",
+  "work": "A Passage to India",
+  "author": "E. M. Forster",
+  "year": "1924",
+  "who": "The narrator",
+  "parts": [
+   [
+    "Except for the Marabar Caves—",
+    4
+   ],
+   [
+    "and they are twenty miles off—",
+    3
+   ],
+   [
+    "the city of Chandrapore",
+    2
+   ],
+   [
+    "presents nothing extraordinary.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1920s",
+   "Author's initials: E. M. F.",
+   "An Englishwoman visits caves in British India, and an Indian doctor is accused"
+  ],
+  "key": "extraordinary",
+  "tiles": [
+   "extraordinary",
+   "remarkable",
+   "beautiful",
+   "ancient"
+  ],
+  "note": "The first sentence sets aside the one thing that matters. What happens, or doesn't, in the caves is the centre of the book, and Forster never says.",
+  "search": {
+   "title": "passage to india",
+   "creator": "forster"
+  },
+  "known": false
+ },
+ {
+  "day": 75,
+  "theme": "The Gothic",
+  "work": "The Castle of Otranto",
+  "author": "Horace Walpole",
+  "year": "1764",
+  "who": "The narrator",
+  "parts": [
+   [
+    "an enormous helmet,",
+    4
+   ],
+   [
+    "an hundred times more large",
+    3
+   ],
+   [
+    "than any casque ever made for human being,",
+    2
+   ],
+   [
+    "and shaded with a proportionable quantity of black feathers.",
+    1
+   ]
+  ],
+  "hints": [
+   "The first novel to call itself Gothic",
+   "Author's initials: H. W.",
+   "On his wedding day a prince's son is crushed by something that falls from the sky"
+  ],
+  "key": "feathers",
+  "tiles": [
+   "feathers",
+   "plumes",
+   "ribbons",
+   "iron"
+  ],
+  "note": "The story begins when this giant helmet falls into the courtyard and kills the bridegroom. Walpole first passed the book off as a translation of an old Italian manuscript.",
+  "search": {
+   "title": "castle of otranto",
+   "creator": "walpole"
+  },
+  "known": false
+ },
+ {
+  "day": 76,
+  "theme": "The Gothic",
+  "work": "La Belle Dame sans Merci",
+  "author": "John Keats",
+  "year": "1819",
+  "who": "The speaker, to the knight",
+  "parts": [
+   [
+    "O what can ail thee, knight-at-arms,",
+    4
+   ],
+   [
+    "/ Alone and palely loitering?",
+    3
+   ],
+   [
+    "/ The sedge has withered from the lake,",
+    2
+   ],
+   [
+    "/ And no birds sing.",
+    1
+   ]
+  ],
+  "hints": [
+   "A ballad from the 1810s",
+   "Author's initials: J. K.",
+   "A knight meets a beautiful lady in the meadows and wakes alone on a cold hillside"
+  ],
+  "key": "loitering",
+  "tiles": [
+   "loitering",
+   "wandering",
+   "weeping",
+   "waiting"
+  ],
+  "note": "Keats copied it into a letter in April 1819. The printed version of 1820 changed the knight to a \"wretched wight\"; most readers know the letter's version.",
+  "search": {
+   "title": "keats poems",
+   "creator": "keats"
+  },
+  "known": false
+ },
+ {
+  "day": 77,
+  "theme": "The Gothic",
+  "work": "Northanger Abbey",
+  "author": "Jane Austen",
+  "year": "1817",
+  "who": "The narrator",
+  "parts": [
+   [
+    "No one who had ever seen Catherine Morland in her infancy",
+    4
+   ],
+   [
+    "would have supposed her",
+    2
+   ],
+   [
+    "born to be",
+    3
+   ],
+   [
+    "an heroine.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1810s that teases the Gothic craze",
+   "Author's initials: J. A.",
+   "A young reader of horror novels visits a real abbey and imagines a crime"
+  ],
+  "key": "heroine",
+  "tiles": [
+   "heroine",
+   "beauty",
+   "scholar",
+   "lady"
+  ],
+  "note": "Austen's send-up of the novels everyone was reading. Catherine is ordinary on purpose, and the abbey's dark secret turns out to be a laundry list.",
+  "search": {
+   "title": "northanger abbey",
+   "creator": "austen"
+  },
+  "known": true
+ },
+ {
+  "day": 78,
+  "theme": "The Gothic",
+  "work": "Carmilla",
+  "author": "J. Sheridan Le Fanu",
+  "year": "1872",
+  "who": "Carmilla, to Laura",
+  "parts": [
+   [
+    "I live in your warm life,",
+    4
+   ],
+   [
+    "and you shall die—",
+    3
+   ],
+   [
+    "die, sweetly die—",
+    2
+   ],
+   [
+    "into mine.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novella from the 1870s",
+   "Author's initials: J. S. Le F.",
+   "A lonely girl in an Austrian castle befriends a guest who sleeps all day"
+  ],
+  "key": "sweetly",
+  "tiles": [
+   "sweetly",
+   "slowly",
+   "softly",
+   "gladly"
+  ],
+  "note": "A vampire story twenty-five years before Dracula, and it says out loud what Dracula only hints at: Carmilla's hunger is also love.",
+  "search": {
+   "title": "carmilla",
+   "creator": "le fanu"
+  },
+  "known": false
+ },
+ {
+  "theme": "The Gothic",
+  "work": "The Tell-Tale Heart",
+  "author": "Edgar Allan Poe",
+  "year": "1843",
+  "who": "The narrator",
+  "parts": [
+   [
+    "True!—nervous—",
+    4
+   ],
+   [
+    "very, very dreadfully nervous I had been and am;",
+    3
+   ],
+   [
+    "but why will you say",
+    2
+   ],
+   [
+    "that I am mad?",
+    1
+   ]
+  ],
+  "hints": [
+   "A short story from the 1840s",
+   "Author's initials: E. A. P.",
+   "A murderer insists he is sane, but hears his victim's heart beating under the floor"
+  ],
+  "key": "mad",
+  "tiles": [
+   "mad",
+   "guilty",
+   "ill",
+   "wicked"
+  ],
+  "note": "The narrator argues for his sanity in the first sentence, and the rest of the story is his proof, which proves the opposite.",
+  "search": {
+   "title": "tales",
+   "creator": "poe"
+  },
+  "day": 79,
+  "known": true
+ },
+ {
+  "day": 80,
+  "theme": "The Gothic",
+  "work": "The Turn of the Screw",
+  "author": "Henry James",
+  "year": "1898",
+  "who": "The narrator of the frame story",
+  "parts": [
+   [
+    "The story had held us,",
+    4
+   ],
+   [
+    "round the fire,",
+    3
+   ],
+   [
+    "sufficiently breathless,",
+    2
+   ],
+   [
+    "but except the obvious remark that it was gruesome,",
+    1
+   ]
+  ],
+  "hints": [
+   "A novella from the 1890s",
+   "Author's initials: H. J.",
+   "A governess believes two ghosts want the children in her care"
+  ],
+  "key": "breathless",
+  "tiles": [
+   "breathless",
+   "spellbound",
+   "silent",
+   "enthralled"
+  ],
+  "note": "The book opens with people telling ghost stories on Christmas Eve, and the story we get is a manuscript read aloud. James keeps us at a distance from the start, so we never know whether to believe the governess.",
+  "search": {
+   "title": "turn of the screw",
+   "creator": "james"
+  },
+  "known": false
+ },
+ {
+  "day": 81,
+  "theme": "The Gothic",
+  "work": "The Woman in White",
+  "author": "Wilkie Collins",
+  "year": "1860",
+  "who": "Walter Hartright, the first narrator",
+  "parts": [
+   [
+    "This is the story",
+    4
+   ],
+   [
+    "of what a Woman's patience can endure,",
+    3
+   ],
+   [
+    "and what a Man's resolution",
+    2
+   ],
+   [
+    "can achieve.",
+    1
+   ]
+  ],
+  "hints": [
+   "A sensation novel from the 1860s",
+   "Author's initials: W. C.",
+   "A drawing teacher meets a ghostly figure on a moonlit road outside London"
+  ],
+  "key": "patience",
+  "tiles": [
+   "patience",
+   "courage",
+   "sorrow",
+   "faith"
+  ],
+  "note": "Collins tells the story through several witnesses, like evidence at a trial. It first ran weekly in Dickens's magazine All the Year Round.",
+  "search": {
+   "title": "woman in white",
+   "creator": "collins"
+  },
+  "known": false
+ },
+ {
+  "day": 82,
+  "theme": "Shakespeare",
+  "work": "A Midsummer Night's Dream",
+  "author": "William Shakespeare",
+  "year": "c. 1595",
+  "who": "Lysander, to Hermia",
+  "parts": [
+   [
+    "For aught that I could ever read,",
+    4
+   ],
+   [
+    "/ Could ever hear by tale or history,",
+    3
+   ],
+   [
+    "/ The course of true love",
+    2
+   ],
+   [
+    "never did run smooth;",
+    1
+   ]
+  ],
+  "hints": [
+   "A comedy from the 1590s",
+   "Spoken by a young man whose love has just been forbidden to marry him",
+   "Four lovers lost in a wood near Athens, fairies, and a weaver with a donkey's head"
+  ],
+  "key": "smooth",
+  "tiles": [
+   "smooth",
+   "true",
+   "straight",
+   "long"
+  ],
+  "note": "Lysander says it to comfort Hermia, whose father wants her married to someone else. The rest of the play proves him right, with fairies making it worse.",
+  "search": {
+   "title": "midsummer night's dream",
+   "creator": "shakespeare"
+  },
+  "known": true
+ },
+ {
+  "day": 83,
+  "theme": "Shakespeare",
+  "work": "The Merchant of Venice",
+  "author": "William Shakespeare",
+  "year": "c. 1597",
+  "who": "Portia, disguised as a lawyer, to Shylock",
+  "parts": [
+   [
+    "The quality of mercy",
+    4
+   ],
+   [
+    "is not strain'd,",
+    3
+   ],
+   [
+    "/ It droppeth as the gentle rain from heaven",
+    2
+   ],
+   [
+    "/ Upon the place beneath:",
+    1
+   ]
+  ],
+  "hints": [
+   "A comedy from the 1590s",
+   "Spoken by a woman disguised as a young lawyer",
+   "A loan secured by a pound of flesh, and a trial in Venice"
+  ],
+  "key": "rain",
+  "tiles": [
+   "rain",
+   "dew",
+   "light",
+   "snow"
+  ],
+  "note": "\"Strained\" means forced: mercy can't be compelled. Portia asks Shylock to be merciful, he refuses, and she beats him on a technicality instead.",
+  "search": {
+   "title": "merchant of venice",
+   "creator": "shakespeare"
+  },
+  "known": true
+ },
+ {
+  "day": 84,
+  "theme": "Shakespeare",
+  "work": "Richard III",
+  "author": "William Shakespeare",
+  "year": "c. 1593",
+  "who": "Richard, Duke of Gloucester",
+  "parts": [
+   [
+    "Now is the winter",
+    4
+   ],
+   [
+    "of our discontent",
+    3
+   ],
+   [
+    "/ Made glorious summer",
+    2
+   ],
+   [
+    "by this sun of York;",
+    1
+   ]
+  ],
+  "hints": [
+   "A history play from the 1590s",
+   "The play's first line, spoken by a duke who will murder his way to the crown",
+   "Two princes in the Tower, and a horse he'd trade his kingdom for"
+  ],
+  "key": "discontent",
+  "tiles": [
+   "discontent",
+   "sorrow",
+   "weariness",
+   "waiting"
+  ],
+  "note": "Often quoted as if the winter is now. It isn't: the winter has been turned into summer by the new king, Richard's brother, the \"sun\" of York. Richard is bored by peace.",
+  "search": {
+   "title": "richard iii",
+   "creator": "shakespeare"
+  },
+  "known": true
+ },
+ {
+  "day": 85,
+  "theme": "Shakespeare",
+  "work": "Henry V",
+  "author": "William Shakespeare",
+  "year": "1599",
+  "who": "King Henry, to his soldiers",
+  "parts": [
+   [
+    "Once more unto the breach,",
+    4
+   ],
+   [
+    "dear friends, once more;",
+    3
+   ],
+   [
+    "/ Or close the wall up",
+    2
+   ],
+   [
+    "with our English dead.",
+    1
+   ]
+  ],
+  "hints": [
+   "A history play from 1599",
+   "A king rallies his soldiers at a siege in France",
+   "A young English king, once a wild prince, wins at Agincourt"
+  ],
+  "key": "breach",
+  "tiles": [
+   "breach",
+   "battle",
+   "fray",
+   "walls"
+  ],
+  "note": "The siege of Harfleur. The breach is a gap blown in the town wall; if they can't get through it, Henry says, they should fill it with their bodies.",
+  "search": {
+   "title": "henry v",
+   "creator": "shakespeare"
+  },
+  "known": true
+ },
+ {
+  "day": 86,
+  "theme": "Shakespeare",
+  "work": "Much Ado About Nothing",
+  "author": "William Shakespeare",
+  "year": "c. 1598",
+  "who": "Beatrice",
+  "parts": [
+   [
+    "I had rather hear",
+    4
+   ],
+   [
+    "my dog bark at a crow",
+    3
+   ],
+   [
+    "than a man swear",
+    2
+   ],
+   [
+    "he loves me.",
+    1
+   ]
+  ],
+  "hints": [
+   "A comedy from the 1590s",
+   "Spoken by a woman who trades insults with a soldier",
+   "Two sworn enemies of marriage are tricked into falling in love in Messina"
+  ],
+  "key": "crow",
+  "tiles": [
+   "crow",
+   "cat",
+   "moon",
+   "fox"
+  ],
+  "note": "Beatrice says it in the first scene, to Benedick. By the end of the play he swears exactly that, and she believes him.",
+  "search": {
+   "title": "much ado about nothing",
+   "creator": "shakespeare"
+  },
+  "known": true
+ },
+ {
+  "day": 87,
+  "theme": "Shakespeare",
+  "work": "Antony and Cleopatra",
+  "author": "William Shakespeare",
+  "year": "c. 1607",
+  "who": "Enobarbus, describing Cleopatra",
+  "parts": [
+   [
+    "Age cannot wither her,",
+    4
+   ],
+   [
+    "nor custom stale",
+    3
+   ],
+   [
+    "/ Her infinite",
+    2
+   ],
+   [
+    "variety:",
+    1
+   ]
+  ],
+  "hints": [
+   "A tragedy from the 1600s",
+   "Spoken by a blunt soldier describing a queen",
+   "A Roman general gives up half an empire for an Egyptian queen"
+  ],
+  "key": "wither",
+  "tiles": [
+   "wither",
+   "weary",
+   "tame",
+   "change"
+  ],
+  "note": "Enobarbus is the play's cynic, so the praise counts. He is explaining why Antony will never leave her, just after Antony has agreed to marry someone else.",
+  "search": {
+   "title": "antony and cleopatra",
+   "creator": "shakespeare"
+  },
+  "known": false
+ },
+ {
+  "day": 88,
+  "theme": "Shakespeare",
+  "work": "The Winter's Tale",
+  "author": "William Shakespeare",
+  "year": "c. 1611",
+  "who": "A stage direction: Antigonus leaves",
+  "parts": [
+   [
+    "Exit,",
+    3
+   ],
+   [
+    "pursued",
+    2
+   ],
+   [
+    "by a bear.",
+    1
+   ]
+  ],
+  "hints": [
+   "A late play, half tragedy and half comedy",
+   "Not a line of speech at all",
+   "A jealous king, an abandoned baby, and a statue that comes to life"
+  ],
+  "key": "bear",
+  "tiles": [
+   "bear",
+   "lion",
+   "ghost",
+   "wolf"
+  ],
+  "note": "The most famous stage direction in English. Antigonus has just left the baby Perdita on a shore; the bear eats him, and the play turns from tragedy to comedy.",
+  "search": {
+   "title": "winter's tale",
+   "creator": "shakespeare"
+  },
+  "known": false
+ },
+ {
+  "day": 89,
+  "theme": "Love",
+  "work": "Sonnets from the Portuguese",
+  "author": "Elizabeth Barrett Browning",
+  "year": "1850",
+  "who": "The speaker",
+  "parts": [
+   [
+    "How do I love thee?",
+    4
+   ],
+   [
+    "Let me count the ways.",
+    3
+   ],
+   [
+    "/ I love thee to the depth and breadth and height",
+    2
+   ],
+   [
+    "/ My soul can reach,",
+    1
+   ]
+  ],
+  "hints": [
+   "A sonnet from the 1850s, number 43 of a sequence",
+   "Author's initials: E. B. B.",
+   "Love sonnets written during a secret courtship with another poet"
+  ],
+  "key": "breadth",
+  "tiles": [
+   "breadth",
+   "width",
+   "length",
+   "distance"
+  ],
+  "note": "She wrote the sequence while Robert Browning was courting her against her father's wishes. They married in secret and left for Italy.",
+  "search": {
+   "title": "sonnets from the portuguese",
+   "creator": "browning"
+  },
+  "known": true
+ },
+ {
+  "day": 90,
+  "theme": "Love",
+  "work": "Sonnet 116",
+  "alias": [
+   "Shakespeare's Sonnets"
+  ],
+  "author": "William Shakespeare",
+  "year": "1609",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Let me not to the marriage of true minds",
+    4
+   ],
+   [
+    "/ Admit impediments.",
+    3
+   ],
+   [
+    "Love is not love",
+    2
+   ],
+   [
+    "/ Which alters when it alteration finds,",
+    1
+   ]
+  ],
+  "hints": [
+   "A sonnet from 1609",
+   "Author's initials: W. S.",
+   "Often read at weddings: real love doesn't change when circumstances do"
+  ],
+  "key": "impediments",
+  "tiles": [
+   "impediments",
+   "objections",
+   "obstacles",
+   "conditions"
+  ],
+  "note": "\"Impediments\" echoes the marriage service, where the priest asks whether anyone knows a reason the couple may not marry.",
+  "search": {
+   "title": "sonnets",
+   "creator": "shakespeare"
+  },
+  "known": false
+ },
+ {
+  "day": 91,
+  "theme": "Love",
+  "work": "A Red, Red Rose",
+  "author": "Robert Burns",
+  "year": "1794",
+  "who": "The speaker",
+  "parts": [
+   [
+    "O my Luve's like a red, red rose,",
+    4
+   ],
+   [
+    "/ That's newly sprung in June:",
+    3
+   ],
+   [
+    "/ O my Luve's like the melodie,",
+    2
+   ],
+   [
+    "/ That's sweetly play'd in tune.",
+    1
+   ]
+  ],
+  "hints": [
+   "A song from the 1790s",
+   "Author's initials: R. B.",
+   "A Scottish lover promises to love till the seas run dry"
+  ],
+  "key": "June",
+  "tiles": [
+   "June",
+   "May",
+   "spring",
+   "bloom"
+  ],
+  "note": "Burns collected and reworked old Scots songs, and this one stitches together lines from earlier ballads. Bob Dylan has called it his greatest inspiration.",
+  "search": {
+   "title": "burns poems",
+   "creator": "burns"
+  },
+  "known": false
+ },
+ {
+  "day": 92,
+  "theme": "Love",
+  "work": "She Walks in Beauty",
+  "author": "Lord Byron",
+  "year": "1815",
+  "who": "The speaker",
+  "parts": [
+   [
+    "She walks in beauty, like the night",
+    4
+   ],
+   [
+    "/ Of cloudless climes and starry skies;",
+    3
+   ],
+   [
+    "/ And all that's best of dark and bright",
+    2
+   ],
+   [
+    "/ Meet in her aspect and her eyes:",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1810s",
+   "Author's initials: Lord B.",
+   "A poet sees a woman in a black mourning dress at a party"
+  ],
+  "key": "starry",
+  "tiles": [
+   "starry",
+   "silver",
+   "endless",
+   "quiet"
+  ],
+  "note": "Byron is said to have written it after seeing his cousin by marriage in mourning, black dress with spangles. The beauty is in the mix of dark and light.",
+  "search": {
+   "title": "hebrew melodies",
+   "creator": "byron"
+  },
+  "known": false
+ },
+ {
+  "day": 93,
+  "theme": "Love",
+  "work": "The Passionate Shepherd to His Love",
+  "author": "Christopher Marlowe",
+  "year": "1599",
+  "who": "The shepherd",
+  "parts": [
+   [
+    "Come live with me",
+    4
+   ],
+   [
+    "and be my love,",
+    3
+   ],
+   [
+    "/ And we will all the pleasures prove",
+    2
+   ],
+   [
+    "/ That hills and valleys, dales and fields,",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1590s",
+   "Author's initials: C. M.",
+   "A shepherd promises his love beds of roses and a gown of the finest wool"
+  ],
+  "key": "pleasures",
+  "tiles": [
+   "pleasures",
+   "treasures",
+   "seasons",
+   "meadows"
+  ],
+  "note": "The text here is the 1599–1600 printing (England's Helicon). Walter Raleigh wrote the nymph's reply: flowers fade, wool wears out, and shepherds lie.",
+  "search": {
+   "title": "marlowe poems",
+   "creator": "marlowe"
+  },
+  "known": true
+ },
+ {
+  "day": 94,
+  "theme": "Love",
+  "work": "Wild Nights! Wild Nights!",
+  "author": "Emily Dickinson",
+  "year": "1891",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Wild nights! Wild nights!",
+    4
+   ],
+   [
+    "/ Were I with thee,",
+    3
+   ],
+   [
+    "/ Wild nights should be",
+    2
+   ],
+   [
+    "/ Our luxury!",
+    1
+   ]
+  ],
+  "hints": [
+   "A short poem first printed in the 1890s, after its author's death",
+   "Author's initials: E. D.",
+   "A speaker longs to be moored for the night in a lover's harbour"
+  ],
+  "key": "luxury",
+  "tiles": [
+   "luxury",
+   "glory",
+   "comfort",
+   "treasure"
+  ],
+  "note": "Her first editor, Thomas Wentworth Higginson, worried that readers would read too much into it. He printed it anyway.",
+  "search": {
+   "title": "poems second series",
+   "creator": "dickinson",
+   "gutenberg": [
+    "2679"
+   ]
+  },
+  "known": true
+ },
+ {
+  "day": 95,
+  "theme": "Love",
+  "work": "Cyrano de Bergerac",
+  "author": "Edmond Rostand",
+  "year": "1897",
+  "who": "Cyrano, to Roxane (Gladys Thomas and Mary F. Guillemard's 1898 translation)",
+  "parts": [
+   [
+    "A kiss, when all is said,—what is it?",
+    4
+   ],
+   [
+    "/ An oath that's ratified,—a sealed promise,",
+    3
+   ],
+   [
+    "/ A heart's avowal claiming confirmation,—",
+    2
+   ],
+   [
+    "/ A rose-dot on the 'i' of 'adoration,'—",
+    1
+   ]
+  ],
+  "hints": [
+   "A French verse play from the 1890s, in translation",
+   "Author's initials: E. R.",
+   "A swordsman with an enormous nose writes love letters for a handsome friend"
+  ],
+  "key": "rose",
+  "tiles": [
+   "rose",
+   "ink",
+   "gold",
+   "love"
+  ],
+  "note": "Cyrano says it in the dark under Roxane's balcony, speaking for his handsome friend Christian, who then climbs up to get the kiss. In Rostand's French the dot goes on the i of \"aimer\".",
+  "search": {
+   "title": "cyrano de bergerac",
+   "creator": "rostand"
+  },
+  "known": false
+ },
+ {
+  "day": 96,
+  "theme": "In translation",
+  "work": "The Iliad",
+  "author": "Homer",
+  "year": "c. 8th century BCE",
+  "who": "The poet, calling on the Muse (Samuel Butler's 1898 translation)",
+  "parts": [
+   [
+    "Sing, O goddess,",
+    4
+   ],
+   [
+    "the anger of Achilles son of Peleus,",
+    3
+   ],
+   [
+    "that brought countless ills",
+    2
+   ],
+   [
+    "upon the Achæans.",
+    1
+   ]
+  ],
+  "hints": [
+   "An epic from ancient Greek, translated by Samuel Butler",
+   "Author: traditionally called H.",
+   "Ten years into a war, a quarrel over a captive woman splits the Greek camp at Troy"
+  ],
+  "key": "anger",
+  "tiles": [
+   "anger",
+   "sorrow",
+   "glory",
+   "pride"
+  ],
+  "note": "The poem's first subject is a feeling, not a war. Butler, who also translated the Odyssey (day 22), turned Homer into plain prose.",
+  "search": {
+   "title": "iliad",
+   "creator": "butler"
+  },
+  "known": true
+ },
+ {
+  "day": 97,
+  "theme": "In translation",
+  "work": "The Divine Comedy",
+  "alias": [
+   "Inferno"
+  ],
+  "author": "Dante Alighieri",
+  "year": "c. 1320",
+  "who": "Dante (Henry Wadsworth Longfellow's 1867 translation)",
+  "parts": [
+   [
+    "Midway upon the journey of our life",
+    4
+   ],
+   [
+    "/ I found myself within a forest dark,",
+    3
+   ],
+   [
+    "/ For the straightforward pathway",
+    2
+   ],
+   [
+    "had been lost.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from 1300s Italy, translated by Henry Wadsworth Longfellow",
+   "Author's initials: D. A.",
+   "A poet lost in a wood is led down through the circles of Hell"
+  ],
+  "key": "forest",
+  "tiles": [
+   "forest",
+   "valley",
+   "desert",
+   "darkness"
+  ],
+  "note": "Dante was 35, halfway through the Bible's three score and ten. Longfellow kept the line count of the Italian exactly, and gave up rhyme to do it.",
+  "search": {
+   "title": "divine comedy",
+   "creator": "longfellow"
+  },
+  "known": true
+ },
+ {
+  "day": 98,
+  "theme": "In translation",
+  "work": "Madame Bovary",
+  "author": "Gustave Flaubert",
+  "year": "1857",
+  "who": "The narrator (Eleanor Marx-Aveling's 1886 translation)",
+  "parts": [
+   [
+    "human speech is like a cracked tin kettle,",
+    4
+   ],
+   [
+    "on which we hammer out tunes",
+    3
+   ],
+   [
+    "to make bears dance",
+    2
+   ],
+   [
+    "when we long to move the stars.",
+    1
+   ]
+  ],
+  "hints": [
+   "A French novel from the 1850s, translated by Eleanor Marx-Aveling",
+   "Author's initials: G. F.",
+   "A doctor's wife in Normandy, bored by her marriage, ruins herself for romance"
+  ],
+  "key": "stars",
+  "tiles": [
+   "stars",
+   "heavens",
+   "mountains",
+   "hearts"
+  ],
+  "note": "Flaubert spent days on single sentences, and here he admits language can never be good enough. His translator was Karl Marx's youngest daughter.",
+  "search": {
+   "title": "madame bovary",
+   "creator": "marx",
+   "q": "title:(madame bovary) AND mediatype:texts"
+  },
+  "known": false
+ },
+ {
+  "day": 99,
+  "theme": "In translation",
+  "work": "Les Misérables",
+  "author": "Victor Hugo",
+  "year": "1862",
+  "who": "The Bishop, to Jean Valjean (Isabel F. Hapgood's 1887 translation)",
+  "parts": [
+   [
+    "Jean Valjean, my brother,",
+    4
+   ],
+   [
+    "you no longer belong to evil,",
+    3
+   ],
+   [
+    "but to good.",
+    2
+   ],
+   [
+    "It is your soul that I buy from you;",
+    1
+   ]
+  ],
+  "hints": [
+   "A French novel from the 1860s, translated by Isabel F. Hapgood",
+   "Author's initials: V. H.",
+   "A released convict steals a bishop's silver, and the bishop lets him keep it"
+  ],
+  "key": "soul",
+  "tiles": [
+   "soul",
+   "life",
+   "heart",
+   "freedom"
+  ],
+  "note": "The police have brought Valjean back with the stolen silver. The bishop says it was a gift, adds two candlesticks, and changes Valjean's life.",
+  "search": {
+   "title": "misérables",
+   "creator": "hapgood",
+   "q": "hugo AND hapgood AND mediatype:texts"
+  },
+  "known": false
+ },
+ {
+  "day": 100,
+  "theme": "In translation",
+  "work": "Crime and Punishment",
+  "author": "Fyodor Dostoevsky",
+  "year": "1866",
+  "who": "The narrator (Constance Garnett's 1914 translation)",
+  "parts": [
+   [
+    "On an exceptionally hot evening early in July",
+    4
+   ],
+   [
+    "a young man came out of the garret",
+    3
+   ],
+   [
+    "in which he lodged in S. Place",
+    2
+   ],
+   [
+    "and walked slowly, as though in hesitation, towards K. bridge.",
+    1
+   ]
+  ],
+  "hints": [
+   "A Russian novel from the 1860s, translated by Constance Garnett",
+   "Author's initials: F. D.",
+   "A poor student in St Petersburg kills a pawnbroker to test a theory"
+  ],
+  "key": "garret",
+  "tiles": [
+   "garret",
+   "tavern",
+   "church",
+   "prison"
+  ],
+  "note": "Raskolnikov is rehearsing the murder on this walk. Garnett, who also translated Anna Karenina (day 17), brought most of the Russian classics into English.",
+  "search": {
+   "title": "crime and punishment",
+   "creator": "garnett"
+  },
+  "known": false
+ },
+ {
+  "theme": "In translation",
+  "work": "A Doll's House",
+  "author": "Henrik Ibsen",
+  "year": "1879",
+  "who": "Nora, to Helmer (R. Farquharson Sharp's 1910 translation)",
+  "parts": [
+   [
+    "I have been your doll-wife,",
+    4
+   ],
+   [
+    "just as at home I was papa's doll-child;",
+    3
+   ],
+   [
+    "and here the children",
+    2
+   ],
+   [
+    "have been my dolls.",
+    1
+   ]
+  ],
+  "hints": [
+   "A Norwegian play from the 1870s, translated by R. Farquharson Sharp",
+   "Author's initials: H. I.",
+   "A wife with a secret debt finally sees her marriage clearly"
+  ],
+  "key": "dolls",
+  "tiles": [
+   "dolls",
+   "toys",
+   "pets",
+   "puppets"
+  ],
+  "note": "Nora is about to walk out on her husband and children. For a German production the leading actress refused to play that ending, and Ibsen, under protest, wrote one where she stays.",
+  "search": {
+   "title": "doll's house",
+   "creator": "ibsen"
+  },
+  "day": 101,
+  "known": false
+ },
+ {
+  "day": 102,
+  "theme": "In translation",
+  "work": "Faust",
+  "author": "Johann Wolfgang von Goethe",
+  "year": "1808",
+  "who": "Faust (Bayard Taylor's 1870 translation)",
+  "parts": [
+   [
+    "Two souls, alas!",
+    4
+   ],
+   [
+    "reside within my breast,",
+    3
+   ],
+   [
+    "/ And each withdraws from,",
+    2
+   ],
+   [
+    "and repels, its brother.",
+    1
+   ]
+  ],
+  "hints": [
+   "A German verse play from 1808, translated by Bayard Taylor",
+   "Author's initials: J. W. von G.",
+   "A scholar bored with all knowledge makes a wager with the devil"
+  ],
+  "key": "souls",
+  "tiles": [
+   "souls",
+   "hearts",
+   "minds",
+   "voices"
+  ],
+  "note": "Faust says it on an Easter walk, before he meets the devil: one soul clings to the world, the other wants to fly. Taylor kept Goethe's metres and rhymes.",
+  "search": {
+   "title": "faust",
+   "creator": "taylor"
+  },
+  "known": false
+ },
+ {
+  "day": 103,
+  "theme": "Last lines",
+  "work": "The Sun Also Rises",
+  "author": "Ernest Hemingway",
+  "year": "1926",
+  "who": "Jake Barnes, the narrator, answering Brett",
+  "parts": [
+   [
+    "He raised his baton.",
+    4
+   ],
+   [
+    "The car slowed suddenly pressing Brett against me.",
+    3
+   ],
+   [
+    "“Yes,” I said.",
+    2
+   ],
+   [
+    "“Isn't it pretty to think so?”",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1920s",
+   "Author's initials: E. H.",
+   "American and British expatriates drink their way from Paris to the bullfights in Pamplona"
+  ],
+  "key": "baton",
+  "tiles": [
+   "baton",
+   "hand",
+   "whistle",
+   "arm"
+  ],
+  "note": "Brett has just said they could have had \"such a damned good time together\". A policeman's raised baton cuts in before Jake answers. He was wounded in the war and can't be her lover.",
+  "search": {
+   "title": "sun also rises",
+   "creator": "hemingway",
+   "urls": [
+    "https://standardebooks.org/ebooks/ernest-hemingway/the-sun-also-rises/text/single-page"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 104,
+  "theme": "Last lines",
+  "work": "The Dead",
+  "alias": [
+   "Dubliners"
+  ],
+  "author": "James Joyce",
+  "year": "1914",
+  "who": "The narrator, about Gabriel Conroy",
+  "parts": [
+   [
+    "His soul swooned slowly",
+    5
+   ],
+   [
+    "as he heard the snow falling faintly through the universe",
+    4
+   ],
+   [
+    "and faintly falling,",
+    3
+   ],
+   [
+    "like the descent of their last end,",
+    2
+   ],
+   [
+    "upon all the living and the dead.",
+    1
+   ]
+  ],
+  "hints": [
+   "The last story in a collection from the 1910s",
+   "Author's initials: J. J.",
+   "After a Christmas party in Dublin, a man learns his wife once loved a boy who died"
+  ],
+  "key": "snow",
+  "tiles": [
+   "snow",
+   "rain",
+   "dust",
+   "leaves"
+  ],
+  "note": "The last sentence of Dubliners. \"Falling faintly ... faintly falling\" turns back on itself, like the snow settling on everything.",
+  "search": {
+   "title": "dubliners",
+   "creator": "joyce"
+  },
+  "known": false
+ },
+ {
+  "day": 105,
+  "theme": "Last lines",
+  "work": "Great Expectations",
+  "author": "Charles Dickens",
+  "year": "1861",
+  "who": "Pip, the narrator",
+  "parts": [
+   [
+    "and in all the broad expanse of tranquil light",
+    4
+   ],
+   [
+    "they showed to me,",
+    3
+   ],
+   [
+    "I saw no shadow",
+    2
+   ],
+   [
+    "of another parting from her.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1860s",
+   "Author's initials: C. D.",
+   "A blacksmith's boy is made a gentleman by a secret benefactor"
+  ],
+  "key": "shadow",
+  "tiles": [
+   "shadow",
+   "sign",
+   "hope",
+   "fear"
+  ],
+  "note": "Dickens first wrote a sadder ending. Bulwer-Lytton (day 68) persuaded him to change it, and even this happier one is careful not to promise.",
+  "search": {
+   "title": "great expectations",
+   "creator": "dickens"
+  },
+  "known": false
+ },
+ {
+  "day": 106,
+  "theme": "Last lines",
+  "work": "Sons and Lovers",
+  "author": "D. H. Lawrence",
+  "year": "1913",
+  "who": "The narrator, about Paul Morel",
+  "parts": [
+   [
+    "He would not take that direction,",
+    4
+   ],
+   [
+    "to the darkness, to follow her.",
+    3
+   ],
+   [
+    "He walked towards the faintly humming, glowing town,",
+    2
+   ],
+   [
+    "quickly.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1910s",
+   "Author's initials: D. H. L.",
+   "A miner's son in Nottinghamshire is torn between his mother and the women he loves"
+  ],
+  "key": "darkness",
+  "tiles": [
+   "darkness",
+   "river",
+   "night",
+   "grave"
+  ],
+  "note": "\"Her\" is his mother, who has just died. Paul has thought about following her; the last word is his choice to live.",
+  "search": {
+   "title": "sons and lovers",
+   "creator": "lawrence"
+  },
+  "known": false
+ },
+ {
+  "day": 107,
+  "theme": "Last lines",
+  "work": "Gulliver's Travels",
+  "author": "Jonathan Swift",
+  "year": "1726",
+  "who": "Lemuel Gulliver, the narrator",
+  "parts": [
+   [
+    "I here entreat those",
+    4
+   ],
+   [
+    "who have any tincture",
+    3
+   ],
+   [
+    "of this absurd vice,",
+    2
+   ],
+   [
+    "that they will not presume to come in my sight.",
+    1
+   ]
+  ],
+  "hints": [
+   "A satire from the 1720s",
+   "Author's initials: J. S.",
+   "A ship's surgeon visits tiny people, giants, a flying island and a land of horses"
+  ],
+  "key": "vice",
+  "tiles": [
+   "vice",
+   "pride",
+   "folly",
+   "habit"
+  ],
+  "note": "The vice is pride. Gulliver comes home from the land of the wise horses unable to stand other people, his own family included.",
+  "search": {
+   "title": "gulliver's travels",
+   "creator": "swift"
+  },
+  "known": false
+ },
+ {
+  "day": 108,
+  "theme": "Last lines",
+  "work": "Stopping by Woods on a Snowy Evening",
+  "author": "Robert Frost",
+  "year": "1923",
+  "who": "The speaker",
+  "parts": [
+   [
+    "The woods are lovely, dark and deep,",
+    4
+   ],
+   [
+    "/ But I have promises to keep,",
+    3
+   ],
+   [
+    "/ And miles to go before I sleep,",
+    2
+   ],
+   [
+    "/ And miles to go before I sleep.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1920s",
+   "Author's initials: R. F.",
+   "A rider stops his horse by a wood on the darkest evening of the year"
+  ],
+  "key": "promises",
+  "tiles": [
+   "promises",
+   "errands",
+   "duties",
+   "debts"
+  ],
+  "note": "The last line repeats the one before it, and the repeat changes it: the second time, \"sleep\" sounds like more than a night's rest.",
+  "search": {
+   "title": "new hampshire",
+   "creator": "frost"
+  },
+  "known": true
+ },
+ {
+  "day": 109,
+  "theme": "Last lines",
+  "work": "The Hollow Men",
+  "author": "T. S. Eliot",
+  "year": "1925",
+  "who": "The hollow men",
+  "parts": [
+   [
+    "This is the way the world ends",
+    3
+   ],
+   [
+    "/ Not with a bang",
+    2
+   ],
+   [
+    "but a whimper.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1920s",
+   "Author's initials: T. S. E.",
+   "Empty men, stuffed with straw, chant in a dead land"
+  ],
+  "key": "whimper",
+  "tiles": [
+   "whimper",
+   "sigh",
+   "cry",
+   "prayer"
+  ],
+  "note": "The poem ends on a children's rhyme, \"Here we go round the mulberry bush\", bent out of shape. The line is repeated three times before this one.",
+  "search": {
+   "title": "poems 1909-1925",
+   "creator": "eliot"
+  },
+  "known": true
+ },
+ {
+  "day": 110,
+  "theme": "Women writers",
+  "work": "A Room of One's Own",
+  "author": "Virginia Woolf",
+  "year": "1929",
+  "who": "The speaker of the lectures",
+  "parts": [
+   [
+    "a woman must have money",
+    4
+   ],
+   [
+    "and a room of her own",
+    3
+   ],
+   [
+    "if she is",
+    2
+   ],
+   [
+    "to write fiction;",
+    1
+   ]
+  ],
+  "hints": [
+   "A long essay from the 1920s, first given as lectures",
+   "Author's initials: V. W.",
+   "Asked to talk about women and fiction, a writer invents Shakespeare's gifted sister"
+  ],
+  "key": "money",
+  "tiles": [
+   "money",
+   "time",
+   "courage",
+   "quiet"
+  ],
+  "note": "Woolf said it in lectures at Cambridge women's colleges in 1928. The money she has in mind is five hundred pounds a year, and the room has a lock.",
+  "search": {
+   "title": "room of one's own",
+   "creator": "woolf"
+  },
+  "known": true
+ },
+ {
+  "day": 111,
+  "theme": "Women writers",
+  "work": "A Vindication of the Rights of Woman",
+  "author": "Mary Wollstonecraft",
+  "year": "1792",
+  "who": "The author, about women",
+  "parts": [
+   [
+    "I do not wish them",
+    3
+   ],
+   [
+    "to have power over men;",
+    2
+   ],
+   [
+    "but over themselves.",
+    1
+   ]
+  ],
+  "hints": [
+   "A treatise from the 1790s",
+   "Author's initials: M. W.",
+   "A reply to those who would educate girls only to please men"
+  ],
+  "key": "power",
+  "tiles": [
+   "power",
+   "rule",
+   "rights",
+   "victory"
+  ],
+  "note": "Wollstonecraft's daughter was Mary Shelley, who wrote Frankenstein (day 5). She argues that education, not nature, makes women seem weaker.",
+  "search": {
+   "title": "vindication of the rights of woman",
+   "creator": "wollstonecraft"
+  },
+  "known": false
+ },
+ {
+  "day": 112,
+  "theme": "Women writers",
+  "work": "I'm Nobody! Who are you?",
+  "author": "Emily Dickinson",
+  "year": "1891",
+  "who": "The speaker",
+  "parts": [
+   [
+    "I'm nobody! Who are you?",
+    4
+   ],
+   [
+    "/ Are you nobody, too?",
+    3
+   ],
+   [
+    "/ Then there's a pair of us—don't tell!",
+    2
+   ],
+   [
+    "/ They'd banish us, you know.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem first printed in the 1890s",
+   "Author's initials: E. D.",
+   "Two secret nobodies agree that being somebody would be dreary"
+  ],
+  "key": "banish",
+  "tiles": [
+   "banish",
+   "advertise",
+   "punish",
+   "notice"
+  ],
+  "note": "Almost none of Dickinson's nearly 1,800 poems were printed while she lived. Her first editors changed the last word of this line from \"advertise\" to \"banish\".",
+  "search": {
+   "title": "poems second series",
+   "creator": "dickinson",
+   "gutenberg": [
+    "2679"
+   ]
+  },
+  "known": true
+ },
+ {
+  "day": 113,
+  "theme": "Women writers",
+  "work": "How It Feels to Be Colored Me",
+  "author": "Zora Neale Hurston",
+  "year": "1928",
+  "who": "The author",
+  "parts": [
+   [
+    "I am not tragically colored.",
+    4
+   ],
+   [
+    "There is no great sorrow",
+    3
+   ],
+   [
+    "dammed up in my soul,",
+    2
+   ],
+   [
+    "nor lurking behind my eyes.",
+    1
+   ]
+  ],
+  "hints": [
+   "A magazine essay from the 1920s",
+   "Author's initials: Z. N. H.",
+   "A writer remembers the day she \"became colored\", when she left her Florida town at thirteen"
+  ],
+  "key": "sorrow",
+  "tiles": [
+   "sorrow",
+   "anger",
+   "secret",
+   "grief"
+  ],
+  "note": "Hurston grew up in Eatonville, an all-Black town in Florida. The essay refuses the pity readers expected from her.",
+  "search": {
+   "title": "world tomorrow",
+   "creator": "hurston",
+   "urls": [
+    "https://www.literaryladiesguide.com/?p=25492",
+    "https://americanliterature.com/author/zora-neale-hurston/essay/how-it-feels-to-be-colored-me",
+    "https://scalar.lehigh.edu/african-american-poetry-a-digital-anthology/zora-neale-hurston-how-it-feels-to-be-colored-me-1928",
+    "https://billofrightsinstitute.org/activities/zora-neale-hurston-how-it-feels-to-be-colored-me-1928/"
+   ],
+   "gutenberg": [
+    "73549"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 114,
+  "theme": "Women writers",
+  "work": "O Pioneers!",
+  "author": "Willa Cather",
+  "year": "1913",
+  "who": "Carl Linstrum, to Alexandra",
+  "parts": [
+   [
+    "there are only two or three human stories,",
+    4
+   ],
+   [
+    "and they go on repeating themselves",
+    3
+   ],
+   [
+    "as fiercely as if they had never happened before;",
+    2
+   ],
+   [
+    "like the larks in this country,",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1910s",
+   "Author's initials: W. C.",
+   "A Swedish immigrant's daughter makes the Nebraska prairie pay"
+  ],
+  "key": "larks",
+  "tiles": [
+   "larks",
+   "crickets",
+   "wolves",
+   "rivers"
+  ],
+  "note": "The larks have been singing the same five notes for thousands of years. Cather took her title from a Whitman poem.",
+  "search": {
+   "title": "o pioneers",
+   "creator": "cather"
+  },
+  "known": false
+ },
+ {
+  "day": 115,
+  "theme": "Women writers",
+  "work": "The House of Mirth",
+  "author": "Edith Wharton",
+  "year": "1905",
+  "who": "The narrator",
+  "parts": [
+   [
+    "Selden paused in surprise.",
+    4
+   ],
+   [
+    "In the afternoon rush of the Grand Central Station",
+    3
+   ],
+   [
+    "his eyes had been refreshed",
+    2
+   ],
+   [
+    "by the sight of Miss Lily Bart.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1900s",
+   "Author's initials: E. W.",
+   "A beautiful, penniless woman in New York society runs out of time to marry well"
+  ],
+  "key": "refreshed",
+  "tiles": [
+   "refreshed",
+   "startled",
+   "dazzled",
+   "troubled"
+  ],
+  "note": "We meet Lily through a man's eyes, as society will judge her all book long. The title comes from Ecclesiastes: \"the heart of fools is in the house of mirth.\"",
+  "search": {
+   "title": "house of mirth",
+   "creator": "wharton"
+  },
+  "known": false
+ },
+ {
+  "day": 116,
+  "theme": "Women writers",
+  "work": "Cranford",
+  "author": "Elizabeth Gaskell",
+  "year": "1853",
+  "who": "Mary Smith, the narrator",
+  "parts": [
+   [
+    "In the first place,",
+    3
+   ],
+   [
+    "Cranford is in possession of the Amazons;",
+    4
+   ],
+   [
+    "all the holders of houses above a certain rent",
+    2
+   ],
+   [
+    "are women.",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1850s, first a magazine serial",
+   "Author's initials: E. G.",
+   "Genteel widows and spinsters in a small English town keep up appearances"
+  ],
+  "key": "Amazons",
+  "tiles": [
+   "Amazons",
+   "widows",
+   "spinsters",
+   "ladies"
+  ],
+  "note": "Gaskell's sketches first ran in Dickens's magazine Household Words. Men in Cranford, the narrator says, are \"so in the way\".",
+  "search": {
+   "title": "cranford",
+   "creator": "gaskell"
+  },
+  "known": false
+ },
+ {
+  "day": 117,
+  "theme": "",
+  "work": "Oliver Twist",
+  "author": "Charles Dickens",
+  "year": "1838",
+  "who": "Oliver, to the master of the workhouse",
+  "parts": [
+   [
+    "basin and spoon in hand,",
+    4
+   ],
+   [
+    "said: somewhat alarmed at his own temerity:",
+    3
+   ],
+   [
+    "“Please, sir,",
+    2
+   ],
+   [
+    "I want some more.”",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1830s",
+   "Author's initials: C. D.",
+   "An orphan in a workhouse asks for a second helping"
+  ],
+  "key": "temerity",
+  "tiles": [
+   "temerity",
+   "hunger",
+   "boldness",
+   "daring"
+  ],
+  "note": "The boys drew lots to decide who would ask. The master hits Oliver with the ladle and the board offers five pounds to anyone who will take him away.",
+  "search": {
+   "title": "oliver twist",
+   "creator": "dickens"
+  },
+  "known": true
+ },
+ {
+  "theme": "",
+  "work": "The Bible",
+  "alias": [
+   "Ecclesiastes",
+   "King James Bible"
+  ],
+  "author": "King James Version",
+  "year": "1611",
+  "who": "The Preacher",
+  "parts": [
+   [
+    "To every thing there is a season,",
+    4
+   ],
+   [
+    "and a time to every purpose under the heaven:",
+    3
+   ],
+   [
+    "A time to be born,",
+    2
+   ],
+   [
+    "and a time to die;",
+    1
+   ]
+  ],
+  "hints": [
+   "A book of wisdom, in an English translation of 1611",
+   "Traditionally credited to a king, the son of David",
+   "A preacher says all is vanity, then lists a time for everything"
+  ],
+  "key": "season",
+  "tiles": [
+   "season",
+   "hour",
+   "cause",
+   "end"
+  ],
+  "note": "Ecclesiastes 3:1–2. Pete Seeger set these verses to music as \"Turn! Turn! Turn!\", a number-one hit for the Byrds in 1965.",
+  "search": {
+   "title": "bible",
+   "creator": "",
+   "gutenberg": [
+    "10"
+   ],
+   "q": "title:(holy bible) AND (king james OR authorized version) AND mediatype:texts"
+  },
+  "day": 118,
+  "known": true
+ },
+ {
+  "day": 119,
+  "theme": "",
+  "work": "Invictus",
+  "author": "William Ernest Henley",
+  "year": "1888",
+  "who": "The speaker",
+  "parts": [
+   [
+    "It matters not how strait the gate,",
+    4
+   ],
+   [
+    "/ How charged with punishments the scroll,",
+    3
+   ],
+   [
+    "/ I am the master of my fate:",
+    2
+   ],
+   [
+    "/ I am the captain of my soul.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1880s",
+   "Author's initials: W. E. H.",
+   "Written in hospital by a poet who had lost a leg to tuberculosis"
+  ],
+  "key": "captain",
+  "tiles": [
+   "captain",
+   "pilot",
+   "ruler",
+   "keeper"
+  ],
+  "note": "Henley wrote it in hospital in Edinburgh, where surgeons saved his other leg. \"Strait\" means narrow, as in the Bible's strait gate. His friend Stevenson based Long John Silver on him.",
+  "search": {
+   "title": "book of verses",
+   "creator": "henley"
+  },
+  "known": false
+ },
+ {
+  "day": 120,
+  "theme": "",
+  "work": "Lady Windermere's Fan",
+  "author": "Oscar Wilde",
+  "year": "1893",
+  "who": "Lord Darlington",
+  "parts": [
+   [
+    "We are all",
+    4
+   ],
+   [
+    "in the gutter,",
+    3
+   ],
+   [
+    "but some of us",
+    2
+   ],
+   [
+    "are looking at the stars.",
+    1
+   ]
+  ],
+  "hints": [
+   "A comedy from the 1890s",
+   "Author's initials: O. W.",
+   "A young wife suspects her husband, and a woman with a past saves her reputation"
+  ],
+  "key": "gutter",
+  "tiles": [
+   "gutter",
+   "mud",
+   "dark",
+   "street"
+  ],
+  "note": "Wilde gives his most hopeful line to a seducer, late at night, among men trading cynical jokes.",
+  "search": {
+   "title": "lady windermere's fan",
+   "creator": "wilde"
+  },
+  "known": false
+ },
+ {
+  "day": 121,
+  "theme": "",
+  "work": "The Hound of the Baskervilles",
+  "author": "Arthur Conan Doyle",
+  "year": "1902",
+  "who": "Dr Mortimer, to Holmes",
+  "parts": [
+   [
+    "Mr. Holmes,",
+    3
+   ],
+   [
+    "they were the footprints",
+    1
+   ],
+   [
+    "of a gigantic",
+    2
+   ],
+   [
+    "hound!",
+    4
+   ]
+  ],
+  "hints": [
+   "A detective novel from the 1900s",
+   "Author's initials: A. C. D.",
+   "A family curse on the moors of Devon"
+  ],
+  "key": "footprints",
+  "tiles": [
+   "footprints",
+   "tracks",
+   "bones",
+   "marks"
+  ],
+  "note": "The end of chapter two, written for a magazine serial. Mortimer found the prints beside the dead body of Sir Charles Baskerville.",
+  "search": {
+   "title": "hound of the baskervilles",
+   "creator": "doyle"
+  },
+  "known": false
+ },
+ {
+  "theme": "",
+  "work": "Sympathy",
+  "author": "Paul Laurence Dunbar",
+  "year": "1899",
+  "who": "The speaker",
+  "parts": [
+   [
+    "I know why the caged bird sings, ah me,",
+    4
+   ],
+   [
+    "/ When his wing is bruised and his bosom sore,—",
+    3
+   ],
+   [
+    "/ When he beats his bars and he would be free;",
+    2
+   ],
+   [
+    "/ It is not a carol of joy or glee,",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1890s",
+   "Author's initials: P. L. D.",
+   "A speaker compares himself to a bird beating its wings against a cage"
+  ],
+  "key": "caged",
+  "tiles": [
+   "caged",
+   "captive",
+   "wounded",
+   "lonely"
+  ],
+  "note": "Maya Angelou took the title of her 1969 memoir from this line. Dunbar, the son of formerly enslaved parents, was one of the first Black poets to find a national readership.",
+  "search": {
+   "title": "lyrics of the hearthside",
+   "creator": "dunbar"
+  },
+  "day": 122,
+  "known": false
+ },
+ {
+  "day": 123,
+  "theme": "",
+  "work": "Walden",
+  "author": "Henry David Thoreau",
+  "year": "1854",
+  "who": "The author",
+  "parts": [
+   [
+    "I went to the woods",
+    5
+   ],
+   [
+    "because I wished to live deliberately,",
+    4
+   ],
+   [
+    "to front only the essential facts of life,",
+    3
+   ],
+   [
+    "and see if I could not learn what it had to teach,",
+    2
+   ],
+   [
+    "and not, when I came to die, discover that I had not lived.",
+    1
+   ]
+  ],
+  "hints": [
+   "A book from the 1850s",
+   "Author's initials: H. D. T.",
+   "A man builds a cabin by a pond in Massachusetts and lives there two years"
+  ],
+  "key": "deliberately",
+  "tiles": [
+   "deliberately",
+   "simply",
+   "honestly",
+   "freely"
+  ],
+  "note": "The woods were a mile from his neighbours and two from Concord, on land owned by Emerson. He walked into town most days.",
+  "search": {
+   "title": "walden",
+   "creator": "thoreau"
+  },
+  "known": false
+ },
+ {
+  "theme": "Childhood",
+  "work": "Winnie-the-Pooh",
+  "author": "A. A. Milne",
+  "year": "1926",
+  "who": "The narrator",
+  "parts": [
+   [
+    "Here is Edward Bear,",
+    4
+   ],
+   [
+    "coming downstairs now, bump, bump, bump,",
+    3
+   ],
+   [
+    "on the back of his head,",
+    2
+   ],
+   [
+    "behind Christopher Robin.",
+    1
+   ]
+  ],
+  "hints": [
+   "A children's book from the 1920s",
+   "Author's initials: A. A. M.",
+   "A bear of very little brain lives in the Hundred Acre Wood"
+  ],
+  "key": "bump",
+  "tiles": [
+   "bump",
+   "thump",
+   "bang",
+   "step"
+  ],
+  "note": "The book's first sentence. He is still Edward Bear, the name of Christopher Milne's real teddy; the Winnie came from a black bear at London Zoo.",
+  "search": {
+   "title": "winnie-the-pooh",
+   "creator": "milne"
+  },
+  "known": true,
+  "day": 124
+ },
+ {
+  "theme": "Childhood",
+  "work": "The Wonderful Wizard of Oz",
+  "author": "L. Frank Baum",
+  "year": "1900",
+  "who": "Dorothy, to the Scarecrow",
+  "parts": [
+   [
+    "No matter how dreary and gray our homes are,",
+    4
+   ],
+   [
+    "we people of flesh and blood would rather live there than in any other country,",
+    3
+   ],
+   [
+    "be it ever so beautiful.",
+    2
+   ],
+   [
+    "There is no place like home.",
+    1
+   ]
+  ],
+  "hints": [
+   "A children's novel from 1900",
+   "Author's initials: L. F. B.",
+   "A Kansas girl, a cyclone, and three companions on a yellow brick road"
+  ],
+  "key": "dreary",
+  "tiles": [
+   "dreary",
+   "dull",
+   "poor",
+   "small"
+  ],
+  "note": "The Scarecrow can't see why anyone would leave Oz for grey Kansas. The ruby slippers came with the 1939 film; in the book they are silver shoes.",
+  "search": {
+   "title": "wonderful wizard of oz",
+   "creator": "baum"
+  },
+  "known": true,
+  "day": 125
+ },
+ {
+  "theme": "Childhood",
+  "work": "The Velveteen Rabbit",
+  "author": "Margery Williams",
+  "year": "1922",
+  "who": "The Skin Horse, to the Rabbit",
+  "parts": [
+   [
+    "“Real isn't how you are made,”",
+    4
+   ],
+   [
+    "said the Skin Horse.",
+    3
+   ],
+   [
+    "“It's a thing that happens to you.",
+    2
+   ],
+   [
+    "When a child loves you for a long, long time, not just to play with, but REALLY loves you, then you become Real.”",
+    1
+   ]
+  ],
+  "hints": [
+   "A children's book from the 1920s",
+   "Author's initials: M. W.",
+   "A stuffed toy rabbit learns from an old toy horse how toys come alive"
+  ],
+  "key": "Real",
+  "tiles": [
+   "Real",
+   "alive",
+   "loved",
+   "new"
+  ],
+  "note": "The Skin Horse is the oldest toy in the nursery, and his seams show. He warns the Rabbit that becoming Real can hurt.",
+  "search": {
+   "title": "velveteen rabbit",
+   "creator": "williams"
+  },
+  "day": 126,
+  "known": false
+ },
+ {
+  "theme": "Childhood",
+  "work": "Just So Stories",
+  "author": "Rudyard Kipling",
+  "year": "1902",
+  "who": "The storyteller",
+  "parts": [
+   [
+    "In the High and Far-Off Times",
+    4
+   ],
+   [
+    "the Elephant,",
+    3
+   ],
+   [
+    "O Best Beloved,",
+    2
+   ],
+   [
+    "had no trunk.",
+    1
+   ]
+  ],
+  "hints": [
+   "A book of animal stories for children from the 1900s",
+   "Author's initials: R. K.",
+   "How the leopard got his spots and the camel his hump"
+  ],
+  "key": "trunk",
+  "tiles": [
+   "trunk",
+   "tusks",
+   "ears",
+   "tail"
+  ],
+  "note": "From \"The Elephant's Child\". Kipling first told the stories to his daughter Josephine, the Best Beloved; she died at six, three years before the book came out.",
+  "search": {
+   "title": "just so stories",
+   "creator": "kipling"
+  },
+  "day": 127,
+  "known": false
+ },
+ {
+  "theme": "Childhood",
+  "work": "The Owl and the Pussy-cat",
+  "author": "Edward Lear",
+  "year": "1871",
+  "who": "The speaker",
+  "parts": [
+   [
+    "The Owl and the Pussy-cat went to sea",
+    4
+   ],
+   [
+    "/ In a beautiful pea-green boat,",
+    3
+   ],
+   [
+    "/ They took some honey, and plenty of money,",
+    2
+   ],
+   [
+    "/ Wrapped up in a five-pound note.",
+    1
+   ]
+  ],
+  "hints": [
+   "A nonsense poem from the 1870s",
+   "Author's initials: E. L.",
+   "Two animals elope, buy a ring from a pig, and dance by the light of the moon"
+  ],
+  "key": "honey",
+  "tiles": [
+   "honey",
+   "butter",
+   "jam",
+   "bread"
+  ],
+  "note": "Lear wrote it for a friend's small daughter who was ill. The \"runcible spoon\" in the last verse is a word he made up.",
+  "search": {
+   "title": "nonsense songs",
+   "creator": "lear"
+  },
+  "known": true,
+  "day": 128
+ },
+ {
+  "day": 129,
+  "theme": "Childhood",
+  "work": "Alice's Adventures in Wonderland",
+  "author": "Lewis Carroll",
+  "year": "1865",
+  "who": "The narrator",
+  "parts": [
+   [
+    "“Curiouser and curiouser!”",
+    4
+   ],
+   [
+    "cried Alice",
+    3
+   ],
+   [
+    "(she was so much surprised, that for the moment",
+    2
+   ],
+   [
+    "she quite forgot how to speak good English);",
+    1
+   ]
+  ],
+  "hints": [
+   "A children's book from the 1860s",
+   "Author's initials: L. C.",
+   "A girl follows a white rabbit down a hole"
+  ],
+  "key": "English",
+  "tiles": [
+   "English",
+   "French",
+   "sense",
+   "manners"
+  ],
+  "note": "She has just eaten a cake and grown nine feet tall. Carroll (day 38 was Through the Looking-Glass) makes the grammar mistake part of the joke.",
+  "search": {
+   "title": "alice's adventures in wonderland",
+   "creator": "carroll"
+  },
+  "known": true
+ },
+ {
+  "day": 130,
+  "theme": "Childhood",
+  "work": "The Wind in the Willows",
+  "author": "Kenneth Grahame",
+  "year": "1908",
+  "who": "The narrator",
+  "parts": [
+   [
+    "The Mole",
+    4
+   ],
+   [
+    "had been working very hard all the morning,",
+    3
+   ],
+   [
+    "spring-cleaning",
+    2
+   ],
+   [
+    "his little home.",
+    1
+   ]
+  ],
+  "hints": [
+   "A children's novel from the 1900s",
+   "Author's initials: K. G.",
+   "A mole, a water rat, a badger and a reckless toad by an English river"
+  ],
+  "key": "cleaning",
+  "tiles": [
+   "cleaning",
+   "painting",
+   "digging",
+   "sweeping"
+  ],
+  "note": "A few lines later the Mole says \"Hang spring-cleaning!\" and leaves the work. Grahame began the stories as bedtime tales for his son.",
+  "search": {
+   "title": "wind in the willows",
+   "creator": "grahame"
+  },
+  "known": false
+ },
+ {
+  "theme": "",
+  "work": "An Essay on Criticism",
+  "author": "Alexander Pope",
+  "year": "1711",
+  "who": "The poet",
+  "parts": [
+   [
+    "Good-nature and good sense",
+    4
+   ],
+   [
+    "must ever join;",
+    3
+   ],
+   [
+    "/ To err is human,",
+    2
+   ],
+   [
+    "to forgive, divine.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1710s, written when its author was in his early twenties",
+   "Author's initials: A. P.",
+   "Rules for critics, in rhyming couplets"
+  ],
+  "key": "err",
+  "tiles": [
+   "err",
+   "fail",
+   "fall",
+   "sin"
+  ],
+  "note": "The same poem gives us \"a little learning is a dang'rous thing\" and \"fools rush in where angels fear to tread\".",
+  "search": {
+   "title": "essay on criticism",
+   "creator": "pope"
+  },
+  "known": true,
+  "day": 131
+ },
+ {
+  "day": 132,
+  "theme": "",
+  "work": "Kubla Khan",
+  "author": "Samuel Taylor Coleridge",
+  "year": "1816",
+  "who": "The speaker",
+  "parts": [
+   [
+    "In Xanadu did Kubla Khan",
+    5
+   ],
+   [
+    "/ A stately pleasure-dome decree:",
+    4
+   ],
+   [
+    "/ Where Alph, the sacred river, ran",
+    3
+   ],
+   [
+    "/ Through caverns measureless to man",
+    2
+   ],
+   [
+    "/ Down to a sunless sea.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1810s",
+   "Author's initials: S. T. C.",
+   "A vision of an emperor's palace, cut short by a visitor from Porlock"
+  ],
+  "key": "sunless",
+  "tiles": [
+   "sunless",
+   "silent",
+   "endless",
+   "frozen"
+  ],
+  "note": "Coleridge said the poem came to him in an opium dream, and that a visitor \"on business from Porlock\" broke it off. He published it as a fragment.",
+  "search": {
+   "title": "christabel kubla khan",
+   "creator": "coleridge"
+  },
+  "known": false
+ },
+ {
+  "theme": "",
+  "work": "Narrative of the Life of Frederick Douglass",
+  "author": "Frederick Douglass",
+  "year": "1845",
+  "who": "The author",
+  "parts": [
+   [
+    "You have seen",
+    4
+   ],
+   [
+    "how a man was made a slave;",
+    3
+   ],
+   [
+    "you shall see",
+    2
+   ],
+   [
+    "how a slave was made a man.",
+    1
+   ]
+  ],
+  "hints": [
+   "A memoir from the 1840s",
+   "Author's initials: F. D.",
+   "A man born enslaved in Maryland teaches himself to read, fights back, and escapes north"
+  ],
+  "key": "seen",
+  "tiles": [
+   "seen",
+   "heard",
+   "read",
+   "learned"
+  ],
+  "note": "Douglass writes this just before telling how he fought the \"slave-breaker\" Edward Covey, the turning point of his life. He published the book at about 27, at the risk of being recaptured.",
+  "search": {
+   "title": "narrative of the life of frederick douglass",
+   "creator": "douglass"
+  },
+  "day": 133,
+  "known": false
+ },
+ {
+  "day": 134,
+  "theme": "",
+  "work": "The War of the Worlds",
+  "author": "H. G. Wells",
+  "year": "1898",
+  "who": "The narrator",
+  "parts": [
+   [
+    "No one would have believed in the last years of the nineteenth century",
+    4
+   ],
+   [
+    "that this world was being watched keenly and closely",
+    3
+   ],
+   [
+    "by intelligences greater than man's",
+    2
+   ],
+   [
+    "and yet as mortal as his own;",
+    1
+   ]
+  ],
+  "hints": [
+   "A novel from the 1890s",
+   "Author's initials: H. G. W.",
+   "Cylinders land near Woking, and tripods walk out"
+  ],
+  "key": "watched",
+  "tiles": [
+   "watched",
+   "studied",
+   "measured",
+   "envied"
+  ],
+  "note": "\"As mortal as his own\" gives away the ending in the first sentence: the invaders die of ordinary germs.",
+  "search": {
+   "title": "war of the worlds",
+   "creator": "wells"
+  },
+  "known": false
+ },
+ {
+  "theme": "",
+  "work": "Elegy Written in a Country Churchyard",
+  "author": "Thomas Gray",
+  "year": "1751",
+  "who": "The speaker, of the villagers buried there",
+  "parts": [
+   [
+    "Far from the madding crowd's ignoble strife,",
+    4
+   ],
+   [
+    "/ Their sober wishes never learn'd to stray;",
+    3
+   ],
+   [
+    "/ Along the cool sequester'd vale of life",
+    2
+   ],
+   [
+    "/ They kept the noiseless tenor of their way.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1750s",
+   "Author's initials: T. G.",
+   "At dusk in a village churchyard, a poet thinks about the poor buried there"
+  ],
+  "key": "madding",
+  "tiles": [
+   "madding",
+   "noisy",
+   "angry",
+   "busy"
+  ],
+  "note": "\"Madding\" means frenzied. Thomas Hardy borrowed the phrase for the title of his 1874 novel, which is not today's answer.",
+  "search": {
+   "title": "elegy written in a country churchyard",
+   "creator": "gray"
+  },
+  "known": true,
+  "day": 135
+ },
+ {
+  "day": 136,
+  "theme": "",
+  "work": "Self-Reliance",
+  "author": "Ralph Waldo Emerson",
+  "year": "1841",
+  "who": "The author",
+  "parts": [
+   [
+    "A foolish consistency",
+    4
+   ],
+   [
+    "is the hobgoblin",
+    3
+   ],
+   [
+    "of little minds,",
+    2
+   ],
+   [
+    "adored by little statesmen and philosophers and divines.",
+    1
+   ]
+  ],
+  "hints": [
+   "An essay from the 1840s",
+   "Author's initials: R. W. E.",
+   "An American argues: trust yourself, not society"
+  ],
+  "key": "hobgoblin",
+  "tiles": [
+   "hobgoblin",
+   "enemy",
+   "comfort",
+   "refuge"
+  ],
+  "note": "Usually quoted without \"foolish\", which changes it. Emerson's point is that you may contradict yesterday's self if today's is right.",
+  "search": {
+   "title": "essays",
+   "creator": "emerson"
+  },
+  "known": false
+ },
+ {
+  "day": 137,
+  "theme": "",
+  "work": "Doctor Faustus",
+  "author": "Christopher Marlowe",
+  "year": "c. 1592",
+  "who": "Faustus, to Helen of Troy",
+  "parts": [
+   [
+    "Was this the face",
+    4
+   ],
+   [
+    "that launch'd a thousand ships,",
+    3
+   ],
+   [
+    "/ And burnt the topless towers of Ilium?",
+    2
+   ],
+   [
+    "/ Sweet Helen, make me immortal with a kiss.",
+    1
+   ]
+  ],
+  "hints": [
+   "A play from the 1590s",
+   "Author's initials: C. M.",
+   "A scholar sells his soul to the devil for twenty-four years of power"
+  ],
+  "key": "topless",
+  "tiles": [
+   "topless",
+   "golden",
+   "ancient",
+   "mighty"
+  ],
+  "note": "Helen is a spirit the devil has conjured, so the kiss damns him. Goethe's Faust (day 102) retells the same legend two centuries later.",
+  "search": {
+   "title": "doctor faustus",
+   "creator": "marlowe"
+  },
+  "known": true
+ },
+ {
+  "theme": "Around the world",
+  "work": "The Arabian Nights",
+  "alias": [
+   "Ali Baba and the Forty Thieves",
+   "One Thousand and One Nights"
+  ],
+  "author": "Anonymous",
+  "year": "1700s (Ali Baba first printed in French)",
+  "who": "The narrator (Andrew Lang's 1889 retelling)",
+  "parts": [
+   [
+    "Then Ali Baba climbed down",
+    4
+   ],
+   [
+    "and went to the door concealed among the bushes,",
+    3
+   ],
+   [
+    "and said: “Open, Sesame!”",
+    2
+   ],
+   [
+    "and it flew open.",
+    1
+   ]
+  ],
+  "hints": [
+   "A tale from a Middle Eastern story collection, retold in English by Andrew Lang",
+   "Told by a queen, night after night, to stay alive",
+   "A woodcutter spies on forty robbers and their secret cave"
+  ],
+  "key": "Sesame",
+  "tiles": [
+   "Sesame",
+   "Barley",
+   "Wheat",
+   "Millet"
+  ],
+  "note": "Ali Baba is in no Arabic manuscript of the Nights. Antoine Galland added it to his French version in the 1700s, from a story told him by the Syrian storyteller Hanna Diyab.",
+  "search": {
+   "title": "blue fairy book",
+   "creator": "lang"
+  },
+  "known": true,
+  "day": 138
+ },
+ {
+  "theme": "Around the world",
+  "work": "The Rubáiyát of Omar Khayyám",
+  "author": "Omar Khayyám",
+  "year": "1100s (FitzGerald's version 1859)",
+  "who": "The poet (Edward FitzGerald's 1859 version)",
+  "parts": [
+   [
+    "The Moving Finger writes;",
+    4
+   ],
+   [
+    "and, having writ, / Moves on:",
+    3
+   ],
+   [
+    "nor all thy Piety nor Wit / Shall lure it back to cancel half a Line,",
+    2
+   ],
+   [
+    "/ Nor all thy Tears wash out a Word of it.",
+    1
+   ]
+  ],
+  "hints": [
+   "Persian verses of the 1100s, in Edward FitzGerald's free English version",
+   "Author's initials: O. K.",
+   "A poet urges wine and the present moment, because what's done can't be undone"
+  ],
+  "key": "Line",
+  "tiles": [
+   "Line",
+   "Verse",
+   "Page",
+   "Letter"
+  ],
+  "note": "This game takes its name from this verse. FitzGerald's version sold almost nothing at first, until Rossetti and Swinburne found copies marked down to a penny.",
+  "search": {
+   "title": "rubaiyat",
+   "creator": "fitzgerald"
+  },
+  "day": 139,
+  "known": false
+ },
+ {
+  "theme": "Around the world",
+  "work": "Gitanjali",
+  "author": "Rabindranath Tagore",
+  "year": "1912",
+  "who": "The poet (his own translation from Bengali)",
+  "parts": [
+   [
+    "Where the mind is without fear",
+    4
+   ],
+   [
+    "and the head is held high;",
+    3
+   ],
+   [
+    "/ Where knowledge is free;",
+    2
+   ],
+   [
+    "/ Where the world has not been broken up into fragments by narrow domestic walls;",
+    1
+   ]
+  ],
+  "hints": [
+   "Song offerings from 1912, translated from Bengali by their author",
+   "Author's initials: R. T.",
+   "A poet prays that his country will wake into a heaven of freedom"
+  ],
+  "key": "fear",
+  "tiles": [
+   "fear",
+   "doubt",
+   "shame",
+   "chains"
+  ],
+  "note": "Poem 35. Tagore made the English versions himself, and the next year became the first non-European to win the Nobel Prize in Literature.",
+  "search": {
+   "title": "gitanjali",
+   "creator": "tagore"
+  },
+  "day": 140,
+  "known": false
+ },
+ {
+  "theme": "Around the world",
+  "work": "The Analects",
+  "author": "Confucius",
+  "year": "c. 500 BCE",
+  "who": "The Master, to Tsze-kung (James Legge's 1861 translation)",
+  "parts": [
+   [
+    "Is not RECIPROCITY such a word?",
+    4
+   ],
+   [
+    "What you do not want",
+    3
+   ],
+   [
+    "done to yourself,",
+    2
+   ],
+   [
+    "do not do to others.",
+    1
+   ]
+  ],
+  "hints": [
+   "Sayings of a Chinese teacher from about 500 BCE, translated by James Legge",
+   "Author: known in English as C.",
+   "A student asks for one word that can guide a whole life"
+  ],
+  "key": "others",
+  "tiles": [
+   "others",
+   "neighbours",
+   "strangers",
+   "friends"
+  ],
+  "note": "The Golden Rule turned around, five centuries before the Gospels. Legge was a Scottish missionary who became Oxford's first professor of Chinese.",
+  "search": {
+   "title": "analects",
+   "creator": "legge"
+  },
+  "day": 141,
+  "known": false
+ },
+ {
+  "theme": "Around the world",
+  "work": "The River-Merchant's Wife: A Letter",
+  "alias": [
+   "Cathay"
+  ],
+  "author": "Li Bai",
+  "year": "700s (Pound's version 1915)",
+  "who": "The wife, to her husband (Ezra Pound's 1915 version)",
+  "parts": [
+   [
+    "While my hair was still cut straight across my forehead",
+    4
+   ],
+   [
+    "/ I played about the front gate, pulling flowers.",
+    3
+   ],
+   [
+    "/ You came by on bamboo stilts,",
+    2
+   ],
+   [
+    "playing horse,",
+    1
+   ]
+  ],
+  "hints": [
+   "A Chinese poem of the 700s, in Ezra Pound's English version",
+   "The poet, as Pound named him: R.",
+   "A young wife writes to her husband, away on a long trading journey"
+  ],
+  "key": "stilts",
+  "tiles": [
+   "stilts",
+   "horseback",
+   "foot",
+   "rafts"
+  ],
+  "note": "Pound read no Chinese. He worked from the notes of the scholar Ernest Fenollosa and called the poet by his Japanese name, Rihaku.",
+  "search": {
+   "title": "cathay",
+   "creator": "pound",
+   "q": "pound AND (cathay OR personae OR lustra OR umbra) AND mediatype:texts"
+  },
+  "day": 142,
+  "known": false
+ },
+ {
+  "theme": "Around the world",
+  "work": "Aesop's Fables",
+  "alias": [
+   "The Hare and the Tortoise"
+  ],
+  "author": "Aesop",
+  "year": "c. 500s BCE",
+  "who": "The narrator (George Fyler Townsend's 1867 translation)",
+  "parts": [
+   [
+    "The Tortoise never for a moment stopped,",
+    4
+   ],
+   [
+    "but went on with a slow but steady pace",
+    3
+   ],
+   [
+    "straight to the end",
+    2
+   ],
+   [
+    "of the course.",
+    1
+   ]
+  ],
+  "hints": [
+   "Greek fables from about 2,500 years ago, translated by George Fyler Townsend",
+   "Author's initial: A.",
+   "A boastful animal takes a nap halfway through a race"
+  ],
+  "key": "steady",
+  "tiles": [
+   "steady",
+   "sure",
+   "patient",
+   "careful"
+  ],
+  "note": "Moments later the Hare wakes and runs, too late. The moral everyone knows, \"slow and steady wins the race\", isn't in Townsend's printed text: he lets the story make the point.",
+  "search": {
+   "title": "aesop",
+   "creator": "townsend",
+   "q": "aesop AND townsend AND mediatype:texts"
+  },
+  "known": true,
+  "day": 143
+ },
+ {
+  "theme": "Around the world",
+  "work": "The Emperor's New Clothes",
+  "author": "Hans Christian Andersen",
+  "year": "1837",
+  "who": "A little child (Mary Howitt's 1848 translation)",
+  "parts": [
+   [
+    "“But the Emperor",
+    4
+   ],
+   [
+    "has nothing",
+    3
+   ],
+   [
+    "at all on!”",
+    2
+   ],
+   [
+    "said a little child.",
+    1
+   ]
+  ],
+  "hints": [
+   "A Danish fairy tale from the 1830s, translated by Mary Howitt",
+   "Author's initials: H. C. A.",
+   "Two swindlers sell a vain ruler cloth that only the clever can see"
+  ],
+  "key": "child",
+  "tiles": [
+   "child",
+   "boy",
+   "beggar",
+   "fool"
+  ],
+  "note": "Everyone else has pretended to see the cloth so as not to look stupid. The child's line breaks the spell, and the Emperor keeps walking anyway.",
+  "search": {
+   "title": "andersen",
+   "creator": "andersen",
+   "q": "andersen AND (emperor's new clothes OR fairy tales) AND mediatype:texts"
+  },
+  "known": true,
+  "day": 144
+ },
+ {
+  "theme": "",
+  "work": "Rapunzel",
+  "author": "Brothers Grimm",
+  "year": "1812",
+  "who": "The enchantress (Margaret Hunt's 1884 translation)",
+  "parts": [
+   [
+    "“Rapunzel,",
+    3
+   ],
+   [
+    "Rapunzel,",
+    2
+   ],
+   [
+    "/ Let down thy hair to me.”",
+    1
+   ]
+  ],
+  "hints": [
+   "A German fairy tale from the 1810s, translated by Margaret Hunt",
+   "Authors: two brothers, J. and W. G.",
+   "A girl locked in a tower with no door or stairs"
+  ],
+  "key": "hair",
+  "tiles": [
+   "hair",
+   "rope",
+   "braid",
+   "ladder"
+  ],
+  "note": "A prince overhears the call and uses it himself. In the Grimms' first edition Rapunzel gives the visits away by asking why her clothes have grown so tight.",
+  "search": {
+   "title": "household tales",
+   "creator": "grimm",
+   "q": "grimm AND (household tales) AND mediatype:texts"
+  },
+  "known": true,
+  "day": 145
+ },
+ {
+  "theme": "",
+  "work": "The Souls of Black Folk",
+  "author": "W. E. B. Du Bois",
+  "year": "1903",
+  "who": "The author, in the Forethought",
+  "parts": [
+   [
+    "The problem",
+    4
+   ],
+   [
+    "of the twentieth century",
+    3
+   ],
+   [
+    "is the problem",
+    2
+   ],
+   [
+    "of the color-line,",
+    1
+   ]
+  ],
+  "hints": [
+   "A book of essays from 1903",
+   "Author's initials: W. E. B. D.",
+   "A sociologist describes \"double-consciousness\": seeing yourself through the eyes of others"
+  ],
+  "key": "color",
+  "tiles": [
+   "color",
+   "class",
+   "border",
+   "money"
+  ],
+  "note": "Du Bois states it in the Forethought and repeats it in chapter two. His idea of \"double-consciousness\" is still taught a century later.",
+  "search": {
+   "title": "souls of black folk",
+   "creator": "du bois"
+  },
+  "day": 146,
+  "known": false
+ },
+ {
+  "day": 147,
+  "theme": "",
+  "work": "I Wandered Lonely as a Cloud",
+  "alias": [
+   "Daffodils"
+  ],
+  "author": "William Wordsworth",
+  "year": "1807",
+  "who": "The speaker",
+  "parts": [
+   [
+    "They flash upon that inward eye",
+    4
+   ],
+   [
+    "/ Which is the bliss of solitude;",
+    3
+   ],
+   [
+    "/ And then my heart with pleasure fills,",
+    2
+   ],
+   [
+    "/ And dances with the daffodils.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1800s",
+   "Author's initials: W. W.",
+   "A walker by a lake comes on a crowd of golden flowers"
+  ],
+  "key": "solitude",
+  "tiles": [
+   "solitude",
+   "memory",
+   "silence",
+   "childhood"
+  ],
+  "note": "The walk was with his sister Dorothy, in April 1802. Her journal describes the daffodils first; the two best lines of the poem are said to be by his wife, Mary.",
+  "search": {
+   "title": "poems in two volumes",
+   "creator": "wordsworth"
+  },
+  "known": true
+ },
+ {
+  "day": 148,
+  "theme": "",
+  "work": "Bartleby, the Scrivener",
+  "author": "Herman Melville",
+  "year": "1853",
+  "who": "The lawyer, the narrator, then Bartleby",
+  "parts": [
+   [
+    "Imagine my surprise, nay, my consternation,",
+    4
+   ],
+   [
+    "when without moving from his privacy,",
+    3
+   ],
+   [
+    "Bartleby",
+    5
+   ],
+   [
+    "in a singularly mild, firm voice, replied,",
+    2
+   ],
+   [
+    "“I would prefer not to.”",
+    1
+   ]
+  ],
+  "hints": [
+   "A short story from the 1850s",
+   "Author's initials: H. M.",
+   "A Wall Street lawyer hires a copyist who gradually stops doing anything"
+  ],
+  "key": "prefer",
+  "tiles": [
+   "prefer",
+   "refuse",
+   "decline",
+   "rather"
+  ],
+  "note": "The first time Bartleby says it. He goes on saying it to every request until he dies, and the narrator never finds out why.",
+  "search": {
+   "title": "piazza tales",
+   "creator": "melville"
+  },
+  "known": false
+ },
+ {
+  "day": 149,
+  "theme": "",
+  "work": "The Love Song of J. Alfred Prufrock",
+  "author": "T. S. Eliot",
+  "year": "1915",
+  "who": "Prufrock",
+  "parts": [
+   [
+    "For I have known them all already, known them all:",
+    4
+   ],
+   [
+    "/ Have known the evenings, mornings, afternoons,",
+    3
+   ],
+   [
+    "/ I have measured out my life",
+    2
+   ],
+   [
+    "with coffee spoons;",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1910s",
+   "Author's initials: T. S. E.",
+   "A timid man on his way to a tea party wonders whether he dares to eat a peach"
+  ],
+  "key": "spoons",
+  "tiles": [
+   "spoons",
+   "teacups",
+   "hours",
+   "letters"
+  ],
+  "note": "Eliot was in his early twenties when he wrote it, about a man who feels middle-aged. Ezra Pound got it printed in Poetry magazine.",
+  "search": {
+   "title": "prufrock and other observations",
+   "creator": "eliot",
+   "gutenberg": [
+    "1459",
+    "1567"
+   ],
+   "urls": [
+    "https://standardebooks.org/ebooks/t-s-eliot/poetry/text/single-page"
+   ]
+  },
+  "known": false
+ },
+ {
+  "day": 150,
+  "theme": "",
+  "work": "The Charge of the Light Brigade",
+  "author": "Alfred, Lord Tennyson",
+  "year": "1854",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Theirs not to reason why,",
+    4
+   ],
+   [
+    "/ Theirs but to do and die:",
+    3
+   ],
+   [
+    "/ Into the valley of Death",
+    2
+   ],
+   [
+    "/ Rode the six hundred.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1850s",
+   "Author's initials: Lord T.",
+   "British cavalry ride into Russian guns after a blundered order"
+  ],
+  "key": "valley",
+  "tiles": [
+   "valley",
+   "shadow",
+   "mouth",
+   "jaws"
+  ],
+  "note": "Tennyson wrote it within weeks of reading the newspaper report from the Crimean War. It praises the men and quietly blames the order.",
+  "search": {
+   "title": "tennyson poems",
+   "creator": "tennyson"
+  },
+  "known": true
+ },
+ {
+  "day": 151,
+  "theme": "",
+  "work": "To the Virgins, to Make Much of Time",
+  "author": "Robert Herrick",
+  "year": "1648",
+  "who": "The speaker",
+  "parts": [
+   [
+    "Gather ye rosebuds while ye may,",
+    4
+   ],
+   [
+    "/ Old Time is still a-flying:",
+    3
+   ],
+   [
+    "/ And this same flower that smiles to-day,",
+    2
+   ],
+   [
+    "/ To-morrow will be dying.",
+    1
+   ]
+  ],
+  "hints": [
+   "A poem from the 1640s",
+   "Author's initials: R. H.",
+   "A poet tells young women to marry while they can"
+  ],
+  "key": "rosebuds",
+  "tiles": [
+   "rosebuds",
+   "flowers",
+   "blossoms",
+   "roses"
+  ],
+  "note": "From Hesperides, over a thousand short poems. Herrick was a country parson in Devon.",
+  "search": {
+   "title": "hesperides",
+   "creator": "herrick"
+  },
+  "known": true
+ }
+]
