@@ -1,9 +1,10 @@
 # Handoff
 
 ## State
-Live since 18 November 2026 at https://acao-boop.github.io/half-a-line/ (tag `published`), and hung third on the andrewcao.org wall (acao-boop/enoch#54). Day 1 is 18 November 2026 (Pride and Prejudice). 60 lines run to 16 January 2027.
+Live since 18 November 2026 at https://halfaline.andrewcao.org/ (moved from https://acao-boop.github.io/half-a-line/, which forwards) (tag `published`), and hung third on the andrewcao.org wall (acao-boop/enoch#54). Day 1 is 18 November 2026 (Pride and Prejudice). 60 lines run to 16 January 2027.
 
 ## Last change
+- 2026-11-18: moved to halfaline.andrewcao.org (Cloudflare DNS-only CNAME `halfaline` → acao-boop.github.io; Pages custom domain; HTTPS enforced once the certificate was issued). Share tags and 404 paths updated.
 - 2026-11-18: built from the Claude prototype. Public version: full page with share tags, icons, 404, credit mark; no review page; no all-caps labels. Notes fact-checked by Claude (fixed the Earnest note; Song of Myself dated 1855, text of 1892). Andrew has not reviewed the lines yet.
 
 ## Checks run
@@ -14,4 +15,3 @@ Live since 18 November 2026 at https://acao-boop.github.io/half-a-line/ (tag `pu
 - Andrew reviews lines in the spreadsheet, staying about a week ahead of the calendar. Copy edits into `site/lines.js`.
 - Before 16 January 2027: add more lines, or the game stays on the last one.
 - Run LinkedIn Post Inspector on the live URL.
-- Andrew asked about serving it at his own domain: proposed halfaline.andrewcao.org (a Cloudflare DNS CNAME to acao-boop.github.io plus the Pages custom-domain setting, then update canonical, og: URLs and the hub link). Not decided yet.

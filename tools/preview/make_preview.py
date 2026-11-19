@@ -13,7 +13,7 @@ BASE is the commit that matches the live site (default: the `published` tag).
 import json, os, subprocess, sys, difflib
 
 # The path the live site is served under: '/' for acao-boop.github.io, '/<repo>/' for a project site.
-SITE_ROOT = '/half-a-line/'  # set to '/<this repo's name>/'
+SITE_ROOT = '/'  # set to '/<this repo's name>/'
 ROOT = subprocess.run(['git', 'rev-parse', '--show-toplevel'], capture_output=True, text=True, check=True).stdout.strip()
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'published'
 TEXT = ('.html', '.css', '.js', '.json')

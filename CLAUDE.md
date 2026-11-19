@@ -1,6 +1,6 @@
 # Half a Line
 
-Public: https://acao-boop.github.io/half-a-line/ (repo acao-boop/half-a-line). Part of Andrew Cao's portfolio, https://andrewcao.org/. Andrew's role: design, selection of lines, and editing.
+Public: https://halfaline.andrewcao.org/ (GitHub Pages custom domain; Cloudflare DNS record `halfaline` is a DNS-only CNAME to acao-boop.github.io; old address forwards) (repo acao-boop/half-a-line). Part of Andrew Cao's portfolio, https://andrewcao.org/. Andrew's role: design, selection of lines, and editing.
 
 ## Session routine
 - Read HANDOFF.md first. Then read only the files the task needs.
@@ -8,7 +8,7 @@ Public: https://acao-boop.github.io/half-a-line/ (repo acao-boop/half-a-line). P
 
 ## Run and check
 - No build step. When a feature changes, test it at desktop and phone widths, keyboard-only, with reduced motion and dark mode.
-- Keep page links relative; the site lives under `/half-a-line/`. Only 404.html uses full paths.
+- Keep page links relative. The site lives at the root of halfaline.andrewcao.org, so 404.html uses root paths (`/styles.css`).
 
 ## Review, then publish (every session)
 - Nothing goes live mid-session. Edit `site/`.
