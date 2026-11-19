@@ -13,5 +13,5 @@ Live since 18 November 2026 at https://halfaline.andrewcao.org/ (moved from http
 
 ## Next
 - Andrew reviews lines in the spreadsheet, staying about a week ahead of the calendar. Copy edits into `site/lines.js`.
-- Before 16 January 2027: add more lines, or the game stays on the last one.
+- Before 16 January 2027: add more lines, or the game stays on the last one. Proposed answer: themed weeks from day 61 (17 Jan), drafted in `docs/themed-weeks.md`, waiting on Andrew's four decisions listed there. Draft only: nothing built or published.
 - Run LinkedIn Post Inspector on the live URL.
