@@ -1,4 +1,6 @@
-# Themed weeks: plan (draft, not built)
+# Themed weeks: plan
+
+**Approved by Andrew on 18 November 2026 (GO):** all eight weeks as listed, starting 17 January 2027; the theme is shown to players; Last-lines week uses new works instead of repeats.
 
 Drafted 18 November 2026. Nothing here is live. The current 60 lines are a deliberate mix and run to Saturday 16 January 2027. Themed weeks would start with day 61, **Sunday 17 January 2027**, one theme per Sunday-to-Saturday week.
 
@@ -20,7 +22,7 @@ A theme narrows the answer. In a Shakespeare week, "A play from the 1600s" and "
 | 7 Feb | 82–88 | **Shakespeare** | *A Midsummer Night's Dream*; *The Merchant of Venice*; *Richard III*; *Henry V*; *Much Ado About Nothing*; *Antony and Cleopatra*; *The Winter's Tale* ("Exit, pursued by a bear") |
 | 14 Feb | 89–95 | **Love** (Valentine's week) | E. B. Browning, Sonnet 43; Shakespeare, Sonnet 116; Burns, "A Red, Red Rose"; Byron, "She Walks in Beauty"; Marlowe, "The Passionate Shepherd to His Love"; Dickinson, "Wild nights – Wild nights!"; Rostand, *Cyrano de Bergerac* (Hooker, 1923) |
 | 21 Feb | 96–102 | **In translation** | Homer, *The Iliad* (Butler, 1898); Dante, *Inferno* (Longfellow, 1867); Flaubert, *Madame Bovary* (Eleanor Marx-Aveling, 1886); Hugo, *Les Misérables* (Hapgood, 1887); Dostoevsky, *Crime and Punishment* (Garnett, 1914); Voltaire, *Candide* (a pre-1931 translation); Goethe, *Faust* (Bayard Taylor, 1870) |
-| 28 Feb | 103–109 | **Last lines** | Hemingway, *The Sun Also Rises* ("Isn't it pretty to think so?"); Hemingway, *A Farewell to Arms*; Joyce, "The Dead"; Dickens, *Great Expectations*; plus last lines of works already played: *A Tale of Two Cities*, *Moby-Dick*, *Frankenstein* |
+| 28 Feb | 103–109 | **Last lines** | Hemingway, *The Sun Also Rises* ("Isn't it pretty to think so?"); Hemingway, *A Farewell to Arms*; Joyce, "The Dead"; Dickens, *Great Expectations*; Wharton, *The Age of Innocence*; Lawrence, *Sons and Lovers*; Swift, *Gulliver's Travels*. (No repeats of earlier answers, as decided.) |
 | 7 Mar | 110–116 | **Women writers** (International Women's Day is 8 March) | Woolf, *A Room of One's Own*; Wollstonecraft, *A Vindication of the Rights of Woman*; Dickinson, "I'm Nobody! Who are you?"; Hurston, "How It Feels to Be Colored Me"; Cather, *O Pioneers!*; Wharton, *The House of Mirth*; Gaskell, *North and South* |
 
 After 13 March: either more themes (first loves of poetry, America, the sea, war, childhood, Russian week) or a return to a mixed fortnight between themes.
@@ -33,11 +35,11 @@ After 13 March: either more themes (first loves of poetry, America, the sea, war
 
 Effort: the code is under an hour. Each week of lines takes a drafting session from Claude plus about 20 minutes of Andrew's review.
 
-## Decisions only Andrew can make
-1. **The themes and their order.** The table is a proposal.
-2. **Repeats in "Last lines" week.** Three of its works (*A Tale of Two Cities*, *Moby-Dick*, *Frankenstein*) were already answers. Different lines, but players who remember will get them fast. Allow, or swap for new works?
-3. **Show the theme to players?** Showing it is the point, but it narrows every guess. The alternative is keeping it hidden and revealing it with the answer.
-4. **Start date.** 17 January follows straight on from the current lines; starting later would need a short mixed bridge.
+## Decisions (settled 18 November 2026)
+1. **The themes and their order.** As in the table.
+2. **Repeats in "Last lines" week.** Three of its works (*A Tale of Two Cities*, *Moby-Dick*, *Frankenstein*) were already answers. Different lines, but players who remember will get them fast. Decided: swap for new works.
+3. **Show the theme to players?** Showing it is the point, but it narrows every guess. Decided: show it.
+4. **Start date.** Decided: 17 January, straight on from the current lines.
 
 ## Recommendation
-Go with the eight weeks as listed, show the theme, swap the Last-lines repeats for new works. **Lean**: the schedule is sound and seasonal (public-domain day in January, Valentine's, Women's Day), but whether themes keep players more than a mix does is a guess until there are players to watch.
+Adopted. **Lean**: the schedule is sound and seasonal (public-domain day in January, Valentine's, Women's Day), but whether themes keep players more than a mix does is a guess until there are players to watch.

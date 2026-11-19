@@ -29,6 +29,10 @@ nav a[aria-current=page]{background:var(--card);color:var(--ink);box-shadow:inse
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px clamp(18px,4vw,36px);display:flex;flex-direction:column;gap:20px}
 .meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted);font-weight:600}
 h2{font-family:var(--serif);font-weight:400;font-size:26px;margin:0}
+.theme{margin:-6px 0 0;font-size:14px;color:var(--muted)}
+.theme b{color:var(--ink);background:var(--hl);color:var(--hl-ink);padding:1px 6px;border-radius:4px;font-weight:700}
+.arch .wk{grid-column:1/-1;font-family:var(--serif);font-size:18px;margin:10px 0 0;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.arch .wk:first-child{margin-top:0}
 .quote{font-family:var(--serif);font-size:clamp(23px,4.2vw,31px);line-height:1.6;margin:0;text-wrap:pretty}
 .part{transition:background-color .5s ease,color .5s ease;padding:.04em 0}
 .part.hid{background:var(--bar);color:transparent;user-select:none;border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}

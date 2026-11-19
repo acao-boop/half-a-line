@@ -4,6 +4,7 @@
 Live since 18 November 2026 at https://halfaline.andrewcao.org/ (moved from https://acao-boop.github.io/half-a-line/, which forwards) (tag `published`), and hung third on the andrewcao.org wall (acao-boop/enoch#54). Day 1 is 18 November 2026 (Pride and Prejudice). 60 lines run to 16 January 2027.
 
 ## Last change
+- 2026-11-18: themed weeks approved; theme support added to `site/app.js` and `site/styles.css` (committed, not pushed or published).
 - 2026-11-18: moved to halfaline.andrewcao.org (Cloudflare DNS-only CNAME `halfaline` → acao-boop.github.io; Pages custom domain; HTTPS enforced once the certificate was issued). Share tags and 404 paths updated.
 - 2026-11-18: built from the Claude prototype. Public version: full page with share tags, icons, 404, credit mark; no review page; no all-caps labels. Notes fact-checked by Claude (fixed the Earnest note; Song of Myself dated 1855, text of 1892). Andrew has not reviewed the lines yet.
 
@@ -13,5 +14,5 @@ Live since 18 November 2026 at https://halfaline.andrewcao.org/ (moved from http
 
 ## Next
 - Andrew reviews lines in the spreadsheet, staying about a week ahead of the calendar. Copy edits into `site/lines.js`.
-- Before 16 January 2027: add more lines, or the game stays on the last one. Proposed answer: themed weeks from day 61 (17 Jan), drafted in `docs/themed-weeks.md`, waiting on Andrew's four decisions listed there. Draft only: nothing built or published.
+- Before 16 January 2027: add more lines, or the game stays on the last one. Answer approved by Andrew (GO, 18 Nov): themed weeks from day 61 (17 Jan), plan in `docs/themed-weeks.md`. Theme support is built but not published: a line's optional `theme` field shows "This week: …" above the line, adds the theme to the results card, and groups the archive by week. Tested on a copy with two made-up themed days. Lines without a theme look exactly as before, so it is safe to publish with the next batch. Next: draft week 1 (1931 works; check each is public domain in the US from 1 Jan 2027), then add a line to About about weekly themes when the first themed lines go in.
 - Run LinkedIn Post Inspector on the live URL.

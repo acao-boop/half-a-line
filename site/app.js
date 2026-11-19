@@ -28,7 +28,7 @@ const plural=(k,w)=>k+" "+w+(k===1?"":"s");
 const clues=k=>plural(k,"extra clue");
 
 function squares(L,r){const T=steps(L).length+1;if(!r.done)return"";if(!r.won)return"\u{1F7E5}".repeat(T);return"\u{1F7E8}".repeat(r.step)+"\u{1F7E9}"+"⬜".repeat(T-1-r.step)}
-function shareText(n,L,r){return "Half a Line #"+n+"\n"+(r.won?(r.step?"Solved with "+clues(r.step):"Solved with no extra clues"):"Missed")+"\n"+squares(L,r)}
+function shareText(n,L,r){return "Half a Line #"+n+(L.theme?" \u00b7 "+L.theme:"")+"\n"+(r.won?(r.step?"Solved with "+clues(r.step):"Solved with no extra clues"):"Missed")+"\n"+squares(L,r)}
 function shuffle(a,seed){const b=a.slice();let s=seed*9301+49297;for(let k=b.length-1;k>0;k--){s=(s*9301+49297)%233280;const j=Math.floor(s/233280*(k+1));[b[k],b[j]]=[b[j],b[k]]}return b}
 
 function quoteHTML(L,r,blankKey){
@@ -50,6 +50,7 @@ function play(n){
   let h='';
   if(isToday&&!S.help)h+='<div class="help" id="help"><p><b>How to play</b></p><ol><li>A famous line is shown with some pieces hidden.</li><li>Guess which work it’s from. Every wrong guess, or “Next clue,” reveals a hint or another piece.</li><li>Solve it with as few extra clues as you can, then try the bonus word.</li></ol><div><button class="btn ghost" id="gotit">Got it</button></div></div>';
   h+='<div class="meta"><span>No. '+n+' · '+fmt(dateOf(n),true)+'</span><span>'+(r.done?(r.won?(r.step?'Solved with '+clues(r.step):'Solved, no extra clues'):'Missed'):v.pieces+' of '+N+' pieces · '+v.hints.length+' of 3 hints')+'</span></div>';
+  if(L.theme)h+='<p class="theme">This week: <b>'+esc(L.theme)+'</b></p>';
   h+='<p class="quote">'+quoteHTML(L,r,r.done&&r.bonus===null?L.key:null)+'</p>';
   if(!r.done&&v.hints.length)h+='<ul class="hints" aria-label="Hints">'+v.hints.map(k=>'<li'+(v.last&&v.last[0]==="h"&&v.last[1]===k?' class="fresh"':'')+'><span>Hint</span>'+esc(L.hints[k])+'</li>').join("")+'</ul>';
   if(!r.done){
@@ -122,7 +123,9 @@ setInterval(tick,30000);
 
 function archive(){
   setNav("archive");const t=TODAY();let items="";
-  for(let n=t;n>=1;n--){const r=S.days[n];const st=!r||(!r.done&&!r.step&&!r.misses.length)?'<span class="st">Not played</span>':!r.done?'<span class="st open">In progress</span>':r.won?'<span class="st won">Solved'+(r.step?', '+clues(r.step):'')+'</span>':'<span class="st lost">Missed</span>';
+  const anyTheme=LINES.slice(0,t).some(L=>L.theme);let prev=null;
+  for(let n=t;n>=1;n--){const r=S.days[n];const th=lineOf(n).theme||'A mix of lines';
+    if(anyTheme&&th!==prev){items+='<li class="wk">'+esc(th)+'</li>';prev=th}const st=!r||(!r.done&&!r.step&&!r.misses.length)?'<span class="st">Not played</span>':!r.done?'<span class="st open">In progress</span>':r.won?'<span class="st won">Solved'+(r.step?', '+clues(r.step):'')+'</span>':'<span class="st lost">Missed</span>';
     items+='<li><a href="'+(n===t?'#':'#day-'+n)+'"><b>No. '+n+'</b><small>'+fmt(dateOf(n))+(n===t?' · today':'')+'</small>'+st+'</a></li>'}
   $("card").innerHTML='<div class="meta"><span>Archive</span><span>'+plural(t,"line")+' so far</span></div><h2>Every line so far</h2><p style="margin:0;color:var(--muted)">Missed a day? Play any past line here. Past lines count toward your stats but not your streak.</p><ul class="arch">'+items+'</ul>';
 }
