@@ -77,6 +77,7 @@ function play(n){
   }
   $("card").innerHTML=h;
   wire(n,L,r,T);
+  const st=$("status");if(st){st.textContent=say;say=""}
   tick();
 }
 function nextLink(n){for(let k=n+1;k<=TODAY();k++){if(!(S.days[k]&&S.days[k].done))return '<a class="btn ghost" href="'+(k===TODAY()?'#':'#day-'+k)+'">Next unplayed line</a>'}return '<a class="btn ghost" href="#archive">Back to archive</a>'}
@@ -109,8 +110,9 @@ function wire(n,L,r,T){
       if(r.misses.includes(hit[0])){err.textContent="You already tried that one.";return}
       if(hit[0]===L.work||(L.alias||[]).includes(hit[0])){finish(n,r,true)}
       else{r.misses.push(hit[0]);if(r.step<T)r.step++;else finish(n,r,false)}
+      say=(r.misses.length&&!r.won&&r.misses[r.misses.length-1]===hit[0]?"Not "+hit[0]+". ":"")+announce(L,r);
       save();play(n);const ng=$("g");if(ng)ng.focus()});
-    const more=$("more");if(more)more.onclick=()=>{r.step++;save();play(n);$("g").focus()};
+    const more=$("more");if(more)more.onclick=()=>{r.step++;say=announce(L,r);save();play(n);$("g").focus()};
   }
   document.querySelectorAll(".tile").forEach(b=>b.onclick=()=>{r.bonus=b.dataset.t;save();play(n)});
   const cp=$("copy");if(cp)cp.onclick=()=>{const text=shareText(n,L,r);
@@ -120,6 +122,10 @@ function wire(n,L,r,T){
 }
 // The phone's own share sheet on touch screens; copying everywhere else.
 function canShare(){return !!navigator.share&&matchMedia("(pointer: coarse)").matches}
+// What a screen reader hears after a guess, instead of the whole card.
+let say="";
+function announce(L,r){const v=view(L,r);if(r.done)return r.won?"Correct: "+L.work+".":"Out of clues. It was "+L.work+".";
+  if(v.last&&v.last[0]==="h")return "New hint: "+L.hints[v.last[1]];if(v.last&&v.last[0]==="p")return "Another piece of the line is shown.";return ""}
 function finish(n,r,won){r.done=true;r.won=won;r.onDay=n===dayNo(new Date())}
 
 function tick(){const el=$("countdown");if(!el)return;const now=new Date(),next=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1),m=Math.max(0,Math.round((next-now)/6e4));
@@ -147,7 +153,9 @@ function stats(){
   $("card").innerHTML='<div class="meta"><span>Your stats</span><span>Saved in this browser</span></div>'
     +'<div class="nums"><div class="num"><b>'+played+'</b><span>Played</span></div><div class="num"><b>'+pct+'%</b><span>Solved</span></div><div class="num"><b>'+cur+'</b><span>Current streak</span></div><div class="num"><b>'+best+'</b><span>Best streak</span></div><div class="num"><b>'+avg+'</b><span>Avg. extra clues</span></div><div class="num"><b>'+bonus+'</b><span>Bonus words</span></div></div>'
     +'<h2 style="font-size:20px">Extra clues needed</h2><ul class="bars">'+dist.map((c,k)=>bar(k===0?"None":plural(k,"clue"),c,"won")).join("")+bar("Missed",miss,"lost")+'</ul>'
-    +'<p style="margin:0;color:var(--muted);font-size:14px">A streak counts days in a row you solved the line on its own day. Stats live in this browser only, so they won’t follow you to another device.</p>';
+    +'<p style="margin:0;color:var(--muted);font-size:14px">A streak counts days in a row you solved the line on its own day. Stats live in this browser only, so they won’t follow you to another device.</p>'
+    +'<p style="margin:0"><button class="linkish" id="reset">Clear my progress</button></p>';
+  wireReset();
 }
 
 function about(){
@@ -163,13 +171,13 @@ function about(){
 function route(){
   const h=location.hash.slice(1);
   if(h==="archive")archive();else if(h==="stats")stats();else if(h==="about")about();
-  else if(/^day-\d+$/.test(h)&&+h.slice(4)>=1&&+h.slice(4)<=LINES.length)play(+h.slice(4));
+  else if(/^day-\d+$/.test(h)&&+h.slice(4)>=1&&+h.slice(4)<=TODAY())play(+h.slice(4));
   else play(TODAY());
   window.scrollTo({top:0});
 }
 addEventListener("hashchange",route);
 let armed=false;
-$("reset").onclick=()=>{if(!armed){armed=true;$("reset").textContent="Click again to clear every day's progress and stats";setTimeout(()=>{armed=false;$("reset").textContent="Clear my progress"},4000);return}
-  S=fresh();save();armed=false;$("reset").textContent="Clear my progress";route()};
+function wireReset(){const b=$("reset");if(!b)return;armed=false;b.onclick=()=>{if(!armed){armed=true;$("reset").textContent="Click again to clear every day's progress and stats";setTimeout(()=>{armed=false;const x=$("reset");if(x)x.textContent="Clear my progress"},4000);return}
+  S=fresh();save();armed=false;stats()}}
 const start=()=>{if(!LINES.length){$("card").textContent="The lines didn't load. Refresh the page to try again.";return}route()};
 start();

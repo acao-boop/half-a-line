@@ -116,3 +116,4 @@ button:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(-
 .maker-mark img{display:block;width:.8em;height:.8em}
 .notfound{display:flex;flex-direction:column;gap:12px}
 .notfound p{margin:0}
+.linkish{background:none;border:0;padding:0;font:inherit;font-size:14px;color:var(--muted);text-decoration:underline;cursor:pointer}
