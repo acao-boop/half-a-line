@@ -20,6 +20,16 @@ let S=null;
 try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
 if(!S||typeof S.days!=="object")S=fresh();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+// Settings live under their own key, separate from progress.
+const PK="half-a-line-prefs";
+let P={palette:"ink",mode:"auto",easy:false};
+try{Object.assign(P,JSON.parse(localStorage.getItem(PK))||{})}catch(e){}
+const saveP=()=>{try{localStorage.setItem(PK,JSON.stringify(P))}catch(e){}};
+function applyP(){const d=document.documentElement;
+  if(P.palette&&P.palette!=="ink")d.dataset.palette=P.palette;else delete d.dataset.palette;
+  if(P.mode==="light"||P.mode==="dark")d.dataset.theme=P.mode;else delete d.dataset.theme}
+applyP();
+const PALS=[["ink","Ink"],["sepia","Sepia"],["sage","Sage"],["rose","Rose"],["contrast","High contrast"]];
 const rec=n=>S.days[n]||(S.days[n]={step:0,misses:[],done:false,won:false,bonus:null,onDay:false});
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const norm=s=>s.toLowerCase().normalize("NFD").replace(/\p{M}/gu,"").replace(/^the\s+/,"").replace(/[^a-z0-9]/g,"");
@@ -28,8 +38,13 @@ const plural=(k,w)=>k+" "+w+(k===1?"":"s");
 const clues=k=>plural(k,"extra clue");
 
 function squares(L,r){const T=steps(L).length+1;if(!r.done)return"";if(!r.won)return"\u{1F7E5}".repeat(T);return"\u{1F7E8}".repeat(r.step)+"\u{1F7E9}"+"⬜".repeat(T-1-r.step)}
-function shareText(n,L,r){return "Half a Line #"+n+(L.theme?" \u00b7 "+L.theme:"")+"\n"+(r.won?(r.step?"Solved with "+clues(r.step):"Solved with no extra clues"):"Missed")+"\n"+squares(L,r)+"\nhalfaline.andrewcao.org"}
+function shareText(n,L,r){return "Half a Line #"+n+(L.theme?" \u00b7 "+L.theme:"")+"\n"+(r.won?(r.step?"Solved with "+clues(r.step):"Solved with no extra clues"):"Missed")+(r.easy?" (easy mode)":"")+"\n"+squares(L,r)+"\nhalfaline.andrewcao.org"}
 function shuffle(a,seed){const b=a.slice();let s=seed*9301+49297;for(let k=b.length-1;k>0;k--){s=(s*9301+49297)%233280;const j=Math.floor(s/233280*(k+1));[b[k],b[j]]=[b[j],b[k]]}return b}
+
+function choices(n,L){const yr=s=>parseInt(s,10)||1800,y=yr(L.year),seen=new Set([L.work,...(L.alias||[])]),pool=[];
+  for(const M of LINES)if(!seen.has(M.work)){seen.add(M.work);pool.push(M)}
+  pool.sort((a,b)=>Math.abs(yr(a.year)-y)-Math.abs(yr(b.year)-y));
+  return shuffle([[L.work,L.author],...shuffle(pool.slice(0,12),n).slice(0,5).map(M=>[M.work,M.author])],n+7)}
 
 function quoteHTML(L,r,blankKey){
   const v=view(L,r);
@@ -53,12 +68,20 @@ function play(n){
   if(L.theme)h+='<p class="theme">This week: <b>'+esc(L.theme)+'</b></p>';
   h+='<p class="quote">'+quoteHTML(L,r,r.done&&r.bonus===null?L.key:null)+'</p>';
   if(!r.done&&v.hints.length)h+='<ul class="hints" aria-label="Hints">'+v.hints.map(k=>'<li'+(v.last&&v.last[0]==="h"&&v.last[1]===k?' class="fresh"':'')+'><span>Hint</span>'+esc(L.hints[k])+'</li>').join("")+'</ul>';
-  if(!r.done){
+  if(!r.done&&P.easy){
+    const C=choices(n,L),inC=new Set(C.map(c=>c[0])),other=r.misses.filter(m=>!inC.has(m));
+    h+='<div class="ask"><p class="q" id="ql">Which work is this from?</p><div class="choices" role="group" aria-labelledby="ql">'
+      +C.map(([t,a])=>'<button class="choice" type="button" data-t="'+esc(t)+'"'+(r.misses.includes(t)?' disabled':'')+'><span>'+esc(t)+'</span><small>'+esc(a)+'</small></button>').join("")+'</div>'
+      +(r.step<T?'<div class="row"><button class="btn ghost" type="button" id="more">Next clue</button></div>':'')
+      +(other.length?'<ul class="misses" aria-label="Wrong guesses">'+other.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')
+      +'<button class="linkish switch" type="button" id="mode">Type the title instead</button></div>';
+  }else if(!r.done){
     h+='<form class="ask" id="f" autocomplete="off"><label for="g">Which work is this from?</label>'
       +'<div class="row"><div class="combo"><input type="text" id="g" placeholder="Start typing a title or author" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list"><ul class="sugg" id="sugg" role="listbox" hidden></ul></div>'
       +'<button class="btn" type="submit">Guess</button>'
       +(r.step<T?'<button class="btn ghost" type="button" id="more">Next clue</button>':'')+'</div>'
       +'<p class="err" id="err"></p>'
+      +'<button class="linkish switch" type="button" id="mode">Too hard? Pick from six titles</button>'
       +(r.misses.length?'<ul class="misses" aria-label="Wrong guesses">'+r.misses.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')
       +'</form>';
   }else{
@@ -83,6 +106,13 @@ function play(n){
 function nextLink(n){for(let k=n+1;k<=TODAY();k++){if(!(S.days[k]&&S.days[k].done))return '<a class="btn ghost" href="'+(k===TODAY()?'#':'#day-'+k)+'">Next unplayed line</a>'}return '<a class="btn ghost" href="#archive">Back to archive</a>'}
 
 function wire(n,L,r,T){
+  const guess=t=>{if(r.misses.includes(t))return;
+    if(t===L.work||(L.alias||[]).includes(t))finish(n,r,true);
+    else{r.misses.push(t);if(r.step<T)r.step++;else finish(n,r,false)}
+    say=(!r.won&&r.misses[r.misses.length-1]===t?"Not "+t+". ":"")+announce(L,r);
+    save();play(n);const ng=$("g")||document.querySelector(".choice:not(:disabled)");if(ng)ng.focus()};
+  document.querySelectorAll(".choice").forEach(b=>b.onclick=()=>{r.easy=true;guess(b.dataset.t)});
+  const md=$("mode");if(md)md.onclick=()=>{P.easy=!P.easy;saveP();play(n);const x=P.easy?document.querySelector(".choice:not(:disabled)"):$("g");if(x)x.focus()};
   const g0=$("gotit");if(g0)g0.onclick=()=>{S.help=true;save();$("help").remove()};
   const f=$("f");
   if(f){
@@ -108,12 +138,9 @@ function wire(n,L,r,T){
         if(m.length===1)hit=m[0];
         else{g.dispatchEvent(new Event("input"));err.textContent=m.length?"More than one title matches. Pick one from the list.":"No title matches. Start typing to see suggestions.";return}}
       if(r.misses.includes(hit[0])){err.textContent="You already tried that one.";return}
-      if(hit[0]===L.work||(L.alias||[]).includes(hit[0])){finish(n,r,true)}
-      else{r.misses.push(hit[0]);if(r.step<T)r.step++;else finish(n,r,false)}
-      say=(r.misses.length&&!r.won&&r.misses[r.misses.length-1]===hit[0]?"Not "+hit[0]+". ":"")+announce(L,r);
-      save();play(n);const ng=$("g");if(ng)ng.focus()});
-    const more=$("more");if(more)more.onclick=()=>{r.step++;say=announce(L,r);save();play(n);$("g").focus()};
+      guess(hit[0])});
   }
+  const more=$("more");if(more)more.onclick=()=>{r.step++;say=announce(L,r);save();play(n);const x=$("more")||$("g")||document.querySelector(".choice:not(:disabled)");if(x)x.focus()};
   document.querySelectorAll(".tile").forEach(b=>b.onclick=()=>{r.bonus=b.dataset.t;save();play(n)});
   const cp=$("copy");if(cp)cp.onclick=()=>{const text=shareText(n,L,r);
     if(canShare()){navigator.share({text}).catch(()=>{});return}
@@ -158,19 +185,32 @@ function stats(){
   wireReset();
 }
 
+function settings(){
+  setNav("settings");
+  const radio=(name,k,label,on,sw)=>'<label class="opt'+(sw?'':' plain')+'"><input type="radio" name="'+name+'" value="'+k+'"'+(on?' checked':'')+'>'+(sw?'<span class="sw" data-palette="'+k+'" aria-hidden="true"><i></i><i></i><i></i></span>':'')+label+'</label>';
+  $("card").innerHTML='<div class="meta"><span>Settings</span><span>Saved in this browser</span></div>'
+    +'<fieldset class="set"><legend>Colours</legend><div class="opts">'+PALS.map(([k,l])=>radio("pal",k,l,P.palette===k,true)).join("")+'</div></fieldset>'
+    +'<fieldset class="set"><legend>Light or dark</legend><div class="opts">'+[["auto","Match my device"],["light","Light"],["dark","Dark"]].map(([k,l])=>radio("mode",k,l,P.mode===k)).join("")+'</div></fieldset>'
+    +'<fieldset class="set"><legend>Difficulty</legend><label class="toggle"><input type="checkbox" id="easy"'+(P.easy?' checked':'')+'><span><b>Easy mode.</b> Pick the work from six titles instead of typing it. Shared results say “easy mode.”</span></label></fieldset>';
+  document.querySelectorAll('input[name=pal]').forEach(i=>i.onchange=()=>{P.palette=i.value;saveP();applyP()});
+  document.querySelectorAll('input[name=mode]').forEach(i=>i.onchange=()=>{P.mode=i.value;saveP();applyP()});
+  $("easy").onchange=e=>{P.easy=e.target.checked;saveP()};
+}
+
 function about(){
   setNav("about");
   $("card").innerHTML='<div class="meta"><span>About</span><span>'+plural(LINES.length,"line")+'</span></div><h2>About Half a Line</h2><div class="prose">'
     +'<p>Each day brings one famous line from literature, shown a few pieces at a time. Name the work it comes from in as few clues as you can, then read why the line matters.</p>'
     +'<p>Every line comes from a work in the public domain. Translations are named where they’re used: Constance Garnett for Tolstoy, Samuel Butler for Homer.</p>'
     +'<p><b>Scoring.</b> You start with two pieces of the line. Each wrong guess, or a press of “Next clue,” gives you a hint or another piece. Your score is the number of extra clues you needed.</p>'
+    +'<p><b>Easy mode.</b> Prefer to pick from a short list? Turn on easy mode in Settings, or press “Too hard?” under the guess box. Colours and light or dark are there too.</p>'
     +'<p>Designed and built by <a href="https://andrewcao.org/">Andrew Cao</a>.</p></div>';
 }
 
 
 function route(){
   const h=location.hash.slice(1);
-  if(h==="archive")archive();else if(h==="stats")stats();else if(h==="about")about();
+  if(h==="archive")archive();else if(h==="stats")stats();else if(h==="about")about();else if(h==="settings")settings();
   else if(/^day-\d+$/.test(h)&&+h.slice(4)>=1&&+h.slice(4)<=TODAY())play(+h.slice(4));
   else play(TODAY());
   window.scrollTo({top:0});
