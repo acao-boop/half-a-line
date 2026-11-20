@@ -328,7 +328,7 @@ window.HAL_LINES = [
  parts:[["But there has been also the American dream,",5],["that dream of a land in which life should be",3],["better and richer and fuller for every man,",1],["with opportunity for each",2],["according to his ability or achievement.",4]],
  hints:["A one-volume history from the 1930s","Author's initials: J. T. A.","A historian tells his country's story, from the first settlers to the Depression"],
  key:"fuller",tiles:["fuller","freer","happier","safer"],
- note:"The book that made \u201cthe American dream\u201d a household phrase. Adams goes on to say it is not a dream of motor cars and high wages, but of a society where each person is recognized for what they are, whatever their birth."},
+ note:"The book that made \u201cthe American dream\u201d a household phrase. Adams goes on to say it is not merely a dream of motor cars and high wages, but of a society where each person is recognized for what they are, whatever their birth."},
 {work:"somewhere i have never travelled,gladly beyond",author:"E. E. Cummings",year:"1931",who:"The speaker, to the beloved",theme:"New to the public domain",
  parts:[["somewhere i have never",4],["travelled,gladly beyond",3],["/ any experience,your eyes",2],["have their silence:",1]],
  hints:["A love poem with almost no capital letters","Author's initials: E. E. C.","A beloved who opens the speaker the way spring opens a rose"],
