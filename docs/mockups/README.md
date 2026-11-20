@@ -67,3 +67,22 @@ File `museum-rooms.html`, sheet `shots/f-museum-rooms.jpg`, art in `art/`, sourc
 | Avoid | text, faces or key details in the calm zone; brand names or logos anywhere | the same |
 
 To swap one: save it with the same name in `art/` (for example `cabin-desk.webp`), add its source and licence to `art/CREDITS.md`, and rerun the contrast check (the text sits on the solid card, so it should still pass). Check Canva's licence terms for each element before using it (I haven't checked them), and record what was used in `art/CREDITS.md`.
+
+## H · Real rooms (19 November 2026; Andrew's pick, replaces F as the direction)
+File `real-rooms.html`, sheet `shots/h-real-rooms.jpg`, test of six candidates in `photo-rooms.html` and `shots/g-photo-rooms.jpg`. Andrew wanted immersion: the feeling of being in a room, not a wall with pictures on it. Drawn walls could not get there, so each backdrop is now **one real photograph of an actual room**, softly blurred so the card reads as the foreground. Credits in `art/CREDITS.md`.
+
+| Room | Photograph | Clue pieces |
+|---|---|---|
+| Reading room | Library of Congress Main Reading Room (Highsmith, 2009) | new: green leather book spines with gold tooling; gold-leaf newest clue |
+| Renaissance study | Gubbio studiolo, 1478–82 (Met) | marble plaques, gold leaf, gilt card frame (from D) |
+| Alpine cabin | Flims Room, Switzerland, 1680s (Met) | pine boards, paper tape, tack (from D) |
+| Timber house | Hart House room, Ipswich, 1680 (Met) | pine boards, paper tape, tack (from D) |
+| High contrast | none | plain black bars, yellow highlight (unchanged) |
+
+- **The mid-century showroom is dropped:** no real mid-century room photograph is free to use (the rooms are too recent for the public domain).
+- **Weight:** desktop 35–63 KB, phone 18–30 KB, webp. Far lighter than the drawn rooms because blur compresses well.
+- **Evening:** the same photo dimmed in CSS.
+- **Text:** all on solid card colours; contrast check 614 pairs, all at least 4.5:1 (`node docs/mockups/check-contrast.js`).
+- **Remaking or adding a room:** put the photo in `rooms/`, serve the folder locally and open `art/photo-maker.html?src=rooms/NAME.jpg&mode=desk&fx=.5&fy=.5&blur=2.5&q=.55` (fx/fy is the point to keep centred). Same for `mode=phone`.
+- **Andrew's own art:** the size and safe-zone table below still applies; a real photo of a room works best.
+- **The F drawn rooms** (`museum-rooms.html`) and earlier mockups stay in this folder for reference until a direction is merged; delete them then.

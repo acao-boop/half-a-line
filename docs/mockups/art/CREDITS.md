@@ -37,3 +37,14 @@ Every photograph and artwork below is public domain or CC0, checked on 19 Novemb
 | Print: Hudson (No. 13 of The Hudson River Portfolio), John Hill, 1825 | https://www.metmuseum.org/art/collection/search/418422 | Met, CC0 |
 | Framed photo: William Morris Log Cabin, Saluda, North Carolina, 1935 | https://www.loc.gov/pictures/item/2017888788/ | LOC: "No known restrictions on publication." |
 | Framed photo (phone only): interior of an old log cabin, fireplace, c1895 (cropped to remove the studio's imprint) | https://www.loc.gov/pictures/item/2006683529/ | LOC: "No known restrictions on publication." |
+
+## Real rooms (mockup H, `art/photo/`): one photograph of an actual room per backdrop
+Each is the photograph cropped and softly blurred (2–2.5 px) in `photo-maker.html`; nothing is drawn over it. Desktop 1600 × 1000, phone 600 × 1300, webp, 12–63 KB.
+| Room | Source | Licence |
+|---|---|---|
+| Reading room: Main Reading Room, Library of Congress Thomas Jefferson Building, view from above, Carol M. Highsmith, 2009 (`loc-reading2`) | https://www.loc.gov/pictures/item/2011646837/ | LOC: "No known restrictions on publication." |
+| Renaissance study: Studiolo from the Ducal Palace in Gubbio, ca. 1478–82 (`studiolo`) | https://www.metmuseum.org/art/collection/search/198556 | Met, CC0 |
+| Alpine cabin: The Flims Room, Switzerland, ca. 1682–84 (`flims`) | https://www.metmuseum.org/art/collection/search/189157 | Met, CC0 |
+| Timber house: Room from the Hart House, Ipswich, Massachusetts, 1680 (`hart`) | https://www.metmuseum.org/art/collection/search/6887 | Met, CC0 |
+| Tested, not chosen: Dining room from Lansdowne House, 1766–69 (`lansdowne`) | https://www.metmuseum.org/art/collection/search/196910 | Met, CC0 |
+| Tested, not chosen: Damascus Room, 1707 (`damascus`) | https://www.metmuseum.org/art/collection/search/452102 | Met, CC0 |

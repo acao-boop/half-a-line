@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><title>working</title></head><body style="margin:0">
+<canvas id="c"></canvas><pre id="out"></pre>
+<script>
+// A real room photograph as the backdrop: cropped around a focal point, slightly blurred (so the card reads as the foreground), webp.
+// ?src=rooms/flims.jpg&mode=desk|phone&fx=.5&fy=.5&blur=2&zoom=1&q=.6
+const P=new URLSearchParams(location.search),mode=P.get("mode")||"desk",W=mode==="desk"?1600:600,H=mode==="desk"?1000:1300;
+const fx=+(P.get("fx")||.5),fy=+(P.get("fy")||.5),blur=+(P.get("blur")||2),zoom=+(P.get("zoom")||1),Q=+(P.get("q")||.6);
+const cv=document.getElementById("c"),x=cv.getContext("2d");cv.width=W;cv.height=H;
+const im=new Image();im.onload=()=>{
+  const s=Math.max(W/im.width,H/im.height)*zoom,dw=im.width*s,dh=im.height*s;
+  let dx=W/2-fx*dw,dy=H/2-fy*dh;dx=Math.min(0,Math.max(W-dw,dx));dy=Math.min(0,Math.max(H-dh,dy));
+  x.filter=`blur(${blur}px)`;x.drawImage(im,dx-blur*2,dy-blur*2,dw+blur*4,dh+blur*4);x.filter="none";
+  document.getElementById("out").textContent=cv.toDataURL("image/webp",Q);document.title="done"};
+im.src=P.get("src");
+</script></body></html>
