@@ -51,3 +51,11 @@ Each is the photograph cropped and softly blurred (2–2.5 px) in `photo-maker.h
 
 ## Site rooms, sharper version (20 November 2026 build, `site/rooms/`)
 The four live rooms were re-rendered at 1920 × 1200 (desktop) and 750 × 1625 (phone) with light blur (0.6–0.7 px instead of 2–2.5 px), so the rooms show their detail. The reading room now uses the Library of Congress's 2600-pixel copy of the same Highsmith photograph (IIIF service for highsm 11604). Same photographs, same licences as above; nothing generated. Desktop 132–206 KB, phone 56–92 KB.
+
+## Mockup I: three looks (`art/themes/`)
+| Look | Photograph | Licence |
+|---|---|---|
+| Library | Main Reading Room, Library of Congress, Carol M. Highsmith, 2009 (same as the live Reading room) | LOC: "No known restrictions on publication." https://www.loc.gov/pictures/item/2011646837/ |
+| Coast | "Pacific Ocean and rocky California coast", Big Sur, Carol M. Highsmith, between 1980 and 2006 (2400 px copy via the LOC image service, highsm 13822) | LOC: "No known restrictions on publication." https://www.loc.gov/pictures/item/2011632016/ |
+| Night | Perseid and Alpha Capricornid meteor showers, Spruce Knob, West Virginia, 3 August 2025, photo by Bill Ingalls for NASA (NHQ202508030001) | NASA staff photograph, not copyrighted (NASA media guidelines: https://www.nasa.gov/nasa-brand-center/images-and-media/); credit "NASA/Bill Ingalls"; must not imply NASA endorsement. https://images.nasa.gov/details/NHQ202508030001 |
+Fonts (all SIL Open Font License, via Google Fonts): Cormorant Garamond, Inter, Fraunces, DM Sans, Instrument Serif, Space Grotesk.

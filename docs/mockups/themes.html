@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-attr="look" data-fixed-theme="1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup I: Three looks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="mock.css">
+<style>
+/* Mockup I: three complete looks, each a public-domain photograph plus its own type, colours, clue pieces and accents.
+   A sleeker layout shared by all three: a slim floating top bar, one frosted card with generous space, a large line,
+   no boxes inside the card, pill buttons, a one-line footer. Credits: art/CREDITS.md. Nothing generated. */
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100vh;background:var(--base);color:var(--ink);font-family:var(--ui);-webkit-font-smoothing:antialiased;padding:20px 16px 40px}
+.bg{position:fixed;inset:0;z-index:0;background:linear-gradient(var(--veil),var(--veil)),var(--art) center/cover no-repeat,var(--base)}
+@media (max-width:600px){.bg{background-image:linear-gradient(var(--veil),var(--veil)),var(--art-p)}}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+.frost{background:var(--glass);-webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2);border:1px solid var(--rim)}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 22px;border-radius:999px}
+.logo{white-space:nowrap;font-family:var(--line-font);font-size:26px;line-height:1;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.logo b{font-weight:inherit;color:var(--accent)}
+.top nav{display:flex;gap:2px}
+.top nav a{font:500 13.5px var(--ui);color:var(--muted);text-decoration:none;padding:8px 13px;border-radius:999px}
+.top nav a[aria-current]{background:var(--chip);color:var(--ink)}
+
+/* card */
+.card{border-radius:28px;padding:40px 48px 36px;display:flex;flex-direction:column;gap:26px;box-shadow:0 40px 80px -40px rgba(0,0,0,.45)}
+.meta{display:flex;gap:10px;align-items:center;font:500 13px var(--ui);color:var(--muted);letter-spacing:.01em}
+.meta .sp{flex:1}
+.meta .dot{width:3px;height:3px;border-radius:50%;background:var(--muted);opacity:.7}
+.quote{font-family:var(--line-font);font-weight:var(--line-weight);font-size:var(--line-size);line-height:1.32;letter-spacing:var(--line-track);margin:0;text-wrap:pretty}
+.part{padding:.02em .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.part.hid{color:transparent;user-select:none}
+.part.fresh{background:var(--hl);color:var(--hl-ink);border-radius:var(--hl-radius)}
+.hints{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--accent);display:flex;flex-direction:column;gap:6px}
+.hints li{font:400 16px/1.5 var(--ui);display:flex;gap:12px;align-items:baseline}
+.hints li span{font:500 12.5px var(--ui);color:var(--muted);letter-spacing:.02em}
+.ask{display:flex;flex-direction:column;gap:12px}
+.ask label{font:500 14px var(--ui);color:var(--muted)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row input{flex:1 1 240px;min-width:0;height:50px;border-radius:999px;border:1px solid var(--field-line);background:var(--field);color:var(--ink);font:400 16px var(--ui);padding:0 22px}
+.row input::placeholder{color:var(--muted)}
+.go,.ghost{height:50px;border-radius:999px;padding:0 24px;font:600 15px var(--ui);cursor:pointer}
+.go{background:var(--accent);color:var(--accent-ink);border:0}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--field-line)}
+.link{align-self:flex-start;background:none;border:0;padding:0;font:500 14px var(--ui);color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+footer{align-self:center;padding:8px 16px;border-radius:999px;font:400 12.5px var(--ui);color:var(--muted)}
+@media (max-width:600px){
+  body{padding:14px 12px 30px}.top{flex-wrap:wrap;border-radius:22px;padding:12px 8px 6px 16px;row-gap:6px}.top nav{width:100%;justify-content:space-between}.logo{font-size:22px}.top nav a{padding:7px 8px;font-size:12.5px}
+  .card{padding:26px 22px 24px;border-radius:22px;gap:22px}.meta{flex-wrap:wrap}.meta .sp{flex-basis:100%;height:0}
+  .go,.ghost,.row input{height:46px}}
+
+/* ---------- Library: the Library of Congress Main Reading Room. Cormorant Garamond and Inter; antique gold; leather-spine pieces. ---------- */
+[data-look="library"]{--art:url("art/themes/library-desk.webp");--art-p:url("art/themes/library-phone.webp");--base:#2A2118;--veil:rgba(20,12,4,.10);
+  --glass:rgba(251,246,234,.92);--rim:rgba(255,255,255,.6);--chip:rgba(60,45,20,.08);--ink:#211A10;--muted:#5D533F;--accent:#8C6A1E;--accent-ink:#FFFFFF;
+  --field:rgba(255,255,255,.7);--field-line:rgba(60,45,20,.22);
+  --line-font:"Cormorant Garamond",Georgia,serif;--line-weight:500;--line-size:clamp(30px,4.6vw,42px);--line-track:-.005em;--ui:"Inter",system-ui,sans-serif;
+  --hl:linear-gradient(180deg,#F1D488,#E2B64E);--hl-ink:#211A10;--hl-radius:3px;--bar:#24402F;--tool:#C9A048}
+[data-look="library"] .part.hid{background:linear-gradient(90deg,transparent 6%,var(--tool) 6%,var(--tool) 7.5%,transparent 7.5%,transparent 92.5%,var(--tool) 92.5%,var(--tool) 94%,transparent 94%),linear-gradient(180deg,rgba(255,255,255,.12),rgba(0,0,0,.2)),var(--bar);border-radius:3px;box-shadow:inset 0 1px 0 var(--tool),inset 0 -1px 0 var(--tool)}
+[data-look="library"] .logo{font-style:italic;font-weight:500}
+[data-look="library"] .logo b{font-style:normal;font-weight:600;border-bottom:2px solid currentColor}
+[data-look="library"] .card{border-radius:6px;box-shadow:0 0 0 1px rgba(140,106,30,.35),0 0 0 6px rgba(251,246,234,.5),0 40px 80px -40px rgba(0,0,0,.6)}
+[data-look="library"] .go{border-radius:4px}[data-look="library"] .ghost{border-radius:4px}[data-look="library"] .row input{border-radius:4px}
+
+/* ---------- Coast: Big Sur cliffs at dawn. Fraunces and DM Sans; Pacific blue and sand; sea-glass pieces. ---------- */
+[data-look="coast"]{--art:url("art/themes/coast-desk.webp");--art-p:url("art/themes/coast-phone.webp");--base:#C9D3E3;--veil:rgba(255,255,255,0);
+  --glass:rgba(255,255,255,.86);--rim:rgba(255,255,255,.85);--chip:rgba(16,35,58,.07);--ink:#0F2236;--muted:#4A5B6E;--accent:#1D5E86;--accent-ink:#FFFFFF;
+  --field:rgba(255,255,255,.75);--field-line:rgba(15,34,54,.18);
+  --line-font:"Fraunces",Georgia,serif;--line-weight:300;--line-size:clamp(29px,4.4vw,40px);--line-track:-.015em;--ui:"DM Sans",system-ui,sans-serif;
+  --hl:#F3D7A6;--hl-ink:#0F2236;--hl-radius:999px}
+[data-look="coast"] .part.hid{background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(255,255,255,0) 45%),linear-gradient(135deg,#7FB9BE,#4F8E9D);border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+[data-look="coast"] .part.fresh{padding:.02em .3em}
+[data-look="coast"] .logo{font-weight:600;font-variation-settings:"opsz" 72}
+[data-look="coast"] .hints{border-left-color:#F3D7A6;border-left-width:3px}
+
+/* ---------- Night: the Milky Way over Spruce Knob. Instrument Serif and Space Grotesk; starlight and moon-gold; frosted-glass pieces. ---------- */
+[data-look="night"]{--art:url("art/themes/night-desk.webp");--art-p:url("art/themes/night-phone.webp");--base:#05070F;--veil:rgba(0,0,0,0);
+  --glass:rgba(10,13,28,.82);--rim:rgba(255,255,255,.14);--chip:rgba(255,255,255,.09);--ink:#EEF0FA;--muted:#B3BAD6;--accent:#C9D3FF;--accent-ink:#0A0D1C;
+  --field:rgba(255,255,255,.06);--field-line:rgba(255,255,255,.22);
+  --line-font:"Instrument Serif",Georgia,serif;--line-weight:400;--line-size:clamp(32px,5vw,46px);--line-track:-.01em;--ui:"Space Grotesk",system-ui,sans-serif;
+  --hl:#F2E2A4;--hl-ink:#0A0D1C;--hl-radius:4px}
+[data-look="night"] .part.hid{background:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,.14));border-radius:4px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 0 18px rgba(170,190,255,.18)}
+[data-look="night"] .logo{font-style:italic}
+[data-look="night"] .part.fresh{box-shadow:0 0 22px rgba(242,226,164,.35)}
+
+/* ---------- High contrast: no photo, no glass, strongest colours. ---------- */
+[data-look="contrast"]{--art:none;--art-p:none;--base:#FFFFFF;--veil:rgba(0,0,0,0);--glass:#FFFFFF;--rim:#000;--chip:#E6E6E6;--ink:#000;--muted:#2B2B2B;--accent:#0033CC;--accent-ink:#FFF;
+  --field:#FFF;--field-line:#000;--line-font:Georgia,serif;--line-weight:400;--line-size:clamp(28px,4.4vw,38px);--line-track:0;--ui:system-ui,sans-serif;--hl:#FFE600;--hl-ink:#000;--hl-radius:2px}
+[data-look="contrast"] .part.hid{background:#000}
+[data-look="contrast"] .frost{-webkit-backdrop-filter:none;backdrop-filter:none}
+</style>
+<script>window.MOODS=[["library","Library"],["coast","Coast"],["night","Night"],["contrast","High contrast"]]</script>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top frost"><a class="logo" href="#">Half a <b>Line</b></a>
+    <nav aria-label="Sections"><a href="#" aria-current="page">Today</a><a href="#">Archive</a><a href="#">Stats</a><a href="#">About</a><a href="#">Settings</a></nav></header>
+  <main class="card frost">
+    <div class="meta"><span>No. 2</span><span class="dot"></span><span>Thursday 19 November</span><span class="sp"></span><span>3 of 4 pieces · 1 of 3 hints</span></div>
+    <p class="quote"><span class="part hid" aria-hidden="true">Life’s but a walking shadow,</span> <span class="part fresh">a poor player</span> <span class="part">/ That struts and frets his hour upon the stage</span> <span class="part">/ And then is heard no more.</span></p>
+    <ol class="hints"><li><span>Hint 1</span>A play from the 1600s</li></ol>
+    <div class="ask"><label for="g">Which work is this from?</label>
+      <div class="row"><input id="g" type="text" placeholder="Start typing a title or author"><button class="go">Guess</button><button class="ghost">Next clue</button></div>
+      <button class="link">Too hard? Pick from six titles</button></div>
+  </main>
+  <footer class="frost">A new line every day at midnight · Designed and built by Andrew Cao</footer>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>
