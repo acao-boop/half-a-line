@@ -80,23 +80,22 @@ Why fewer than five, or what to know: Four independent web copies (poets.org, Li
 - [Web: wist.info](https://wist.info/millay-edna-st-vincent/72683/) · exact · “Love is not all: it is not meat nor drink Nor slumber nor a roof against the rain”
 - [Web: literarydevices.net](https://literarydevices.net/love-is-not-all-sonnet-xxx) · exact · “Love is not all; it is not meat nor drink Nor slumber nor a roof against the rain”
 
-## Day 65: Langston Hughes, *The Negro Mother*
+## Day 65: James Truslow Adams, *The Epic of America* (replaced 20 Nov 2026; was Langston Hughes, *The Negro Mother*)
 
-Draft: Children, I come back today To tell you a story of the long dark way That I had to climb, that I had to know In order that the race might live and grow.
+Draft: But there has been also the American dream, that dream of a land in which life should be better and richer and fuller for every man, with opportunity for each according to his ability or achievement.
 
-Result: 2 independent sources match (2 word-for-word, the rest differ only by scanning errors)
+Result: 3 independent printed copies match word for word.
 
 Exact match (character for character, to the line-check standard) in:
 
-- [Web: www.poemhunter.com](https://www.poemhunter.com/poem/the-negro-mother/)
-- [Web: www.poetryverse.com](https://www.poetryverse.com/langston-hughes-poems/negro-mother)
+- [archive.org scan: The Epic of America (Boston: Little, Brown 1931)](https://archive.org/details/in.ernet.dli.2015.262385) · p. 404
 
-Same words in (all sources found):
+Same words in:
 
-Why fewer than five, or what to know: Only two web copies could be checked, and both are reader-posted sites. Published in 1931, so it is still in copyright until 1 January 2027: Gutenberg and Wikisource can't carry it yet, and archive.org's scans of 1931 printings are lending-only, so their text can't be searched. Checked against the open copies that exist. The 1931 booklet (Golden Stair Press) is in the Smithsonian and the Morgan Library but not online. Lowest-confidence wording in this batch: worth a look at a printed copy before it goes in.
+- [archive.org scan: The Epic of America (Garden City Books)](https://archive.org/details/epicofamerica0000jame_n6i0)
+- [archive.org scan: The Epic of America (Little, Brown, copyright 1931, 1933)](https://archive.org/details/in.ernet.dli.2015.226679)
 
-- [Web: www.poemhunter.com](https://www.poemhunter.com/poem/the-negro-mother/) · exact · “Children, I come back today To tell you a story of the long dark way That I had to climb, that I had to know In order that the race might live and grow”
-- [Web: www.poetryverse.com](https://www.poetryverse.com/langston-hughes-poems/negro-mother) · exact · “Children, I come back today To tell you a story of the long dark way That I had to climb, that I had to know In order that the race might live and grow”
+Not used: [Wikiquote](https://en.wikiquote.org/wiki/James_Truslow_Adams) drops “his” before “ability”.
 
 ## Day 66: E. E. Cummings, *somewhere i have never travelled,gladly beyond*
 
