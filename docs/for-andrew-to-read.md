@@ -36,3 +36,7 @@ Childhood and Around the world were picked by Claude (recommended options; backu
 ## Themed weeks (in branch `claude/lines-151-audit`, not live yet)
 - **About page, new second paragraph:** "Some weeks have a theme, such as first lines or the Gothic. The theme is named above the line, and a public-domain painting for the week appears once you solve it." (`site/app.js`, about())
 - **New right answers:** "How Do I Love Thee?" (day 89) and "The Elephant's Child" (day 127) count as right, from the craft audit's fair-answers list.
+
+## Credit wording (approved by Andrew 20 Nov 2026, in branch `claude/lines-151-audit`)
+- **Footer credit:** "Designed and edited by Andrew Cao" (was "Designed and built by Andrew Cao"); mark and link unchanged (`site/index.html`).
+- **About page, last paragraph:** "Designed and edited by Andrew Cao. Drafted with AI assistance and checked against the sources cited." (replaces "Designed and built by Andrew Cao."; the name still links to andrewcao.org; `site/app.js`, about())
