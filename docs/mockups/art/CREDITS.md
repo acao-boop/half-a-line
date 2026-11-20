@@ -48,3 +48,6 @@ Each is the photograph cropped and softly blurred (2–2.5 px) in `photo-maker.h
 | Timber house: Room from the Hart House, Ipswich, Massachusetts, 1680 (`hart`) | https://www.metmuseum.org/art/collection/search/6887 | Met, CC0 |
 | Tested, not chosen: Dining room from Lansdowne House, 1766–69 (`lansdowne`) | https://www.metmuseum.org/art/collection/search/196910 | Met, CC0 |
 | Tested, not chosen: Damascus Room, 1707 (`damascus`) | https://www.metmuseum.org/art/collection/search/452102 | Met, CC0 |
+
+## Site rooms, sharper version (20 November 2026 build, `site/rooms/`)
+The four live rooms were re-rendered at 1920 × 1200 (desktop) and 750 × 1625 (phone) with light blur (0.6–0.7 px instead of 2–2.5 px), so the rooms show their detail. The reading room now uses the Library of Congress's 2600-pixel copy of the same Highsmith photograph (IIIF service for highsm 11604). Same photographs, same licences as above; nothing generated. Desktop 132–206 KB, phone 56–92 KB.
