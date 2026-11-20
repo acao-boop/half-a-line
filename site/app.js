@@ -6,7 +6,7 @@ const mid=d=>new Date(d.getFullYear(),d.getMonth(),d.getDate());
 const dayNo=d=>Math.round((mid(d)-EPOCH)/DAY)+1;
 const TODAY=()=>Math.min(Math.max(dayNo(new Date()),1),LINES.length);
 const dateOf=n=>new Date(EPOCH.getFullYear(),EPOCH.getMonth(),EPOCH.getDate()+n-1);
-const fmt=(d,long)=>d.toLocaleDateString(undefined,long?{weekday:"long",day:"numeric",month:"long"}:{day:"numeric",month:"short"});
+const fmt=(d,long)=>d.toLocaleDateString(undefined,long?{weekday:"short",day:"numeric",month:"short"}:{day:"numeric",month:"short"});
 const lineOf=n=>LINES[(n-1)%LINES.length];
 
 // Clue ladder after the two opening pieces: h = hint, p = next piece. Leftover pieces come at the end.
@@ -53,11 +53,11 @@ function choices(n,L){const yr=s=>parseInt(s,10)||1800,y=yr(L.year),seen=new Set
 function quoteHTML(L,r,blankKey){
   const v=view(L,r);
   return L.parts.map(([t,o])=>{
-    const shown=r.done||o<=v.pieces, isFresh=!r.done&&v.last&&v.last[0]==="p"&&v.last[1]===o;
+    const shown=r.done||o<=v.pieces, isFresh=!r.done&&v.last&&v.last[0]==="p"&&v.last[1]===o, lift=r.done&&reveal!==null&&o>reveal;
     if(!shown)return '<span class="part hid" aria-hidden="true">'+esc(t)+'</span><span class="sr">(hidden piece)</span>';
     let h=esc(t);
     if(blankKey)h=h.replace(new RegExp("\\b"+blankKey+"\\b"),'<span class="blank">&nbsp;?&nbsp;</span>');
-    return '<span class="part'+(isFresh?' fresh':'')+'">'+h+'</span>';
+    return '<span class="part'+(isFresh?' fresh':'')+(lift?' hid lift':'')+'">'+h+'</span>';
   }).join(" ");
 }
 
@@ -67,8 +67,8 @@ function play(n){
   const today=TODAY(), isToday=n===today, L=lineOf(n), r=rec(n), N=L.parts.length, T=steps(L).length, v=view(L,r);
   setNav(isToday?"today":"archive");
   let h='';
-  if(isToday&&!S.help)h+='<div class="help" id="help"><p><b>How to play:</b> name the work this line is from. Each wrong guess, or \u201cNext clue,\u201d shows a hint or more of the line.</p><button class="gotit" id="gotit" aria-label="Hide how to play">Got it</button></div>';
-  h+='<div class="meta"><span>No. '+n+' · '+fmt(dateOf(n),true)+'</span><span>'+(r.done?(r.won?(r.step?'Solved with '+clues(r.step):'Solved, no extra clues'):'Missed'):v.pieces+' of '+N+' pieces · '+v.hints.length+' of 3 hints')+'</span></div>';
+  const help=isToday&&!S.help&&!r.step&&!r.misses.length?'<p class="help" id="help">Name the work this line is from. Each wrong guess, or \u201cNext clue,\u201d shows a hint or more of the line.</p>':'';
+  h+='<div class="meta"><span>No. '+n+' · '+fmt(dateOf(n),true)+'</span>'+(r.done?'':'<span>'+v.pieces+' of '+N+' pieces · '+v.hints.length+' of 3 hints</span>')+'</div>';
   if(L.theme)h+='<p class="theme">This week: <b>'+esc(L.theme)+'</b></p>';
   h+='<p class="quote">'+quoteHTML(L,r,r.done&&r.bonus===null?L.key:null)+'</p>';
   if(!r.done&&v.hints.length)h+='<ul class="hints" aria-label="Hints">'+v.hints.map(k=>'<li'+(v.last&&v.last[0]==="h"&&v.last[1]===k?' class="fresh"':'')+'><span>Hint</span>'+esc(L.hints[k])+'</li>').join("")+'</ul>';
@@ -78,20 +78,22 @@ function play(n){
       +C.map(([t,a])=>'<button class="choice" type="button" data-t="'+esc(t)+'"'+(r.misses.includes(t)?' disabled':'')+'><span>'+esc(t)+'</span><small>'+esc(a)+'</small></button>').join("")+'</div>'
       +(r.step<T?'<div class="row"><button class="btn ghost" type="button" id="more">Next clue</button></div>':'')
       +(other.length?'<ul class="misses" aria-label="Wrong guesses">'+other.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')
-      +'<button class="linkish switch" type="button" id="mode">Type the title instead</button></div>';
+      +help+'<button class="linkish switch" type="button" id="mode">Type the title instead</button></div>';
   }else if(!r.done){
     h+='<form class="ask" id="f" autocomplete="off"><label for="g">Which work is this from?</label>'
       +'<div class="row"><div class="combo"><input type="text" id="g" placeholder="Start typing a title or author" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list"><ul class="sugg" id="sugg" role="listbox" hidden></ul></div>'
       +'<button class="btn" type="submit">Guess</button>'
       +(r.step<T?'<button class="btn ghost" type="button" id="more">Next clue</button>':'')+'</div>'
       +'<p class="err" id="err"></p>'
+      +help
       +'<button class="linkish switch" type="button" id="mode">Too hard? Pick from six titles</button>'
       +(r.misses.length?'<ul class="misses" aria-label="Wrong guesses">'+r.misses.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')
       +'</form>';
   }else{
-    h+='<p class="verdict '+(r.won?'won':'lost')+'">'+(r.won?(r.step===0?'Straight away. Impressive.':'Got it with '+clues(r.step)+'.'):'Not this time.')+'</p>';
-    if(r.misses.length)h+='<ul class="misses" aria-label="Wrong guesses">'+r.misses.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>';
-    h+='<dl class="facts"><dt>Work</dt><dd><i>'+esc(L.work)+'</i>, '+esc(L.year)+'</dd><dt>Author</dt><dd>'+esc(L.author)+'</dd><dt>Speaker</dt><dd>'+esc(L.who)+'</dd></dl>';
+    const lifted=reveal!==null?L.parts.filter(p=>p[1]>reveal).length:0;
+    h+='<div class="plate'+(lifted?' arrive" style="--wait:'+(lifted*LIFT+200)+'ms':'')+'"><div class="res"><p class="verdict '+(r.won?'won':'lost')+'">'+(r.won?(r.step===0?'Straight away. Impressive.':'Got it with '+clues(r.step)+'.'):'Not this time.')+'</p>'
+      +(r.misses.length?'<ul class="misses" aria-label="Wrong guesses">'+r.misses.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')+'</div>'
+      +'<h2 class="title"><span class="sr">The work: </span>'+esc(L.work)+'</h2><p class="by"><span class="sr">By </span>'+esc(L.author)+', '+esc(L.year)+'</p><p class="who"><span class="sr">Speaker: </span>'+esc(L.who)+'</p></div>';
     if(r.bonus===null){
       h+='<div class="bonus"><p><b>Bonus:</b> which word fills the gap?</p><div class="tiles">'+shuffle(L.tiles,n).map(t=>'<button class="tile" data-t="'+esc(t)+'">'+esc(t)+'</button>').join("")+'</div></div>';
     }else{
@@ -99,27 +101,30 @@ function play(n){
       h+='<p class="note">'+esc(L.note)+'</p>';
       const W=L.theme&&window.HAL_WEEKS&&HAL_WEEKS[L.theme];
       if(W)h+='<section class="potw" aria-labelledby="pw"><figure><img src="'+esc(W.img)+'" alt="'+esc(W.alt)+'" width="'+W.w+'" height="'+W.h+'" loading="lazy" decoding="async"></figure><div><p class="k">This week’s painting</p><h3 id="pw">'+esc(W.title)+'</h3><p>'+esc(W.by)+'. '+esc(W.caption)+'</p><p class="src">The Metropolitan Museum of Art · public domain · <a href="'+esc(W.url)+'">see it at the Met</a></p></div></section>';
-      h+='<div class="share"><pre id="sharetext">'+esc(shareText(n,L,r))+'</pre><div class="row"><button class="btn" id="copy">'+(canShare()?'Share result':'Copy result')+'</button><a class="btn ghost" href="#stats">Your stats</a>'
-        +(isToday?'<a class="btn ghost" href="#archive">Play past lines</a>':nextLink(n))+'</div><p class="err" id="cerr" style="color:var(--muted)"></p>'
+      h+='<div class="share"><pre id="sharetext">'+esc(shareText(n,L,r))+'</pre><div class="row"><button class="btn" id="copy">'+(canShare()?'Share result':'Copy result')+'</button><span class="more"><a class="quiet" href="#stats">Your stats</a>'
+        +(isToday?'<a class="quiet" href="#archive">Play past lines</a>':nextLink(n))+'</span></div><p class="err" id="cerr" style="color:var(--muted)"></p>'
         +(isToday?'<p class="next" id="countdown"></p>':'')+'</div>';
     }
   }
-  $("card").innerHTML=h;
+  $("card").innerHTML=h;reveal=null;
+  document.querySelectorAll(".part.lift").forEach((el,k)=>setTimeout(()=>el.classList.remove("hid"),80+k*LIFT));
   wire(n,L,r,T);
   const st=$("status");if(st){st.textContent=say;say=""}
   tick();
 }
-function nextLink(n){for(let k=n+1;k<=TODAY();k++){if(!(S.days[k]&&S.days[k].done))return '<a class="btn ghost" href="'+(k===TODAY()?'#':'#day-'+k)+'">Next unplayed line</a>'}return '<a class="btn ghost" href="#archive">Back to archive</a>'}
+// When a line is finished, the pieces still hidden lift one by one, LIFT ms apart (not when the device asks for less motion).
+let reveal=null;const LIFT=260;
+function nextLink(n){for(let k=n+1;k<=TODAY();k++){if(!(S.days[k]&&S.days[k].done))return '<a class="quiet" href="'+(k===TODAY()?'#':'#day-'+k)+'">Next unplayed line</a>'}return '<a class="quiet" href="#archive">Back to archive</a>'}
 
 function wire(n,L,r,T){
-  const guess=t=>{if(r.misses.includes(t))return;
+  const guess=t=>{if(r.misses.includes(t))return;S.help=true;const had=view(L,r).pieces;
     if(t===L.work||(L.alias||[]).includes(t))finish(n,r,true);
     else{r.misses.push(t);if(r.step<T)r.step++;else finish(n,r,false)}
     say=(!r.won&&r.misses[r.misses.length-1]===t?"Not "+t+". ":"")+announce(L,r);
+    if(r.done&&!matchMedia("(prefers-reduced-motion: reduce)").matches)reveal=had;
     save();play(n);const ng=$("g")||document.querySelector(".choice:not(:disabled)");if(ng)ng.focus()};
   document.querySelectorAll(".choice").forEach(b=>b.onclick=()=>{r.easy=true;guess(b.dataset.t)});
   const md=$("mode");if(md)md.onclick=()=>{P.easy=!P.easy;saveP();play(n);const x=P.easy?document.querySelector(".choice:not(:disabled)"):$("g");if(x)x.focus()};
-  const g0=$("gotit");if(g0)g0.onclick=()=>{S.help=true;save();$("help").remove()};
   const f=$("f");
   if(f){
     const g=$("g"),list=$("sugg"),err=$("err");let items=[],sel=-1;
@@ -146,7 +151,7 @@ function wire(n,L,r,T){
       if(r.misses.includes(hit[0])){err.textContent="You already tried that one.";return}
       guess(hit[0])});
   }
-  const more=$("more");if(more)more.onclick=()=>{r.step++;say=announce(L,r);save();play(n);const x=$("more")||$("g")||document.querySelector(".choice:not(:disabled)");if(x)x.focus()};
+  const more=$("more");if(more)more.onclick=()=>{S.help=true;r.step++;say=announce(L,r);save();play(n);const x=$("more")||$("g")||document.querySelector(".choice:not(:disabled)");if(x)x.focus()};
   document.querySelectorAll(".tile").forEach(b=>b.onclick=()=>{r.bonus=b.dataset.t;save();play(n)});
   const cp=$("copy");if(cp)cp.onclick=()=>{const text=shareText(n,L,r);
     if(canShare()){navigator.share({text}).catch(()=>{});return}
@@ -165,12 +170,17 @@ function tick(){const el=$("countdown");if(!el)return;const now=new Date(),next=
   el.textContent=TODAY()>=LINES.length?"That's every line so far. More are on the way.":"Next line in "+Math.floor(m/60)+"h "+(m%60)+"m."}
 setInterval(tick,30000);
 
+// The start of a line for the archive: whole words, up to about 70 characters.
+function opening(L){const s=L.parts.map(p=>p[0]).join(" ");if(s.length<=72)return s;const c=s.slice(0,70);return c.slice(0,c.lastIndexOf(" ")).replace(/[\s,;:\u2014\/]+$/,"")+"\u2026"}
 function archive(){
   setNav("archive");const t=TODAY();let items="";
   const anyTheme=LINES.slice(0,t).some(L=>L.theme);let prev=null;
   for(let n=t;n>=1;n--){const r=S.days[n];const th=lineOf(n).theme||'A mix of lines';
     if(anyTheme&&th!==prev){items+='<li class="wk">'+esc(th)+'</li>';prev=th}const st=!r||(!r.done&&!r.step&&!r.misses.length)?'<span class="st">Not played</span>':!r.done?'<span class="st open">In progress</span>':r.won?'<span class="st won">Solved'+(r.step?', '+clues(r.step):'')+'</span>':'<span class="st lost">Missed</span>';
-    items+='<li><a href="'+(n===t?'#':'#day-'+n)+'"><b>No. '+n+'</b><small>'+fmt(dateOf(n))+(n===t?' · today':'')+'</small>'+st+'</a></li>'}
+    const M=lineOf(n);
+    items+='<li><a href="'+(n===t?'#':'#day-'+n)+'"><span class="top"><span>No. '+n+' · '+fmt(dateOf(n))+(n===t?' · today':'')+'</span>'+st+'</span>'
+      +(r&&r.done?'<span class="ln">'+esc(opening(M))+'</span><span class="of"><i>'+esc(M.work)+'</i>, '+esc(M.author)+'</span>'
+        :'<span class="ln" aria-hidden="true">'+M.parts.slice(0,3).map(p=>'<span class="part hid">'+esc(p[0].slice(0,22))+'</span>').join(" ")+'</span>')+'</a></li>'}
   $("card").innerHTML='<div class="meta"><span>Archive</span><span>'+plural(t,"line")+' so far</span></div><h2>Every line so far</h2><p style="margin:0;color:var(--muted)">Missed a day? Play any past line here. Past lines count toward your stats but not your streak.</p><ul class="arch">'+items+'</ul>';
 }
 
@@ -182,7 +192,7 @@ function stats(){
   let best=0,run=0;for(let k=1;k<=t;k++){const r=S.days[k];run=(r&&r.won&&r.onDay)?run+1:0;best=Math.max(best,run)}
   const bonus=recs.filter(([n,r])=>r.bonus===lineOf(+n).key).length;
   const dist=[0,1,2,3,4,5,6].map(k=>won.filter(([,r])=>r.step===k).length),miss=played-won.length,mx=Math.max(1,...dist,miss);
-  const bar=(label,c,cls)=>'<li><span>'+label+'</span><div class="b '+cls+'" style="width:'+Math.max(8,Math.round(c/mx*100))+'%">'+c+'</div></li>';
+  const bar=(label,c,cls)=>'<li><span>'+label+'</span>'+(c?'<div class="b '+cls+'" style="width:'+Math.max(8,Math.round(c/mx*100))+'%">'+c+'</div>':'<span class="z">0</span>')+'</li>';
   $("card").innerHTML='<div class="meta"><span>Your stats</span><span>Saved in this browser</span></div>'
     +'<div class="nums"><div class="num"><b>'+played+'</b><span>Played</span></div><div class="num"><b>'+pct+'%</b><span>Solved</span></div><div class="num"><b>'+cur+'</b><span>Current streak</span></div><div class="num"><b>'+best+'</b><span>Best streak</span></div><div class="num"><b>'+avg+'</b><span>Avg. extra clues</span></div><div class="num"><b>'+bonus+'</b><span>Bonus words</span></div></div>'
     +'<h2 style="font-size:20px">Extra clues needed</h2><ul class="bars">'+dist.map((c,k)=>bar(k===0?"None":plural(k,"clue"),c,"won")).join("")+bar("Missed",miss,"lost")+'</ul>'
