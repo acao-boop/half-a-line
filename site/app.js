@@ -22,17 +22,18 @@ if(!S||typeof S.days!=="object")S=fresh();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 // Settings live under their own key, separate from progress.
 const PK="half-a-line-prefs";
-let P={room:"plain",mode:"auto",easy:false};
+// Rooms: a real photograph of each room behind the card (site/rooms/, styles in styles.css). The Reading room is the default.
+const ROOMS=[["reading","Reading room","Library of Congress"],["study","Renaissance study","Gubbio, Italy, 1470s"],["alpine","Alpine cabin","Flims, Switzerland, 1680s"],["timber","Timber house","Ipswich, Massachusetts, 1680"],["contrast","High contrast","No room, strongest colours"]];
+let P={room:"reading",mode:"auto",easy:false};
 try{const o=JSON.parse(localStorage.getItem(PK))||{};Object.assign(P,o);
-  // Before rooms (19 Nov 2026) the choice was a colour set; carry it across.
-  if(!o.room&&o.palette)P.room=({contrast:"contrast",sepia:"reading"})[o.palette]||"plain"}catch(e){}
+  // Before rooms the choice was a colour set; each maps to the nearest room (the same map is in the head of index.html and 404.html).
+  if(!o.room&&o.palette)P.room=({sepia:"study",sage:"alpine",rose:"timber",contrast:"contrast"})[o.palette]||"reading"}catch(e){}
+if(!ROOMS.some(([k])=>k===P.room))P.room="reading";
 const saveP=()=>{try{localStorage.setItem(PK,JSON.stringify(P))}catch(e){}};
 function applyP(){const d=document.documentElement;
-  if(P.room&&P.room!=="plain")d.dataset.room=P.room;else delete d.dataset.room;
+  d.dataset.room=P.room;
   if(P.mode==="light"||P.mode==="dark")d.dataset.theme=P.mode;else delete d.dataset.theme}
 applyP();
-// Rooms: a scene drawn behind the card (CSS and inline SVG in styles.css). Plain and High contrast have no scene.
-const ROOMS=[["plain","Plain","Just the card"],["reading","Reading room","Green lamp, oak desk"],["gallery","Gallery","A line hung on the wall"],["library","Library at night","Shelves and one lamp; always dark"],["garden","Autumn garden","Falling leaves"],["contrast","High contrast","Strongest colours, no room"]];
 const rec=n=>S.days[n]||(S.days[n]={step:0,misses:[],done:false,won:false,bonus:null,onDay:false});
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const norm=s=>s.toLowerCase().normalize("NFD").replace(/\p{M}/gu,"").replace(/^the\s+/,"").replace(/[^a-z0-9]/g,"");
@@ -191,9 +192,9 @@ function stats(){
 function settings(){
   setNav("settings");
   const radio=(name,k,label,on)=>'<label class="opt plain"><input type="radio" name="'+name+'" value="'+k+'"'+(on?' checked':'')+'>'+label+'</label>';
-  const room=([k,l,s])=>'<label class="rtile"><input type="radio" name="room" value="'+k+'"'+(P.room===k?' checked':'')+'><span class="thumb" data-room="'+k+'" aria-hidden="true"><span class="scene"></span></span><span>'+l+'</span><small>'+s+'</small></label>';
+  const room=([k,l,s])=>'<label class="rtile" data-room="'+k+'"><input type="radio" name="room" value="'+k+'"'+(P.room===k?' checked':'')+'><span class="thumb" aria-hidden="true"><span class="scene"></span></span><span class="mini" aria-hidden="true"><span class="h">Call</span> me <span class="f">Ishmael</span>.</span><span>'+l+'</span><small>'+s+'</small></label>';
   $("card").innerHTML='<div class="meta"><span>Settings</span><span>Saved in this browser</span></div>'
-    +'<fieldset class="set"><legend>Room</legend><p class="hint">Where you’d like to read the day’s line. The card stays easy to read in every room.</p><div class="rooms">'+ROOMS.map(room).join("")+'</div></fieldset>'
+    +'<fieldset class="set"><legend>Room</legend><p class="hint">Where you’d like to read the day’s line: photographs of real rooms, each with its own clue pieces. In dark mode the room dims to evening.</p><div class="rooms">'+ROOMS.map(room).join("")+'</div></fieldset>'
     +'<fieldset class="set"><legend>Light or dark</legend><div class="opts">'+[["auto","Match my device"],["light","Light"],["dark","Dark"]].map(([k,l])=>radio("mode",k,l,P.mode===k)).join("")+'</div></fieldset>'
     +'<fieldset class="set"><legend>Difficulty</legend><label class="toggle"><input type="checkbox" id="easy"'+(P.easy?' checked':'')+'><span><b>Easy mode.</b> Pick the work from six titles instead of typing it. Shared results say “easy mode.”</span></label></fieldset>';
   document.querySelectorAll('input[name=room]').forEach(i=>i.onchange=()=>{P.room=i.value;saveP();applyP()});
@@ -208,6 +209,7 @@ function about(){
     +'<p>Every line comes from a work in the public domain. Translations are named where they’re used: Constance Garnett for Tolstoy, Samuel Butler for Homer.</p>'
     +'<p><b>Scoring.</b> You start with two pieces of the line. Each wrong guess, or a press of “Next clue,” gives you a hint or another piece. Your score is the number of extra clues you needed.</p>'
     +'<p><b>Easy mode.</b> Prefer to pick from a short list? Turn on easy mode in Settings, or press “Too hard?” under the guess box. Rooms and light or dark are there too.</p>'
+    +'<p><b>Rooms.</b> The rooms are public-domain photographs: the <a href="https://www.loc.gov/pictures/item/2011646837/">Main Reading Room of the Library of Congress</a> by Carol M. Highsmith, and three period rooms at the Metropolitan Museum of Art: the <a href="https://www.metmuseum.org/art/collection/search/198556">studiolo from Gubbio</a>, the <a href="https://www.metmuseum.org/art/collection/search/189157">Flims Room</a> and the <a href="https://www.metmuseum.org/art/collection/search/6887">Hart House room</a>.</p>'
     +'<p>Designed and built by <a href="https://andrewcao.org/">Andrew Cao</a>.</p></div>';
 }
 

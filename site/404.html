@@ -9,9 +9,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<script>try{var p=JSON.parse(localStorage.getItem("half-a-line-prefs"))||{},d=document.documentElement;var r=p.room||({contrast:"contrast",sepia:"reading"})[p.palette];if(r&&r!=="plain")d.dataset.room=r;if(p.mode==="light"||p.mode==="dark")d.dataset.theme=p.mode}catch(e){}</script>
+<script>document.documentElement.dataset.room="reading";try{var p=JSON.parse(localStorage.getItem("half-a-line-prefs"))||{},d=document.documentElement;var r=p.room||({sepia:"study",sage:"alpine",rose:"timber",contrast:"contrast"})[p.palette];d.dataset.room=/^(reading|study|alpine|timber|contrast)$/.test(r)?r:"reading";if(p.mode==="light"||p.mode==="dark")d.dataset.theme=p.mode}catch(e){}</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/styles.css?v=5">
+<link rel="stylesheet" href="/styles.css?v=6">
 </head>
 <body>
 <div class="scene" aria-hidden="true"></div>
