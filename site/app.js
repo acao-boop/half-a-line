@@ -218,11 +218,12 @@ function about(){
   setNav("about");
   $("card").innerHTML='<div class="meta"><span>About</span><span>'+plural(LINES.length,"line")+'</span></div><h2>About Half a Line</h2><div class="prose">'
     +'<p>Each day brings one famous line from literature, shown a few pieces at a time. Name the work it comes from in as few clues as you can, then read why the line matters.</p>'
+    +'<p>Some weeks have a theme, such as first lines or the Gothic. The theme is named above the line, and a public-domain painting for the week appears once you solve it.</p>'
     +'<p>Every line comes from a work in the public domain. Translations are named where they’re used: Constance Garnett for Tolstoy, Samuel Butler for Homer.</p>'
     +'<p><b>Scoring.</b> You start with two pieces of the line. Each wrong guess, or a press of “Next clue,” gives you a hint or another piece. Your score is the number of extra clues you needed.</p>'
     +'<p><b>Easy mode.</b> Prefer to pick from a short list? Turn on easy mode in Settings, or press “Too hard?” under the guess box. Looks and light or dark are there too.</p>'
     +'<p><b>Looks.</b> The photographs are in the public domain: the <a href="https://www.loc.gov/pictures/item/2011646837/">Main Reading Room of the Library of Congress</a> and <a href="https://www.loc.gov/pictures/item/2011632016/">the Big Sur coast</a>, both by Carol M. Highsmith, and <a href="https://images.nasa.gov/details/NHQ202508030001">the Milky Way over Spruce Knob, West Virginia</a> by Bill Ingalls for NASA.</p>'
-    +'<p>Designed and edited by <a href="https://andrewcao.org/">Andrew Cao</a>.</p></div>';
+    +'<p>Designed and edited by <a href="https://andrewcao.org/">Andrew Cao</a>. Drafted with AI assistance and checked against the sources cited.</p></div>';
 }
 
 

@@ -18,5 +18,10 @@ New wording that goes out under Andrew's name, written by Claude and not yet rea
 ## Painting of the week
 Done: Andrew approved plainer, museum-label captions for all ten weeks on 20 Nov 2026 (`site/weeks.js`). The paintings themselves stand as listed in `docs/painting-of-the-week.md`.
 
-## Still to write when themed weeks go live
-- One sentence on the About page about weekly themes and the painting of the week.
+## Themed weeks (in branch `claude/lines-151-audit`, not live yet)
+- **About page, new second paragraph:** "Some weeks have a theme, such as first lines or the Gothic. The theme is named above the line, and a public-domain painting for the week appears once you solve it." (`site/app.js`, about())
+- **New right answers:** "How Do I Love Thee?" (day 89) and "The Elephant's Child" (day 127) count as right, from the craft audit's fair-answers list.
+
+## Credit wording (approved by Andrew 20 Nov 2026, in branch `claude/lines-151-audit`)
+- **Footer credit:** "Designed and edited by Andrew Cao" (was "Designed and built by Andrew Cao"); mark and link unchanged (`site/index.html`).
+- **About page, last paragraph:** "Designed and edited by Andrew Cao. Drafted with AI assistance and checked against the sources cited." (replaces "Designed and built by Andrew Cao."; the name still links to andrewcao.org; `site/app.js`, about())
