@@ -3,8 +3,8 @@
   --paper:#EEF1F6; --card:#FFFFFF; --ink:#141B33; --muted:#59627A; --line:#D6DCE7;
   --bar:#141B33; --hl:#FFE14D; --hl-ink:#141B33; --good:#1C7A4B; --good-bg:#DDF2E6;
   --bad:#B3261E; --bad-bg:#FBE3E1; --accent:#2944C2; --accent-bg:#E3E8FB;
-  --serif:"Libre Caslon Text", Georgia, "Times New Roman", serif;
-  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif:Georgia, "Times New Roman", serif;
+  --sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#0E1322; --card:#161C2F; --ink:#E7EBF4; --muted:#9BA4B9; --line:#2B334A;
@@ -118,69 +118,88 @@ button:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(-
 .notfound p{margin:0}
 .linkish{background:none;border:0;padding:0;font:inherit;font-size:14px;color:var(--muted);text-decoration:underline;cursor:pointer}
 
-/* Rooms (Settings). Each room is a real public-domain photograph of that room, softly blurred, behind the card (site/rooms/,
-   credits on About and in docs/mockups/art/CREDITS.md). Each room also styles the clue pieces. Colours are set on the page root
-   and on each Settings tile, in light and dark; in dark mode the photo dims to evening (--s-dim). Text never sits on a photo:
-   the card, header and footer are solid. Check new colours with docs/mockups/check-contrast.js (4.5:1 for all text). */
-[data-room]{--s-dim:rgba(0,0,0,0)}
-[data-room="reading"]{--art:url("rooms/reading-desk.webp");--art-p:url("rooms/reading-phone.webp")}
-[data-room="study"]{--art:url("rooms/study-desk.webp");--art-p:url("rooms/study-phone.webp")}
-[data-room="alpine"]{--art:url("rooms/alpine-desk.webp");--art-p:url("rooms/alpine-phone.webp")}
-[data-room="timber"]{--art:url("rooms/timber-desk.webp");--art-p:url("rooms/timber-phone.webp")}
-[data-room="reading"],:root[data-room="reading"]{--paper:#F3ECDB;--card:#FCF7EA;--ink:#221C12;--muted:#5F5644;--line:#E4D9BF;--bar:#26402F;--tool:#C9A048;--hl:#EDCB6B;--hl2:#E0B24A;--hl-ink:#221C12;--accent:#2E5E45;--accent-bg:#E0EBDF}
-[data-room="study"],:root[data-room="study"]{--paper:#F4EBD8;--card:#FCF6E8;--ink:#2A1E12;--muted:#65553F;--line:#E4D5B8;--bar:#2F3B33;--vein:rgba(255,255,255,.2);--hl:#EDCB6B;--hl2:#E0B24A;--hl-ink:#2A1E12;--accent:#7A2E1F;--accent-bg:#F3DED2;--gilt:#C9972E;--gilt-dk:#8A6420;--gilt-lt:#EBCB7A}
-[data-room="alpine"],:root[data-room="alpine"],[data-room="timber"],:root[data-room="timber"]{--paper:#F2E8D5;--card:#FBF4E4;--ink:#2B2117;--muted:#62523F;--line:#E3D3B6;--bar:#6B4426;--grain1:#7A5030;--grain2:#5E381E;--hl:#F0D99A;--hl2:#E8CE88;--hl-ink:#2B2117;--accent:#8C2F1B;--accent-bg:#F2DCD2}
-[data-room="contrast"],:root[data-room="contrast"]{--paper:#FFFFFF;--card:#FFFFFF;--ink:#000000;--muted:#2B2B2B;--line:#6B6B6B;--bar:#000000;--hl:#FFE600;--hl-ink:#000000;--accent:#0033CC;--accent-bg:#E0E8FF}
+/* Looks (Settings). Each look is a public-domain photograph behind the page plus its own type, colours and clue pieces:
+   Library (the Library of Congress reading room; Cormorant Garamond and Inter), Coast (Big Sur at dawn; Fraunces and DM Sans),
+   Night (the Milky Way over Spruce Knob; Instrument Serif and Space Grotesk; always dark), and High contrast (no photo).
+   Photos in site/looks/, credits on About and in docs/mockups/art/CREDITS.md. Colours are set on the page root and on each
+   Settings tile, in light and dark. Text sits on the frosted card, top bar and footer; their tint is strong enough that every
+   text colour stays at least 4.5:1 even over pure black or white (checked in docs/mockups/check-contrast.js). */
+[data-look]{--veil:rgba(0,0,0,0);--hl2:var(--hl);--accent-ink:#FFFFFF;--line-size:clamp(28px,4.6vw,40px);--line-weight:400;--line-track:-.01em}
+[data-look="library"]{--art:url("looks/library-desk.webp");--art-p:url("looks/library-phone.webp")}
+[data-look="coast"]{--art:url("looks/coast-desk.webp");--art-p:url("looks/coast-phone.webp")}
+[data-look="night"]{--art:url("looks/night-desk.webp");--art-p:url("looks/night-phone.webp")}
+[data-look="library"],:root[data-look="library"]{--paper:#F3ECDB;--card:#FBF6EA;--glass:rgba(251,246,234,.92);--rim:rgba(255,255,255,.6);--ink:#211A10;--muted:#5D533F;--line:#E4D9BF;--bar:#24402F;--tool:#C9A048;--hl:#F1D488;--hl2:#E2B64E;--hl-ink:#211A10;--accent:#6B4F12;--accent-bg:#F3E7C9;--accent-ink:#FFFFFF;
+  --serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--line-weight:500;--line-size:clamp(30px,4.8vw,42px);--line-track:-.005em}
+[data-look="coast"],:root[data-look="coast"]{--paper:#EEF3F7;--card:#FFFFFF;--glass:rgba(255,255,255,.86);--rim:rgba(255,255,255,.85);--ink:#0F2236;--muted:#4A5B6E;--line:#D9E2EA;--bar:#4F8E9D;--hl:#F3D7A6;--hl-ink:#0F2236;--accent:#1D5E86;--accent-bg:#DDEBF3;--accent-ink:#FFFFFF;
+  --serif:"Fraunces",Georgia,serif;--sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--line-weight:300;--line-track:-.015em}
+[data-look="night"],:root[data-look="night"]{--paper:#0F1326;--card:#121730;--glass:rgba(10,13,28,.82);--rim:rgba(255,255,255,.14);--ink:#EEF0FA;--muted:#B3BAD6;--line:#2A3152;--bar:#5E668A;--hl:#F2E2A4;--hl-ink:#0A0D1C;--accent:#C9D3FF;--accent-bg:#252D55;--accent-ink:#0A0D1C;
+  --good:#6FD39C;--good-bg:#173527;--bad:#FF9A90;--bad-bg:#3C1C1B;color-scheme:dark;
+  --serif:"Instrument Serif",Georgia,serif;--sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;--line-size:clamp(32px,5vw,46px)}
+[data-look="contrast"],:root[data-look="contrast"]{--paper:#FFFFFF;--card:#FFFFFF;--glass:#FFFFFF;--rim:#000000;--ink:#000000;--muted:#2B2B2B;--line:#6B6B6B;--bar:#000000;--hl:#FFE600;--hl-ink:#000000;--accent:#0033CC;--accent-bg:#E0E8FF;--accent-ink:#FFFFFF;--line-size:clamp(26px,4.4vw,36px)}
 @media (prefers-color-scheme: dark){
-:root:not([data-theme="light"])[data-room="reading"],:root:not([data-theme="light"]) [data-room="reading"]{--paper:#12140E;--card:#1B1E15;--ink:#F0E9D6;--muted:#B5AC93;--line:#323628;--bar:#9CB79F;--tool:#6B5420;--hl:#E8C25E;--hl2:#D9A93E;--hl-ink:#1B1E15;--accent:#9FD0B2;--accent-bg:#22392C;--s-dim:rgba(8,8,4,.7)}
-:root:not([data-theme="light"])[data-room="study"],:root:not([data-theme="light"]) [data-room="study"]{--paper:#16110B;--card:#201810;--ink:#F2E7D0;--muted:#BBA98B;--line:#3A2D1E;--bar:#DCD5C8;--vein:rgba(90,80,70,.35);--hl:#E8C25E;--hl2:#D9A93E;--hl-ink:#201810;--accent:#E8A58E;--accent-bg:#3A2219;--s-dim:rgba(14,8,3,.72)}
-:root:not([data-theme="light"])[data-room="alpine"],:root:not([data-theme="light"]) [data-room="alpine"],:root:not([data-theme="light"])[data-room="timber"],:root:not([data-theme="light"]) [data-room="timber"]{--paper:#17110B;--card:#221A12;--ink:#F3E8D6;--muted:#BCAA90;--line:#3B2E21;--bar:#D2B489;--grain1:#C6A577;--grain2:#DEC49C;--hl:#E9C77E;--hl2:#DDB96C;--hl-ink:#221A12;--accent:#F0A58C;--accent-bg:#3D241B;--s-dim:rgba(14,8,4,.66)}
-:root:not([data-theme="light"])[data-room="contrast"],:root:not([data-theme="light"]) [data-room="contrast"]{--paper:#000000;--card:#000000;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A}}
-:root[data-theme="dark"][data-room="reading"],:root[data-theme="dark"] [data-room="reading"]{--paper:#12140E;--card:#1B1E15;--ink:#F0E9D6;--muted:#B5AC93;--line:#323628;--bar:#9CB79F;--tool:#6B5420;--hl:#E8C25E;--hl2:#D9A93E;--hl-ink:#1B1E15;--accent:#9FD0B2;--accent-bg:#22392C;--s-dim:rgba(8,8,4,.7)}
-:root[data-theme="dark"][data-room="study"],:root[data-theme="dark"] [data-room="study"]{--paper:#16110B;--card:#201810;--ink:#F2E7D0;--muted:#BBA98B;--line:#3A2D1E;--bar:#DCD5C8;--vein:rgba(90,80,70,.35);--hl:#E8C25E;--hl2:#D9A93E;--hl-ink:#201810;--accent:#E8A58E;--accent-bg:#3A2219;--s-dim:rgba(14,8,3,.72)}
-:root[data-theme="dark"][data-room="alpine"],:root[data-theme="dark"] [data-room="alpine"],:root[data-theme="dark"][data-room="timber"],:root[data-theme="dark"] [data-room="timber"]{--paper:#17110B;--card:#221A12;--ink:#F3E8D6;--muted:#BCAA90;--line:#3B2E21;--bar:#D2B489;--grain1:#C6A577;--grain2:#DEC49C;--hl:#E9C77E;--hl2:#DDB96C;--hl-ink:#221A12;--accent:#F0A58C;--accent-bg:#3D241B;--s-dim:rgba(14,8,4,.66)}
-:root[data-theme="dark"][data-room="contrast"],:root[data-theme="dark"] [data-room="contrast"]{--paper:#000000;--card:#000000;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A}
+:root:not([data-theme="light"])[data-look="library"],:root:not([data-theme="light"]) [data-look="library"]{--paper:#15120C;--card:#1E1A12;--glass:rgba(30,26,18,.88);--rim:rgba(255,255,255,.12);--ink:#F1E9D6;--muted:#B9AE93;--line:#3A3324;--bar:#9CB79F;--tool:#6B5420;--hl:#E8C25E;--hl2:#D9A93E;--hl-ink:#1E1A12;--accent:#E3BE6A;--accent-bg:#3A3020;--accent-ink:#1E1A12;--veil:rgba(10,6,2,.55)}
+:root:not([data-theme="light"])[data-look="coast"],:root:not([data-theme="light"]) [data-look="coast"]{--paper:#0E1824;--card:#142130;--glass:rgba(16,28,42,.86);--rim:rgba(255,255,255,.14);--ink:#EAF0F6;--muted:#A7B6C6;--line:#26384C;--bar:#7FB9BE;--hl:#E9C98E;--hl-ink:#0E1824;--accent:#8EC3E6;--accent-bg:#17324A;--accent-ink:#0E1824;--veil:rgba(5,10,25,.6)}
+:root:not([data-theme="light"])[data-look="contrast"],:root:not([data-theme="light"]) [data-look="contrast"]{--paper:#000000;--card:#000000;--glass:#000000;--rim:#FFFFFF;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A;--accent-ink:#000000}}
+:root[data-theme="dark"][data-look="library"],:root[data-theme="dark"] [data-look="library"]{--paper:#15120C;--card:#1E1A12;--glass:rgba(30,26,18,.88);--rim:rgba(255,255,255,.12);--ink:#F1E9D6;--muted:#B9AE93;--line:#3A3324;--bar:#9CB79F;--tool:#6B5420;--hl:#E8C25E;--hl2:#D9A93E;--hl-ink:#1E1A12;--accent:#E3BE6A;--accent-bg:#3A3020;--accent-ink:#1E1A12;--veil:rgba(10,6,2,.55)}
+:root[data-theme="dark"][data-look="coast"],:root[data-theme="dark"] [data-look="coast"]{--paper:#0E1824;--card:#142130;--glass:rgba(16,28,42,.86);--rim:rgba(255,255,255,.14);--ink:#EAF0F6;--muted:#A7B6C6;--line:#26384C;--bar:#7FB9BE;--hl:#E9C98E;--hl-ink:#0E1824;--accent:#8EC3E6;--accent-bg:#17324A;--accent-ink:#0E1824;--veil:rgba(5,10,25,.6)}
+:root[data-theme="dark"][data-look="contrast"],:root[data-theme="dark"] [data-look="contrast"]{--paper:#000000;--card:#000000;--glass:#000000;--rim:#FFFFFF;--ink:#FFFFFF;--muted:#D6D6D6;--line:#8A8A8A;--bar:#FFFFFF;--hl:#FFE600;--hl-ink:#000000;--accent:#8FB0FF;--accent-bg:#10204A;--accent-ink:#000000}
 
-/* The photo: one fixed layer behind the page (a smaller crop on phones), and a small copy in each Settings tile. */
+/* The photo: one fixed layer behind the page (a phone-shaped crop on small screens), and a small copy in each Settings tile. */
 .scene{display:none}
-:root:is([data-room="reading"],[data-room="study"],[data-room="alpine"],[data-room="timber"]) body>.scene{display:block;position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(var(--s-dim),var(--s-dim)),var(--art) center/cover no-repeat,var(--paper)}
-@media (max-width:600px){:root:is([data-room="reading"],[data-room="study"],[data-room="alpine"],[data-room="timber"]) body>.scene{background-image:linear-gradient(var(--s-dim),var(--s-dim)),var(--art-p)}}
-.wrap{position:relative;z-index:1}
+:root:is([data-look="library"],[data-look="coast"],[data-look="night"]) body>.scene{display:block;position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(var(--veil),var(--veil)),var(--art) center/cover no-repeat,var(--paper)}
+@media (max-width:600px){:root:is([data-look="library"],[data-look="coast"],[data-look="night"]) body>.scene{background-image:linear-gradient(var(--veil),var(--veil)),var(--art-p)}}
+.wrap{position:relative;z-index:1;max-width:760px;gap:22px}
 
-/* Clue pieces. Reading room: green leather book spines with gold tooling. Study: green marble plaques with a gilt edge, gold-leaf
-   newest clue, the card in a gilt frame. Cabins: pine boards with grain, paper-tape newest clue, the card pinned with a tack. */
-:root[data-room="reading"] .part.hid,.rtile[data-room="reading"] .mini .h{background:linear-gradient(90deg,rgba(0,0,0,0) 7%,var(--tool) 7%,var(--tool) 8.5%,rgba(0,0,0,0) 8.5%,rgba(0,0,0,0) 91.5%,var(--tool) 91.5%,var(--tool) 93%,rgba(0,0,0,0) 93%),linear-gradient(180deg,rgba(255,255,255,.12),rgba(0,0,0,.18)),var(--bar);border-radius:3px;box-shadow:inset 0 1px 0 var(--tool),inset 0 -1px 0 var(--tool)}
-:root[data-room="study"] .part.hid,.rtile[data-room="study"] .mini .h{background:linear-gradient(115deg,rgba(0,0,0,0) 28%,var(--vein) 30%,rgba(0,0,0,0) 33%,rgba(0,0,0,0) 62%,var(--vein) 63%,rgba(0,0,0,0) 66%),var(--bar);border-radius:2px;box-shadow:inset 0 0 0 1.5px var(--gilt)}
-:root:is([data-room="alpine"],[data-room="timber"]) .part.hid,.rtile:is([data-room="alpine"],[data-room="timber"]) .mini .h{background:repeating-linear-gradient(177deg,var(--bar) 0 2px,var(--grain1) 2px 5px,var(--grain2) 5px 6px);border-radius:3px}
-:root:is([data-room="reading"],[data-room="study"],[data-room="alpine"],[data-room="timber"]) :is(.part.fresh,.hints li.fresh,h1 b),.rtile:is([data-room="reading"],[data-room="study"],[data-room="alpine"],[data-room="timber"]) .mini .f{background:linear-gradient(180deg,var(--hl),var(--hl2))}
-:root:is([data-room="alpine"],[data-room="timber"]) :is(.part.fresh,.hints li.fresh,h1 b){box-shadow:0 1px 2px rgba(0,0,0,.18)}
-:root[data-room="study"] .card{border:0;border-radius:3px;box-shadow:0 0 0 4px var(--gilt),0 0 0 6px var(--gilt-dk),0 0 0 9px var(--gilt-lt),0 0 0 10px var(--gilt-dk),0 30px 50px -22px rgba(30,15,0,.6)}
-:root[data-room="study"] .wrap{gap:28px}
-:root:is([data-room="alpine"],[data-room="timber"]) main.card{position:relative;border-radius:4px}
-:root:is([data-room="alpine"],[data-room="timber"]) main.card::before{content:"";position:absolute;top:-7px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#E46A50,#8C2F1B 70%);box-shadow:0 2px 3px rgba(0,0,0,.4)}
-:root:is([data-room="reading"],[data-room="alpine"],[data-room="timber"]) .card{box-shadow:0 30px 60px -28px rgba(0,0,0,.6)}
+/* The sleeker frame, in every look: a floating top bar, a frosted card with room to breathe, pill controls, a one-line footer. */
+header{background:var(--glass);border:1px solid var(--rim);border-radius:999px;padding:10px 10px 10px 22px;-webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2)}
+h1{font-size:27px;line-height:1.1;white-space:nowrap}
+h1 b{background:none;color:var(--accent);padding:0;font-weight:inherit}
+nav a{font-weight:500;font-size:13.5px;padding:8px 13px}
+nav a[aria-current=page]{background:var(--accent-bg);box-shadow:none}
+main.card{background:var(--glass);border:1px solid var(--rim);border-radius:28px;padding:40px clamp(22px,5vw,48px) 36px;gap:26px;-webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2);box-shadow:0 40px 80px -40px rgba(0,0,0,.45)}
+.meta{font-weight:500;letter-spacing:.01em}
+.quote{font-weight:var(--line-weight);font-size:var(--line-size);line-height:1.32;letter-spacing:var(--line-track)}
+.part{padding:.02em .06em}
+.part.fresh{background:linear-gradient(180deg,var(--hl),var(--hl2))}
+.hints{border-left:2px solid var(--accent);padding-left:18px;margin:0;gap:6px}
+.hints li{background:none;padding:2px 0;border-radius:0}
+.hints li.fresh{background:linear-gradient(90deg,var(--hl),rgba(0,0,0,0));padding-left:8px;margin-left:-8px;border-radius:4px}
+.btn{border-radius:999px;background:var(--accent);border-color:var(--accent);color:var(--accent-ink);padding:12px 24px}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+input[type=text]{border-radius:999px;padding:12px 22px;border-width:1px}
+input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
+.foot,.site-credit{align-self:center;background:var(--glass);border:1px solid var(--rim);border-radius:999px;padding:6px 16px;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+:root[data-look="contrast"] :is(header,main.card,.foot,.site-credit){-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+@media (max-width:600px){header{flex-wrap:wrap;border-radius:22px;padding:12px 8px 6px 16px;row-gap:6px}header nav{width:100%;justify-content:space-between;gap:0}nav a{padding:7px 8px;font-size:12.5px}
+  main.card{border-radius:22px;padding:26px 20px 24px;gap:22px}}
 
-/* Plates: in a room, the header and footer sit on the card colour, so their text keeps the card's contrast. */
-:root:is([data-room="reading"],[data-room="study"],[data-room="alpine"],[data-room="timber"]) header{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px 10px 18px}
-:root:is([data-room="reading"],[data-room="study"],[data-room="alpine"],[data-room="timber"]) :is(.foot,.site-credit){align-self:center;background:var(--card);padding:6px 14px;border-radius:999px;border:1px solid var(--line)}
-@media (max-width:480px){:root:is([data-room="reading"],[data-room="study"],[data-room="alpine"],[data-room="timber"]) header{padding:8px 6px 6px 12px}
-  :root:is([data-room="reading"],[data-room="study"],[data-room="alpine"],[data-room="timber"]) nav a{padding:7px 7px}}
+/* Accents per look. Library: leather book-spine pieces with gold tooling, a gold-leaf highlight, squarer corners, an underlined title.
+   Coast: sea-glass pieces, sand highlight, round everything. Night: frosted-glass pieces with a faint glow, a moon-gold highlight. */
+:root[data-look="library"] .part.hid,.rtile[data-look="library"] .mini .h{background:linear-gradient(90deg,rgba(0,0,0,0) 6%,var(--tool) 6%,var(--tool) 7.5%,rgba(0,0,0,0) 7.5%,rgba(0,0,0,0) 92.5%,var(--tool) 92.5%,var(--tool) 94%,rgba(0,0,0,0) 94%),linear-gradient(180deg,rgba(255,255,255,.12),rgba(0,0,0,.2)),var(--bar);border-radius:3px;box-shadow:inset 0 1px 0 var(--tool),inset 0 -1px 0 var(--tool)}
+:root[data-look="library"] main.card{border-radius:6px;box-shadow:0 0 0 1px rgba(140,106,30,.35),0 40px 80px -40px rgba(0,0,0,.6)}
+:root[data-look="library"] :is(.btn,input[type=text],.tile,.choice){border-radius:4px}
+:root[data-look="library"] h1 b{border-bottom:2px solid currentColor;font-style:normal;font-weight:600}
+:root[data-look="coast"] .part.hid,.rtile[data-look="coast"] .mini .h{background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(255,255,255,0) 45%),linear-gradient(135deg,#7FB9BE,#4F8E9D);border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+:root[data-look="coast"] .part.fresh{border-radius:999px;padding:.02em .3em}
+:root[data-look="coast"] h1{font-style:normal;font-weight:600}
+:root[data-look="night"] .part.hid,.rtile[data-look="night"] .mini .h{background:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,.14));border-radius:4px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 0 18px rgba(170,190,255,.18)}
+:root[data-look="night"] .part.fresh{border-radius:4px;box-shadow:0 0 22px rgba(242,226,164,.35)}
 
-/* Room picker in Settings: a small picture of each room and its clue pieces. */
+/* Look picker in Settings: a small picture of each look and its clue pieces, in that look's own type. */
 .rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.rtile{position:relative;display:flex;flex-direction:column;gap:6px;padding:8px 8px 10px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;font-weight:600;font-size:14px;color:var(--ink)}
+.rtile{position:relative;display:flex;flex-direction:column;gap:6px;padding:8px 8px 10px;border:1.5px solid var(--line);border-radius:14px;background:var(--card);cursor:pointer;font:600 14px var(--sans);color:var(--ink)}
 .rtile input{position:absolute;opacity:0;pointer-events:none}
 .rtile:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .rtile:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
 .rtile small{font-weight:500;color:var(--muted);font-size:12px;line-height:1.35;margin-top:-4px}
-.thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
-.thumb>.scene{display:block;position:absolute;inset:0;background:linear-gradient(var(--s-dim),var(--s-dim)),var(--art) center/cover no-repeat}
-.rtile[data-room="contrast"] .thumb>.scene{background:var(--paper)}
-.thumb::after{content:"";position:absolute;left:30%;right:30%;top:26%;bottom:24%;background:var(--card);border:1px solid var(--line);border-radius:2px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
-.rtile[data-room="contrast"] .thumb::after{border:2px solid var(--ink);box-shadow:none}
-.mini{display:block;border-radius:6px;padding:6px 8px;background:var(--paper);color:var(--ink);font:400 14px/1.5 var(--serif);border:1px solid var(--line)}
+.thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:9px;overflow:hidden;border:1px solid var(--line);background:var(--paper)}
+.thumb>.scene{display:block;position:absolute;inset:0;background:linear-gradient(var(--veil),var(--veil)),var(--art) center/cover no-repeat}
+.rtile[data-look="contrast"] .thumb>.scene{background:var(--paper)}
+.thumb::after{content:"";position:absolute;left:30%;right:30%;top:26%;bottom:24%;background:var(--glass);border:1px solid var(--rim);border-radius:4px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.rtile[data-look="contrast"] .thumb::after{border:2px solid var(--ink);box-shadow:none}
+.mini{display:block;border-radius:8px;padding:6px 8px;background:var(--paper);color:var(--ink);font:var(--line-weight) 15px/1.5 var(--serif);border:1px solid var(--line)}
 .mini .h{background:var(--bar);color:transparent;border-radius:2px}
-.mini .f{background:var(--hl);color:var(--hl-ink)}
+.mini .f{background:linear-gradient(180deg,var(--hl),var(--hl2));color:var(--hl-ink)}
 @media (max-width:480px){.rooms{grid-template-columns:1fr 1fr}}
 
 /* Settings page and easy mode */
@@ -193,7 +212,7 @@ button:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(-
 .opt:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .opt:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
 .opt.plain{padding-left:14px}
-.toggle{display:flex;gap:12px;align-items:flex-start;font-size:15px;cursor:pointer}
+.toggle{display:flex;gap:12px;align-items:flex-start;font-size:15px;font-weight:400;cursor:pointer}
 .toggle input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--accent);flex:none}
 .choices{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
 .choice{text-align:left;font:400 17px var(--serif);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;flex-direction:column;gap:2px}
