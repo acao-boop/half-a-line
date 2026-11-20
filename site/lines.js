@@ -61,7 +61,7 @@ window.HAL_LINES = [
  note:"The narrator insists on Marley's death because the story depends on it: if we doubted it, his ghost wouldn't be remarkable. Dickens then spends a paragraph joking about the phrase “dead as a door-nail.”"},
 {work:"Ode on a Grecian Urn",author:"John Keats",year:"1819 (published 1820)",who:"The urn, or the poet, or both",
  parts:[["“Beauty is truth,",4],["truth beauty,”",3],["—that is all / Ye know on earth,",1],["and all ye need to know.",2]],
- hints:["A poem from the 1810s","Author's initials: J. K.","The speaker looks at scenes painted on an ancient vase"],
+ hints:["A poem from the 1810s","Author's initials: J. K.","The speaker looks at scenes carved on an ancient vase"],
  key:"earth",tiles:["earth","heaven","paper","stone"],
  note:"The poem's last lines. Early printings put the quotation marks in different places, so nobody agrees on who is speaking, and critics have argued about it for two hundred years."},
 {work:"Hamlet",author:"William Shakespeare",year:"c. 1600",who:"Hamlet",
