@@ -33,5 +33,6 @@ Each caption appears under the painting on a themed day's solved screen (`site/w
 
 Childhood and Around the world were picked by Claude (recommended options; backups: Homer, *Boys in a Dory*; Giovanni di Paolo, *The Creation of the World*). Swap either by telling a Half a Line session.
 
-## Still to write when themed weeks go live
-- One sentence on the About page about weekly themes and the painting of the week.
+## Themed weeks (in branch `claude/lines-151-audit`, not live yet)
+- **About page, new second paragraph:** "Some weeks have a theme, such as first lines or the Gothic. The theme is named above the line, and a public-domain painting for the week appears once you solve it." (`site/app.js`, about())
+- **New right answers:** "How Do I Love Thee?" (day 89) and "The Elephant's Child" (day 127) count as right, from the craft audit's fair-answers list.
