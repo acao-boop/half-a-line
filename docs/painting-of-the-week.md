@@ -43,3 +43,11 @@ Pick the painting while drafting that week's lines, so the caption can echo them
 
 ## Status (20 November 2026)
 Andrew approved all eight recommended paintings and the solved-screen plate. Built on branch `claude/aesthetic-rooms`: `site/weeks.js` (one entry per theme, keyed by the exact theme names in the table above), `site/weeks/*.webp` (600 px, 5–46 KB each), the plate in `site/app.js` after the note, styles in `site/styles.css`. Nothing shows until a line in `lines.js` has one of these `theme` values, so it is safe to publish before 17 January. If the themed-lines work renames a theme, rename its key in `weeks.js` too. Still to do with week 1: Andrew approves each caption with that week's lines; add one sentence to About.
+
+## Added 20 November 2026: two later themed weeks
+The drafted lines (`claude/lines-061-151`) add two themes. Andrew asked for paintings for both; Claude picked the recommended ones (he can swap):
+| Week of | Theme | Painting | Backup |
+|---|---|---|---|
+| 21 Mar | Childhood | Winslow Homer, *Snap the Whip*, 1872 · [Met 11140](https://www.metmuseum.org/art/collection/search/11140) | Winslow Homer, *Boys in a Dory*, 1873 · [Met 17053](https://www.metmuseum.org/art/collection/search/17053) |
+| 4 Apr | Around the world | Katsushika Hokusai, *The Great Wave*, about 1830–32 · [Met 45434](https://www.metmuseum.org/art/collection/search/45434) | Giovanni di Paolo, *The Creation of the World and the Expulsion from Paradise*, 1445 · [Met 458971](https://www.metmuseum.org/art/collection/search/458971) |
+Captions are on `docs/for-andrew-to-read.md`.

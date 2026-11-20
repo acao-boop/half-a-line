@@ -33,5 +33,13 @@ window.HAL_WEEKS = {
 "Women writers":{img:"weeks/women.webp",w:600,h:502,
  title:"Young Woman Knitting",by:"Berthe Morisot, about 1883",url:"https://www.metmuseum.org/art/collection/search/437159",
  caption:"A painting by a woman, of a woman at her own work.",
- alt:"A young woman in a light dress and a straw hat sits knitting in a garden, surrounded by loosely painted greenery."}
+ alt:"A young woman in a light dress and a straw hat sits knitting in a garden, surrounded by loosely painted greenery."},
+"Childhood":{img:"weeks/childhood.webp",w:600,h:371,
+ title:"Snap the Whip",by:"Winslow Homer, 1872",url:"https://www.metmuseum.org/art/collection/search/11140",
+ caption:"School’s out: a line of barefoot boys playing a game in a summer field.",
+ alt:"A line of barefoot boys holding hands runs across a green meadow in front of a red schoolhouse; two at the end have tumbled to the ground."},
+"Around the world":{img:"weeks/world.webp",w:600,h:403,
+ title:"The Great Wave",by:"Katsushika Hokusai, about 1830–32",url:"https://www.metmuseum.org/art/collection/search/45434",
+ caption:"A Japanese print that travelled the world and changed how the West painted the sea.",
+ alt:"A woodblock print of a huge blue wave curling over three fishing boats, with snow-capped Mount Fuji small in the distance."}
 };
