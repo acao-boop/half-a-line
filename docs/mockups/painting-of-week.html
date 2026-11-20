@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-look="library" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup J: Painting of the week</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../../site/styles.css">
+<style>
+/* Mockup only. The painting of the week sits at the end of the solved screen, after the note: a small plate, not a backdrop,
+   so it never competes with the line or the player's chosen look. Caption names the work and its source. */
+.scene{background-image:linear-gradient(var(--veil),var(--veil)),url("../../site/looks/library-desk.webp")!important}
+.week{margin:-6px 0 0;font-size:14px;color:var(--muted)}
+.week b{color:var(--ink);font-weight:600}
+.potw{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:22px;align-items:start;padding-top:22px;border-top:1px solid var(--line)}
+.potw figure{margin:0}
+.potw img{display:block;width:100%;height:auto;border:1px solid var(--line);box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
+.potw .k{font-size:13px;color:var(--muted);margin:0 0 6px}
+.potw h3{font-family:var(--serif);font-weight:var(--line-weight);font-size:24px;line-height:1.2;margin:0 0 4px}
+.potw p{margin:0 0 10px;font-size:15px;line-height:1.55}
+.potw .src{font-size:13px;color:var(--muted)}
+.potw .src a{color:var(--accent)}
+@media (max-width:600px){.potw{grid-template-columns:1fr}.potw figure{max-width:260px}}
+</style>
+</head>
+<body>
+<div class="scene" aria-hidden="true"></div>
+<div class="wrap">
+  <header><h1><a href="#">Half a <b>Line</b></a></h1>
+    <nav aria-label="Sections"><a href="#" aria-current="page">Today</a><a href="#">Archive</a><a href="#">Stats</a><a href="#">About</a><a href="#">Settings</a></nav></header>
+  <main class="card">
+    <div class="meta"><span>No. 75 · Sunday, January 31</span><span>Solved with 1 extra clue</span></div>
+    <p class="week">This week: <b>The Gothic</b></p>
+    <p class="quote">(Today's line appears here.)</p>
+    <p class="verdict won">Got it with 1 extra clue.</p>
+    <dl class="facts"><dt>Work</dt><dd><i>(the week's work)</i></dd><dt>Author</dt><dd>(author)</dd></dl>
+    <p class="note">(The line's note appears here, as now.)</p>
+    <section class="potw" aria-labelledby="pw">
+      <figure><img src="art/weeks/gothic-friedrich.jpg" alt="Two men in a wooded landscape at dusk, one leaning on the other's shoulder, gazing at a crescent moon through bare branches." width="600" height="473"></figure>
+      <div>
+        <p class="k">This week’s painting</p>
+        <h3 id="pw">Two Men Contemplating the Moon</h3>
+        <p>Caspar David Friedrich, about 1825–30. The Romantic moonlight that Gothic novels were written by: ruins, bare trees, and two figures with their backs to us.</p>
+        <p class="src">The Metropolitan Museum of Art · public domain · <a href="https://www.metmuseum.org/art/collection/search/438417">see it at the Met</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="colophon"><p class="foot">A new line every day at midnight, your time.</p><p class="site-credit">Designed and built by Andrew Cao</p></footer>
+</div>
+</body>
+</html>
