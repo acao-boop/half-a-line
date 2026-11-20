@@ -9,7 +9,7 @@ New wording that goes out under Andrew's name, written by Claude and not yet rea
 - **Settings tiles:** Library, "The Library of Congress reading room"; Coast, "Big Sur at dawn"; Night, "The Milky Way; always dark"; High contrast, "No photo, strongest colours".
 - **Solved screen:** wrong guesses now read "Not Hamlet" (was a struck-through name).
 
-## On branch `claude/fable-craft` (20 November 2026, not live)
+## Craft pass (live since 20 November 2026)
 - **First visit, under the guess box:** "Name the work this line is from. Each wrong guess, or “Next clue,” shows a hint or more of the line." (the old "How to play" sentence without its label and "Got it" button; `site/app.js`, play())
 - **Date on the top row:** now short, "Fri, Nov 20".
 - **Day 45 (Donne):** "Meditation XVII" is a new title in the guess list and counts as a right answer.
