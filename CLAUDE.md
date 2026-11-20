@@ -17,7 +17,7 @@ Public: https://halfaline.andrewcao.org/ (GitHub Pages custom domain; Cloudflare
 - When Andrew approves, Claude commits, updates HANDOFF.md, and pushes `main`. When the Actions run finishes, confirm the live files match `site/` (SHA-256), then tag the deployed commit as `published` and push the tag. If the social card changed, rerun LinkedIn Post Inspector.
 
 ## Portfolio
-- Credit line: "Designed and built by Andrew Cao" (adjust to the real role), with Andrew's open A mark small beside it, linking to https://andrewcao.org/. Never larger, never as the project's logo.
+- Credit line: "Designed and edited by Andrew Cao" (adjust to the real role), with Andrew's open A mark small beside it, linking to https://andrewcao.org/. Never larger, never as the project's logo.
 - Give the project its own identity; don't reuse the portfolio's look.
 - When the project is published or changes substantially, update its entry on the portfolio, https://andrewcao.org/ (code in the portfolio repo, acao-boop/portfolio; ask its lead).
 

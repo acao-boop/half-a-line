@@ -222,7 +222,7 @@ function about(){
     +'<p><b>Scoring.</b> You start with two pieces of the line. Each wrong guess, or a press of “Next clue,” gives you a hint or another piece. Your score is the number of extra clues you needed.</p>'
     +'<p><b>Easy mode.</b> Prefer to pick from a short list? Turn on easy mode in Settings, or press “Too hard?” under the guess box. Looks and light or dark are there too.</p>'
     +'<p><b>Looks.</b> The photographs are in the public domain: the <a href="https://www.loc.gov/pictures/item/2011646837/">Main Reading Room of the Library of Congress</a> and <a href="https://www.loc.gov/pictures/item/2011632016/">the Big Sur coast</a>, both by Carol M. Highsmith, and <a href="https://images.nasa.gov/details/NHQ202508030001">the Milky Way over Spruce Knob, West Virginia</a> by Bill Ingalls for NASA.</p>'
-    +'<p>Designed and built by <a href="https://andrewcao.org/">Andrew Cao</a>.</p></div>';
+    +'<p>Designed and edited by <a href="https://andrewcao.org/">Andrew Cao</a>.</p></div>';
 }
 
 
