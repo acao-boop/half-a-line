@@ -188,7 +188,7 @@ input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--acc
 .misses li::before{content:"Not ";white-space:pre}
 .facts dt{font-weight:500}
 .facts dd i{font-size:1.12em}
-.note{font-size:calc(var(--line-size)*.5);line-height:1.6;max-width:none}
+.note{font-size:clamp(17px,calc(var(--line-size)*.5),22px);font-weight:var(--line-weight,400);line-height:1.6;max-width:none}
 :root[data-look="library"] .note{font-size:21px}
 .bonus{border-top:1px solid var(--line)}
 .tile,.choice{border-radius:var(--r);border-width:1px}
@@ -254,3 +254,14 @@ input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--acc
 .q{font-weight:700;font-size:15px;margin:0}
 @media (max-width:480px){nav{gap:2px}nav a{padding:7px 9px}.choices{grid-template-columns:1fr 1fr}.choice{font-size:15px;padding:8px 10px}}
 :root[data-look="library"] body{font-variant-numeric:lining-nums}
+
+/* Painting of the week: a small plate after the note on a themed line's solved screen (data in weeks.js). */
+.potw{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:22px;align-items:start;padding-top:22px;border-top:1px solid var(--line)}
+.potw figure{margin:0}
+.potw img{display:block;width:100%;height:auto;border:1px solid var(--line);box-shadow:0 10px 24px -14px rgba(0,0,0,.5)}
+.potw .k{font-size:13px;color:var(--muted);margin:0 0 6px}
+.potw h3{font-family:var(--serif);font-weight:var(--line-weight,400);font-size:24px;line-height:1.2;margin:0 0 6px}
+.potw p{margin:0 0 10px;font-size:15px;line-height:1.55}
+.potw .src{font-size:13px;color:var(--muted);margin:0}
+.potw .src a{color:var(--accent)}
+@media (max-width:600px){.potw{grid-template-columns:1fr}.potw figure{max-width:280px}}

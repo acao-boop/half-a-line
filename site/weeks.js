@@ -1,0 +1,37 @@
+// Half a Line: the painting of the week. Keyed by a line's `theme` (the same words as in lines.js); a themed line shows its
+// week's painting on the solved screen. Images in site/weeks/ (600 px webp). All from The Metropolitan Museum of Art's Open
+// Access collection: public domain, CC0. Captions are drafts; Andrew approves each with that week's lines. See docs/painting-of-the-week.md.
+window.HAL_WEEKS = {
+"New to the public domain":{img:"weeks/public-domain.webp",w:600,h:479,
+ title:"Moonlight, Strandgade 30",by:"Vilhelm Hammershøi, 1900–06",url:"https://www.metmuseum.org/art/collection/search/441933",
+ caption:"A shut door and moonlight coming in: the week’s books have just come free.",
+ alt:"A bare room with a white panelled door and a tall window; moonlight falls through the panes onto the wall and floor."},
+"First lines":{img:"weeks/first-lines.webp",w:600,h:373,
+ title:"Shipwreck off Nantucket",by:"William Bradford, about 1860–61",url:"https://www.metmuseum.org/art/collection/search/10209",
+ caption:"It was a dark and stormy night: the oldest way to begin.",
+ alt:"A wrecked sailing ship heeled over in rough green waves under a stormy sky."},
+"The Gothic":{img:"weeks/gothic.webp",w:600,h:486,
+ title:"Two Men Contemplating the Moon",by:"Caspar David Friedrich, about 1825–30",url:"https://www.metmuseum.org/art/collection/search/438417",
+ caption:"Romantic moonlight, bare branches and two figures with their backs to us: the Gothic mood exactly.",
+ alt:"Two men in a wooded landscape at dusk, one resting a hand on the other’s shoulder, gazing at a crescent moon through the branches of a bare oak."},
+"Shakespeare":{img:"weeks/shakespeare.webp",w:600,h:469,
+ title:"The Enchanted Island before the Cell of Prospero",by:"Peter Simon after Henry Fuseli, for the Boydell Shakespeare Gallery, 1797",url:"https://www.metmuseum.org/art/collection/search/365591",
+ caption:"The Tempest, from the gallery built to illustrate every one of the plays.",
+ alt:"An engraving of Prospero and Miranda outside a rocky cell, with the spirit Ariel flying above and Caliban crouching nearby."},
+"Love":{img:"weeks/love.webp",w:582,h:720,
+ title:"The Love Letter",by:"Jean Honoré Fragonard, early 1770s",url:"https://www.metmuseum.org/art/collection/search/436322",
+ caption:"Love as something read: a letter, a bouquet, and a look over the shoulder.",
+ alt:"A young woman in a blue silk dress at a writing desk turns toward us, holding a folded letter and a bouquet of flowers; a small dog rests on the chair."},
+"In translation":{img:"weeks/translation.webp",w:600,h:472,
+ title:"The Circle of the Lustful: Paolo and Francesca",by:"William Blake, about 1825–27",url:"https://www.metmuseum.org/art/collection/search/367367",
+ caption:"An English poet illustrating an Italian one: Dante’s Inferno, carried across.",
+ alt:"An engraving of a whirlwind of entwined souls sweeping across the scene, while Dante lies fainted on the ground and Virgil stands over him."},
+"Last lines":{img:"weeks/last-lines.webp",w:600,h:275,
+ title:"Twilight on the Sound, Darien, Connecticut",by:"John Frederick Kensett, 1872",url:"https://www.metmuseum.org/art/collection/search/11329",
+ caption:"An ending, quietly: the last light on still water.",
+ alt:"A low, dark shoreline under an orange and yellow twilight sky over calm water."},
+"Women writers":{img:"weeks/women.webp",w:600,h:502,
+ title:"Young Woman Knitting",by:"Berthe Morisot, about 1883",url:"https://www.metmuseum.org/art/collection/search/437159",
+ caption:"A painting by a woman, of a woman at her own work.",
+ alt:"A young woman in a light dress and a straw hat sits knitting in a garden, surrounded by loosely painted greenery."}
+};

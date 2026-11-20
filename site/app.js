@@ -97,6 +97,8 @@ function play(n){
     }else{
       h+='<div class="bonus"><p><b>Bonus:</b> '+(r.bonus===L.key?'right, it’s “'+esc(L.key)+'.”':'it was “'+esc(L.key)+',” not “'+esc(r.bonus)+'.”')+'</p></div>';
       h+='<p class="note">'+esc(L.note)+'</p>';
+      const W=L.theme&&window.HAL_WEEKS&&HAL_WEEKS[L.theme];
+      if(W)h+='<section class="potw" aria-labelledby="pw"><figure><img src="'+esc(W.img)+'" alt="'+esc(W.alt)+'" width="'+W.w+'" height="'+W.h+'" loading="lazy" decoding="async"></figure><div><p class="k">This week’s painting</p><h3 id="pw">'+esc(W.title)+'</h3><p>'+esc(W.by)+'. '+esc(W.caption)+'</p><p class="src">The Metropolitan Museum of Art · public domain · <a href="'+esc(W.url)+'">see it at the Met</a></p></div></section>';
       h+='<div class="share"><pre id="sharetext">'+esc(shareText(n,L,r))+'</pre><div class="row"><button class="btn" id="copy">'+(canShare()?'Share result':'Copy result')+'</button><a class="btn ghost" href="#stats">Your stats</a>'
         +(isToday?'<a class="btn ghost" href="#archive">Play past lines</a>':nextLink(n))+'</div><p class="err" id="cerr" style="color:var(--muted)"></p>'
         +(isToday?'<p class="next" id="countdown"></p>':'')+'</div>';
