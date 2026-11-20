@@ -125,9 +125,9 @@ button:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(-
    Settings tile, in light and dark. Text sits on the frosted card, top bar and footer; their tint is strong enough that every
    text colour stays at least 4.5:1 even over pure black or white (checked in docs/mockups/check-contrast.js). */
 [data-look]{--veil:rgba(0,0,0,0);--hl2:var(--hl);--accent-ink:#FFFFFF;--line-size:clamp(28px,4.6vw,40px);--line-weight:400;--line-track:-.01em}
-[data-look="library"]{--art:url("looks/library-desk.webp");--art-p:url("looks/library-phone.webp")}
-[data-look="coast"]{--art:url("looks/coast-desk.webp");--art-p:url("looks/coast-phone.webp")}
-[data-look="night"]{--art:url("looks/night-desk.webp");--art-p:url("looks/night-phone.webp")}
+[data-look="library"]{--art:url("looks/library-desk.webp");--art2:image-set(url("looks/library-desk.webp") 1x,url("looks/library-desk2.webp") 2x);--art-p:url("looks/library-phone.webp")}
+[data-look="coast"]{--art:url("looks/coast-desk.webp");--art2:image-set(url("looks/coast-desk.webp") 1x,url("looks/coast-desk2.webp") 2x);--art-p:url("looks/coast-phone.webp")}
+[data-look="night"]{--art:url("looks/night-desk.webp");--art2:image-set(url("looks/night-desk.webp") 1x,url("looks/night-desk2.webp") 2x);--art-p:url("looks/night-phone.webp")}
 [data-look="library"],:root[data-look="library"]{--paper:#F3ECDB;--card:#FBF6EA;--glass:rgba(251,246,234,.92);--rim:rgba(255,255,255,.6);--ink:#211A10;--muted:#5D533F;--line:#E4D9BF;--bar:#24402F;--tool:#C9A048;--hl:#F1D488;--hl2:#E2B64E;--hl-ink:#211A10;--accent:#6B4F12;--accent-bg:#F3E7C9;--accent-ink:#FFFFFF;
   --serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--line-weight:500;--line-size:clamp(30px,4.8vw,42px);--line-track:-.005em}
 [data-look="coast"],:root[data-look="coast"]{--paper:#EEF3F7;--card:#FFFFFF;--glass:rgba(255,255,255,.86);--rim:rgba(255,255,255,.85);--ink:#0F2236;--muted:#4A5B6E;--line:#D9E2EA;--bar:#4F8E9D;--hl:#F3D7A6;--hl-ink:#0F2236;--accent:#1D5E86;--accent-bg:#DDEBF3;--accent-ink:#FFFFFF;
@@ -147,43 +147,73 @@ button:focus-visible,a:focus-visible,.tile:focus-visible{outline:3px solid var(-
 /* The photo: one fixed layer behind the page (a phone-shaped crop on small screens), and a small copy in each Settings tile. */
 .scene{display:none}
 :root:is([data-look="library"],[data-look="coast"],[data-look="night"]) body>.scene{display:block;position:fixed;inset:0;z-index:0;pointer-events:none;background:linear-gradient(var(--veil),var(--veil)),var(--art) center/cover no-repeat,var(--paper)}
+@supports (background-image:image-set(url("x.webp") 1x)){@media (min-width:601px){:root:is([data-look="library"],[data-look="coast"],[data-look="night"]) body>.scene{background-image:linear-gradient(var(--veil),var(--veil)),var(--art2)}}}
 @media (max-width:600px){:root:is([data-look="library"],[data-look="coast"],[data-look="night"]) body>.scene{background-image:linear-gradient(var(--veil),var(--veil)),var(--art-p)}}
 .wrap{position:relative;z-index:1;max-width:760px;gap:22px}
 
-/* The sleeker frame, in every look: a floating top bar, a frosted card with room to breathe, pill controls, a one-line footer. */
-header{background:var(--glass);border:1px solid var(--rim);border-radius:999px;padding:10px 10px 10px 22px;-webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2)}
+/* The frame, in every look. Solid paper surfaces (no frosted glass), hairline rules, one corner radius per look (--r for controls,
+   --r-lg for the bar and card), flat clue pieces, no glows or gradients. The photo is the atmosphere; the card is the page. */
+[data-look]{--r:6px;--r-lg:10px}
+:root[data-look="library"],[data-look="library"]{--r:2px;--r-lg:3px}
+:root[data-look="coast"],[data-look="coast"]{--r:10px;--r-lg:18px}
+:root[data-look="night"],[data-look="night"]{--r:6px;--r-lg:12px}
+header{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:12px 14px 12px 24px;box-shadow:0 10px 30px -18px rgba(0,0,0,.45)}
 h1{font-size:27px;line-height:1.1;white-space:nowrap}
 h1 b{background:none;color:var(--accent);padding:0;font-weight:inherit}
-nav a{font-weight:500;font-size:13.5px;padding:8px 13px}
-nav a[aria-current=page]{background:var(--accent-bg);box-shadow:none}
-main.card{background:var(--glass);border:1px solid var(--rim);border-radius:28px;padding:40px clamp(22px,5vw,48px) 36px;gap:26px;-webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2);box-shadow:0 40px 80px -40px rgba(0,0,0,.45)}
+nav a{font-weight:500;font-size:14px;padding:8px 12px;border-radius:0}
+nav a[aria-current=page]{background:none;box-shadow:inset 0 -2px 0 var(--accent);color:var(--ink)}
+main.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:44px clamp(22px,5.5vw,56px) 40px;gap:28px;box-shadow:0 30px 70px -36px rgba(0,0,0,.55)}
 .meta{font-weight:500;letter-spacing:.01em}
-.quote{font-weight:var(--line-weight);font-size:var(--line-size);line-height:1.32;letter-spacing:var(--line-track)}
+.quote{font-weight:var(--line-weight);font-size:var(--line-size);line-height:1.3;letter-spacing:var(--line-track)}
 .part{padding:.02em .06em}
-.part.fresh{background:linear-gradient(180deg,var(--hl),var(--hl2))}
-.hints{border-left:2px solid var(--accent);padding-left:18px;margin:0;gap:6px}
-.hints li{background:none;padding:2px 0;border-radius:0}
-.hints li.fresh{background:linear-gradient(90deg,var(--hl),rgba(0,0,0,0));padding-left:8px;margin-left:-8px;border-radius:4px}
-.btn{border-radius:999px;background:var(--accent);border-color:var(--accent);color:var(--accent-ink);padding:12px 24px}
+.part.hid,.part.fresh{border-radius:var(--r)}
+.hints{border:0;padding:0;margin:0;gap:0}
+.hints li{background:none;border-radius:0;padding:10px 0;border-top:1px solid var(--line)}
+.hints li:first-child{border-top:0;padding-top:0}
+.hints li.fresh{background:none;color:var(--ink)}
+.hints li.fresh span{color:var(--ink)}
+.hints li.fresh{background:var(--hl);color:var(--hl-ink);padding:9px 12px;border-radius:var(--r);border-top-color:transparent}
+.hints li.fresh span{color:var(--hl-ink)}
+.btn{border-radius:var(--r);background:var(--accent);border-color:var(--accent);color:var(--accent-ink);padding:12px 22px}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-input[type=text]{border-radius:999px;padding:12px 22px;border-width:1px}
+.btn.ghost:hover{border-color:var(--ink)}
+input[type=text]{border-radius:var(--r);padding:12px 16px;border-width:1px;background:var(--paper)}
 input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
-.foot,.site-credit{align-self:center;background:var(--glass);border:1px solid var(--rim);border-radius:999px;padding:6px 16px;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
-:root[data-look="contrast"] :is(header,main.card,.foot,.site-credit){-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
-@media (max-width:600px){header{flex-wrap:wrap;border-radius:22px;padding:12px 8px 6px 16px;row-gap:6px}header nav{width:100%;justify-content:space-between;gap:0}nav a{padding:7px 8px;font-size:12.5px}
-  main.card{border-radius:22px;padding:26px 20px 24px;gap:22px}}
+.help{border-radius:var(--r);background:var(--paper);border:1px solid var(--line)}
+.gotit{border-radius:var(--r)}
+.verdict{font-family:var(--serif);font-weight:var(--line-weight);font-size:calc(var(--line-size)*.66);line-height:1.2}
+.verdict.won{color:var(--ink)}
+.misses{gap:4px 14px}
+.misses li{background:none;padding:0;border-radius:0;color:var(--muted);text-decoration:none}
+.misses li::before{content:"Not ";white-space:pre}
+.facts dt{font-weight:500}
+.facts dd i{font-size:1.12em}
+.note{font-size:calc(var(--line-size)*.5);line-height:1.6;max-width:none}
+:root[data-look="library"] .note{font-size:21px}
+.bonus{border-top:1px solid var(--line)}
+.tile,.choice{border-radius:var(--r);border-width:1px}
+.share{background:none;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.share pre{font:500 15px/1.6 var(--sans)}
+.arch a{border-radius:var(--r);background:var(--paper)}
+.nums{gap:0;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.num{background:none;border-radius:0;padding:16px 4px;border-bottom:1px solid var(--line)}
+.num b{font-size:36px;font-variant-numeric:lining-nums tabular-nums}
+.bars .b{border-radius:var(--r);background:var(--paper)}
+.bars .b.won{background:var(--accent-bg);color:var(--ink)}
+.colophon{align-self:center;display:flex;flex-wrap:wrap;justify-content:center;gap:2px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:8px 18px}
+.colophon p{margin:0}
+:root[data-look="contrast"] :is(header,main.card,.colophon){box-shadow:none}
+@media (max-width:600px){header{flex-wrap:wrap;padding:12px 8px 4px 16px;row-gap:4px}header nav{width:100%;justify-content:space-between;gap:0}nav a{padding:8px 8px;font-size:13px}
+  main.card{padding:28px 20px 26px;gap:24px}.colophon{flex-direction:column;align-items:center;text-align:center}}
 
-/* Accents per look. Library: leather book-spine pieces with gold tooling, a gold-leaf highlight, squarer corners, an underlined title.
-   Coast: sea-glass pieces, sand highlight, round everything. Night: frosted-glass pieces with a faint glow, a moon-gold highlight. */
-:root[data-look="library"] .part.hid,.rtile[data-look="library"] .mini .h{background:linear-gradient(90deg,rgba(0,0,0,0) 6%,var(--tool) 6%,var(--tool) 7.5%,rgba(0,0,0,0) 7.5%,rgba(0,0,0,0) 92.5%,var(--tool) 92.5%,var(--tool) 94%,rgba(0,0,0,0) 94%),linear-gradient(180deg,rgba(255,255,255,.12),rgba(0,0,0,.2)),var(--bar);border-radius:3px;box-shadow:inset 0 1px 0 var(--tool),inset 0 -1px 0 var(--tool)}
-:root[data-look="library"] main.card{border-radius:6px;box-shadow:0 0 0 1px rgba(140,106,30,.35),0 40px 80px -40px rgba(0,0,0,.6)}
-:root[data-look="library"] :is(.btn,input[type=text],.tile,.choice){border-radius:4px}
+/* Accents per look. Library: leather book-spine pieces with gold tooling, a gold-leaf highlight, an underlined title.
+   Coast: flat sea-glass pieces, a sand highlight. Night: pale glass pieces that read as frosted panes, a moon-gold highlight. */
+:root[data-look="library"] .part.hid,.rtile[data-look="library"] .mini .h{background:linear-gradient(90deg,rgba(0,0,0,0) 6%,var(--tool) 6%,var(--tool) 7.5%,rgba(0,0,0,0) 7.5%,rgba(0,0,0,0) 92.5%,var(--tool) 92.5%,var(--tool) 94%,rgba(0,0,0,0) 94%),var(--bar);box-shadow:inset 0 1px 0 var(--tool),inset 0 -1px 0 var(--tool)}
 :root[data-look="library"] h1 b{border-bottom:2px solid currentColor;font-style:normal;font-weight:600}
-:root[data-look="coast"] .part.hid,.rtile[data-look="coast"] .mini .h{background:linear-gradient(160deg,rgba(255,255,255,.55),rgba(255,255,255,0) 45%),linear-gradient(135deg,#7FB9BE,#4F8E9D);border-radius:999px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
-:root[data-look="coast"] .part.fresh{border-radius:999px;padding:.02em .3em}
+:root[data-look="coast"] .part.hid,.rtile[data-look="coast"] .mini .h{background:#6FA5AC;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
 :root[data-look="coast"] h1{font-style:normal;font-weight:600}
-:root[data-look="night"] .part.hid,.rtile[data-look="night"] .mini .h{background:linear-gradient(180deg,rgba(255,255,255,.32),rgba(255,255,255,.14));border-radius:4px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 0 18px rgba(170,190,255,.18)}
-:root[data-look="night"] .part.fresh{border-radius:4px;box-shadow:0 0 22px rgba(242,226,164,.35)}
+:root[data-look="night"] .part.hid,.rtile[data-look="night"] .mini .h{background:#4B5378;box-shadow:inset 0 0 0 1px #737CA6}
+.part.fresh{background:var(--hl)}
 
 /* Look picker in Settings: a small picture of each look and its clue pieces, in that look's own type. */
 .rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
@@ -223,3 +253,4 @@ input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--acc
 .switch{align-self:flex-start}
 .q{font-weight:700;font-size:15px;margin:0}
 @media (max-width:480px){nav{gap:2px}nav a{padding:7px 9px}.choices{grid-template-columns:1fr 1fr}.choice{font-size:15px;padding:8px 10px}}
+:root[data-look="library"] body{font-variant-numeric:lining-nums}
