@@ -38,6 +38,25 @@ const rec=n=>S.days[n]||(S.days[n]={step:0,misses:[],done:false,won:false,bonus:
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const norm=s=>s.toLowerCase().normalize("NFD").replace(/\p{M}/gu,"").replace(/^the\s+/,"").replace(/[^a-z0-9]/g,"");
 const $=id=>document.getElementById(id);
+// Title box matching. Exact and partial matches first (titles that start with what was typed, then titles that contain it, then
+// authors); if nothing matches, the closest titles by spelling, so "frankenstien", "huck finn" or "tale of 2 cities" still find
+// the work. A spelling slip never counts as a guess.
+const NUMS=["zero","one","two","three","four","five","six","seven","eight","nine","ten"];
+const words=s=>s.toLowerCase().normalize("NFD").replace(/\p{M}/gu,"").replace(/&/g," and ").replace(/['\u2019]/g,"").split(/[^a-z0-9]+/).filter(Boolean).map(w=>/^\d+$/.test(w)&&+w<=10?NUMS[+w]:w);
+function dist(a,b,max){if(Math.abs(a.length-b.length)>max)return max+1;let p2=null,p=[...Array(b.length+1).keys()];
+  for(let i=1;i<=a.length;i++){const c=[i];let lo=i;for(let j=1;j<=b.length;j++){let v=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));
+    if(p2&&i>1&&j>1&&a[i-1]===b[j-2]&&a[i-2]===b[j-1])v=Math.min(v,p2[j-2]+1);c[j]=v;lo=Math.min(lo,v)}if(lo>max)return max+1;p2=p;p=c}return p[b.length]}
+const SKIP=new Set(["the","a","an","of","and","in","on","to","by"]);
+// Every word typed must start a word of the title or author, or be one or two letters off one (same first letter).
+function near(q,t){const qw=words(q),tw=words(t);if(!qw.some(w=>!SKIP.has(w)))return false;
+  return qw.every(w=>SKIP.has(w)||tw.some(x=>{if(x.startsWith(w))return true;if(w.length<4||w[0]!==x[0])return false;const k=w.length>=7?2:1;
+    return dist(w,x,k)<=k||dist(w,x.slice(0,w.length),k)<=k}))}
+function findWorks(v){const q=norm(v);if(!q)return{items:[],close:false};
+  const a=[],b=[],c=[];for(const W of WORKS){const t=norm(W[0]);if(t.startsWith(q))a.push(W);else if(t.includes(q))b.push(W);else if(norm(W[1]).includes(q))c.push(W)}
+  const hit=a.concat(b,c);if(hit.length)return{items:hit,close:false};
+  let near1=WORKS.filter(([t,au])=>near(v,t)||near(v,au));
+  if(!near1.length){const lim=Math.max(1,Math.floor(q.length/5));near1=WORKS.map(W=>[W,dist(q,norm(W[0]),lim)]).filter(x=>x[1]<=lim).sort((x,y)=>x[1]-y[1]).map(x=>x[0])}
+  return{items:near1,close:near1.length>0}}
 const plural=(k,w)=>k+" "+w+(k===1?"":"s");
 const clues=k=>plural(k,"extra clue");
 
@@ -65,6 +84,12 @@ function setNav(r){document.querySelectorAll("nav a").forEach(a=>a.toggleAttribu
 
 function play(n){
   const today=TODAY(), isToday=n===today, L=lineOf(n), r=rec(n), N=L.parts.length, T=steps(L).length, v=view(L,r);
+  shown=n;shownToday=today;
+  // Right after a wrong guess, say so under the title box; the earlier wrong guesses stay listed below.
+  const fl=flash&&!r.done&&r.misses[r.misses.length-1]===flash.miss?flash:null;flash=null;
+  const said=fl?'<p class="said" id="said">Not <i>'+esc(fl.miss)+'</i>. '+(fl.hint?'A new hint is above.':'More of the line is above.')+'</p>':'';
+  const older=fl?r.misses.slice(0,-1):r.misses;
+  const ask=(r.step>=T?'Last guess. ':'')+'Which work is this from?';
   setNav(isToday?"today":"archive");
   let h='';
   const help=isToday&&!S.help&&!r.step&&!r.misses.length?'<p class="help" id="help">Name the work this line is from. Each wrong guess, or \u201cNext clue,\u201d shows a hint or more of the line.</p>':'';
@@ -73,31 +98,31 @@ function play(n){
   h+='<p class="quote">'+quoteHTML(L,r,r.done&&r.bonus===null?L.key:null)+'</p>';
   if(!r.done&&v.hints.length)h+='<ul class="hints" aria-label="Hints">'+v.hints.map(k=>'<li'+(v.last&&v.last[0]==="h"&&v.last[1]===k?' class="fresh"':'')+'><span>Hint</span>'+esc(L.hints[k])+'</li>').join("")+'</ul>';
   if(!r.done&&P.easy){
-    const C=choices(n,L),inC=new Set(C.map(c=>c[0])),other=r.misses.filter(m=>!inC.has(m));
-    h+='<div class="ask"><p class="q" id="ql">Which work is this from?</p><div class="choices" role="group" aria-labelledby="ql">'
-      +C.map(([t,a])=>'<button class="choice" type="button" data-t="'+esc(t)+'"'+(r.misses.includes(t)?' disabled':'')+'><span>'+esc(t)+'</span><small>'+esc(a)+'</small></button>').join("")+'</div>'
+    const C=choices(n,L),inC=new Set(C.map(c=>c[0])),other=older.filter(m=>!inC.has(m));
+    h+='<div class="ask"><p class="q" id="ql">'+ask+'</p><div class="choices" role="group" aria-labelledby="ql">'
+      +C.map(([t,a])=>'<button class="choice" type="button" data-t="'+esc(t)+'"'+(r.misses.includes(t)?' disabled':'')+'><span>'+esc(t)+'</span><small>'+esc(a)+'</small></button>').join("")+'</div>'+said
       +(r.step<T?'<div class="row"><button class="btn ghost" type="button" id="more">Next clue</button></div>':'')
       +(other.length?'<ul class="misses" aria-label="Wrong guesses">'+other.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')
       +help+'<button class="linkish switch" type="button" id="mode">Type the title instead</button></div>';
   }else if(!r.done){
-    h+='<form class="ask" id="f" autocomplete="off"><label for="g">Which work is this from?</label>'
+    h+='<form class="ask" id="f" autocomplete="off"><label for="g">'+ask+'</label>'
       +'<div class="row"><div class="combo"><input type="text" id="g" placeholder="Start typing a title or author" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list"><ul class="sugg" id="sugg" role="listbox" hidden></ul></div>'
       +'<button class="btn" type="submit">Guess</button>'
       +(r.step<T?'<button class="btn ghost" type="button" id="more">Next clue</button>':'')+'</div>'
-      +'<p class="err" id="err"></p>'
+      +'<p class="err" id="err"></p>'+said
       +help
       +'<button class="linkish switch" type="button" id="mode">Too hard? Pick from six titles</button>'
-      +(r.misses.length?'<ul class="misses" aria-label="Wrong guesses">'+r.misses.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')
+      +(older.length?'<ul class="misses" aria-label="Wrong guesses">'+older.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')
       +'</form>';
   }else{
     const lifted=reveal!==null?L.parts.filter(p=>p[1]>reveal).length:0;
     h+='<div class="plate'+(lifted?' arrive" style="--wait:'+(lifted*LIFT+200)+'ms':'')+'"><div class="res"><p class="verdict '+(r.won?'won':'lost')+'">'+(r.won?(r.step===0?'Straight away. Impressive.':'Got it with '+clues(r.step)+'.'):'Not this time.')+'</p>'
       +(r.misses.length?'<ul class="misses" aria-label="Wrong guesses">'+r.misses.map(m=>'<li>'+esc(m)+'</li>').join("")+'</ul>':'')+'</div>'
-      +'<h2 class="title"><span class="sr">The work: </span>'+esc(L.work)+'</h2><p class="by"><span class="sr">By </span>'+esc(L.author)+', '+esc(L.year)+'</p><p class="who"><span class="sr">Speaker: </span>'+esc(L.who)+'</p></div>';
+      +'<h2 class="title" tabindex="-1"><span class="sr">The work: </span>'+esc(L.work)+'</h2><p class="by"><span class="sr">By </span>'+esc(L.author)+', '+esc(L.year)+'</p><p class="who"><span class="sr">Speaker: </span>'+esc(L.who)+'</p></div>';
     if(r.bonus===null){
       h+='<div class="bonus"><p><b>Bonus:</b> which word fills the gap?</p><div class="tiles">'+shuffle(L.tiles,n).map(t=>'<button class="tile" data-t="'+esc(t)+'">'+esc(t)+'</button>').join("")+'</div></div>';
     }else{
-      h+='<div class="bonus"><p><b>Bonus:</b> '+(r.bonus===L.key?'right, it’s “'+esc(L.key)+'.”':'it was “'+esc(L.key)+',” not “'+esc(r.bonus)+'.”')+'</p></div>';
+      h+='<div class="bonus" tabindex="-1"><p><b>Bonus:</b> '+(r.bonus===L.key?'right, it’s “'+esc(L.key)+'.”':'it was “'+esc(L.key)+',” not “'+esc(r.bonus)+'.”')+'</p></div>';
       h+='<p class="note">'+esc(L.note)+'</p>';
       const W=L.theme&&window.HAL_WEEKS&&HAL_WEEKS[L.theme];
       if(W)h+='<section class="potw" aria-labelledby="pw"><figure><img src="'+esc(W.img)+'" alt="'+esc(W.alt)+'" width="'+W.w+'" height="'+W.h+'" loading="lazy" decoding="async"></figure><div><p class="k">This week’s painting</p><h3 id="pw">'+esc(W.title)+'</h3><p>'+esc(W.by)+'. '+esc(W.caption)+'</p><p class="src">The Metropolitan Museum of Art · public domain · <a href="'+esc(W.url)+'">see it at the Met</a></p></div></section>';
@@ -114,6 +139,8 @@ function play(n){
 }
 // When a line is finished, the pieces still hidden lift one by one, LIFT ms apart (not when the device asks for less motion).
 let reveal=null;const LIFT=260;
+// What the page is showing: the day, and which day was "today" when it was drawn (see tick()).
+let flash=null,shown=0,shownToday=0;
 function nextLink(n){for(let k=n+1;k<=TODAY();k++){if(!(S.days[k]&&S.days[k].done))return '<a class="quiet" href="'+(k===TODAY()?'#':'#day-'+k)+'">Next unplayed line</a>'}return '<a class="quiet" href="#archive">Back to archive</a>'}
 
 function wire(n,L,r,T){
@@ -121,17 +148,18 @@ function wire(n,L,r,T){
     if(t===L.work||(L.alias||[]).includes(t))finish(n,r,true);
     else{r.misses.push(t);if(r.step<T)r.step++;else finish(n,r,false)}
     say=(!r.won&&r.misses[r.misses.length-1]===t?"Not "+t+". ":"")+announce(L,r);
+    if(!r.done){const v2=view(L,r);flash={miss:t,hint:!!(v2.last&&v2.last[0]==="h")}}
     if(r.done&&!matchMedia("(prefers-reduced-motion: reduce)").matches)reveal=had;
-    save();play(n);const ng=$("g")||document.querySelector(".choice:not(:disabled)");if(ng)ng.focus()};
+    save();play(n);const ng=$("g")||document.querySelector(".choice:not(:disabled)")||document.querySelector(".plate .title");if(ng)ng.focus({preventScroll:true})};
   document.querySelectorAll(".choice").forEach(b=>b.onclick=()=>{r.easy=true;guess(b.dataset.t)});
   const md=$("mode");if(md)md.onclick=()=>{P.easy=!P.easy;saveP();play(n);const x=P.easy?document.querySelector(".choice:not(:disabled)"):$("g");if(x)x.focus()};
   const f=$("f");
   if(f){
     const g=$("g"),list=$("sugg"),err=$("err");let items=[],sel=-1;
     const close=()=>{list.hidden=true;g.setAttribute("aria-expanded","false");sel=-1};
-    const draw=()=>{const q=norm(g.value);items=q?WORKS.filter(([t,a])=>norm(t).includes(q)||norm(a).includes(q)).slice(0,8):[];
+    const draw=()=>{const fw=findWorks(g.value);items=fw.items.slice(0,8);
       if(!items.length)return close();
-      list.innerHTML=items.map(([t,a],k)=>'<li role="option" aria-selected="'+(k===sel)+'" data-t="'+esc(t)+'"><span>'+esc(t)+'</span><small>'+esc(a)+'</small></li>').join("");
+      list.innerHTML=(fw.close?'<li class="sh" role="presentation">Closest match</li>':'')+items.map(([t,a],k)=>'<li role="option" aria-selected="'+(k===sel)+'" data-t="'+esc(t)+'"><span>'+esc(t)+'</span><small>'+esc(a)+'</small></li>').join("");
       list.hidden=false;g.setAttribute("aria-expanded","true")};
     g.addEventListener("input",()=>{err.textContent="";sel=-1;draw()});
     g.addEventListener("keydown",e=>{if(list.hidden)return;
@@ -139,20 +167,21 @@ function wire(n,L,r,T){
       else if(e.key==="ArrowUp"){e.preventDefault();sel=Math.max(sel-1,0);draw()}
       else if(e.key==="Enter"&&sel>=0){e.preventDefault();g.value=items[sel][0];close()}
       else if(e.key==="Escape")close()});
-    list.addEventListener("mousedown",e=>{const li=e.target.closest("li");if(li){e.preventDefault();g.value=li.dataset.t;close();g.focus()}});
+    list.addEventListener("mousedown",e=>{const li=e.target.closest("li[data-t]");if(li){e.preventDefault();g.value=li.dataset.t;close();g.focus()}});
     g.addEventListener("blur",()=>setTimeout(close,120));
     f.addEventListener("submit",e=>{e.preventDefault();
       const v=g.value.trim();
       if(!v){err.textContent="Type a title first.";return}
       let hit=WORKS.find(([t])=>norm(t)===norm(v));
-      if(!hit){const m=WORKS.filter(([t,a])=>norm(t).includes(norm(v))||norm(a).includes(norm(v)));
-        if(m.length===1)hit=m[0];
+      if(!hit){const fw=findWorks(v),m=fw.items;
+        if(m.length===1&&!fw.close)hit=m[0];
+        else if(m.length===1){g.dispatchEvent(new Event("input"));sel=0;draw();err.textContent="Closest match: "+m[0][0]+".";return}
         else{g.dispatchEvent(new Event("input"));err.textContent=m.length?"More than one title matches. Pick one from the list.":"No title matches. Start typing to see suggestions.";return}}
       if(r.misses.includes(hit[0])){err.textContent="You already tried that one.";return}
       guess(hit[0])});
   }
   const more=$("more");if(more)more.onclick=()=>{S.help=true;r.step++;say=announce(L,r);save();play(n);const x=$("more")||$("g")||document.querySelector(".choice:not(:disabled)");if(x)x.focus()};
-  document.querySelectorAll(".tile").forEach(b=>b.onclick=()=>{r.bonus=b.dataset.t;save();play(n)});
+  document.querySelectorAll(".tile").forEach(b=>b.onclick=()=>{r.bonus=b.dataset.t;save();play(n);const x=document.querySelector(".bonus");if(x)x.focus({preventScroll:true})});
   const cp=$("copy");if(cp)cp.onclick=()=>{const text=shareText(n,L,r);
     if(canShare()){navigator.share({text}).catch(()=>{});return}
     const fall=()=>{const rg=document.createRange();rg.selectNodeContents($("sharetext"));const s=getSelection();s.removeAllRanges();s.addRange(rg);$("cerr").textContent="Copying isn't allowed here. The result is selected, so copy it yourself."};
@@ -166,9 +195,19 @@ function announce(L,r){const v=view(L,r);if(r.done)return r.won?"Correct: "+L.wo
   if(v.last&&v.last[0]==="h")return "New hint: "+L.hints[v.last[1]];if(v.last&&v.last[0]==="p")return "Another piece of the line is shown.";return ""}
 function finish(n,r,won){r.done=true;r.won=won;r.onDay=n===dayNo(new Date())}
 
-function tick(){const el=$("countdown");if(!el)return;const now=new Date(),next=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1),m=Math.max(0,Math.round((next-now)/6e4));
-  el.textContent=TODAY()>=LINES.length?"That's every line so far. More are on the way.":"Next line in "+Math.floor(m/60)+"h "+(m%60)+"m."}
+// Every 30 seconds, and whenever the page comes back into view (phones keep tabs and Home Screen apps open for days):
+// if midnight has passed since the page was drawn, an untouched line moves to the new day, and a finished one offers it.
+function tick(){
+  const t=TODAY(),onToday=!/^#./.test(location.hash);
+  if(onToday&&shown&&t!==shownToday){const r=S.days[shown];
+    if(!r||(!r.done&&!r.step&&!r.misses.length)){const a=document.activeElement,typing=a&&a.id==="g"&&a.value;if(!typing){play(t);return}}}
+  const el=$("countdown");if(!el)return;
+  if(shown&&t>shown){if(!$("ready")){el.innerHTML='<button class="linkish ready" type="button" id="ready">Today\u2019s line is ready</button>';$("ready").onclick=()=>{play(TODAY());window.scrollTo({top:0});const c=$("card");if(c)c.focus({preventScroll:true})}}return}
+  const now=new Date(),next=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1),m=Math.max(0,Math.round((next-now)/6e4));
+  el.textContent=t>=LINES.length?"That's every line so far. More are on the way.":"Next line in "+Math.floor(m/60)+"h "+(m%60)+"m."}
 setInterval(tick,30000);
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)tick()});
+addEventListener("pageshow",tick);addEventListener("focus",tick);
 
 // The start of a line for the archive: whole words, up to about 70 characters.
 function opening(L){const s=L.parts.map(p=>p[0]).join(" ");if(s.length<=72)return s;const c=s.slice(0,70);return c.slice(0,c.lastIndexOf(" ")).replace(/[\s,;:\u2014\/]+$/,"")+"\u2026"}

@@ -15,6 +15,13 @@ New wording that goes out under Andrew's name, written by Claude and not yet rea
 - **Day 45 (Donne):** "Meditation XVII" is a new title in the guess list and counts as a right answer.
 - Still waiting for Andrew's yes, not changed: the line and note fixes listed in `docs/fable-audit-2026-11.md`.
 
+## Second craft pass (items 1, 2, 4 and 8 of `docs/fable-audit-2-2026-11.md`; branch `claude/audit2-fixes`, not live yet)
+- **Title box, when nothing matches exactly:** a small heading "Closest match" above the suggested titles; pressing Enter on a misspelling shows "Closest match: Frankenstein." (`site/app.js`)
+- **Right after a wrong guess, under the title box:** "Not *Dracula*. A new hint is above."
+- **New, not in the audit:** when the wrong guess uncovers more of the line instead of a hint, the same line reads "Not *Dracula*. More of the line is above." ("A new hint" would be untrue there.)
+- **When no clues are left:** the label reads "Last guess. Which work is this from?"
+- **On a finished screen after midnight:** "Today’s line is ready" replaces the countdown.
+
 ## Painting of the week
 Done: Andrew approved plainer, museum-label captions for all ten weeks on 20 Nov 2026 (`site/weeks.js`). The paintings themselves stand as listed in `docs/painting-of-the-week.md`.
 

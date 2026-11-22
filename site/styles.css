@@ -296,3 +296,18 @@ input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--acc
 .quiet{font-size:15px;font-weight:500;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
 @media (prefers-reduced-motion: reduce){.plate.arrive{animation:none}.part{transition:none}}
 @media (max-width:480px){.meta{flex-wrap:nowrap;gap:8px;white-space:nowrap;letter-spacing:0}}
+
+/* Second craft pass (22 Nov 2026). The last corners follow the look: --pr/--pr-lg are the page's own radii, so a Settings tile
+   keeps the page's corner while the small picture inside it shows its own look. */
+:root{--pr:var(--r);--pr-lg:var(--r-lg)}
+.skip,.gotit,.sugg,.sugg li,.opt,.theme b{border-radius:var(--pr)}
+.rtile{border-radius:var(--pr-lg)}
+.thumb,.mini,.mini .h,.thumb::after{border-radius:var(--r)}
+.sugg li.sh{cursor:default;font-size:13px;color:var(--muted);padding:6px 12px 2px;background:none}
+/* Right after a wrong guess, under the title box. */
+.said{margin:0;font-size:15px;color:var(--ink)}
+.countdown .ready,.next .ready{font-size:14px;color:var(--ink)}
+/* Focus moves to the answer after a finish and to the bonus result after the bonus; they are not controls, so no ring. */
+.plate .title:focus,.bonus:focus{outline:none}
+/* Windows High Contrast and other forced colours would otherwise draw hidden words in the system text colour. */
+@media (forced-colors: active){.part.hid,.mini .h{forced-color-adjust:none;background:CanvasText!important;color:CanvasText!important;box-shadow:none!important}}
