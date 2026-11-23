@@ -7,4 +7,3 @@ Public: https://halfaline.andrewcao.org/ (repo acao-boop/half-a-line; the old ad
 - `site/` is the whole website, published by GitHub Pages on every push to `main`. Plain HTML, CSS and JavaScript; no build step.
 - `site/lines.js` holds the 60 daily lines and the list of titles players guess from. Day 1 is set in `site/app.js` (`EPOCH`).
 - `docs/art/` holds what drew the share card and the hub screenshots (`card.html`, `seed.html`, `icon.html`).
-- The review copy of the lines is a Claude spreadsheet: https://claude.ai/artifact/AWQKS9gvRRQYG7ygEKAWRu

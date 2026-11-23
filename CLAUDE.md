@@ -14,7 +14,7 @@ Public: https://halfaline.andrewcao.org/ (GitHub Pages custom domain; Cloudflare
 - Nothing goes live mid-session. Edit `site/`.
 - Review locally: from `site/`, run `python3 -m http.server 8000` and open http://localhost:8000/. Check desktop and phone widths, keyboard-only, reduced motion and dark mode.
 - As a fallback only, run `python3 tools/preview/make_preview.py`, open the live site in the browser pane, and run `tools/preview/preview.js` there. New images appear only after publishing.
-- When Andrew approves, Claude commits, updates HANDOFF.md, and pushes `main`. When the Actions run finishes, confirm the live files match `site/` (SHA-256), then tag the deployed commit as `published` and push the tag. If the social card changed, rerun LinkedIn Post Inspector.
+- When Andrew approves, Claude commits, updates HANDOFF.md, and pushes `main`. When the Actions run finishes, confirm the live files match `site/` (SHA-256), then tag the deployed commit as `published` and push the tag.
 
 ## Portfolio
 - Credit line: "Designed and edited by Andrew Cao" (adjust to the real role), with Andrew's open A mark small beside it, linking to https://andrewcao.org/. Never larger, never as the project's logo.
@@ -32,7 +32,6 @@ Public: https://halfaline.andrewcao.org/ (GitHub Pages custom domain; Cloudflare
 
 ## The game
 - `site/lines.js`: each line has pieces with a reveal order (1 and 2 show first), three hints from weakest to strongest, a bonus word that appears in the line, and a note. Every work must be in the public domain; name translators.
-- Andrew reviews lines in the Claude spreadsheet (README). Copy his edits into `lines.js`, then run the data check in HANDOFF.md before publishing.
 - `EPOCH` in `site/app.js` is day 1. Never move it after launch: it renumbers every player's history and breaks streaks.
 - Keep the review page out of the public site. Players' progress and stats live in their own browser (localStorage key `half-a-line-v3`); changing that key wipes everyone's stats.
 
