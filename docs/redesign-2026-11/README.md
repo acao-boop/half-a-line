@@ -16,3 +16,6 @@ All three share the same game changes, borrowed from the top daily games:
 | **C. Broadsheet** | Source Serif 4 + Archivo | solid black bars, newest clue in the existing yellow | 0 | newspaper puzzle page; most contemporary, two columns on desktop |
 
 Not covered yet: Archive, Stats, About, Settings, easy mode, the bonus word, the painting of the week, the lift animation. Those follow the picked direction.
+
+## Second pass (27 Nov): Andrew picked A
+A now has named ranks (By heart → Last page; a miss is Still reading) leading the end screen and the share text, tinted blanks that ink in on "Next clue" (open the page and press it), and no themed-week chrome. Reasons and the Krillion / Pinpoint / Bracket City notes: end of `research.md`.
