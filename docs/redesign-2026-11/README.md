@@ -19,3 +19,6 @@ Not covered yet: Archive, Stats, About, Settings, easy mode, the bonus word, the
 
 ## Second pass (27 Nov): Andrew picked A
 A now has named ranks (By heart → Last page; a miss is Still reading) leading the end screen and the share text, tinted blanks that ink in on "Next clue" (open the page and press it), and no themed-week chrome. Reasons and the Krillion / Pinpoint / Bracket City notes: end of `research.md`.
+
+## Clean-slate prototype (27 Nov): `prototype.html`
+Playable on days 1–10 (real lines from `site/lines.js`; nothing is saved). Every word starts as a blank at its real length, and small linking words show from the start, except in the giveaway piece. Each clue, or wrong guess, inks in the next piece, using the reveal order already in `lines.js`. No trivia hints; "Pick from six" stays as the lifeline. Ranks and share as in A. Open it through a local server (it loads `../../site/lines.js`).
