@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Half a Line: private preview</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="A daily literature game: one famous line, revealed a piece at a time. Name the work in as few clues as you can.">
+<link rel="canonical" href="https://halfaline.andrewcao.org/">
+<!-- Link previews (LinkedIn, Slack, iMessage). The card is 1200×627; bump ?v= whenever it changes. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Half a Line">
+<meta property="og:description" content="A daily literature game: one famous line, revealed a piece at a time. Name the work in as few clues as you can.">
+<meta property="og:url" content="https://halfaline.andrewcao.org/">
+<meta property="og:image" content="https://halfaline.andrewcao.org/social-preview.jpg?v=20261127">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Half a Line: a famous line on a cream page, with some words left as blanks to fill in.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Half a Line">
+<meta name="twitter:description" content="A daily literature game: one famous line, revealed a piece at a time. Name the work in as few clues as you can.">
+<meta name="twitter:image" content="https://halfaline.andrewcao.org/social-preview.jpg?v=20261127">
+<meta name="twitter:image:alt" content="Half a Line: a famous line on a cream page, with some words left as blanks to fill in.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../../site/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../site/apple-touch-icon.png">
+<link rel="manifest" href="../../site/manifest.webmanifest">
+<meta name="theme-color" content="#F5F0E6">
+<script>
+// Private preview only (not part of the site): pretend today is one of the next five days, so the editor can play them.
+(function(){var D=Date,q=new URLSearchParams(location.search),day=Math.max(1,parseInt(q.get("day")||"11",10));
+var now=new D(),t=new D(2026,10,17+day,now.getHours(),now.getMinutes(),now.getSeconds()),off=t-D.now();
+function F(){var a=[].slice.call(arguments);return a.length?new (Function.prototype.bind.apply(D,[null].concat(a)))():new D(D.now()+off)}
+F.prototype=D.prototype;F.now=function(){return D.now()+off};F.UTC=D.UTC;F.parse=D.parse;window.Date=F;window.PREVIEW_DAY=day})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>try{var p=JSON.parse(localStorage.getItem("half-a-line-prefs"))||{},d=document.documentElement;if(p.contrast||(p.contrast===undefined&&(p.look==="contrast"||p.room==="contrast"||p.palette==="contrast")))d.dataset.contrast="high";if(p.mode==="light"||p.mode==="dark")d.dataset.theme=p.mode}catch(e){}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../site/styles.css?v=14">
+</head>
+<body>
+<div class="pv" role="note"><span>Private preview, playing day <b id="pvd"></b>. Nothing here is live.</span><span id="pvl"></span></div>
+<style>.pv{font:500 13px var(--sans);color:var(--muted);border:1px dashed var(--rule);border-radius:3px;padding:8px 12px;margin:12px auto 0;max-width:680px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}.pv a{color:var(--ink)}.pv a[aria-current]{font-weight:700;text-decoration:none}</style>
+<script>document.getElementById("pvd").textContent=PREVIEW_DAY;document.getElementById("pvl").innerHTML=[11,12,13,14,15].map(function(d){return '<a href="?day='+d+'"'+(d===PREVIEW_DAY?' aria-current="true"':'')+'>Day '+d+'</a>'}).join(" ");</script>
+<a class="skip" href="#card">Skip to today's line</a>
+<div class="wrap">
+  <header>
+    <h1><a href="#"><i>Half a</i> <b>Line</b></a></h1>
+    <nav aria-label="Sections">
+      <a href="#" data-r="today">Today</a><a href="#archive" data-r="archive">Archive</a><a href="#stats" data-r="stats">Stats</a><a href="#about" data-r="about">About</a><a href="#settings" data-r="settings">Settings</a>
+    </nav>
+  </header>
+  <main class="card" id="card" tabindex="-1"><p>Loading today's line…</p></main>
+  <p class="sr" id="status" role="status" aria-live="polite"></p>
+  <footer class="colophon"><p class="foot">A new line every day at midnight, your time.</p><p class="site-credit">Designed and edited by Andrew Cao<a class="maker-mark" href="https://andrewcao.org/" aria-label="Andrew Cao’s home page"><img src="../../site/andrew-cao-mark.svg" alt="" width="12" height="12"></a></p></footer>
+</div>
+<script src="../../site/lines.js?v=13"></script>
+<script src="../../site/app.js?v=14"></script>
+</body>
+</html>
