@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mock-up B: Index card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* B. Index card. A library catalogue card on a desk: blue ruled lines, a red margin rule, Caslon for the line,
+   Plex Sans for data. The end screen is a date-due slip. Radius 2px. No shadows; the card sits on a hairline. */
+:root{
+  --desk:#E4DCCB; --card:#FBF8F0; --ink:#23201B; --muted:#6A6358; --blue:#BCCBDD; --red:#B8432F; --stamp:#5A3E8C; --hl:#F1E3A6;
+  --serif:"Libre Caslon Text", Georgia, serif; --sans:"IBM Plex Sans", system-ui, sans-serif; --r:2px; --lh:32px;
+}
+@media (prefers-color-scheme: dark){:root{
+  --desk:#121417; --card:#1C1E22; --ink:#E6E1D6; --muted:#9C978C; --blue:#2C3542; --red:#E07A63; --stamp:#B7A2E6; --hl:#4A4020}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);color:var(--ink);font:400 15px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:640px;margin:0 auto;padding:16px 12px 32px}
+nav{display:flex;justify-content:space-between;align-items:baseline;padding:4px 6px 12px}
+.mark{font-family:var(--serif);font-size:22px;color:var(--ink)}
+.mark i{font-style:italic}
+.mark b{font-weight:700;background:var(--hl);padding:0 .12em}
+nav span a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;margin-left:16px}
+.card{background:var(--card);border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:var(--r);position:relative;
+  padding:0 18px 22px 46px;
+  background-image:linear-gradient(var(--card) 0 calc(var(--lh)*2 - 1px),transparent 0),repeating-linear-gradient(transparent 0 calc(var(--lh) - 1px),var(--blue) calc(var(--lh) - 1px) var(--lh));}
+.card::before{content:"";position:absolute;top:0;bottom:0;left:32px;width:1px;background:var(--red);opacity:.7}
+.head{height:calc(var(--lh)*2);display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:7px;border-bottom:1.5px solid var(--red);margin-left:-46px;padding-left:46px;margin-right:-18px;padding-right:18px}
+.head b{font-family:var(--serif);font-weight:400;font-size:17px}
+.head span{font-size:13px;color:var(--muted)}
+/* everything below sits on the ruled lines */
+.l{min-height:var(--lh);line-height:var(--lh);margin:0}
+.label{font-size:12.5px;color:var(--muted);font-weight:500}
+.line{font-family:var(--serif);font-size:23px;line-height:var(--lh);margin:var(--lh) 0 0;text-wrap:pretty}
+.bar{background:var(--ink);color:transparent;border-radius:1px;-webkit-box-decoration-break:clone;box-decoration-break:clone;user-select:none}
+.new{background:var(--hl);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.boxes{display:flex;gap:6px;align-items:center;height:var(--lh)}
+.boxes i{width:13px;height:13px;border:1.5px solid var(--ink);border-radius:var(--r);display:inline-grid;place-items:center}
+.boxes i.x::after{content:"";width:7px;height:7px;background:var(--red)}
+.boxes em{font-style:normal;font-size:13px;color:var(--muted);margin-left:8px}
+.hint{font-size:16px}
+.hint .label{display:inline-block;width:52px}
+.miss{color:var(--red);font-size:14px}
+input{display:block;width:100%;font:400 18px var(--serif);color:var(--ink);background:transparent;border:0;border-bottom:1.5px solid var(--ink);height:var(--lh);padding:0 2px;margin-top:calc(var(--lh) - 1.5px)}
+input::placeholder{color:var(--muted);font-style:italic}
+.acts{display:flex;gap:10px;align-items:center;margin-top:var(--lh)}
+.btn{font:600 14.5px var(--sans);border-radius:var(--r);height:calc(var(--lh) + 6px);padding:0 18px;border:1.5px solid var(--ink);background:var(--ink);color:var(--card);cursor:pointer}
+.btn.ghost{background:var(--card);color:var(--ink)}
+.acts a{margin-left:auto;font-size:13.5px;color:var(--muted)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;color:var(--muted);padding:14px 6px 0}
+/* End */
+.end{display:none} body.done .play{display:none} body.done .end{display:block}
+.title{font-family:var(--serif);font-style:italic;font-size:40px;line-height:calc(var(--lh)*1.5);margin:calc(var(--lh)*.5) 0 0;font-weight:400}
+.note{font-family:var(--serif);font-size:16.5px;line-height:var(--lh);margin:var(--lh) 0 0}
+.slip{margin-top:20px;background:var(--card);border:1px solid color-mix(in srgb,var(--ink) 22%,transparent);border-radius:var(--r);padding:14px 18px 18px}
+.slip h3{margin:0;font:600 13px var(--sans);display:flex;justify-content:space-between;border-bottom:1.5px solid var(--ink);padding-bottom:6px}
+.slip h3 span{font-weight:400;color:var(--muted)}
+.dues{display:grid;grid-template-columns:repeat(7,1fr);border-left:1px solid var(--blue);margin-top:10px}
+.dues div{border-right:1px solid var(--blue);border-bottom:1px solid var(--blue);padding:6px 4px;text-align:center;font-size:11.5px;color:var(--muted);min-height:48px;display:flex;flex-direction:column;justify-content:space-between}
+.dues div b{font:600 12px var(--sans);color:var(--stamp);border:1.5px solid var(--stamp);border-radius:var(--r);padding:1px 0;transform:rotate(-3deg)}
+.dues div.miss b{color:var(--red);border-color:var(--red)}
+.slip pre{margin:14px 0 0;font:400 15px/1.5 var(--sans);white-space:pre-wrap}
+.slip .acts{margin-top:12px}
+@media (min-width:900px){
+  body{padding-top:28px}
+  .page{max-width:880px;display:grid;grid-template-columns:1fr 290px;gap:0 22px;align-items:start}
+  nav,footer{grid-column:1/-1}
+  .line{font-size:27px}
+  .card{padding-left:60px;padding-right:28px}.card::before{left:44px}
+  .head{margin-left:-60px;padding-left:60px;margin-right:-28px;padding-right:28px}
+  .slip{margin-top:0}
+  .card.play{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <nav><span class="mark"><i>Half a</i> <b>Line</b></span><span><a href="#">Archive</a><a href="#">Stats</a><a href="#">About</a></span></nav>
+
+  <main class="card play">
+    <div class="head"><b>No. 2</b><span>Thursday, 19 November</span></div>
+    <p class="line"><span class="bar">Life’s but a walking shadow,</span> <span class="bar">a poor player</span> / That struts and frets his hour upon the stage / And then is heard no more:</p>
+    <div class="boxes" aria-label="1 of 5 clues used"><i class="x"></i><i></i><i></i><i></i><i></i><em>1 of 5 clues used</em></div>
+    <p class="l hint"><span class="label">Hint</span><span class="new">A play from the 1600s</span></p>
+    <p class="l miss">Not King Lear. A new hint is above.</p>
+    <input placeholder="Which work is this from?" aria-label="Which work is this from?">
+    <div class="acts"><button class="btn">Guess</button><button class="btn ghost">Next clue</button><a href="#">Pick from six</a></div>
+  </main>
+
+  <main class="card end">
+    <div class="head"><b>No. 2</b><span>Solved with 2 extra clues</span></div>
+    <h2 class="title">Macbeth</h2>
+    <p class="l">William Shakespeare, c. 1606</p><p class="l label">Spoken by Macbeth</p>
+    <p class="line" style="margin-top:var(--lh)">Life’s but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more:</p>
+    <p class="note">Macbeth has just heard that Lady Macbeth is dead. The image is theatrical on purpose: an actor, on a stage, telling the audience that life is only acting on a stage.</p>
+  </main>
+
+  <aside class="slip end">
+    <h3>Clues needed this week <span>Streak 4</span></h3>
+    <div class="dues"><div>Sun<b>0</b></div><div>Mon<b>1</b></div><div>Tue<b>3</b></div><div>Wed<b>2</b></div><div>Thu<b>2</b></div><div>Fri</div><div>Sat</div></div>
+    <pre>Half a Line #2
+Solved with 2 extra clues
+🟨🟨🟩⬜⬜⬜
+halfaline.andrewcao.org</pre>
+    <div class="acts"><button class="btn">Share result</button><a href="#">Next line in 6 h</a></div>
+  </aside>
+
+  <footer><span>A new line every day at midnight.</span><span>Designed and edited by Andrew Cao</span></footer>
+</div>
+<script>if(location.hash==="#end")document.body.classList.add("done")</script>
+</body>
+</html>
