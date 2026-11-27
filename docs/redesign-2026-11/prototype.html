@@ -34,9 +34,15 @@ header span:last-child{justify-self:end}
 .epigraph{margin:30px 0 0;font-family:var(--serif);font-size:clamp(27px,6.6vw,38px);line-height:1.5;font-weight:400;text-wrap:pretty}
 /* A hidden word: its real width, a pale tint, a hairline under it */
 .w{transition:color .6s ease,background-color .6s ease,border-color .6s ease;transition-delay:var(--d,0ms);border-bottom:1.5px solid transparent;border-radius:1px}
-.w.hid{color:transparent;background:var(--wash);border-bottom-color:var(--ink);user-select:none}
+.w.hid{color:transparent;border-bottom-color:var(--ink);user-select:none}
 .w.fresh{background:var(--fresh)}
 .end .w{background:transparent}
+.end .w.fresh{background:var(--fresh)}
+.bonus{margin:18px auto 0;max-width:420px;text-align:left}
+.bonus label{display:block;font-family:var(--serif);font-style:italic;font-size:19px;margin-bottom:4px;text-align:center}
+.bres{text-align:center;margin:14px 0 0;font-size:15px;color:var(--muted)}
+.bres i{font-family:var(--serif);font-size:19px;color:var(--ink)}
+.bres.right i{color:var(--red)}
 .how{margin:22px 0 0;font-size:15px;color:var(--muted)}
 .ask{margin:26px 0 0}
 .ask label{display:block;font-family:var(--serif);font-style:italic;font-size:20px;margin-bottom:6px}
@@ -53,7 +59,7 @@ input::placeholder{color:var(--muted)}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule);text-align:left}
 .btn.ghost:hover{border-color:var(--ink)}
 button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
-.work:focus{outline:none}
+.work:focus,.bres:focus{outline:none}
 .quiet{font:500 15px var(--sans);background:none;border:0;color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:4px;padding:0;cursor:pointer}
 .below{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;font-size:14px;color:var(--muted)}
 .msg{color:var(--red);font-size:14px;margin:10px 0 0;min-height:21px}
@@ -107,7 +113,7 @@ let n=1,L,st;
 function start(day){
   n=day;L=LINES[n-1];
   const pieces=L.parts.map(([t,o])=>({t,o})), max=Math.max(...pieces.map(p=>p.o));
-  st={clues:0,max,done:false,won:false,misses:[],easy:false,six:false,last:0};
+  st={clues:0,max,done:false,won:false,misses:[],easy:false,six:false,last:0,bonus:null,quiet:false};
   $("no").textContent="No. "+n;
   $("date").textContent=new Date(EPOCH.getFullYear(),EPOCH.getMonth(),EPOCH.getDate()+n-1).toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"}).replace(/^(\w+) /,"$1, ");
   $("days").innerHTML=LINES.map((_,k)=>'<button aria-current="'+(k+1===n)+'">'+(k+1)+'</button>').join("");
@@ -116,12 +122,14 @@ function start(day){
 }
 // Build the line: each word is a span that knows its piece's reveal order and whether it is a linking word.
 function lineHTML(final){
-  let h="",k=0;
+  let h="",k=0,keyed=false;const K=(L.key||"").toLowerCase();
   for(const [text,o] of L.parts){
     const tokens=text.split(/([A-Za-zÀ-ÿ’'\-]+)/);
     h+=(h?" ":"");
     for(let i=0;i<tokens.length;i++){const t=tokens[i];if(!t)continue;
       if(i%2===0){h+=esc(t);continue}
+      if(final&&!keyed&&t.toLowerCase()===K){keyed=true;
+        h+=st.bonus===null?'<span class="w hid" aria-label="missing word, '+t.length+' letters">'+esc(t)+'</span>':'<span class="w fresh">'+esc(t)+'</span>';continue}
       const glue=GLUE.has(t.toLowerCase())&&o!==st.max;
       const shown=final||glue||o<=st.clues;
       const fresh=!final&&!glue&&o===st.clues&&st.last===st.clues;
@@ -130,19 +138,28 @@ function lineHTML(final){
   }
   return h;
 }
+function bonusHTML(){
+  if(st.bonus===null)return '<form class="bonus" id="bf"><label for="b">One more: which word is missing?</label><div class="field"><div class="combo"><input id="b" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="'+L.key.length+' letters"></div><button class="btn">Check</button></div></form>';
+  return '<p class="bres'+(st.bonus==="right"?' right':'')+'" id="bres" tabindex="-1">'+(st.bonus==="right"?'Right: <i>'+esc(L.key)+'</i>. A pen mark goes on your result.':'It was <i>'+esc(L.key)+'</i>.')+'</p>'}
+// Forgiving of capitals, accents and one slip in longer words.
+function near(a,b){a=norm(a);b=norm(b);if(a===b)return true;if(b.length<5||Math.abs(a.length-b.length)>1)return false;
+  const d=Array.from({length:a.length+1},(_,i)=>[i]);for(let j=1;j<=b.length;j++)d[0][j]=j;
+  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return d[a.length][b.length]<=1}
 function shareText(){const T=st.max+1;const sq=st.won?"🟨".repeat(st.clues)+"🟩"+"⬜".repeat(T-1-st.clues):"🟥".repeat(T);
-  return "Half a Line #"+n+" · "+(st.won?RANKS[Math.min(st.clues,5)]:MISS)+(st.easy?" (easy mode)":"")+"\n"+sq+"\nhalfaline.andrewcao.org"}
+  return "Half a Line #"+n+" · "+(st.won?RANKS[Math.min(st.clues,5)]:MISS)+(st.bonus==="right"?" ✒":"")+(st.easy?" (easy mode)":"")+"\n"+sq+"\nhalfaline.andrewcao.org"}
 function render(){
   const g=$("game");
   if(st.done){
     const rank=st.won?RANKS[Math.min(st.clues,5)]:MISS;
     g.innerHTML='<div class="end"><p class="verdict"><i>'+rank+'</i>'+(st.won?(st.clues?'Solved with '+st.clues+' extra clue'+(st.clues>1?'s':''):'Solved with no extra clues'):'It was this one.')+'</p>'
-      +'<p class="epigraph">'+lineHTML(true)+'</p><div class="orn"></div><h2 class="work" tabindex="-1" id="work">'+esc(L.work)+'</h2>'
+      +'<p class="epigraph">'+lineHTML(true)+'</p>'+bonusHTML()+'<div class="orn"></div><h2 class="work" tabindex="-1" id="work">'+esc(L.work)+'</h2>'
       +'<p class="byline">'+esc(L.author)+', '+esc(L.year)+'<span>Spoken by '+esc(L.who.replace(/^The /,"the "))+'</span></p><p class="note">'+esc(L.note)+'</p>'
       +'<div class="slip"><pre>'+esc(shareText())+'</pre><div class="row"><button class="btn" id="copy">Copy result</button><span style="font-size:14px;color:var(--muted)" id="cmsg"></span></div></div>'
       +'<ol class="ladder" aria-label="Ranks, from no extra clues to five">'+RANKS.map((r,k)=>'<li'+(st.won&&Math.min(st.clues,5)===k?' class="me"':'')+'>'+r+'</li>').join("")+'</ol></div>';
     $("copy").onclick=()=>{navigator.clipboard.writeText(shareText()).then(()=>$("cmsg").textContent="Copied.",()=>$("cmsg").textContent="Copy it from the box.")};
-    $("work").focus({preventScroll:true});window.scrollTo(0,0);return;
+    if($("bf"))$("bf").onsubmit=e=>{e.preventDefault();const v=$("b").value;if(!v.trim())return;st.bonus=near(v,L.key)?"right":"wrong";st.quiet=true;render();$("bres").focus({preventScroll:true})};
+    if(!st.quiet){$("work").focus({preventScroll:true});window.scrollTo(0,0)}return;
   }
   const left=st.max-st.clues;
   g.innerHTML='<div class="budget"><div class="ticks" aria-hidden="true">'+Array.from({length:st.max},(_,k)=>'<span'+(k<st.clues?' class="used"':'')+'></span>').join("")+'</div><p>'+st.clues+' of '+st.max+' clues used</p></div>'

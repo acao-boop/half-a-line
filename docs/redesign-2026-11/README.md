@@ -22,3 +22,4 @@ A now has named ranks (By heart → Last page; a miss is Still reading) leading 
 
 ## Clean-slate prototype (27 Nov): `prototype.html`
 Playable on days 1–10 (real lines from `site/lines.js`; nothing is saved). Every word starts as a blank at its real length, and small linking words show from the start, except in the giveaway piece. Each clue, or wrong guess, inks in the next piece, using the reveal order already in `lines.js`. No trivia hints; "Pick from six" stays as the lifeline. Ranks and share as in A. Open it through a local server (it loads `../../site/lines.js`).
+Second round (27 Nov): hidden words are now plain underlines (the tinted boxes looked like fields to type in), and the bonus is typed: after the solve, one word of the line is blank (its length shown), one try, forgiving of capitals and one slip; getting it adds ✒ to the share text.
